@@ -29,42 +29,39 @@
         private void InitializeComponent()
         {
             listView1 = new ListView();
-            label1 = new Label();
+            CodCliente = new ColumnHeader();
             SuspendLayout();
             // 
             // listView1
             // 
+            listView1.Columns.AddRange(new ColumnHeader[] { CodCliente });
             listView1.Location = new Point(12, 12);
             listView1.Name = "listView1";
             listView1.Size = new Size(660, 355);
             listView1.TabIndex = 1;
             listView1.UseCompatibleStateImageBehavior = false;
+            listView1.View = View.Details;
+         
             // 
-            // label1
+            // CodCliente
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(80, 426);
-            label1.Name = "label1";
-            label1.Size = new Size(160, 15);
-            label1.TabIndex = 2;
-            label1.Text = "Es una prueba de push, borar";
+            CodCliente.Text = "Código Cliente";
+            CodCliente.Width = 120;
             // 
             // Itinerario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(label1);
             Controls.Add(listView1);
             Name = "Itinerario";
             Text = "Itinerario";
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
         private ListView listView1;
-        private Label label1;
+        private ColumnHeader CodCliente;
     }
 }
