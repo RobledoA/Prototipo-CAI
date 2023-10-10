@@ -6,10 +6,10 @@ namespace Prototipo_CAI
         {
             InitializeComponent();
         }
-
         private void btnProdDisponibles_Click(object sender, EventArgs e)
         {
-
+            ProductosDisponibles productosDisponibles = new ProductosDisponibles();
+            productosDisponibles.ShowDialog();
         }
     }
 }

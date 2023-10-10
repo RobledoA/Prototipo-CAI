@@ -28,31 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            gbAereos = new GroupBox();
+            dataGridView1 = new DataGridView();
+            Aéreos = new DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
-            // gbAereos
+            // dataGridView1
             // 
-            gbAereos.Location = new Point(12, 12);
-            gbAereos.Name = "gbAereos";
-            gbAereos.Size = new Size(696, 95);
-            gbAereos.TabIndex = 0;
-            gbAereos.TabStop = false;
-            gbAereos.Text = "Aereos";
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Aéreos });
+            dataGridView1.Location = new Point(237, 108);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(240, 113);
+            dataGridView1.TabIndex = 0;
+            // 
+            // Aéreos
+            // 
+            Aéreos.HeaderText = "Aereos";
+            Aéreos.Name = "Aéreos";
             // 
             // ProductosDisponibles
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(gbAereos);
+            Controls.Add(dataGridView1);
             Name = "ProductosDisponibles";
             Text = "ProductosDisponibles";
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private GroupBox gbAereos;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn Aéreos;
     }
 }
