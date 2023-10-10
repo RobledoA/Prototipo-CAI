@@ -52,6 +52,7 @@
             btnProdDisponibles.TabIndex = 1;
             btnProdDisponibles.Text = "Productos Disponibles";
             btnProdDisponibles.UseVisualStyleBackColor = true;
+            btnProdDisponibles.Click += btnProdDisponibles_Click;
             // 
             // btnReservas
             // 
