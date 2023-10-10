@@ -97,6 +97,7 @@
             Controls.Add(lsvProductosDisponibles);
             Name = "ProductosDisponibles";
             Text = "ProductosDisponibles";
+            Load += ProductosDisponibles_Load;
             ResumeLayout(false);
         }
 
