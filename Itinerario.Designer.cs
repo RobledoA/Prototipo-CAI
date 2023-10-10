@@ -29,35 +29,46 @@
         private void InitializeComponent()
         {
             listView1 = new ListView();
-            CodCliente = new ColumnHeader();
+            CUILCUIT = new ColumnHeader();
             Nombre = new ColumnHeader();
+            button1 = new Button();
             SuspendLayout();
             // 
             // listView1
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { CodCliente, Nombre });
+            listView1.Columns.AddRange(new ColumnHeader[] { CUILCUIT, Nombre });
             listView1.Location = new Point(12, 12);
             listView1.Name = "listView1";
-            listView1.Size = new Size(660, 355);
+            listView1.Size = new Size(286, 111);
             listView1.TabIndex = 1;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
             // 
-            // CodCliente
+            // CUILCUIT
             // 
-            CodCliente.Text = "Código Cliente";
-            CodCliente.Width = 120;
+            CUILCUIT.Text = "CUIL/CUIT";
+            CUILCUIT.Width = 120;
             // 
             // Nombre
             // 
-            Nombre.Text = "Nombre";
-            Nombre.Width = 120;
+            Nombre.Text = "Nombre/Razón Social";
+            Nombre.Width = 160;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(223, 129);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 2;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
             // 
             // Itinerario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button1);
             Controls.Add(listView1);
             Name = "Itinerario";
             Text = "Itinerario";
@@ -67,7 +78,8 @@
         #endregion
 
         private ListView listView1;
-        private ColumnHeader CodCliente;
+        private ColumnHeader CUILCUIT;
         private ColumnHeader Nombre;
+        private Button button1;
     }
 }
