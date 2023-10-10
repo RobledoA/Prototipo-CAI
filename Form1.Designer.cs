@@ -73,7 +73,7 @@
             Controls.Add(btnProdDisponibles);
             Controls.Add(btnItinerarios);
             Name = "Form1";
-            Text = "Form1";
+            Text = "Aterrizar S.A.";
             ResumeLayout(false);
         }
 
