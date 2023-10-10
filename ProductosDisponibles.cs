@@ -19,18 +19,35 @@ namespace Prototipo_CAI
 
         private void button1_Click(object sender, EventArgs e)
         {
+            // Limpia las columnas existentes si las hay
             lsvProductosDisponibles.Clear();
-            lsvProductosDisponibles.Columns.Add("Código", -2, HorizontalAlignment.Center);
-            lsvProductosDisponibles.Columns.Add("Origen", -2, HorizontalAlignment.Center);
-            lsvProductosDisponibles.Columns.Add("Destino", -2, HorizontalAlignment.Center);
-            lsvProductosDisponibles.Columns.Add("Paradas", -2, HorizontalAlignment.Center);
-            lsvProductosDisponibles.Columns.Add("Fecha de Salida", -2, HorizontalAlignment.Center);
-            lsvProductosDisponibles.Columns.Add("Fecha de Arribo", -2, HorizontalAlignment.Center);
-            lsvProductosDisponibles.Columns.Add("Tiempo de Vuelo", -2, HorizontalAlignment.Center);
-            lsvProductosDisponibles.Columns.Add("Aerolínea", -2, HorizontalAlignment.Center);
-            lsvProductosDisponibles.Columns.Add("Tarifas", -2, HorizontalAlignment.Center);
-            lsvProductosDisponibles.Columns.Add("Servicios Extra", -2, HorizontalAlignment.Center);
-            
+
+            // Configura las columnas con su texto de encabezado y alineación
+            lsvProductosDisponibles.Columns.Add("Código", 100, HorizontalAlignment.Center);
+            lsvProductosDisponibles.Columns.Add("Origen", 100, HorizontalAlignment.Center);
+            lsvProductosDisponibles.Columns.Add("Destino", 100, HorizontalAlignment.Center);
+            lsvProductosDisponibles.Columns.Add("Paradas", 100, HorizontalAlignment.Center);
+            lsvProductosDisponibles.Columns.Add("Fecha de Salida", 100, HorizontalAlignment.Center);
+            lsvProductosDisponibles.Columns.Add("Fecha de Arribo", 100, HorizontalAlignment.Center);
+            lsvProductosDisponibles.Columns.Add("Tiempo de Vuelo", 100, HorizontalAlignment.Center);
+            lsvProductosDisponibles.Columns.Add("Aerolínea", 100, HorizontalAlignment.Center);
+            lsvProductosDisponibles.Columns.Add("Tarifas", 100, HorizontalAlignment.Center);
+            lsvProductosDisponibles.Columns.Add("Servicios Extra", 100, HorizontalAlignment.Center);
+
+            // Agrega datos a las filas
+            ListViewItem item = new ListViewItem("");
+            item.SubItems.Add("Ciudad A");
+            item.SubItems.Add("Ciudad B");
+            item.SubItems.Add("2");
+            item.SubItems.Add("2023-10-15");
+            item.SubItems.Add("2023-10-16");
+            item.SubItems.Add("2 horas");
+            item.SubItems.Add("Aerolínea X");
+            item.SubItems.Add("$300");
+            item.SubItems.Add("Wi-Fi, Comida");
+
+            lsvProductosDisponibles.Items.Add(item);
+
 
         }
     }
