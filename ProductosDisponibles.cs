@@ -19,7 +19,19 @@ namespace Prototipo_CAI
 
         private void button1_Click(object sender, EventArgs e)
         {
+            lsvProductosDisponibles.Clear();
             lsvProductosDisponibles.Columns.Add("Código", -2, HorizontalAlignment.Center);
+            lsvProductosDisponibles.Columns.Add("Origen", -2, HorizontalAlignment.Center);
+            lsvProductosDisponibles.Columns.Add("Destino", -2, HorizontalAlignment.Center);
+            lsvProductosDisponibles.Columns.Add("Paradas", -2, HorizontalAlignment.Center);
+            lsvProductosDisponibles.Columns.Add("Fecha de Salida", -2, HorizontalAlignment.Center);
+            lsvProductosDisponibles.Columns.Add("Fecha de Arribo", -2, HorizontalAlignment.Center);
+            lsvProductosDisponibles.Columns.Add("Tiempo de Vuelo", -2, HorizontalAlignment.Center);
+            lsvProductosDisponibles.Columns.Add("Aerolínea", -2, HorizontalAlignment.Center);
+            lsvProductosDisponibles.Columns.Add("Tarifas", -2, HorizontalAlignment.Center);
+            lsvProductosDisponibles.Columns.Add("Servicios Extra", -2, HorizontalAlignment.Center);
+            
+
         }
     }
 }

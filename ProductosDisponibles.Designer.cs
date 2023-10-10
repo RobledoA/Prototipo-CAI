@@ -37,6 +37,7 @@
             // 
             // lsvProductosDisponibles
             // 
+            lsvProductosDisponibles.FullRowSelect = true;
             lsvProductosDisponibles.Location = new Point(23, 12);
             lsvProductosDisponibles.Name = "lsvProductosDisponibles";
             lsvProductosDisponibles.Size = new Size(729, 271);
@@ -78,7 +79,7 @@
             button4.Name = "button4";
             button4.Size = new Size(115, 47);
             button4.TabIndex = 4;
-            button4.Text = "Paquetes Turísticos";
+            button4.Text = "Paquetes \r\nTurísticos";
             button4.UseVisualStyleBackColor = true;
             // 
             // ProductosDisponibles
