@@ -16,5 +16,10 @@ namespace Prototipo_CAI
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            lsvProductosDisponibles.Columns.Add("Código", -2, HorizontalAlignment.Center);
+        }
     }
 }
