@@ -30,23 +30,28 @@
         {
             listView1 = new ListView();
             CodCliente = new ColumnHeader();
+            Nombre = new ColumnHeader();
             SuspendLayout();
             // 
             // listView1
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { CodCliente });
+            listView1.Columns.AddRange(new ColumnHeader[] { CodCliente, Nombre });
             listView1.Location = new Point(12, 12);
             listView1.Name = "listView1";
             listView1.Size = new Size(660, 355);
             listView1.TabIndex = 1;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
-         
             // 
             // CodCliente
             // 
             CodCliente.Text = "Código Cliente";
             CodCliente.Width = 120;
+            // 
+            // Nombre
+            // 
+            Nombre.Text = "Nombre";
+            Nombre.Width = 120;
             // 
             // Itinerario
             // 
@@ -63,5 +68,6 @@
 
         private ListView listView1;
         private ColumnHeader CodCliente;
+        private ColumnHeader Nombre;
     }
 }
