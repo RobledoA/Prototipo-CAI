@@ -28,12 +28,58 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            btnItinerarios = new Button();
+            btnProdDisponibles = new Button();
+            btnReservas = new Button();
+            SuspendLayout();
+            // 
+            // btnItinerarios
+            // 
+            btnItinerarios.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            btnItinerarios.Location = new Point(49, 82);
+            btnItinerarios.Name = "btnItinerarios";
+            btnItinerarios.Size = new Size(239, 52);
+            btnItinerarios.TabIndex = 0;
+            btnItinerarios.Text = "Itinerarios";
+            btnItinerarios.UseVisualStyleBackColor = true;
+            // 
+            // btnProdDisponibles
+            // 
+            btnProdDisponibles.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            btnProdDisponibles.Location = new Point(49, 165);
+            btnProdDisponibles.Name = "btnProdDisponibles";
+            btnProdDisponibles.Size = new Size(239, 52);
+            btnProdDisponibles.TabIndex = 1;
+            btnProdDisponibles.Text = "Productos Disponibles";
+            btnProdDisponibles.UseVisualStyleBackColor = true;
+            // 
+            // btnReservas
+            // 
+            btnReservas.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            btnReservas.Location = new Point(49, 248);
+            btnReservas.Name = "btnReservas";
+            btnReservas.Size = new Size(239, 52);
+            btnReservas.TabIndex = 2;
+            btnReservas.Text = "Reservas";
+            btnReservas.UseVisualStyleBackColor = true;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(339, 401);
+            Controls.Add(btnReservas);
+            Controls.Add(btnProdDisponibles);
+            Controls.Add(btnItinerarios);
+            Name = "Form1";
+            Text = "Form1";
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Button btnItinerarios;
+        private Button btnProdDisponibles;
+        private Button btnReservas;
     }
 }
