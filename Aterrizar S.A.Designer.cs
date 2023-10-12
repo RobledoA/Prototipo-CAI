@@ -42,6 +42,7 @@
             btnItinerarios.TabIndex = 0;
             btnItinerarios.Text = "Itinerarios";
             btnItinerarios.UseVisualStyleBackColor = true;
+            btnItinerarios.Click += btnItinerarios_Click;
             // 
             // btnProdDisponibles
             // 
@@ -63,6 +64,7 @@
             btnReservas.TabIndex = 2;
             btnReservas.Text = "Reservas";
             btnReservas.UseVisualStyleBackColor = true;
+            btnReservas.Click += btnReservas_Click;
             // 
             // Form1
             // 
@@ -74,6 +76,7 @@
             Controls.Add(btnItinerarios);
             Name = "Form1";
             Text = "Aterrizar S.A.";
+            Load += Form1_Load;
             ResumeLayout(false);
         }
 

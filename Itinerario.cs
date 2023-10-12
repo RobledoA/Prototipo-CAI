@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Prototipo_CAI
 {
@@ -22,6 +23,23 @@ namespace Prototipo_CAI
 
         }
 
+        private void Itinerario_Load(object sender, EventArgs e)
+        {
+            FileInfo fi = new FileInfo("itinerario.txt");
+            StreamReader sr = fi.OpenText();
+            while (!sr.EndOfStream)
+            {
+                string linea = sr.ReadLine();
+                string[] vector = linea.Split(';');
+                ListViewItem item = new ListViewItem(vector[0]);
+                item.SubItems.Add(vector[1]);
+                item.SubItems.Add(vector[2]);
+                lsvItinerario.Items.Add(item);
 
+            }
+
+            sr.Close();
+
+        }
     }
 }
