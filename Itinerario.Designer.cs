@@ -37,6 +37,8 @@
             button2 = new Button();
             button3 = new Button();
             button4 = new Button();
+            fileSystemWatcher1 = new FileSystemWatcher();
+            ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).BeginInit();
             SuspendLayout();
             // 
             // lsvItinerario
@@ -114,6 +116,11 @@
             button4.Text = "Buscar";
             button4.UseVisualStyleBackColor = true;
             // 
+            // fileSystemWatcher1
+            // 
+            fileSystemWatcher1.EnableRaisingEvents = true;
+            fileSystemWatcher1.SynchronizingObject = this;
+            // 
             // Itinerario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -128,6 +135,7 @@
             Name = "Itinerario";
             Text = "Itinerario";
             Load += Itinerario_Load;
+            ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).EndInit();
             ResumeLayout(false);
         }
 
@@ -142,5 +150,6 @@
         private Button button3;
         private Button button4;
         private ColumnHeader Nombre;
+        private FileSystemWatcher fileSystemWatcher1;
     }
 }

@@ -31,12 +31,11 @@
             lsvProductosDisponibles = new ListView();
             button1 = new Button();
             button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
             listView1 = new ListView();
             btnDetalles = new Button();
             btnCrearItinerario = new Button();
             lblPresupuesto = new Label();
+            button3 = new Button();
             SuspendLayout();
             // 
             // lsvProductosDisponibles
@@ -53,7 +52,7 @@
             // button1
             // 
             button1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(759, 21);
+            button1.Location = new Point(759, 66);
             button1.Name = "button1";
             button1.Size = new Size(115, 47);
             button1.TabIndex = 1;
@@ -64,35 +63,13 @@
             // button2
             // 
             button2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.Location = new Point(759, 74);
+            button2.Location = new Point(759, 129);
             button2.Name = "button2";
             button2.Size = new Size(115, 47);
             button2.TabIndex = 2;
             button2.Text = "Hotelería";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
-            // 
-            // button3
-            // 
-            button3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            button3.Location = new Point(759, 127);
-            button3.Name = "button3";
-            button3.Size = new Size(115, 47);
-            button3.TabIndex = 3;
-            button3.Text = "Cruceros";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
-            // 
-            // button4
-            // 
-            button4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            button4.Location = new Point(759, 180);
-            button4.Name = "button4";
-            button4.Size = new Size(115, 47);
-            button4.TabIndex = 4;
-            button4.Text = "Paquetes \r\nTurísticos";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
             // 
             // listView1
             // 
@@ -113,7 +90,7 @@
             // 
             // btnCrearItinerario
             // 
-            btnCrearItinerario.Location = new Point(759, 462);
+            btnCrearItinerario.Location = new Point(759, 406);
             btnCrearItinerario.Name = "btnCrearItinerario";
             btnCrearItinerario.Size = new Size(115, 47);
             btnCrearItinerario.TabIndex = 7;
@@ -130,17 +107,26 @@
             lblPresupuesto.TabIndex = 8;
             lblPresupuesto.Text = "Presupuesto";
             // 
+            // button3
+            // 
+            button3.Location = new Point(759, 462);
+            button3.Name = "button3";
+            button3.Size = new Size(115, 47);
+            button3.TabIndex = 9;
+            button3.Text = "Cancelar";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click_1;
+            // 
             // ProductosDisponibles
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(892, 521);
+            Controls.Add(button3);
             Controls.Add(lblPresupuesto);
             Controls.Add(btnCrearItinerario);
             Controls.Add(btnDetalles);
             Controls.Add(listView1);
-            Controls.Add(button4);
-            Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(lsvProductosDisponibles);
@@ -156,11 +142,10 @@
         private ListView lsvProductosDisponibles;
         private Button button1;
         private Button button2;
-        private Button button3;
-        private Button button4;
         private ListView listView1;
         private Button btnDetalles;
         private Button btnCrearItinerario;
         private Label lblPresupuesto;
+        private Button button3;
     }
 }

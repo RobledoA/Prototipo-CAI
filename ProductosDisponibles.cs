@@ -160,6 +160,9 @@ namespace Prototipo_CAI
             button1.Select();
         }
 
-
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
