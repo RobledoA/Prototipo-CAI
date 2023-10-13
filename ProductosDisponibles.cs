@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Prototipo_CAI
 {
-    public partial class ProductosDisponibles : Form
+    public partial class ClasesVuelo : Form
     {
-        public ProductosDisponibles()
+        public ClasesVuelo()
         {
             InitializeComponent();
         }
@@ -22,6 +22,8 @@ namespace Prototipo_CAI
 
             grpAereos.Visible = true;
             grpHoteles.Visible = false;
+            grpAgregarVuelos.Visible = true;
+            grpAgregarHoteles.Visible = false;
 
             // Limpia las columnas existentes si las hay
             lsvProductosDisponibles.Clear();
@@ -57,6 +59,8 @@ namespace Prototipo_CAI
         {
             grpHoteles.Visible = true;
             grpAereos.Visible = false;
+            grpAgregarVuelos.Visible = false;
+            grpAgregarHoteles.Visible = true;
 
             lsvProductosDisponibles.Clear();
 
@@ -178,6 +182,31 @@ namespace Prototipo_CAI
         }
 
         private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkIdaVuelta_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grpAgregarVuelos_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grpAgregarHoteles_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
