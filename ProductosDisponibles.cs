@@ -53,6 +53,7 @@ namespace Prototipo_CAI
             item.SubItems.Add("Wi-Fi, Comida");
 
             lsvProductosDisponibles.Items.Add(item);
+            dtpFechaVuelta.Enabled = false;
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -225,13 +226,21 @@ namespace Prototipo_CAI
             {
                 Itinerario itinerario = new Itinerario();
                 itinerario.ShowDialog();
-            }          
+            }
         }
 
 
         private void chkIdaVuelta_CheckedChanged(object sender, EventArgs e)
         {
+            if (chkIdaVuelta.Checked == true)
+            {
+                dtpFechaVuelta.Enabled = true;
+            }
 
+            if (chkIdaVuelta.Checked == false)
+            {
+                dtpFechaVuelta.Enabled = false;
+            }
         }
 
         private void grpAgregarVuelos_Enter(object sender, EventArgs e)

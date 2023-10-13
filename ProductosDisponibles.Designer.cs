@@ -40,7 +40,7 @@
             label6 = new Label();
             txtPasajeros = new TextBox();
             label5 = new Label();
-            dateTimePicker1 = new DateTimePicker();
+            dtpFechaVuelta = new DateTimePicker();
             label2 = new Label();
             dtFechaDesde = new DateTimePicker();
             label4 = new Label();
@@ -171,7 +171,7 @@
             grpAereos.Controls.Add(label6);
             grpAereos.Controls.Add(txtPasajeros);
             grpAereos.Controls.Add(label5);
-            grpAereos.Controls.Add(dateTimePicker1);
+            grpAereos.Controls.Add(dtpFechaVuelta);
             grpAereos.Controls.Add(label2);
             grpAereos.Controls.Add(dtFechaDesde);
             grpAereos.Controls.Add(label4);
@@ -235,14 +235,14 @@
             label5.TabIndex = 9;
             label5.Text = "Fecha Vuelta";
             // 
-            // dateTimePicker1
+            // dtpFechaVuelta
             // 
-            dateTimePicker1.Location = new Point(287, 139);
-            dateTimePicker1.Margin = new Padding(3, 4, 3, 4);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.RightToLeft = RightToLeft.Yes;
-            dateTimePicker1.Size = new Size(228, 27);
-            dateTimePicker1.TabIndex = 8;
+            dtpFechaVuelta.Location = new Point(287, 139);
+            dtpFechaVuelta.Margin = new Padding(3, 4, 3, 4);
+            dtpFechaVuelta.Name = "dtpFechaVuelta";
+            dtpFechaVuelta.RightToLeft = RightToLeft.Yes;
+            dtpFechaVuelta.Size = new Size(228, 27);
+            dtpFechaVuelta.TabIndex = 8;
             // 
             // label2
             // 
@@ -737,7 +737,7 @@
         private Button button3;
         private GroupBox grpAereos;
         private Label label5;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dtpFechaVuelta;
         private Label label2;
         private DateTimePicker dtFechaDesde;
         private Label label4;

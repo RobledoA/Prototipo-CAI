@@ -35,11 +35,9 @@ namespace Prototipo_CAI
                 item.SubItems.Add(vector[1]);
                 item.SubItems.Add(vector[2]);
                 lsvItinerario.Items.Add(item);
-
             }
 
             sr.Close();
-
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -49,7 +47,6 @@ namespace Prototipo_CAI
                 ListViewItem item = lsvItinerario.SelectedItems[0];
                 lsvItinerario.Items.Remove(item);
             }
-
         }
 
 
@@ -91,11 +88,7 @@ namespace Prototipo_CAI
 
                         lsvItinerario.Items.Add(item);
                     }
-
                 }
-
-
-
             }
 
             else
