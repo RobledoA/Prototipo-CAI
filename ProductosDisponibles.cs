@@ -116,7 +116,7 @@ namespace Prototipo_CAI
             lsvProductosDisponibles.Columns.Add("Disponibilidad", 100, HorizontalAlignment.Center);
             lsvProductosDisponibles.Columns.Add("Servicios Extra", 150, HorizontalAlignment.Center);
 
-            ListViewItem item = new ListViewItem("0912");
+            ListViewItem item = new ListViewItem("1010");
             item.SubItems.Add("Hotel CAI");
             item.SubItems.Add("REA");
             item.SubItems.Add("Calle Falsa 123");
@@ -129,61 +129,6 @@ namespace Prototipo_CAI
             btnHotelesPresionado = true;
             btnAereosPresionado = false;
         }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            lsvProductosDisponibles.Clear();
-
-            lsvProductosDisponibles.Columns.Add("Origen", 100, HorizontalAlignment.Center);
-            lsvProductosDisponibles.Columns.Add("Destino", 100, HorizontalAlignment.Center);
-            lsvProductosDisponibles.Columns.Add("Paradas", 150, HorizontalAlignment.Center);
-            lsvProductosDisponibles.Columns.Add("Tarifas", 100, HorizontalAlignment.Center);
-            lsvProductosDisponibles.Columns.Add("Fecha de Salida", 100, HorizontalAlignment.Center);
-            lsvProductosDisponibles.Columns.Add("Fecha de Llegada", 150, HorizontalAlignment.Center);
-
-            ListViewItem item = new ListViewItem("Argentina");
-            item.SubItems.Add("España");
-            item.SubItems.Add("Buenos Aires - Barcelona");
-            item.SubItems.Add("US$ 1000");
-            item.SubItems.Add("10/10/2023");
-            item.SubItems.Add("09/12/2023");
-
-            lsvProductosDisponibles.Items.Add(item);
-        }
-
-        private void button4_Click(object sender, EventArgs e)  //?????
-        {
-            lsvProductosDisponibles.Clear();
-
-            lsvProductosDisponibles.Columns.Add("Código", 100, HorizontalAlignment.Center);
-            lsvProductosDisponibles.Columns.Add("Origen", 100, HorizontalAlignment.Center);
-            lsvProductosDisponibles.Columns.Add("Destino", 150, HorizontalAlignment.Center);
-            lsvProductosDisponibles.Columns.Add("Fecha de Inicio", 100, HorizontalAlignment.Center);
-            lsvProductosDisponibles.Columns.Add("Fecha Fin", 100, HorizontalAlignment.Center);
-            lsvProductosDisponibles.Columns.Add("Actividades", 150, HorizontalAlignment.Center);
-            lsvProductosDisponibles.Columns.Add("Adicionales", 150, HorizontalAlignment.Center);
-            lsvProductosDisponibles.Columns.Add("Capacidad Adultos", 150, HorizontalAlignment.Center);
-            lsvProductosDisponibles.Columns.Add("Capacidad Menores", 150, HorizontalAlignment.Center);
-            lsvProductosDisponibles.Columns.Add("Capacidad Infantes", 150, HorizontalAlignment.Center);
-            lsvProductosDisponibles.Columns.Add("Tarifas", 150, HorizontalAlignment.Center);
-            lsvProductosDisponibles.Columns.Add("Disponibilidad", 150, HorizontalAlignment.Center);
-
-            ListViewItem item = new ListViewItem("0912");
-            item.SubItems.Add("BUE");
-            item.SubItems.Add("BAR");
-            item.SubItems.Add("10/10/2023");
-            item.SubItems.Add("09/12/2023");
-            item.SubItems.Add("Fútbol");
-            item.SubItems.Add("Stand-Up");
-            item.SubItems.Add("20");
-            item.SubItems.Add("8");
-            item.SubItems.Add("6");
-            item.SubItems.Add("US$ 300");
-            item.SubItems.Add("56");
-
-            lsvProductosDisponibles.Items.Add(item);
-        }
-
         private void button3_Click_1(object sender, EventArgs e)
         {
             this.Close();
@@ -253,5 +198,38 @@ namespace Prototipo_CAI
 
         }
 
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            if (lsvProductosDisponibles.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Debe seleccionar un producto de la lista.");
+            }
+
+            if (btnAereosPresionado == true && lsvProductosDisponibles.SelectedItems.Count != 0)
+            {
+                ListViewItem item = new ListViewItem("0912");
+                item.SubItems.Add("Aéreo");
+                item.SubItems.Add("$650000");
+
+                lsvTarifas.Items.Add(item);
+            }
+        }
+
+        private void btnAgregarHoteles_Click_1(object sender, EventArgs e)
+        {
+            if (lsvProductosDisponibles.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Debe seleccionar un producto de la lista.");
+            }
+
+            if (btnHotelesPresionado == true && lsvProductosDisponibles.SelectedItems.Count > 0)
+            {
+                ListViewItem item = new ListViewItem("1010");
+                item.SubItems.Add("Hotel");
+                item.SubItems.Add("$100045");
+
+                lsvTarifas.Items.Add(item);
+            }
+        }
     }
 }
