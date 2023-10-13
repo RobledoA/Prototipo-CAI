@@ -109,7 +109,7 @@
             // button1
             // 
             button1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(997, 103);
+            button1.Location = new Point(997, 59);
             button1.Name = "button1";
             button1.Size = new Size(115, 47);
             button1.TabIndex = 1;
@@ -120,7 +120,7 @@
             // button2
             // 
             button2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.Location = new Point(997, 174);
+            button2.Location = new Point(997, 130);
             button2.Name = "button2";
             button2.Size = new Size(115, 47);
             button2.TabIndex = 2;
@@ -140,20 +140,20 @@
             // 
             // btnCrearItinerario
             // 
-            btnCrearItinerario.Location = new Point(755, 564);
+            btnCrearItinerario.Location = new Point(876, 564);
             btnCrearItinerario.Name = "btnCrearItinerario";
-            btnCrearItinerario.Size = new Size(115, 47);
+            btnCrearItinerario.Size = new Size(115, 26);
             btnCrearItinerario.TabIndex = 7;
             btnCrearItinerario.Text = "Crear Itinerario";
             btnCrearItinerario.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
-            button3.Location = new Point(877, 564);
+            button3.Location = new Point(997, 240);
             button3.Name = "button3";
             button3.Size = new Size(115, 47);
             button3.TabIndex = 9;
-            button3.Text = "Cancelar";
+            button3.Text = "Salir";
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click_1;
             // 
