@@ -43,7 +43,6 @@
             label6 = new Label();
             textBox7 = new TextBox();
             label7 = new Label();
-            listBox2 = new ListBox();
             label8 = new Label();
             label9 = new Label();
             listView1 = new ListView();
@@ -54,6 +53,11 @@
             columnHeader3 = new ColumnHeader();
             columnHeader4 = new ColumnHeader();
             columnHeader5 = new ColumnHeader();
+            listView3 = new ListView();
+            columnHeader6 = new ColumnHeader();
+            columnHeader7 = new ColumnHeader();
+            columnHeader8 = new ColumnHeader();
+            columnHeader9 = new ColumnHeader();
             SuspendLayout();
             // 
             // lblCodVuelo
@@ -69,14 +73,14 @@
             // 
             textBox1.Location = new Point(78, 27);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(327, 23);
+            textBox1.Size = new Size(453, 23);
             textBox1.TabIndex = 1;
             // 
             // textBox2
             // 
             textBox2.Location = new Point(78, 56);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(327, 23);
+            textBox2.Size = new Size(453, 23);
             textBox2.TabIndex = 3;
             // 
             // label1
@@ -92,7 +96,7 @@
             // 
             textBox3.Location = new Point(78, 85);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(327, 23);
+            textBox3.Size = new Size(453, 23);
             textBox3.TabIndex = 5;
             // 
             // label2
@@ -117,7 +121,7 @@
             // 
             textBox4.Location = new Point(78, 191);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(327, 23);
+            textBox4.Size = new Size(453, 23);
             textBox4.TabIndex = 10;
             // 
             // label4
@@ -133,7 +137,7 @@
             // 
             textBox5.Location = new Point(78, 232);
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(327, 23);
+            textBox5.Size = new Size(453, 23);
             textBox5.TabIndex = 12;
             // 
             // label5
@@ -149,7 +153,7 @@
             // 
             textBox6.Location = new Point(78, 272);
             textBox6.Name = "textBox6";
-            textBox6.Size = new Size(327, 23);
+            textBox6.Size = new Size(453, 23);
             textBox6.TabIndex = 14;
             // 
             // label6
@@ -166,7 +170,7 @@
             // 
             textBox7.Location = new Point(78, 314);
             textBox7.Name = "textBox7";
-            textBox7.Size = new Size(327, 23);
+            textBox7.Size = new Size(453, 23);
             textBox7.TabIndex = 16;
             // 
             // label7
@@ -177,15 +181,6 @@
             label7.Size = new Size(57, 15);
             label7.TabIndex = 15;
             label7.Text = "Aerolinea";
-            // 
-            // listBox2
-            // 
-            listBox2.FormattingEnabled = true;
-            listBox2.ItemHeight = 15;
-            listBox2.Location = new Point(78, 360);
-            listBox2.Name = "listBox2";
-            listBox2.Size = new Size(327, 64);
-            listBox2.TabIndex = 18;
             // 
             // label8
             // 
@@ -210,7 +205,7 @@
             listView1.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2 });
             listView1.Location = new Point(78, 117);
             listView1.Name = "listView1";
-            listView1.Size = new Size(327, 55);
+            listView1.Size = new Size(453, 55);
             listView1.TabIndex = 21;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
@@ -220,14 +215,14 @@
             listView2.Columns.AddRange(new ColumnHeader[] { columnHeader3, columnHeader4, columnHeader5 });
             listView2.Location = new Point(78, 444);
             listView2.Name = "listView2";
-            listView2.Size = new Size(327, 97);
+            listView2.Size = new Size(453, 97);
             listView2.TabIndex = 22;
             listView2.UseCompatibleStateImageBehavior = false;
             listView2.View = View.Details;
             // 
             // button3
             // 
-            button3.Location = new Point(298, 557);
+            button3.Location = new Point(424, 547);
             button3.Name = "button3";
             button3.Size = new Size(107, 29);
             button3.TabIndex = 23;
@@ -258,16 +253,46 @@
             columnHeader5.Text = "Tarifa ";
             columnHeader5.Width = 120;
             // 
+            // listView3
+            // 
+            listView3.Columns.AddRange(new ColumnHeader[] { columnHeader6, columnHeader7, columnHeader8, columnHeader9 });
+            listView3.Location = new Point(78, 360);
+            listView3.Name = "listView3";
+            listView3.Size = new Size(453, 55);
+            listView3.TabIndex = 24;
+            listView3.UseCompatibleStateImageBehavior = false;
+            listView3.View = View.Details;
+            // 
+            // columnHeader6
+            // 
+            columnHeader6.Text = "Clase";
+            columnHeader6.Width = 120;
+            // 
+            // columnHeader7
+            // 
+            columnHeader7.Text = "Tarifa Adulto";
+            columnHeader7.Width = 120;
+            // 
+            // columnHeader8
+            // 
+            columnHeader8.Text = "Tarifa Menor";
+            columnHeader8.Width = 120;
+            // 
+            // columnHeader9
+            // 
+            columnHeader9.Text = "Tarifa Infante";
+            columnHeader9.Width = 120;
+            // 
             // Vuelos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(440, 607);
+            ClientSize = new Size(577, 607);
+            Controls.Add(listView3);
             Controls.Add(button3);
             Controls.Add(listView2);
             Controls.Add(listView1);
             Controls.Add(label9);
-            Controls.Add(listBox2);
             Controls.Add(label8);
             Controls.Add(textBox7);
             Controls.Add(label7);
@@ -307,7 +332,6 @@
         private Label label6;
         private TextBox textBox7;
         private Label label7;
-        private ListBox listBox2;
         private Label label8;
         private Label label9;
         private ListView listView1;
@@ -318,5 +342,10 @@
         private ColumnHeader columnHeader3;
         private ColumnHeader columnHeader4;
         private ColumnHeader columnHeader5;
+        private ListView listView3;
+        private ColumnHeader columnHeader6;
+        private ColumnHeader columnHeader7;
+        private ColumnHeader columnHeader8;
+        private ColumnHeader columnHeader9;
     }
 }
