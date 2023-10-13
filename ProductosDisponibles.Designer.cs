@@ -33,7 +33,6 @@
             button2 = new Button();
             btnDetalles = new Button();
             btnCrearItinerario = new Button();
-            lblPresupuesto = new Label();
             button3 = new Button();
             grpAereos = new GroupBox();
             chkIdaVuelta = new CheckBox();
@@ -87,6 +86,8 @@
             listView1 = new ListView();
             hdCodProd = new ColumnHeader();
             hdPrecio = new ColumnHeader();
+            lbTitleProdDisponibles = new Label();
+            lblHoteleriaProd = new Label();
             grpAereos.SuspendLayout();
             grpHoteles.SuspendLayout();
             grpAgregarHoteles.SuspendLayout();
@@ -97,7 +98,7 @@
             // lsvProductosDisponibles
             // 
             lsvProductosDisponibles.FullRowSelect = true;
-            lsvProductosDisponibles.Location = new Point(12, 12);
+            lsvProductosDisponibles.Location = new Point(12, 59);
             lsvProductosDisponibles.MultiSelect = false;
             lsvProductosDisponibles.Name = "lsvProductosDisponibles";
             lsvProductosDisponibles.Size = new Size(979, 228);
@@ -108,7 +109,7 @@
             // button1
             // 
             button1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(997, 12);
+            button1.Location = new Point(997, 103);
             button1.Name = "button1";
             button1.Size = new Size(115, 47);
             button1.TabIndex = 1;
@@ -119,7 +120,7 @@
             // button2
             // 
             button2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.Location = new Point(997, 75);
+            button2.Location = new Point(997, 174);
             button2.Name = "button2";
             button2.Size = new Size(115, 47);
             button2.TabIndex = 2;
@@ -129,7 +130,7 @@
             // 
             // btnDetalles
             // 
-            btnDetalles.Location = new Point(1018, 170);
+            btnDetalles.Location = new Point(12, 293);
             btnDetalles.Name = "btnDetalles";
             btnDetalles.Size = new Size(75, 23);
             btnDetalles.TabIndex = 6;
@@ -139,26 +140,16 @@
             // 
             // btnCrearItinerario
             // 
-            btnCrearItinerario.Location = new Point(755, 535);
+            btnCrearItinerario.Location = new Point(755, 564);
             btnCrearItinerario.Name = "btnCrearItinerario";
             btnCrearItinerario.Size = new Size(115, 47);
             btnCrearItinerario.TabIndex = 7;
             btnCrearItinerario.Text = "Crear Itinerario";
             btnCrearItinerario.UseVisualStyleBackColor = true;
             // 
-            // lblPresupuesto
-            // 
-            lblPresupuesto.AutoSize = true;
-            lblPresupuesto.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblPresupuesto.Location = new Point(1007, 146);
-            lblPresupuesto.Name = "lblPresupuesto";
-            lblPresupuesto.Size = new Size(96, 21);
-            lblPresupuesto.TabIndex = 8;
-            lblPresupuesto.Text = "Presupuesto";
-            // 
             // button3
             // 
-            button3.Location = new Point(877, 535);
+            button3.Location = new Point(877, 564);
             button3.Name = "button3";
             button3.Size = new Size(115, 47);
             button3.TabIndex = 9;
@@ -180,7 +171,7 @@
             grpAereos.Controls.Add(txtDestino);
             grpAereos.Controls.Add(label3);
             grpAereos.Controls.Add(txtOrigen);
-            grpAereos.Location = new Point(22, 302);
+            grpAereos.Location = new Point(22, 331);
             grpAereos.Name = "grpAereos";
             grpAereos.Size = new Size(477, 210);
             grpAereos.TabIndex = 11;
@@ -304,7 +295,7 @@
             grpHoteles.Controls.Add(cmbCalifiacion);
             grpHoteles.Controls.Add(txtHabitaciones);
             grpHoteles.Controls.Add(label1);
-            grpHoteles.Location = new Point(22, 302);
+            grpHoteles.Location = new Point(22, 331);
             grpHoteles.Name = "grpHoteles";
             grpHoteles.Size = new Size(477, 210);
             grpHoteles.TabIndex = 12;
@@ -426,7 +417,7 @@
             grpAgregarHoteles.Controls.Add(lblHuespedes);
             grpAgregarHoteles.Controls.Add(comboBox1);
             grpAgregarHoteles.Controls.Add(btnAgregarHoteles);
-            grpAgregarHoteles.Location = new Point(505, 302);
+            grpAgregarHoteles.Location = new Point(505, 331);
             grpAgregarHoteles.Margin = new Padding(3, 2, 3, 2);
             grpAgregarHoteles.Name = "grpAgregarHoteles";
             grpAgregarHoteles.Padding = new Padding(3, 2, 3, 2);
@@ -510,7 +501,7 @@
             grpAgregarVuelos.Controls.Add(label14);
             grpAgregarVuelos.Controls.Add(button4);
             grpAgregarVuelos.Controls.Add(comboBox3);
-            grpAgregarVuelos.Location = new Point(505, 302);
+            grpAgregarVuelos.Location = new Point(505, 331);
             grpAgregarVuelos.Margin = new Padding(3, 2, 3, 2);
             grpAgregarVuelos.Name = "grpAgregarVuelos";
             grpAgregarVuelos.Padding = new Padding(3, 2, 3, 2);
@@ -629,7 +620,7 @@
             // grpTarifa
             // 
             grpTarifa.Controls.Add(listView1);
-            grpTarifa.Location = new Point(735, 305);
+            grpTarifa.Location = new Point(735, 334);
             grpTarifa.Name = "grpTarifa";
             grpTarifa.Size = new Size(256, 224);
             grpTarifa.TabIndex = 16;
@@ -656,18 +647,40 @@
             hdPrecio.Text = "Precio";
             hdPrecio.Width = 120;
             // 
+            // lbTitleProdDisponibles
+            // 
+            lbTitleProdDisponibles.AutoSize = true;
+            lbTitleProdDisponibles.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lbTitleProdDisponibles.Location = new Point(12, 15);
+            lbTitleProdDisponibles.Name = "lbTitleProdDisponibles";
+            lbTitleProdDisponibles.Size = new Size(77, 30);
+            lbTitleProdDisponibles.TabIndex = 17;
+            lbTitleProdDisponibles.Text = "Aéreos";
+            // 
+            // lblHoteleriaProd
+            // 
+            lblHoteleriaProd.AutoSize = true;
+            lblHoteleriaProd.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblHoteleriaProd.Location = new Point(12, 15);
+            lblHoteleriaProd.Name = "lblHoteleriaProd";
+            lblHoteleriaProd.Size = new Size(97, 30);
+            lblHoteleriaProd.TabIndex = 18;
+            lblHoteleriaProd.Text = "Hotelería";
+            lblHoteleriaProd.Click += label16_Click;
+            // 
             // ClasesVuelo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1131, 613);
+            ClientSize = new Size(1131, 630);
+            Controls.Add(lblHoteleriaProd);
+            Controls.Add(lbTitleProdDisponibles);
             Controls.Add(grpTarifa);
             Controls.Add(grpHoteles);
             Controls.Add(grpAgregarVuelos);
             Controls.Add(grpAgregarHoteles);
             Controls.Add(grpAereos);
             Controls.Add(button3);
-            Controls.Add(lblPresupuesto);
             Controls.Add(btnCrearItinerario);
             Controls.Add(btnDetalles);
             Controls.Add(button2);
@@ -696,7 +709,6 @@
         private Button button2;
         private Button btnDetalles;
         private Button btnCrearItinerario;
-        private Label lblPresupuesto;
         private Button button3;
         private GroupBox grpAereos;
         private Label label5;
@@ -750,5 +762,7 @@
         private ListView listView1;
         private ColumnHeader hdCodProd;
         private ColumnHeader hdPrecio;
+        private Label lbTitleProdDisponibles;
+        private Label lblHoteleriaProd;
     }
 }

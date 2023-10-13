@@ -24,6 +24,9 @@ namespace Prototipo_CAI
             grpHoteles.Visible = false;
             grpAgregarVuelos.Visible = true;
             grpAgregarHoteles.Visible = false;
+            lbTitleProdDisponibles.Visible = true;
+            lblHoteleriaProd.Visible = false;
+
 
             // Limpia las columnas existentes si las hay
             lsvProductosDisponibles.Clear();
@@ -61,6 +64,8 @@ namespace Prototipo_CAI
             grpAereos.Visible = false;
             grpAgregarVuelos.Visible = false;
             grpAgregarHoteles.Visible = true;
+            lbTitleProdDisponibles.Visible = false;
+            lblHoteleriaProd.Visible = true;
 
             lsvProductosDisponibles.Clear();
 
@@ -139,6 +144,14 @@ namespace Prototipo_CAI
 
         private void ProductosDisponibles_Load(object sender, EventArgs e)
         {
+            grpAereos.Visible = true;
+            grpHoteles.Visible = false;
+            grpAgregarVuelos.Visible = true;
+            grpAgregarHoteles.Visible = false;
+            lbTitleProdDisponibles.Visible = true;
+            lblHoteleriaProd.Visible = false;
+
+
             lsvProductosDisponibles.Columns.Add("Código", 100, HorizontalAlignment.Center);
             lsvProductosDisponibles.Columns.Add("Origen", 100, HorizontalAlignment.Center);
             lsvProductosDisponibles.Columns.Add("Destino", 100, HorizontalAlignment.Center);
@@ -207,6 +220,11 @@ namespace Prototipo_CAI
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label16_Click(object sender, EventArgs e)
         {
 
         }
