@@ -51,8 +51,6 @@ namespace Prototipo_CAI
             item.SubItems.Add("Wi-Fi, Comida");
 
             lsvProductosDisponibles.Items.Add(item);
-
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -79,7 +77,6 @@ namespace Prototipo_CAI
             item.SubItems.Add("Wi-Fi, Comida, Spa");
 
             lsvProductosDisponibles.Items.Add(item);
-
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -120,7 +117,6 @@ namespace Prototipo_CAI
             lsvProductosDisponibles.Columns.Add("Tarifas", 150, HorizontalAlignment.Center);
             lsvProductosDisponibles.Columns.Add("Disponibilidad", 150, HorizontalAlignment.Center);
 
-
             ListViewItem item = new ListViewItem("0912");
             item.SubItems.Add("BUE");
             item.SubItems.Add("BAR");
@@ -133,7 +129,6 @@ namespace Prototipo_CAI
             item.SubItems.Add("6");
             item.SubItems.Add("US$ 300");
             item.SubItems.Add("56");
-
 
             lsvProductosDisponibles.Items.Add(item);
         }
@@ -178,6 +173,11 @@ namespace Prototipo_CAI
         }
 
         private void btnDetalles_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
         {
 
         }
