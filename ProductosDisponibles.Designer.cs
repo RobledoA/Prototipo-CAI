@@ -353,7 +353,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1059, 521);
+            ClientSize = new Size(891, 521);
             Controls.Add(button4);
             Controls.Add(grpHoteles);
             Controls.Add(grpAereos);
@@ -365,6 +365,7 @@
             Controls.Add(button1);
             Controls.Add(lsvProductosDisponibles);
             Name = "ProductosDisponibles";
+            Text = "Productos Disponibles";
             Load += ProductosDisponibles_Load;
             grpAereos.ResumeLayout(false);
             grpAereos.PerformLayout();
