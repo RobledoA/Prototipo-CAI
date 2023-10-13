@@ -96,7 +96,6 @@ namespace Prototipo_CAI
             btnAereosPresionado = true;
             btnHotelesPresionado = false;
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             grpHoteles.Visible = true;
@@ -133,7 +132,6 @@ namespace Prototipo_CAI
         {
             this.Close();
         }
-
         private void grpProdcutos_Enter(object sender, EventArgs e)
         {
 
@@ -158,7 +156,6 @@ namespace Prototipo_CAI
                 habitaciones.ShowDialog();
             }
         }
-
         private void btnCrearItinerario_Click(object sender, EventArgs e)
         {
             if (lsvTarifas.Items.Count == 0)
@@ -173,8 +170,6 @@ namespace Prototipo_CAI
                 itinerario.ShowDialog();
             }
         }
-
-
         private void chkIdaVuelta_CheckedChanged(object sender, EventArgs e)
         {
             if (chkIdaVuelta.Checked == true)
@@ -187,17 +182,14 @@ namespace Prototipo_CAI
                 dtpFechaVuelta.Enabled = false;
             }
         }
-
         private void grpAgregarVuelos_Enter(object sender, EventArgs e)
         {
 
         }
-
         private void grpAgregarHoteles_Enter(object sender, EventArgs e)
         {
 
         }
-
         private void button4_Click_1(object sender, EventArgs e)
         {
             if (lsvProductosDisponibles.SelectedItems.Count == 0)
@@ -214,7 +206,6 @@ namespace Prototipo_CAI
                 lsvTarifas.Items.Add(item);
             }
         }
-
         private void btnAgregarHoteles_Click_1(object sender, EventArgs e)
         {
             if (lsvProductosDisponibles.SelectedItems.Count == 0)
