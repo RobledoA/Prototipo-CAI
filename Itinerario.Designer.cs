@@ -47,6 +47,7 @@
             lsvItinerario.Columns.AddRange(new ColumnHeader[] { CodItinerario, CUILCUIT, Nombre });
             lsvItinerario.FullRowSelect = true;
             lsvItinerario.Location = new Point(26, 53);
+            lsvItinerario.MultiSelect = false;
             lsvItinerario.Name = "lsvItinerario";
             lsvItinerario.Size = new Size(457, 159);
             lsvItinerario.TabIndex = 1;

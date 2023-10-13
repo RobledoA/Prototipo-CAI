@@ -67,6 +67,7 @@
             lsvProductosDisponibles.CheckBoxes = true;
             lsvProductosDisponibles.FullRowSelect = true;
             lsvProductosDisponibles.Location = new Point(12, 12);
+            lsvProductosDisponibles.MultiSelect = false;
             lsvProductosDisponibles.Name = "lsvProductosDisponibles";
             lsvProductosDisponibles.Size = new Size(729, 228);
             lsvProductosDisponibles.TabIndex = 0;
@@ -247,7 +248,7 @@
             grpHoteles.Controls.Add(cmbCalifiacion);
             grpHoteles.Controls.Add(txtHabitaciones);
             grpHoteles.Controls.Add(label1);
-            grpHoteles.Location = new Point(12, 299);
+            grpHoteles.Location = new Point(31, 293);
             grpHoteles.Name = "grpHoteles";
             grpHoteles.Size = new Size(477, 210);
             grpHoteles.TabIndex = 12;
@@ -364,7 +365,6 @@
             Controls.Add(button1);
             Controls.Add(lsvProductosDisponibles);
             Name = "ProductosDisponibles";
-            Text = "ProductosDisponibles";
             Load += ProductosDisponibles_Load;
             grpAereos.ResumeLayout(false);
             grpAereos.PerformLayout();

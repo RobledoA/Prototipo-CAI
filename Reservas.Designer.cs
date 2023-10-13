@@ -45,6 +45,7 @@
             lsvReservas.Columns.AddRange(new ColumnHeader[] { codReserva, nombre, fechaReserva, estadoReserva });
             lsvReservas.FullRowSelect = true;
             lsvReservas.Location = new Point(12, 12);
+            lsvReservas.MultiSelect = false;
             lsvReservas.Name = "lsvReservas";
             lsvReservas.Size = new Size(776, 360);
             lsvReservas.TabIndex = 0;
