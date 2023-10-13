@@ -19,6 +19,10 @@ namespace Prototipo_CAI
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+            grpAereos.Visible = true;
+            grpHoteles.Visible = false;
+
             // Limpia las columnas existentes si las hay
             lsvProductosDisponibles.Clear();
 
@@ -53,6 +57,9 @@ namespace Prototipo_CAI
 
         private void button2_Click(object sender, EventArgs e)
         {
+            grpHoteles.Visible = true;
+            grpAereos.Visible = false;
+
             lsvProductosDisponibles.Clear();
 
             lsvProductosDisponibles.Columns.Add("Código Hotel", 100, HorizontalAlignment.Center);
@@ -163,6 +170,16 @@ namespace Prototipo_CAI
         private void button3_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void grpProdcutos_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDetalles_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
