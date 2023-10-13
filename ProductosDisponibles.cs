@@ -150,7 +150,7 @@ namespace Prototipo_CAI
             lsvProductosDisponibles.Items.Add(item);
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)  //?????
         {
             lsvProductosDisponibles.Clear();
 
@@ -191,27 +191,43 @@ namespace Prototipo_CAI
         private void grpProdcutos_Enter(object sender, EventArgs e)
         {
 
-        } 
+        }
         private void btnDetalles_Click(object sender, EventArgs e)
         {
             Vuelos vuelos = new Vuelos();
             Habitaciones habitaciones = new Habitaciones();
 
-            if(btnAereosPresionado == true && lsvProductosDisponibles.SelectedItems.Count > 0) 
+            if (lsvProductosDisponibles.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Seleccione un producto de la lista.");
+            }
+
+            if (btnAereosPresionado == true && lsvProductosDisponibles.SelectedItems.Count > 0)
             {
                 vuelos.ShowDialog();
             }
 
-            if (btnHotelesPresionado == true && lsvProductosDisponibles.SelectedItems.Count > 0) 
+            if (btnHotelesPresionado == true && lsvProductosDisponibles.SelectedItems.Count > 0)
             {
                 habitaciones.ShowDialog();
             }
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void btnCrearItinerario_Click(object sender, EventArgs e)
         {
-
+            if (lsvTarifas.Items.Count == 0)
+            {
+                MessageBox.Show("El carrito de productos no puede estar vacío.");
+            }
+            //Hay que ver a que pantalla te lleva este boton.
+            //Por ahora lo dejamos así:
+            else
+            {
+                Itinerario itinerario = new Itinerario();
+                itinerario.ShowDialog();
+            }          
         }
+
 
         private void chkIdaVuelta_CheckedChanged(object sender, EventArgs e)
         {
@@ -228,19 +244,6 @@ namespace Prototipo_CAI
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label16_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

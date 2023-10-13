@@ -83,7 +83,7 @@
             button4 = new Button();
             comboBox3 = new ComboBox();
             grpTarifa = new GroupBox();
-            listView1 = new ListView();
+            lsvTarifas = new ListView();
             hdCodProd = new ColumnHeader();
             hdPrecio = new ColumnHeader();
             lbTitleProdDisponibles = new Label();
@@ -151,6 +151,7 @@
             btnCrearItinerario.TabIndex = 7;
             btnCrearItinerario.Text = "Crear Itinerario";
             btnCrearItinerario.UseVisualStyleBackColor = true;
+            btnCrearItinerario.Click += btnCrearItinerario_Click;
             // 
             // button3
             // 
@@ -206,7 +207,6 @@
             btnBuscarAereos.TabIndex = 14;
             btnBuscarAereos.Text = "🔍";
             btnBuscarAereos.UseVisualStyleBackColor = true;
-            btnBuscarAereos.Click += button5_Click;
             // 
             // label6
             // 
@@ -414,7 +414,6 @@
             label1.Size = new Size(86, 20);
             label1.TabIndex = 13;
             label1.Text = "Calificación";
-            label1.Click += label1_Click;
             // 
             // btnAgregarHoteles
             // 
@@ -642,7 +641,7 @@
             // 
             // grpTarifa
             // 
-            grpTarifa.Controls.Add(listView1);
+            grpTarifa.Controls.Add(lsvTarifas);
             grpTarifa.Location = new Point(840, 445);
             grpTarifa.Margin = new Padding(3, 4, 3, 4);
             grpTarifa.Name = "grpTarifa";
@@ -652,16 +651,16 @@
             grpTarifa.TabStop = false;
             grpTarifa.Text = "Tarifas";
             // 
-            // listView1
+            // lsvTarifas
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { hdCodProd, hdPrecio });
-            listView1.Location = new Point(16, 39);
-            listView1.Margin = new Padding(3, 4, 3, 4);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(269, 240);
-            listView1.TabIndex = 0;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
+            lsvTarifas.Columns.AddRange(new ColumnHeader[] { hdCodProd, hdPrecio });
+            lsvTarifas.Location = new Point(16, 39);
+            lsvTarifas.Margin = new Padding(3, 4, 3, 4);
+            lsvTarifas.Name = "lsvTarifas";
+            lsvTarifas.Size = new Size(269, 240);
+            lsvTarifas.TabIndex = 0;
+            lsvTarifas.UseCompatibleStateImageBehavior = false;
+            lsvTarifas.View = View.Details;
             // 
             // hdCodProd
             // 
@@ -692,7 +691,6 @@
             lblHoteleriaProd.Size = new Size(126, 37);
             lblHoteleriaProd.TabIndex = 18;
             lblHoteleriaProd.Text = "Hotelería";
-            lblHoteleriaProd.Click += label16_Click;
             // 
             // ClasesVuelo
             // 
@@ -786,7 +784,7 @@
         private Label lblinfantes;
         private ComboBox comboBox6;
         private GroupBox grpTarifa;
-        private ListView listView1;
+        private ListView lsvTarifas;
         private ColumnHeader hdCodProd;
         private ColumnHeader hdPrecio;
         private Label lbTitleProdDisponibles;
