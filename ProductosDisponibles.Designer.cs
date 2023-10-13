@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            ComboBox comboBox4;
             lsvProductosDisponibles = new ListView();
             button1 = new Button();
             button2 = new Button();
@@ -75,7 +76,6 @@
             lblMenores = new Label();
             comboBox5 = new ComboBox();
             label13 = new Label();
-            comboBox4 = new ComboBox();
             lblContadorasientos = new Label();
             label15 = new Label();
             label17 = new Label();
@@ -88,12 +88,23 @@
             hdPrecio = new ColumnHeader();
             lbTitleProdDisponibles = new Label();
             lblHoteleriaProd = new Label();
+            comboBox4 = new ComboBox();
             grpAereos.SuspendLayout();
             grpHoteles.SuspendLayout();
             grpAgregarHoteles.SuspendLayout();
             grpAgregarVuelos.SuspendLayout();
             grpTarifa.SuspendLayout();
             SuspendLayout();
+            // 
+            // comboBox4
+            // 
+            comboBox4.Cursor = Cursors.Hand;
+            comboBox4.FormattingEnabled = true;
+            comboBox4.Location = new Point(15, 153);
+            comboBox4.Margin = new Padding(3, 4, 3, 4);
+            comboBox4.Name = "comboBox4";
+            comboBox4.Size = new Size(223, 28);
+            comboBox4.TabIndex = 24;
             // 
             // lsvProductosDisponibles
             // 
@@ -572,16 +583,6 @@
             label13.Size = new Size(65, 20);
             label13.TabIndex = 25;
             label13.Text = "Mayores";
-            // 
-            // comboBox4
-            // 
-            comboBox4.FormattingEnabled = true;
-            comboBox4.Location = new Point(15, 153);
-            comboBox4.Margin = new Padding(3, 4, 3, 4);
-            comboBox4.Name = "comboBox4";
-            comboBox4.Size = new Size(223, 28);
-            comboBox4.TabIndex = 24;
-            comboBox4.Text = "1";
             // 
             // lblContadorasientos
             // 
