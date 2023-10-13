@@ -47,16 +47,17 @@
             label3 = new Label();
             txtOrigen = new TextBox();
             grpHoteles = new GroupBox();
-            cmbCalifiacion = new ComboBox();
-            label1 = new Label();
-            label7 = new Label();
-            txtHabitaciones = new TextBox();
-            label8 = new Label();
-            txtUbicacion = new TextBox();
             label9 = new Label();
+            label8 = new Label();
             dateTimePicker2 = new DateTimePicker();
+            txtUbicacion = new TextBox();
             label10 = new Label();
+            label7 = new Label();
             dateTimePicker3 = new DateTimePicker();
+            cmbCalifiacion = new ComboBox();
+            txtHabitaciones = new TextBox();
+            label1 = new Label();
+            button4 = new Button();
             grpAereos.SuspendLayout();
             grpHoteles.SuspendLayout();
             SuspendLayout();
@@ -145,7 +146,7 @@
             grpAereos.Controls.Add(txtDestino);
             grpAereos.Controls.Add(label3);
             grpAereos.Controls.Add(txtOrigen);
-            grpAereos.Location = new Point(558, 299);
+            grpAereos.Location = new Point(12, 299);
             grpAereos.Name = "grpAereos";
             grpAereos.Size = new Size(477, 210);
             grpAereos.TabIndex = 11;
@@ -246,62 +247,12 @@
             grpHoteles.Controls.Add(cmbCalifiacion);
             grpHoteles.Controls.Add(txtHabitaciones);
             grpHoteles.Controls.Add(label1);
-            grpHoteles.Location = new Point(52, 299);
+            grpHoteles.Location = new Point(12, 299);
             grpHoteles.Name = "grpHoteles";
             grpHoteles.Size = new Size(477, 210);
             grpHoteles.TabIndex = 12;
             grpHoteles.TabStop = false;
             grpHoteles.Text = "Opciones de Búsqueda";
-            // 
-            // cmbCalifiacion
-            // 
-            cmbCalifiacion.FormattingEnabled = true;
-            cmbCalifiacion.Items.AddRange(new object[] { "1", "2", "3", "4", "5" });
-            cmbCalifiacion.Location = new Point(236, 55);
-            cmbCalifiacion.Name = "cmbCalifiacion";
-            cmbCalifiacion.Size = new Size(199, 23);
-            cmbCalifiacion.TabIndex = 14;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(236, 37);
-            label1.Name = "label1";
-            label1.Size = new Size(69, 15);
-            label1.TabIndex = 13;
-            label1.Text = "Calificación";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(17, 136);
-            label7.Name = "label7";
-            label7.Size = new Size(143, 15);
-            label7.TabIndex = 13;
-            label7.Text = "Cantidad de Habitaciones";
-            // 
-            // txtHabitaciones
-            // 
-            txtHabitaciones.Location = new Point(18, 154);
-            txtHabitaciones.Name = "txtHabitaciones";
-            txtHabitaciones.Size = new Size(200, 23);
-            txtHabitaciones.TabIndex = 12;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(18, 37);
-            label8.Name = "label8";
-            label8.Size = new Size(60, 15);
-            label8.TabIndex = 16;
-            label8.Text = "Ubicación";
-            // 
-            // txtUbicacion
-            // 
-            txtUbicacion.Location = new Point(19, 55);
-            txtUbicacion.Name = "txtUbicacion";
-            txtUbicacion.Size = new Size(200, 23);
-            txtUbicacion.TabIndex = 15;
             // 
             // label9
             // 
@@ -313,6 +264,15 @@
             label9.TabIndex = 15;
             label9.Text = "Fecha Hasta";
             // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(18, 37);
+            label8.Name = "label8";
+            label8.Size = new Size(60, 15);
+            label8.TabIndex = 16;
+            label8.Text = "Ubicación";
+            // 
             // dateTimePicker2
             // 
             dateTimePicker2.Location = new Point(236, 104);
@@ -320,6 +280,13 @@
             dateTimePicker2.RightToLeft = RightToLeft.Yes;
             dateTimePicker2.Size = new Size(200, 23);
             dateTimePicker2.TabIndex = 14;
+            // 
+            // txtUbicacion
+            // 
+            txtUbicacion.Location = new Point(19, 55);
+            txtUbicacion.Name = "txtUbicacion";
+            txtUbicacion.Size = new Size(200, 23);
+            txtUbicacion.TabIndex = 15;
             // 
             // label10
             // 
@@ -330,6 +297,15 @@
             label10.TabIndex = 13;
             label10.Text = "Fecha Desde";
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(17, 136);
+            label7.Name = "label7";
+            label7.Size = new Size(143, 15);
+            label7.TabIndex = 13;
+            label7.Text = "Cantidad de Habitaciones";
+            // 
             // dateTimePicker3
             // 
             dateTimePicker3.Location = new Point(20, 104);
@@ -337,11 +313,47 @@
             dateTimePicker3.Size = new Size(200, 23);
             dateTimePicker3.TabIndex = 12;
             // 
+            // cmbCalifiacion
+            // 
+            cmbCalifiacion.FormattingEnabled = true;
+            cmbCalifiacion.Items.AddRange(new object[] { "1", "2", "3", "4", "5" });
+            cmbCalifiacion.Location = new Point(236, 55);
+            cmbCalifiacion.Name = "cmbCalifiacion";
+            cmbCalifiacion.Size = new Size(199, 23);
+            cmbCalifiacion.TabIndex = 14;
+            // 
+            // txtHabitaciones
+            // 
+            txtHabitaciones.Location = new Point(18, 154);
+            txtHabitaciones.Name = "txtHabitaciones";
+            txtHabitaciones.Size = new Size(200, 23);
+            txtHabitaciones.TabIndex = 12;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(236, 37);
+            label1.Name = "label1";
+            label1.Size = new Size(69, 15);
+            label1.TabIndex = 13;
+            label1.Text = "Calificación";
+            // 
+            // button4
+            // 
+            button4.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            button4.Location = new Point(452, 246);
+            button4.Name = "button4";
+            button4.Size = new Size(47, 47);
+            button4.TabIndex = 13;
+            button4.Text = "\U0001f6d2";
+            button4.UseVisualStyleBackColor = true;
+            // 
             // ProductosDisponibles
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1059, 521);
+            Controls.Add(button4);
             Controls.Add(grpHoteles);
             Controls.Add(grpAereos);
             Controls.Add(button3);
@@ -393,5 +405,6 @@
         private TextBox txtUbicacion;
         private Label label7;
         private TextBox txtHabitaciones;
+        private Button button4;
     }
 }
