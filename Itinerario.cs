@@ -62,11 +62,13 @@ namespace Prototipo_CAI
 
             if (!string.IsNullOrWhiteSpace(idItinerario))
             {
-                lsvItinerario.SelectedItems.Clear();
+                //lsvItinerario.SelectedItems.Clear();  pa que sirve esto
 
                 foreach (ListViewItem item in lsvItinerario.Items)
                 {
                     string idElemento = item.Text;
+                    string cuit = item.SubItems[0].Text;
+                    string razonsocial = item.SubItems[1].Text;
 
                     //Equals sirve para comprar dos cosas y ver si son iguales en este caso lo ingresado en el txtbox con lo que está en la lsv
                     if (idElemento.Equals(idItinerario, StringComparison.OrdinalIgnoreCase))
@@ -77,11 +79,42 @@ namespace Prototipo_CAI
                         lsvItinerario.Items.Add(item);
 
                     }
+                    if (cuit.Equals(idItinerario, StringComparison.OrdinalIgnoreCase))
+                    {
+                        lsvItinerario.Items.Clear();
+
+                        lsvItinerario.Items.Add(item);
+                    }
+                    if (razonsocial.Equals(idItinerario, StringComparison.OrdinalIgnoreCase))
+                    {
+                        lsvItinerario.Items.Clear();
+
+                        lsvItinerario.Items.Add(item);
+                    }
 
                 }
 
 
 
+            }
+
+            else
+            {
+                lsvItinerario.Items.Clear();
+                FileInfo fi = new FileInfo("itinerario.txt");
+                StreamReader sr = fi.OpenText();
+                while (!sr.EndOfStream)
+                {
+                    string linea = sr.ReadLine();
+                    string[] vector = linea.Split(';');
+                    ListViewItem item = new ListViewItem(vector[0]);
+                    item.SubItems.Add(vector[1]);
+                    item.SubItems.Add(vector[2]);
+                    lsvItinerario.Items.Add(item);
+
+                }
+
+                sr.Close();
             }
 
 

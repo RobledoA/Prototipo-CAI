@@ -28,7 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            listView1 = new ListView();
+            lsvReservas = new ListView();
+            codReserva = new ColumnHeader();
+            nombre = new ColumnHeader();
+            fechaReserva = new ColumnHeader();
+            estadoReserva = new ColumnHeader();
             btnNuevaReserva = new Button();
             btnConfirmarReserva = new Button();
             btnEditarReserva = new Button();
@@ -36,13 +40,36 @@
             txtBuscarReserva = new TextBox();
             SuspendLayout();
             // 
-            // listView1
+            // lsvReservas
             // 
-            listView1.Location = new Point(12, 12);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(776, 360);
-            listView1.TabIndex = 0;
-            listView1.UseCompatibleStateImageBehavior = false;
+            lsvReservas.Columns.AddRange(new ColumnHeader[] { codReserva, nombre, fechaReserva, estadoReserva });
+            lsvReservas.FullRowSelect = true;
+            lsvReservas.Location = new Point(12, 12);
+            lsvReservas.Name = "lsvReservas";
+            lsvReservas.Size = new Size(776, 360);
+            lsvReservas.TabIndex = 0;
+            lsvReservas.UseCompatibleStateImageBehavior = false;
+            lsvReservas.View = View.Details;
+            // 
+            // codReserva
+            // 
+            codReserva.Text = "Código";
+            codReserva.Width = 150;
+            // 
+            // nombre
+            // 
+            nombre.Text = "Nombre/Razón Social";
+            nombre.Width = 150;
+            // 
+            // fechaReserva
+            // 
+            fechaReserva.Text = "Fecha";
+            fechaReserva.Width = 150;
+            // 
+            // estadoReserva
+            // 
+            estadoReserva.Text = "Estado";
+            estadoReserva.Width = 150;
             // 
             // btnNuevaReserva
             // 
@@ -105,7 +132,7 @@
             Controls.Add(btnEditarReserva);
             Controls.Add(btnConfirmarReserva);
             Controls.Add(btnNuevaReserva);
-            Controls.Add(listView1);
+            Controls.Add(lsvReservas);
             Name = "Reservas";
             Text = "Reservas";
             Load += Reservas_Load;
@@ -115,11 +142,15 @@
 
         #endregion
 
-        private ListView listView1;
+        private ListView lsvReservas;
         private Button btnNuevaReserva;
         private Button btnConfirmarReserva;
         private Button btnEditarReserva;
         private Button btnBuscarReserva;
         private TextBox txtBuscarReserva;
+        private ColumnHeader codReserva;
+        private ColumnHeader nombre;
+        private ColumnHeader fechaReserva;
+        private ColumnHeader estadoReserva;
     }
 }
