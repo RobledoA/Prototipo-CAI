@@ -191,7 +191,8 @@ namespace Prototipo_CAI
 
         private void btnDetalles_Click(object sender, EventArgs e)
         {
-
+            Vuelos vuelos = new Vuelos();
+            vuelos.ShowDialog();
         }
 
         private void button5_Click(object sender, EventArgs e)
