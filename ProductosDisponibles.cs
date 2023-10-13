@@ -17,7 +17,7 @@ namespace Prototipo_CAI
             InitializeComponent();
         }
 
-        private bool btnAereosPresionado = false;
+        private bool btnAereosPresionado = true;
         private bool btnHotelesPresionado = false;
 
         private void ProductosDisponibles_Load(object sender, EventArgs e)
@@ -53,9 +53,6 @@ namespace Prototipo_CAI
             item.SubItems.Add("Wi-Fi, Comida");
 
             lsvProductosDisponibles.Items.Add(item);
-
-            button1.Select();
-            btnAereosPresionado = true;
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -200,12 +197,12 @@ namespace Prototipo_CAI
             Vuelos vuelos = new Vuelos();
             Habitaciones habitaciones = new Habitaciones();
 
-            if(lsvProductosDisponibles.SelectedItems.Count > 0) //falta la condicion por boton seleccionado
+            if(btnAereosPresionado == true && lsvProductosDisponibles.SelectedItems.Count > 0) 
             {
                 vuelos.ShowDialog();
             }
 
-            if (lsvProductosDisponibles.SelectedItems.Count > 0) //falta la condicion por boton seleccionado
+            if (btnHotelesPresionado == true && lsvProductosDisponibles.SelectedItems.Count > 0) 
             {
                 habitaciones.ShowDialog();
             }
