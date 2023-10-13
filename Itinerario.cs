@@ -41,5 +41,66 @@ namespace Prototipo_CAI
             sr.Close();
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (lsvItinerario.SelectedItems.Count > 0)
+            {
+                ListViewItem item = lsvItinerario.SelectedItems[0];
+                lsvItinerario.Items.Remove(item);
+            }
+
+        }
+
+
+        /*Esto se puede mejorar con una función y llamar a la función directamente esto es una gronchada. También se puede agregar la función de 
+        presionar enter y buscar*/
+        private void btnBuscarItinerario_Click(object sender, EventArgs e)
+        {
+
+            string idItinerario = txtBuscarItinerario.Text;
+
+            if (!string.IsNullOrWhiteSpace(idItinerario))
+            {
+                lsvItinerario.SelectedItems.Clear();
+
+                foreach (ListViewItem item in lsvItinerario.Items)
+                {
+                    string idElemento = item.Text;
+
+                    //Equals sirve para comprar dos cosas y ver si son iguales en este caso lo ingresado en el txtbox con lo que está en la lsv
+                    if (idElemento.Equals(idItinerario, StringComparison.OrdinalIgnoreCase))
+                    {
+
+                        lsvItinerario.Items.Clear();
+
+                        lsvItinerario.Items.Add(item);
+
+                    }
+
+                }
+
+
+
+            }
+
+
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lsvItinerario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
