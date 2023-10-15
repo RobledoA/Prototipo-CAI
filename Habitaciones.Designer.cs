@@ -35,6 +35,8 @@
             listView1 = new ListView();
             columnHeader1 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
+            columnHeader10 = new ColumnHeader();
+            columnHeader11 = new ColumnHeader();
             label9 = new Label();
             textBox5 = new TextBox();
             label5 = new Label();
@@ -47,24 +49,25 @@
             label1 = new Label();
             textBox1 = new TextBox();
             lblCodVuelo = new Label();
-            columnHeader10 = new ColumnHeader();
-            columnHeader11 = new ColumnHeader();
             textBox6 = new TextBox();
             label6 = new Label();
             groupBox1 = new GroupBox();
             groupBox2 = new GroupBox();
-            textBox7 = new TextBox();
-            label8 = new Label();
+            listView5 = new ListView();
+            columnHeader15 = new ColumnHeader();
+            columnHeader16 = new ColumnHeader();
+            columnHeader17 = new ColumnHeader();
+            columnHeader18 = new ColumnHeader();
+            label7 = new Label();
+            label17 = new Label();
+            textBox14 = new TextBox();
+            label16 = new Label();
+            textBox13 = new TextBox();
             listView3 = new ListView();
             columnHeader6 = new ColumnHeader();
             columnHeader7 = new ColumnHeader();
             columnHeader8 = new ColumnHeader();
             label10 = new Label();
-            listView4 = new ListView();
-            columnHeader9 = new ColumnHeader();
-            columnHeader12 = new ColumnHeader();
-            columnHeader13 = new ColumnHeader();
-            columnHeader14 = new ColumnHeader();
             textBox9 = new TextBox();
             label11 = new Label();
             label12 = new Label();
@@ -74,16 +77,6 @@
             label14 = new Label();
             textBox12 = new TextBox();
             label15 = new Label();
-            label16 = new Label();
-            textBox13 = new TextBox();
-            label17 = new Label();
-            textBox14 = new TextBox();
-            listView5 = new ListView();
-            columnHeader15 = new ColumnHeader();
-            columnHeader16 = new ColumnHeader();
-            columnHeader17 = new ColumnHeader();
-            columnHeader18 = new ColumnHeader();
-            label7 = new Label();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
@@ -131,6 +124,14 @@
             // 
             columnHeader2.Text = "Número";
             columnHeader2.Width = 120;
+            // 
+            // columnHeader10
+            // 
+            columnHeader10.Text = "CP";
+            // 
+            // columnHeader11
+            // 
+            columnHeader11.Text = "Lat & Long";
             // 
             // label9
             // 
@@ -230,14 +231,6 @@
             lblCodVuelo.TabIndex = 25;
             lblCodVuelo.Text = "Código \r\nHotel\r\n";
             // 
-            // columnHeader10
-            // 
-            columnHeader10.Text = "CP";
-            // 
-            // columnHeader11
-            // 
-            columnHeader11.Text = "Lat & Long";
-            // 
             // textBox6
             // 
             textBox6.Location = new Point(110, 491);
@@ -287,11 +280,8 @@
             groupBox2.Controls.Add(textBox14);
             groupBox2.Controls.Add(label16);
             groupBox2.Controls.Add(textBox13);
-            groupBox2.Controls.Add(textBox7);
-            groupBox2.Controls.Add(label8);
             groupBox2.Controls.Add(listView3);
             groupBox2.Controls.Add(label10);
-            groupBox2.Controls.Add(listView4);
             groupBox2.Controls.Add(textBox9);
             groupBox2.Controls.Add(label11);
             groupBox2.Controls.Add(label12);
@@ -308,21 +298,76 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Habitación";
             // 
-            // textBox7
+            // listView5
             // 
-            textBox7.Location = new Point(110, 491);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(453, 23);
-            textBox7.TabIndex = 45;
+            listView5.Columns.AddRange(new ColumnHeader[] { columnHeader15, columnHeader16, columnHeader17, columnHeader18 });
+            listView5.Location = new Point(110, 76);
+            listView5.Name = "listView5";
+            listView5.Size = new Size(453, 55);
+            listView5.TabIndex = 51;
+            listView5.UseCompatibleStateImageBehavior = false;
+            listView5.View = View.Details;
             // 
-            // label8
+            // columnHeader15
             // 
-            label8.AutoSize = true;
-            label8.Location = new Point(21, 494);
-            label8.Name = "label8";
-            label8.Size = new Size(49, 30);
-            label8.TabIndex = 44;
-            label8.Text = "Código \r\nHotel\r\n";
+            columnHeader15.Text = "Clase";
+            columnHeader15.Width = 120;
+            // 
+            // columnHeader16
+            // 
+            columnHeader16.Text = "Tarifa Adulto";
+            columnHeader16.Width = 120;
+            // 
+            // columnHeader17
+            // 
+            columnHeader17.Text = "Tarifa Menor";
+            columnHeader17.Width = 120;
+            // 
+            // columnHeader18
+            // 
+            columnHeader18.Text = "Tarifa Infante";
+            columnHeader18.Width = 120;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(21, 76);
+            label7.Name = "label7";
+            label7.Size = new Size(40, 15);
+            label7.TabIndex = 50;
+            label7.Text = "Tarifas";
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Location = new Point(450, 179);
+            label17.Name = "label17";
+            label17.Size = new Size(53, 15);
+            label17.TabIndex = 48;
+            label17.Text = "Menores";
+            // 
+            // textBox14
+            // 
+            textBox14.Location = new Point(450, 194);
+            textBox14.Name = "textBox14";
+            textBox14.Size = new Size(113, 23);
+            textBox14.TabIndex = 49;
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Location = new Point(230, 197);
+            label16.Name = "label16";
+            label16.Size = new Size(53, 15);
+            label16.TabIndex = 46;
+            label16.Text = "Menores";
+            // 
+            // textBox13
+            // 
+            textBox13.Location = new Point(286, 194);
+            textBox13.Name = "textBox13";
+            textBox13.Size = new Size(113, 23);
+            textBox13.TabIndex = 47;
             // 
             // listView3
             // 
@@ -356,34 +401,6 @@
             label10.Size = new Size(65, 30);
             label10.TabIndex = 27;
             label10.Text = "Nombre \r\nHabitación";
-            // 
-            // listView4
-            // 
-            listView4.Columns.AddRange(new ColumnHeader[] { columnHeader9, columnHeader12, columnHeader13, columnHeader14 });
-            listView4.Location = new Point(85, 542);
-            listView4.Name = "listView4";
-            listView4.Size = new Size(453, 55);
-            listView4.TabIndex = 42;
-            listView4.UseCompatibleStateImageBehavior = false;
-            listView4.View = View.Details;
-            // 
-            // columnHeader9
-            // 
-            columnHeader9.Text = "Calle";
-            columnHeader9.Width = 200;
-            // 
-            // columnHeader12
-            // 
-            columnHeader12.Text = "Número";
-            columnHeader12.Width = 120;
-            // 
-            // columnHeader13
-            // 
-            columnHeader13.Text = "CP";
-            // 
-            // columnHeader14
-            // 
-            columnHeader14.Text = "Lat & Long";
             // 
             // textBox9
             // 
@@ -458,77 +475,6 @@
             label15.TabIndex = 32;
             label15.Text = "Calificación";
             // 
-            // label16
-            // 
-            label16.AutoSize = true;
-            label16.Location = new Point(230, 197);
-            label16.Name = "label16";
-            label16.Size = new Size(53, 15);
-            label16.TabIndex = 46;
-            label16.Text = "Menores";
-            // 
-            // textBox13
-            // 
-            textBox13.Location = new Point(286, 194);
-            textBox13.Name = "textBox13";
-            textBox13.Size = new Size(113, 23);
-            textBox13.TabIndex = 47;
-            // 
-            // label17
-            // 
-            label17.AutoSize = true;
-            label17.Location = new Point(450, 179);
-            label17.Name = "label17";
-            label17.Size = new Size(53, 15);
-            label17.TabIndex = 48;
-            label17.Text = "Menores";
-            // 
-            // textBox14
-            // 
-            textBox14.Location = new Point(450, 194);
-            textBox14.Name = "textBox14";
-            textBox14.Size = new Size(113, 23);
-            textBox14.TabIndex = 49;
-            // 
-            // listView5
-            // 
-            listView5.Columns.AddRange(new ColumnHeader[] { columnHeader15, columnHeader16, columnHeader17, columnHeader18 });
-            listView5.Location = new Point(110, 76);
-            listView5.Name = "listView5";
-            listView5.Size = new Size(453, 55);
-            listView5.TabIndex = 51;
-            listView5.UseCompatibleStateImageBehavior = false;
-            listView5.View = View.Details;
-            // 
-            // columnHeader15
-            // 
-            columnHeader15.Text = "Clase";
-            columnHeader15.Width = 120;
-            // 
-            // columnHeader16
-            // 
-            columnHeader16.Text = "Tarifa Adulto";
-            columnHeader16.Width = 120;
-            // 
-            // columnHeader17
-            // 
-            columnHeader17.Text = "Tarifa Menor";
-            columnHeader17.Width = 120;
-            // 
-            // columnHeader18
-            // 
-            columnHeader18.Text = "Tarifa Infante";
-            columnHeader18.Width = 120;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(21, 76);
-            label7.Name = "label7";
-            label7.Size = new Size(40, 15);
-            label7.TabIndex = 50;
-            label7.Text = "Tarifas";
-            // 
             // Habitaciones
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -572,18 +518,11 @@
         private Label label6;
         private GroupBox groupBox1;
         private GroupBox groupBox2;
-        private TextBox textBox7;
-        private Label label8;
         private ListView listView3;
         private ColumnHeader columnHeader6;
         private ColumnHeader columnHeader7;
         private ColumnHeader columnHeader8;
         private Label label10;
-        private ListView listView4;
-        private ColumnHeader columnHeader9;
-        private ColumnHeader columnHeader12;
-        private ColumnHeader columnHeader13;
-        private ColumnHeader columnHeader14;
         private TextBox textBox9;
         private Label label11;
         private Label label12;
