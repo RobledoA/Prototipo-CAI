@@ -1,0 +1,31 @@
+JQM;Hotel Mariposa;ATH;Calle Acropolis, 123;4;7
+PVT;Hotel Luna Azul;PAR;Rue de Rivoli, 456;5;9
+KDF;Hotel Sol Brillante;NYC;Broadway, 789;4;4
+TGB;Hotel Montaña Verde;LON;Baker Street, 221;4;6
+ZWX;Hotel Océano;ROM;Via del Corso, 567;3;3
+MNP;Hotel Estrella Dorada;TOK;Shibuya Crossing, 101;5;5
+CQR;Hotel Bosque Encantado;SYD;Bondi Beach Road, 321;4;8
+LRP;Hotel Palacio Marino;RIO;Copacabana Avenue, 654;3;2
+EIO;Hotel Mar de Cristal;BCN;La Rambla, 222;4;1
+UVX;Hotel Cielo Azul;BER;Unter den Linden, 789;5;10
+YAT;Hotel Aurora;DEL;Connaught Place, 345;4;9
+OPU;Hotel Bahía Azul;MIA;Ocean Drive, 555;4;7
+NKS;Hotel Playa Blanca;LAS;The Strip, 789;3;2
+WRL;Hotel Selva Verde;AMM;Rainbow Street, 123;4;8
+QIK;Hotel Estrella del Mar;PAR;Champs-Élysées, 999;5;6
+DMB;Hotel Oasis;CPT;Table Mountain Road, 456;4;10
+ZTP;Hotel Ciudad de Oro;SFO;Golden Gate Ave, 789;3;4
+HJF;Hotel Luna de Plata;SDQ;Malecón, 101;4;3
+VDC;Hotel Puesta de Sol;BKK;Khao San Road, 567;3;9
+SGP;Hotel Bosque Encantado;SYD;Bondi Beach Road, 321;4;5
+IUE;Hotel Montaña Mágica;PTA;Rua do Comercio, 222;4;7
+LFA;Hotel Torre de Marfil;HKG;Victoria Peak Road, 789;5;8
+RZO;Hotel Cielo Estrellado;CUN;Quinta Avenida, 345;3;6
+TBN;Hotel Mariposa Blanca;HNL;Waikiki Beach, 123;4;5
+XYP;Hotel Oasis de Playa;AMS;Keizersgracht, 456;5;4
+CEG;Hotel Brisa del Mar;VCE;Piazza San Marco, 789;4;9
+OKR;Hotel Río de las Palmas;LIS;Rua Augusta, 567;3;3
+PLM;Hotel Encanto del Caribe;CAS;Place des Nations, 101;4;2
+JRE;Hotel Amanecer Dorado;DXB;Sheikh Zayed Road, 789;5;8
+
+
