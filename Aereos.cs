@@ -10,60 +10,16 @@ using System.Windows.Forms;
 
 namespace Prototipo_CAI
 {
-    public partial class ClasesVuelo : Form
+    public partial class Aereos : Form
     {
-        public ClasesVuelo()
+        public Aereos()
         {
             InitializeComponent();
         }
-        private void ProductosDisponibles_Load(object sender, EventArgs e)
+
+        private void Aereos_Load(object sender, EventArgs e)
         {
-            lsvProductosDisponibles.Columns.Add("Código", 100, HorizontalAlignment.Center);
-            lsvProductosDisponibles.Columns.Add("Origen", 100, HorizontalAlignment.Center);
-            lsvProductosDisponibles.Columns.Add("Destino", 100, HorizontalAlignment.Center);
-            lsvProductosDisponibles.Columns.Add("Paradas", 100, HorizontalAlignment.Center);
-            lsvProductosDisponibles.Columns.Add("Fecha de Salida", 100, HorizontalAlignment.Center);
-            lsvProductosDisponibles.Columns.Add("Fecha de Arribo", 100, HorizontalAlignment.Center);
-            lsvProductosDisponibles.Columns.Add("Tiempo de Vuelo", 100, HorizontalAlignment.Center);
-            lsvProductosDisponibles.Columns.Add("Aerolínea", 100, HorizontalAlignment.Center);
-            lsvProductosDisponibles.Columns.Add("Tarifas", 100, HorizontalAlignment.Center);
-            lsvProductosDisponibles.Columns.Add("Servicios Extra", 100, HorizontalAlignment.Center);
 
-            ListViewItem item = new ListViewItem("0912");
-            item.SubItems.Add("Ciudad A");
-            item.SubItems.Add("Ciudad B");
-            item.SubItems.Add("2");
-            item.SubItems.Add("15/10/2023");
-            item.SubItems.Add("16/10/2023");
-            item.SubItems.Add("2 horas");
-            item.SubItems.Add("Aerolínea X");
-            item.SubItems.Add("$300");
-            item.SubItems.Add("Wi-Fi, Comida");
-
-            lsvProductosDisponibles.Items.Add(item);
-            dtpFechaVuelta.Enabled = false;
-        }
-        private void button2_Click(object sender, EventArgs e)
-        {
-            lsvProductosDisponibles.Clear();
-
-            lsvProductosDisponibles.Columns.Add("Código Hotel", 100, HorizontalAlignment.Center);
-            lsvProductosDisponibles.Columns.Add("Nombre", 100, HorizontalAlignment.Center);
-            lsvProductosDisponibles.Columns.Add("Código Ciudad", 100, HorizontalAlignment.Center);
-            lsvProductosDisponibles.Columns.Add("Dirección", 100, HorizontalAlignment.Center);
-            lsvProductosDisponibles.Columns.Add("Calificación", 100, HorizontalAlignment.Center);
-            lsvProductosDisponibles.Columns.Add("Disponibilidad", 100, HorizontalAlignment.Center);
-            lsvProductosDisponibles.Columns.Add("Servicios Extra", 150, HorizontalAlignment.Center);
-
-            ListViewItem item = new ListViewItem("1010");
-            item.SubItems.Add("Hotel CAI");
-            item.SubItems.Add("REA");
-            item.SubItems.Add("Calle Falsa 123");
-            item.SubItems.Add("3");
-            item.SubItems.Add("18");
-            item.SubItems.Add("Wi-Fi, Comida, Spa");
-
-            lsvProductosDisponibles.Items.Add(item);
         }
         private void button3_Click_1(object sender, EventArgs e)
         {
@@ -149,5 +105,7 @@ namespace Prototipo_CAI
                 lsvTarifas.Items.Add(item);
             }
         }
+
+
     }
 }

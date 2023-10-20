@@ -1,6 +1,6 @@
 ﻿namespace Prototipo_CAI
 {
-    partial class ClasesVuelo
+    partial class Aereos
     {
         /// <summary>
         /// Required designer variable.
@@ -429,7 +429,7 @@
             lbTitleProdDisponibles.TabIndex = 17;
             lbTitleProdDisponibles.Text = "Aéreos";
             // 
-            // ClasesVuelo
+            // Aereos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -443,9 +443,9 @@
             Controls.Add(btnDetalles);
             Controls.Add(lsvProductosDisponibles);
             Margin = new Padding(3, 4, 3, 4);
-            Name = "ClasesVuelo";
+            Name = "Aereos";
             Text = "Productos Disponibles";
-            Load += ProductosDisponibles_Load;
+            Load += Aereos_Load;
             grpAereos.ResumeLayout(false);
             grpAereos.PerformLayout();
             grpAgregarVuelos.ResumeLayout(false);

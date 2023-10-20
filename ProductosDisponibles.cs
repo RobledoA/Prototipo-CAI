@@ -19,7 +19,7 @@ namespace Prototipo_CAI
 
         private void btnAereos_Click(object sender, EventArgs e)
         {
-            ClasesVuelo clasesVuelo = new ClasesVuelo();
+            Aereos clasesVuelo = new Aereos();
             clasesVuelo.ShowDialog();
         }
 
