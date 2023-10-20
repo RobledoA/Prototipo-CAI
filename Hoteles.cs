@@ -33,6 +33,8 @@ namespace Prototipo_CAI
                 item.SubItems.Add(vector[5]);
                 lsvHoteles.Items.Add(item);
             }
+
+            sr.Close();
         }
     }
 }

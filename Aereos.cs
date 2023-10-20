@@ -19,7 +19,25 @@ namespace Prototipo_CAI
 
         private void Aereos_Load(object sender, EventArgs e)
         {
+            /*FileInfo fi = new FileInfo("aereos.txt");
+            StreamReader sr = fi.OpenText();
+            while (!sr.EndOfStream)
+            {
+                string linea = sr.ReadLine();
+                string[] vector = linea.Split(';');
+                ListViewItem item = new ListViewItem(vector[0]);
+                item.SubItems.Add(vector[1]);
+                item.SubItems.Add(vector[2]);
+                item.SubItems.Add(vector[3]);
+                item.SubItems.Add(vector[4]);
+                item.SubItems.Add(vector[5]);
+                item.SubItems.Add(vector[6]);
+                item.SubItems.Add(vector[7]);
+                item.SubItems.Add(vector[8]);
+                lsvAereos.Items.Add(item);
+            }
 
+            sr.Close();*/
         }
         private void button3_Click_1(object sender, EventArgs e)
         {

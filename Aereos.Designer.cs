@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             ComboBox comboBox4;
-            lsvProductosDisponibles = new ListView();
+            lsvAereos = new ListView();
             btnDetalles = new Button();
             btnCrearItinerario = new Button();
             button3 = new Button();
@@ -81,17 +81,17 @@
             comboBox4.Size = new Size(223, 28);
             comboBox4.TabIndex = 24;
             // 
-            // lsvProductosDisponibles
+            // lsvAereos
             // 
-            lsvProductosDisponibles.FullRowSelect = true;
-            lsvProductosDisponibles.Location = new Point(14, 79);
-            lsvProductosDisponibles.Margin = new Padding(3, 4, 3, 4);
-            lsvProductosDisponibles.MultiSelect = false;
-            lsvProductosDisponibles.Name = "lsvProductosDisponibles";
-            lsvProductosDisponibles.Size = new Size(1118, 303);
-            lsvProductosDisponibles.TabIndex = 0;
-            lsvProductosDisponibles.UseCompatibleStateImageBehavior = false;
-            lsvProductosDisponibles.View = View.Details;
+            lsvAereos.FullRowSelect = true;
+            lsvAereos.Location = new Point(14, 79);
+            lsvAereos.Margin = new Padding(3, 4, 3, 4);
+            lsvAereos.MultiSelect = false;
+            lsvAereos.Name = "lsvAereos";
+            lsvAereos.Size = new Size(1118, 303);
+            lsvAereos.TabIndex = 0;
+            lsvAereos.UseCompatibleStateImageBehavior = false;
+            lsvAereos.View = View.Details;
             // 
             // btnDetalles
             // 
@@ -441,7 +441,7 @@
             Controls.Add(button3);
             Controls.Add(btnCrearItinerario);
             Controls.Add(btnDetalles);
-            Controls.Add(lsvProductosDisponibles);
+            Controls.Add(lsvAereos);
             Margin = new Padding(3, 4, 3, 4);
             Name = "Aereos";
             Text = "Productos Disponibles";
@@ -494,5 +494,6 @@
         private Label lbTitleProdDisponibles;
         private ColumnHeader hdTipoProducto;
         private ColumnHeader hdTarifa;
+        private ListView lsvAereos;
     }
 }

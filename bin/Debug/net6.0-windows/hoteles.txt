@@ -27,5 +27,3 @@ CEG;Hotel Brisa del Mar;VCE;Piazza San Marco, 789;4;9
 OKR;Hotel Río de las Palmas;LIS;Rua Augusta, 567;3;3
 PLM;Hotel Encanto del Caribe;CAS;Place des Nations, 101;4;2
 JRE;Hotel Amanecer Dorado;DXB;Sheikh Zayed Road, 789;5;8
-
-
