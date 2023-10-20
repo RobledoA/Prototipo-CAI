@@ -36,5 +36,22 @@ namespace Prototipo_CAI
 
             sr.Close();
         }
+
+        private void btnAgregarHoteles_Click(object sender, EventArgs e)
+        {
+            if (lsvHoteles.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Debe seleccionar un producto de la lista.");
+            }
+
+            if (lsvHoteles.SelectedItems.Count > 0)
+            {
+                ListViewItem item = new ListViewItem("1010");
+                item.SubItems.Add("Hotel");
+                item.SubItems.Add("$100045");
+
+                lsvTarifas.Items.Add(item);
+            }
+        }
     }
 }

@@ -43,16 +43,12 @@ namespace Prototipo_CAI
         {
             this.Close();
         }
-        private void grpProdcutos_Enter(object sender, EventArgs e)
-        {
-
-        }
         private void btnDetalles_Click(object sender, EventArgs e)
         {
             Vuelos vuelos = new Vuelos();
             Habitaciones habitaciones = new Habitaciones();
 
-            if (lsvProductosDisponibles.SelectedItems.Count == 0)
+            if (lsvAereos.SelectedItems.Count == 0)
             {
                 MessageBox.Show("Seleccione un producto de la lista.");
             }
@@ -91,14 +87,14 @@ namespace Prototipo_CAI
         {
 
         }
-        private void button4_Click_1(object sender, EventArgs e)
+        private void button4_Click_1(object sender, EventArgs e)    //Agregar al Carrito
         {
-            if (lsvProductosDisponibles.SelectedItems.Count == 0)
+            if (lsvAereos.SelectedItems.Count == 0)
             {
                 MessageBox.Show("Debe seleccionar un producto de la lista.");
             }
 
-            if (lsvProductosDisponibles.SelectedItems.Count != 0)
+            if (lsvAereos.SelectedItems.Count != 0)
             {
                 ListViewItem item = new ListViewItem("0912");
                 item.SubItems.Add("Aéreo");
@@ -107,23 +103,5 @@ namespace Prototipo_CAI
                 lsvTarifas.Items.Add(item);
             }
         }
-        private void btnAgregarHoteles_Click_1(object sender, EventArgs e)
-        {
-            if (lsvProductosDisponibles.SelectedItems.Count == 0)
-            {
-                MessageBox.Show("Debe seleccionar un producto de la lista.");
-            }
-
-            if (lsvProductosDisponibles.SelectedItems.Count > 0)
-            {
-                ListViewItem item = new ListViewItem("1010");
-                item.SubItems.Add("Hotel");
-                item.SubItems.Add("$100045");
-
-                lsvTarifas.Items.Add(item);
-            }
-        }
-
-
     }
 }
