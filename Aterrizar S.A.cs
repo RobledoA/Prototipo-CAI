@@ -11,7 +11,7 @@ namespace Prototipo_CAI
         }
         private void btnProdDisponibles_Click(object sender, EventArgs e)
         {
-            ClasesVuelo productosDisponibles = new ClasesVuelo();
+            ProductosDisponibles productosDisponibles = new ProductosDisponibles();
             productosDisponibles.ShowDialog();
         }
 
