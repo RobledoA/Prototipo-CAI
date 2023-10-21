@@ -38,6 +38,8 @@ namespace Prototipo_CAI
             }
 
             sr.Close();*/
+
+            dtpFechaVuelta.Enabled = false;
         }
         private void button3_Click_1(object sender, EventArgs e)
         {

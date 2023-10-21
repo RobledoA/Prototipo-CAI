@@ -62,8 +62,9 @@
             hdDireccion = new ColumnHeader();
             hdCalificacion = new ColumnHeader();
             hdDisponibilidad = new ColumnHeader();
-            button3 = new Button();
+            btnSalir = new Button();
             btnDetalles = new Button();
+            btnCrearItinerario = new Button();
             grpHoteles.SuspendLayout();
             grpAgregarHoteles.SuspendLayout();
             grpTarifa.SuspendLayout();
@@ -359,14 +360,15 @@
             hdDisponibilidad.Text = "Disponibilidad";
             hdDisponibilidad.Width = 110;
             // 
-            // button3
+            // btnSalir
             // 
-            button3.Location = new Point(1014, 230);
-            button3.Name = "button3";
-            button3.Size = new Size(115, 47);
-            button3.TabIndex = 23;
-            button3.Text = "Salir";
-            button3.UseVisualStyleBackColor = true;
+            btnSalir.Location = new Point(1014, 230);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(115, 47);
+            btnSalir.TabIndex = 23;
+            btnSalir.Text = "Salir";
+            btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.Click += btnSalir_Click;
             // 
             // btnDetalles
             // 
@@ -378,14 +380,25 @@
             btnDetalles.UseVisualStyleBackColor = true;
             btnDetalles.Click += btnDetalles_Click;
             // 
+            // btnCrearItinerario
+            // 
+            btnCrearItinerario.Location = new Point(1014, 535);
+            btnCrearItinerario.Name = "btnCrearItinerario";
+            btnCrearItinerario.Size = new Size(115, 26);
+            btnCrearItinerario.TabIndex = 25;
+            btnCrearItinerario.Text = "Crear Itinerario";
+            btnCrearItinerario.UseVisualStyleBackColor = true;
+            btnCrearItinerario.Click += btnCrearItinerario_Click;
+            // 
             // Hoteles
             // 
             AcceptButton = btnAgregarHoteles;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1142, 573);
+            Controls.Add(btnCrearItinerario);
             Controls.Add(btnDetalles);
-            Controls.Add(button3);
+            Controls.Add(btnSalir);
             Controls.Add(lsvHoteles);
             Controls.Add(grpTarifa);
             Controls.Add(grpAgregarHoteles);
@@ -434,7 +447,7 @@
         private ColumnHeader hdTipoProducto;
         private ColumnHeader hdTarifa;
         private ListView lsvHoteles;
-        private Button button3;
+        private Button btnSalir;
         private ColumnHeader hdCodigo;
         private ColumnHeader hdNombre;
         private ColumnHeader hdCiudad;
@@ -442,5 +455,6 @@
         private ColumnHeader hdCalificacion;
         private ColumnHeader hdDisponibilidad;
         private Button btnDetalles;
+        private Button btnCrearItinerario;
     }
 }

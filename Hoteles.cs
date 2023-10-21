@@ -68,5 +68,25 @@ namespace Prototipo_CAI
             }
 
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnCrearItinerario_Click(object sender, EventArgs e)
+        {
+            if (lsvTarifas.Items.Count == 0)
+            {
+                MessageBox.Show("El carrito de productos no puede estar vacío.");
+            }
+            //Hay que ver a que pantalla te lleva este boton.
+            //Por ahora lo dejamos así:
+            else
+            {
+                Itinerario itinerario = new Itinerario();
+                itinerario.ShowDialog();
+            }
+        }
     }
 }
