@@ -63,6 +63,7 @@
             hdCalificacion = new ColumnHeader();
             hdDisponibilidad = new ColumnHeader();
             button3 = new Button();
+            btnDetalles = new Button();
             grpHoteles.SuspendLayout();
             grpAgregarHoteles.SuspendLayout();
             grpTarifa.SuspendLayout();
@@ -91,7 +92,7 @@
             grpHoteles.Controls.Add(cmbCalifiacion);
             grpHoteles.Controls.Add(txtHabitaciones);
             grpHoteles.Controls.Add(label1);
-            grpHoteles.Location = new Point(21, 305);
+            grpHoteles.Location = new Point(12, 341);
             grpHoteles.Name = "grpHoteles";
             grpHoteles.Size = new Size(477, 210);
             grpHoteles.TabIndex = 19;
@@ -367,12 +368,23 @@
             button3.Text = "Salir";
             button3.UseVisualStyleBackColor = true;
             // 
+            // btnDetalles
+            // 
+            btnDetalles.Location = new Point(10, 284);
+            btnDetalles.Name = "btnDetalles";
+            btnDetalles.Size = new Size(89, 23);
+            btnDetalles.TabIndex = 24;
+            btnDetalles.Text = "Ver Detalles";
+            btnDetalles.UseVisualStyleBackColor = true;
+            btnDetalles.Click += btnDetalles_Click;
+            // 
             // Hoteles
             // 
             AcceptButton = btnAgregarHoteles;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1142, 573);
+            Controls.Add(btnDetalles);
             Controls.Add(button3);
             Controls.Add(lsvHoteles);
             Controls.Add(grpTarifa);
@@ -429,5 +441,6 @@
         private ColumnHeader hdDireccion;
         private ColumnHeader hdCalificacion;
         private ColumnHeader hdDisponibilidad;
+        private Button btnDetalles;
     }
 }

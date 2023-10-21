@@ -53,5 +53,20 @@ namespace Prototipo_CAI
                 lsvTarifas.Items.Add(item);
             }
         }
+
+        private void btnDetalles_Click(object sender, EventArgs e)
+        {
+            Habitaciones habitaciones = new Habitaciones();
+
+            if (lsvHoteles.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Seleccione un producto de la lista.");
+            }
+            else
+            {
+                habitaciones.ShowDialog();
+            }
+
+        }
     }
 }

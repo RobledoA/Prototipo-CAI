@@ -46,11 +46,14 @@ namespace Prototipo_CAI
         private void btnDetalles_Click(object sender, EventArgs e)
         {
             Vuelos vuelos = new Vuelos();
-            Habitaciones habitaciones = new Habitaciones();
 
             if (lsvAereos.SelectedItems.Count == 0)
             {
                 MessageBox.Show("Seleccione un producto de la lista.");
+            }
+            else
+            {
+                vuelos.ShowDialog();
             }
         }
         private void btnCrearItinerario_Click(object sender, EventArgs e)
