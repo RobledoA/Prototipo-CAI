@@ -446,7 +446,6 @@
         private ColumnHeader hdCodProd;
         private ColumnHeader hdTipoProducto;
         private ColumnHeader hdTarifa;
-        private ListView lsvHoteles;
         private Button btnSalir;
         private ColumnHeader hdCodigo;
         private ColumnHeader hdNombre;
@@ -456,5 +455,6 @@
         private ColumnHeader hdDisponibilidad;
         private Button btnDetalles;
         private Button btnCrearItinerario;
+        public ListView lsvHoteles;
     }
 }

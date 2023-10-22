@@ -17,6 +17,7 @@ namespace Prototipo_CAI
             InitializeComponent();
         }
 
+
         private void Hoteles_Load(object sender, EventArgs e)
         {
             FileInfo fi = new FileInfo("hoteles.txt");
@@ -57,6 +58,8 @@ namespace Prototipo_CAI
         private void btnDetalles_Click(object sender, EventArgs e)
         {
             Habitaciones habitaciones = new Habitaciones();
+
+            habitaciones.SetDatosHotel(lsvHoteles.SelectedItems[0]);
 
             if (lsvHoteles.SelectedItems.Count == 0)
             {
