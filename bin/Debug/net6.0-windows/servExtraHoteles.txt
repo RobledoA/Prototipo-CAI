@@ -1,0 +1,117 @@
+Código hotel;Servicio Extra;Tarifa;Por pasajero
+JQM;Servicio de habitaciones;110;Si
+JQM;Estacionamiento;80;No
+JQM;Gimnasio o spa;150;Si
+JQM;Wi-Fi;90;No
+PVT;Caja fuerte;70;Si
+PVT;Gimnasio o spa;130;No
+PVT;Servicio de lavandería;85;Si
+PVT;Servicio de habitaciones;95;No
+KDF;Caja fuerte;75;Si
+KDF;Servicio de lavandería;100;No
+KDF;Gimnasio o spa;120;Si
+KDF;Estacionamiento;88;No
+TGB;Servicio de lavandería;80;Si
+TGB;Gimnasio o spa;160;No
+TGB;Caja fuerte;65;Si
+TGB;Wi-Fi;95;No
+ZWX;Caja fuerte;75;Si
+ZWX;Servicio de lavandería;85;No
+ZWX;Gimnasio o spa;140;Si
+ZWX;Estacionamiento;75;No
+MNP;Servicio de habitaciones;100;Si
+MNP;Wi-Fi;110;No
+MNP;Estacionamiento;120;Si
+MNP;Caja fuerte;70;No
+CQR;Wi-Fi;95;Si
+CQR;Gimnasio o spa;150;No
+CQR;Caja fuerte;65;Si
+CQR;Servicio de habitaciones;85;No
+LRP;Estacionamiento;100;Si
+LRP;Gimnasio o spa;120;No
+LRP;Caja fuerte;70;Si
+LRP;Servicio de lavandería;80;No
+EIO;Gimnasio o spa;130;Si
+EIO;Estacionamiento;90;No
+EIO;Servicio de lavandería;75;Si
+EIO;Caja fuerte;80;No
+UVX;Servicio de lavandería;85;Si
+UVX;Caja fuerte;75;No
+UVX;Wi-Fi;90;Si
+UVX;Servicio de habitaciones;95;No
+YAT;Gimnasio o spa;120;Si
+YAT;Wi-Fi;100;No
+YAT;Estacionamiento;130;Si
+YAT;Servicio de lavandería;75;No
+OPU;Caja fuerte;70;Si
+OPU;Servicio de lavandería;75;No
+OPU;Gimnasio o spa;110;Si
+OPU;Wi-Fi;95;No
+NKS;Gimnasio o spa;140;Si
+NKS;Servicio de lavandería;80;No
+NKS;Estacionamiento;100;Si
+NKS;Servicio de habitaciones;110;No
+WRL;Wi-Fi;110;Si
+WRL;Estacionamiento;120;No
+WRL;Gimnasio o spa;150;Si
+WRL;Caja fuerte;70;No
+QIK;Servicio de lavandería;85;Si
+QIK;Estacionamiento;90;No
+QIK;Caja fuerte;65;Si
+QIK;Servicio de habitaciones;75;No
+DMB;Wi-Fi;95;Si
+DMB;Gimnasio o spa;120;No
+DMB;Estacionamiento;100;Si
+DMB;Caja fuerte;70;No
+ZTP;Servicio de lavandería;80;Si
+ZTP;Gimnasio o spa;130;No
+ZTP;Caja fuerte;75;Si
+ZTP;Wi-Fi;90;No
+HJF;Estacionamiento;100;Si
+HJF;Gimnasio o spa;120;No
+HJF;Caja fuerte;70;Si
+HJF;Servicio de lavandería;80;No
+VDC;Wi-Fi;90;Si
+VDC;Caja fuerte;70;No
+VDC;Gimnasio o spa;110;Si
+VDC;Servicio de habitaciones;95;No
+SGP;Wi-Fi;95;Si
+SGP;Caja fuerte;75;No
+SGP;Gimnasio o spa;130;Si
+SGP;Caja fuerte;65;No
+IUE;Caja fuerte;70;Si
+IUE;Wi-Fi;90;No
+IUE;Estacionamiento;120;Si
+IUE;Servicio de lavandería;75;No
+LFA;Gimnasio o spa;130;Si
+LFA;Caja fuerte;75;No
+LFA;Estacionamiento;100;Si
+LFA;Wi-Fi;95;No
+RZO;Estacionamiento;90;Si
+RZO;Wi-Fi;90;No
+RZO;Caja fuerte;90;Si
+RZO;Gimnasio o spa;95;No
+TBN;Servicio de habitaciones;110;No
+TBN;Gimnasio o spa;140;No
+TBN;Caja fuerte;70;Si
+TBN;Estacionamiento;90;Si
+XYP;Estacionamiento;120;No
+XYP;Gimnasio o spa;130;Si
+XYP;Servicio de lavandería;80;No
+XYP;Caja fuerte;75;Si
+CEG;Caja fuerte;70;No
+CEG;Servicio de lavandería;85;No
+CEG;Gimnasio o spa;110;Si
+CEG;Estacionamiento;120;Si
+OKR;Wi-Fi;90;Si
+OKR;Gimnasio o spa;120;No
+OKR;Estacionamiento;100;Si
+OKR;Caja fuerte;70;No
+PLM;Gimnasio o spa;110;Si
+PLM;Caja fuerte;70;No
+PLM;Estacionamiento;90;Si
+PLM;Wi-Fi;95;No
+JRE;Estacionamiento;75;Si
+JRE;Wi-Fi;90;No
+JRE;Estacionamiento;120;Si
+JRE;Servicio de habitaciones;110;No
