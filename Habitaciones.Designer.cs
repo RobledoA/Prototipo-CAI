@@ -30,25 +30,23 @@
         {
             lblDireccion = new Label();
             lblNombreHotel = new Label();
-            lsvTarifas = new ListView();
-            hdTarifaAdulto = new ColumnHeader();
-            hdTarifaMenor = new ColumnHeader();
-            hdTarifaInfante = new ColumnHeader();
-            lblTarifas = new Label();
-            lblInfantes = new Label();
-            lblMenores = new Label();
             lsvServExtraHoteles = new ListView();
-            columnHeader6 = new ColumnHeader();
-            columnHeader7 = new ColumnHeader();
-            columnHeader8 = new ColumnHeader();
-            txtNombreHabitacion = new TextBox();
-            lblServiciosExtra = new Label();
-            lblCapacidad = new Label();
-            txtCapacidad = new TextBox();
-            lblDisponibilidad = new Label();
-            lblAdultos = new Label();
+            hdServicio = new ColumnHeader();
+            hdTarifaServ = new ColumnHeader();
+            hdPorPersona = new ColumnHeader();
             lblEstrellas = new Label();
-            lblHabitacion = new Label();
+            lsvHabitaciones = new ListView();
+            hdHabitacion = new ColumnHeader();
+            hdTarifa = new ColumnHeader();
+            hdDisponibilidad = new ColumnHeader();
+            hdCapacidad = new ColumnHeader();
+            hdAdultos = new ColumnHeader();
+            hdMenores = new ColumnHeader();
+            hdInfantes = new ColumnHeader();
+            hdFechaDesde = new ColumnHeader();
+            hdFechaHasta = new ColumnHeader();
+            lblHabitaciones = new Label();
+            lblServExtra = new Label();
             SuspendLayout();
             // 
             // lblDireccion
@@ -71,131 +69,30 @@
             lblNombreHotel.TabIndex = 71;
             lblNombreHotel.Text = "NOMBRE HOTEL";
             // 
-            // lsvTarifas
-            // 
-            lsvTarifas.Columns.AddRange(new ColumnHeader[] { hdTarifaAdulto, hdTarifaMenor, hdTarifaInfante });
-            lsvTarifas.Location = new Point(314, 52);
-            lsvTarifas.Name = "lsvTarifas";
-            lsvTarifas.Size = new Size(453, 55);
-            lsvTarifas.TabIndex = 70;
-            lsvTarifas.UseCompatibleStateImageBehavior = false;
-            lsvTarifas.View = View.Details;
-            // 
-            // hdTarifaAdulto
-            // 
-            hdTarifaAdulto.Text = "Tarifa Adulto";
-            hdTarifaAdulto.Width = 120;
-            // 
-            // hdTarifaMenor
-            // 
-            hdTarifaMenor.Text = "Tarifa Menor";
-            hdTarifaMenor.Width = 120;
-            // 
-            // hdTarifaInfante
-            // 
-            hdTarifaInfante.Text = "Tarifa Infante";
-            hdTarifaInfante.Width = 120;
-            // 
-            // lblTarifas
-            // 
-            lblTarifas.AutoSize = true;
-            lblTarifas.Location = new Point(224, 52);
-            lblTarifas.Name = "lblTarifas";
-            lblTarifas.Size = new Size(40, 15);
-            lblTarifas.TabIndex = 69;
-            lblTarifas.Text = "Tarifas";
-            // 
-            // lblInfantes
-            // 
-            lblInfantes.AutoSize = true;
-            lblInfantes.Location = new Point(224, 280);
-            lblInfantes.Name = "lblInfantes";
-            lblInfantes.Size = new Size(49, 15);
-            lblInfantes.TabIndex = 67;
-            lblInfantes.Text = "Infantes";
-            // 
-            // lblMenores
-            // 
-            lblMenores.AutoSize = true;
-            lblMenores.Location = new Point(223, 253);
-            lblMenores.Name = "lblMenores";
-            lblMenores.Size = new Size(53, 15);
-            lblMenores.TabIndex = 65;
-            lblMenores.Text = "Menores";
-            // 
             // lsvServExtraHoteles
             // 
-            lsvServExtraHoteles.Columns.AddRange(new ColumnHeader[] { columnHeader6, columnHeader7, columnHeader8 });
-            lsvServExtraHoteles.Location = new Point(314, 390);
+            lsvServExtraHoteles.Columns.AddRange(new ColumnHeader[] { hdServicio, hdTarifaServ, hdPorPersona });
+            lsvServExtraHoteles.Location = new Point(236, 299);
             lsvServExtraHoteles.Name = "lsvServExtraHoteles";
-            lsvServExtraHoteles.Size = new Size(453, 97);
+            lsvServExtraHoteles.Size = new Size(425, 171);
             lsvServExtraHoteles.TabIndex = 64;
             lsvServExtraHoteles.UseCompatibleStateImageBehavior = false;
             lsvServExtraHoteles.View = View.Details;
             // 
-            // columnHeader6
+            // hdServicio
             // 
-            columnHeader6.Text = "Código";
+            hdServicio.Text = "Servicio";
+            hdServicio.Width = 200;
             // 
-            // columnHeader7
+            // hdTarifaServ
             // 
-            columnHeader7.Text = "Descripción";
-            columnHeader7.Width = 200;
+            hdTarifaServ.Text = "Tarifa";
+            hdTarifaServ.Width = 100;
             // 
-            // columnHeader8
+            // hdPorPersona
             // 
-            columnHeader8.Text = "Tarifa ";
-            columnHeader8.Width = 120;
-            // 
-            // txtNombreHabitacion
-            // 
-            txtNombreHabitacion.Location = new Point(314, 12);
-            txtNombreHabitacion.Name = "txtNombreHabitacion";
-            txtNombreHabitacion.Size = new Size(186, 23);
-            txtNombreHabitacion.TabIndex = 55;
-            // 
-            // lblServiciosExtra
-            // 
-            lblServiciosExtra.AutoSize = true;
-            lblServiciosExtra.Location = new Point(224, 390);
-            lblServiciosExtra.Name = "lblServiciosExtra";
-            lblServiciosExtra.Size = new Size(56, 30);
-            lblServiciosExtra.TabIndex = 63;
-            lblServiciosExtra.Text = "Servicios \r\nExtra";
-            // 
-            // lblCapacidad
-            // 
-            lblCapacidad.AutoSize = true;
-            lblCapacidad.Location = new Point(224, 160);
-            lblCapacidad.Name = "lblCapacidad";
-            lblCapacidad.Size = new Size(63, 15);
-            lblCapacidad.TabIndex = 56;
-            lblCapacidad.Text = "Capacidad";
-            // 
-            // txtCapacidad
-            // 
-            txtCapacidad.Location = new Point(314, 157);
-            txtCapacidad.Name = "txtCapacidad";
-            txtCapacidad.Size = new Size(453, 23);
-            txtCapacidad.TabIndex = 57;
-            // 
-            // lblDisponibilidad
-            // 
-            lblDisponibilidad.AutoSize = true;
-            lblDisponibilidad.Location = new Point(224, 323);
-            lblDisponibilidad.Name = "lblDisponibilidad";
-            lblDisponibilidad.Size = new Size(83, 15);
-            lblDisponibilidad.TabIndex = 61;
-            lblDisponibilidad.Text = "Disponibilidad";
-            // 
-            // lblAdultos
-            // 
-            lblAdultos.AutoSize = true;
-            lblAdultos.Location = new Point(224, 225);
-            lblAdultos.Name = "lblAdultos";
-            lblAdultos.Size = new Size(48, 15);
-            lblAdultos.TabIndex = 58;
-            lblAdultos.Text = "Adultos";
+            hdPorPersona.Text = "Por Persona?";
+            hdPorPersona.Width = 120;
             // 
             // lblEstrellas
             // 
@@ -209,35 +106,92 @@
             lblEstrellas.TabIndex = 74;
             lblEstrellas.Text = "★★★★★";
             // 
-            // lblHabitacion
+            // lsvHabitaciones
             // 
-            lblHabitacion.AutoSize = true;
-            lblHabitacion.Location = new Point(224, 15);
-            lblHabitacion.Name = "lblHabitacion";
-            lblHabitacion.Size = new Size(65, 15);
-            lblHabitacion.TabIndex = 75;
-            lblHabitacion.Text = "Habitacion";
+            lsvHabitaciones.Columns.AddRange(new ColumnHeader[] { hdHabitacion, hdTarifa, hdDisponibilidad, hdCapacidad, hdAdultos, hdMenores, hdInfantes, hdFechaDesde, hdFechaHasta });
+            lsvHabitaciones.Location = new Point(236, 57);
+            lsvHabitaciones.Name = "lsvHabitaciones";
+            lsvHabitaciones.Size = new Size(685, 171);
+            lsvHabitaciones.TabIndex = 83;
+            lsvHabitaciones.UseCompatibleStateImageBehavior = false;
+            lsvHabitaciones.View = View.Details;
+            // 
+            // hdHabitacion
+            // 
+            hdHabitacion.Text = "Habitación";
+            hdHabitacion.Width = 100;
+            // 
+            // hdTarifa
+            // 
+            hdTarifa.Text = "Tarifa";
+            // 
+            // hdDisponibilidad
+            // 
+            hdDisponibilidad.Text = "Disponibilidad";
+            hdDisponibilidad.Width = 88;
+            // 
+            // hdCapacidad
+            // 
+            hdCapacidad.Text = "Capacidad";
+            hdCapacidad.Width = 68;
+            // 
+            // hdAdultos
+            // 
+            hdAdultos.Text = "Adultos";
+            hdAdultos.Width = 53;
+            // 
+            // hdMenores
+            // 
+            hdMenores.Text = "Menores";
+            hdMenores.Width = 58;
+            // 
+            // hdInfantes
+            // 
+            hdInfantes.Text = "Infantes";
+            hdInfantes.Width = 54;
+            // 
+            // hdFechaDesde
+            // 
+            hdFechaDesde.Text = "Fecha Desde";
+            hdFechaDesde.Width = 100;
+            // 
+            // hdFechaHasta
+            // 
+            hdFechaHasta.Text = "Fecha Hasta";
+            hdFechaHasta.Width = 100;
+            // 
+            // lblHabitaciones
+            // 
+            lblHabitaciones.AutoSize = true;
+            lblHabitaciones.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            lblHabitaciones.Location = new Point(236, 26);
+            lblHabitaciones.Name = "lblHabitaciones";
+            lblHabitaciones.Size = new Size(125, 28);
+            lblHabitaciones.TabIndex = 84;
+            lblHabitaciones.Text = "Habitaciones";
+            // 
+            // lblServExtra
+            // 
+            lblServExtra.AutoSize = true;
+            lblServExtra.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            lblServExtra.Location = new Point(236, 268);
+            lblServExtra.Name = "lblServExtra";
+            lblServExtra.Size = new Size(137, 28);
+            lblServExtra.TabIndex = 85;
+            lblServExtra.Text = "Servicios Extra";
             // 
             // Habitaciones
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(792, 533);
-            Controls.Add(lblHabitacion);
+            ClientSize = new Size(1022, 533);
+            Controls.Add(lblServExtra);
+            Controls.Add(lblHabitaciones);
+            Controls.Add(lsvHabitaciones);
             Controls.Add(lblEstrellas);
             Controls.Add(lblDireccion);
             Controls.Add(lblNombreHotel);
-            Controls.Add(lsvTarifas);
-            Controls.Add(lblTarifas);
-            Controls.Add(lblInfantes);
-            Controls.Add(lblMenores);
             Controls.Add(lsvServExtraHoteles);
-            Controls.Add(txtNombreHabitacion);
-            Controls.Add(lblServiciosExtra);
-            Controls.Add(lblCapacidad);
-            Controls.Add(txtCapacidad);
-            Controls.Add(lblDisponibilidad);
-            Controls.Add(lblAdultos);
             Name = "Habitaciones";
             Text = "Habitaciones";
             Load += Habitaciones_Load;
@@ -253,20 +207,23 @@
         private ColumnHeader hdTarifaAdulto;
         private ColumnHeader hdTarifaMenor;
         private ColumnHeader hdTarifaInfante;
-        private Label lblTarifas;
-        private Label lblInfantes;
-        private Label lblMenores;
         private ListView lsvServExtraHoteles;
-        private ColumnHeader columnHeader6;
-        private ColumnHeader columnHeader7;
-        private ColumnHeader columnHeader8;
+        private ColumnHeader hdServicio;
+        private ColumnHeader hdTarifaServ;
+        private ColumnHeader hdPorPersona;
         private TextBox txtNombreHabitacion;
-        private Label lblServiciosExtra;
-        private Label lblCapacidad;
-        private TextBox txtCapacidad;
-        private Label lblDisponibilidad;
-        private Label lblAdultos;
         private Label lblEstrellas;
-        private Label lblHabitacion;
+        private ListView lsvHabitaciones;
+        private ColumnHeader hdHabitacion;
+        private ColumnHeader hdTarifa;
+        private ColumnHeader hdDisponibilidad;
+        private ColumnHeader hdCapacidad;
+        private ColumnHeader hdAdultos;
+        private ColumnHeader hdMenores;
+        private ColumnHeader hdInfantes;
+        private Label lblHabitaciones;
+        private Label lblServExtra;
+        private ColumnHeader hdFechaDesde;
+        private ColumnHeader hdFechaHasta;
     }
 }

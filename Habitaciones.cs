@@ -39,15 +39,41 @@ namespace Prototipo_CAI
                 string[] vector = linea.Split(';');
                 if (vector[0] == codigoHotel)
                 {
-                    ListViewItem item = new ListViewItem(vector[0]);
-                    item.SubItems.Add(vector[1]);
+                    //La lista está desordenada así que disponibilidad está en la columna 9 del archivo.
+                    ListViewItem item = new ListViewItem(vector[1]);
                     item.SubItems.Add(vector[2]);
+                    item.SubItems.Add(vector[9]);
                     item.SubItems.Add(vector[3]);
+                    item.SubItems.Add(vector[4]);
+                    item.SubItems.Add(vector[5]);
+                    item.SubItems.Add(vector[6]);
+                    item.SubItems.Add(vector[7]);
+                    item.SubItems.Add(vector[8]);
+                    lsvHabitaciones.Items.Add(item);
                 }
 
             }
 
             sr.Close();
+
+            FileInfo fi2 = new FileInfo("servExtraHoteles.txt");
+            StreamReader sr2 = fi2.OpenText();
+            while (!sr2.EndOfStream)
+            {
+                string linea = sr2.ReadLine();
+                string[] vector = linea.Split(';');
+                if (vector[0] == codigoHotel)
+                {
+                    ListViewItem item = new ListViewItem(vector[1]);
+                    item.SubItems.Add(vector[2]);
+                    item.SubItems.Add(vector[3]);
+
+                    lsvServExtraHoteles.Items.Add(item);
+                }
+
+            }
+
+            sr2.Close();
 
         }
 
