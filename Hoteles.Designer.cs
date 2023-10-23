@@ -53,6 +53,9 @@
             cbCantHuespedes = new ComboBox();
             btnAgregarHoteles = new Button();
             grpTarifa = new GroupBox();
+            btnCrearItinerario = new Button();
+            btnEliminarCarrito = new Button();
+            btnLimpiarCarrito = new Button();
             lsvTarifas = new ListView();
             hdCodProd = new ColumnHeader();
             hdTipoProducto = new ColumnHeader();
@@ -66,9 +69,6 @@
             hdDisponibilidad = new ColumnHeader();
             btnSalir = new Button();
             btnDetalles = new Button();
-            btnCrearItinerario = new Button();
-            btnEliminarCarrito = new Button();
-            btnLimpiarCarrito = new Button();
             grpHoteles.SuspendLayout();
             grpAgregarHoteles.SuspendLayout();
             grpTarifa.SuspendLayout();
@@ -323,10 +323,42 @@
             grpTarifa.TabStop = false;
             grpTarifa.Text = "Tarifas";
             // 
+            // btnCrearItinerario
+            // 
+            btnCrearItinerario.Location = new Point(293, 216);
+            btnCrearItinerario.Name = "btnCrearItinerario";
+            btnCrearItinerario.Size = new Size(80, 26);
+            btnCrearItinerario.TabIndex = 25;
+            btnCrearItinerario.Text = "Confirmar";
+            btnCrearItinerario.UseVisualStyleBackColor = true;
+            btnCrearItinerario.Click += btnCrearItinerario_Click;
+            // 
+            // btnEliminarCarrito
+            // 
+            btnEliminarCarrito.Location = new Point(212, 216);
+            btnEliminarCarrito.Name = "btnEliminarCarrito";
+            btnEliminarCarrito.Size = new Size(74, 26);
+            btnEliminarCarrito.TabIndex = 26;
+            btnEliminarCarrito.Text = "Eliminar";
+            btnEliminarCarrito.UseVisualStyleBackColor = true;
+            btnEliminarCarrito.Click += btnEliminarCarrito_Click;
+            // 
+            // btnLimpiarCarrito
+            // 
+            btnLimpiarCarrito.Location = new Point(130, 216);
+            btnLimpiarCarrito.Name = "btnLimpiarCarrito";
+            btnLimpiarCarrito.Size = new Size(76, 26);
+            btnLimpiarCarrito.TabIndex = 27;
+            btnLimpiarCarrito.Text = "Limpiar";
+            btnLimpiarCarrito.UseVisualStyleBackColor = true;
+            btnLimpiarCarrito.Click += btnLimpiarCarrito_Click;
+            // 
             // lsvTarifas
             // 
             lsvTarifas.Columns.AddRange(new ColumnHeader[] { hdCodProd, hdTipoProducto, hdTarifa });
+            lsvTarifas.FullRowSelect = true;
             lsvTarifas.Location = new Point(5, 29);
+            lsvTarifas.MultiSelect = false;
             lsvTarifas.Name = "lsvTarifas";
             lsvTarifas.Size = new Size(367, 181);
             lsvTarifas.TabIndex = 0;
@@ -336,17 +368,17 @@
             // hdCodProd
             // 
             hdCodProd.Text = "Código Producto";
-            hdCodProd.Width = 150;
+            hdCodProd.Width = 103;
             // 
             // hdTipoProducto
             // 
             hdTipoProducto.Text = "Producto";
-            hdTipoProducto.Width = 120;
+            hdTipoProducto.Width = 160;
             // 
             // hdTarifa
             // 
             hdTarifa.Text = "Tarifa";
-            hdTarifa.Width = 120;
+            hdTarifa.Width = 100;
             // 
             // lsvHoteles
             // 
@@ -410,41 +442,12 @@
             btnDetalles.UseVisualStyleBackColor = true;
             btnDetalles.Click += btnDetalles_Click;
             // 
-            // btnCrearItinerario
-            // 
-            btnCrearItinerario.Location = new Point(293, 216);
-            btnCrearItinerario.Name = "btnCrearItinerario";
-            btnCrearItinerario.Size = new Size(80, 26);
-            btnCrearItinerario.TabIndex = 25;
-            btnCrearItinerario.Text = "Confirmar";
-            btnCrearItinerario.UseVisualStyleBackColor = true;
-            btnCrearItinerario.Click += btnCrearItinerario_Click;
-            // 
-            // btnEliminarCarrito
-            // 
-            btnEliminarCarrito.Location = new Point(212, 216);
-            btnEliminarCarrito.Name = "btnEliminarCarrito";
-            btnEliminarCarrito.Size = new Size(74, 26);
-            btnEliminarCarrito.TabIndex = 26;
-            btnEliminarCarrito.Text = "Eliminar";
-            btnEliminarCarrito.UseVisualStyleBackColor = true;
-            // 
-            // btnLimpiarCarrito
-            // 
-            btnLimpiarCarrito.Location = new Point(130, 216);
-            btnLimpiarCarrito.Name = "btnLimpiarCarrito";
-            btnLimpiarCarrito.Size = new Size(76, 26);
-            btnLimpiarCarrito.TabIndex = 27;
-            btnLimpiarCarrito.Text = "Limpiar";
-            btnLimpiarCarrito.UseVisualStyleBackColor = true;
-            btnLimpiarCarrito.Click += btnLimpiarCarrito_Click;
-            // 
             // Hoteles
             // 
             AcceptButton = btnAgregarHoteles;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1142, 737);
+            ClientSize = new Size(1142, 653);
             Controls.Add(btnDetalles);
             Controls.Add(btnSalir);
             Controls.Add(lsvHoteles);

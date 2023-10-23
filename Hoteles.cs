@@ -47,14 +47,14 @@ namespace Prototipo_CAI
                 MessageBox.Show("Debe seleccionar un producto de la lista.");
             }
 
-            /*if (lsvHoteles.SelectedItems.Count > 0)
+            if (lsvHoteles.SelectedItems.Count > 0)
             {
                 ListViewItem item = new ListViewItem("1010");
                 item.SubItems.Add("Hotel");
                 item.SubItems.Add("$100045");
 
                 lsvTarifas.Items.Add(item);
-            } TODO */
+            }
         }
 
         private void btnDetalles_Click(object sender, EventArgs e)
@@ -160,10 +160,28 @@ namespace Prototipo_CAI
 
         private void btnLimpiarCarrito_Click(object sender, EventArgs e)
         {
-            var r = MessageBox.Show("Se eliminarán todos los productos del carrito.\n                             ¿Está seguro?","Confirmación",MessageBoxButtons.YesNo); //no borren el espacio es para que se vea bonito
+            var r = MessageBox.Show("Se eliminarán todos los productos del carrito.\n                             ¿Está seguro?", "Confirmación", MessageBoxButtons.YesNo); //no borren el espacio es para que se vea bonito
             if (r == DialogResult.Yes)
             {
                 lsvTarifas.Items.Clear();
+            }
+        }
+
+        private void btnEliminarCarrito_Click(object sender, EventArgs e)
+        {
+            if (lsvTarifas.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Debe seleccionar el producto que desea eliminar.", "Error");
+            }
+            else
+            {
+                var r = MessageBox.Show("Se eliminará el producto seleccionado.\n                         ¿Está seguro?", "Confirmación", MessageBoxButtons.YesNo);
+                if (r == DialogResult.Yes)
+                {
+                    ListViewItem item = lsvTarifas.SelectedItems[0];
+                    lsvTarifas.Items.Remove(item);
+                }
+
             }
         }
     }
