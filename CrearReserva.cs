@@ -31,15 +31,15 @@ namespace Prototipo_CAI
 
         private void CrearReserva_Load(object sender, EventArgs e)
         {
-            lsvGenerarReserva.View = View.Details; 
-            lsvGenerarReserva.FullRowSelect = true; 
-            string rutaArchivo = "reservaCreada.txt"; 
+            lsvGenerarReserva.View = View.Details;
+            lsvGenerarReserva.FullRowSelect = true;
+            string rutaArchivo = "reservaCreada.txt";
 
             try
             {
                 using (StreamReader sr = new StreamReader(rutaArchivo))
                 {
-                    string headerLine = sr.ReadLine(); 
+                    string headerLine = sr.ReadLine();
                     string[] columnNames = headerLine.Split(';');
 
                     // Configurar las columnas del ListView
@@ -55,10 +55,10 @@ namespace Prototipo_CAI
 
                         if (values.Length == columnNames.Length)
                         {
-                            ListViewItem item = new ListViewItem(values[0]); 
+                            ListViewItem item = new ListViewItem(values[0]);
                             for (int i = 1; i < values.Length; i++)
                             {
-                                item.SubItems.Add(values[i]); 
+                                item.SubItems.Add(values[i]);
                             }
                             lsvGenerarReserva.Items.Add(item);
                         }
@@ -73,8 +73,8 @@ namespace Prototipo_CAI
             }
         }
 
-        
-        //Ajustes del menú contextual
+
+        //Ajustes del menú contextual. No le encontré la vuelta para que funcione el eliminar 
         private void lsvGenerarReserva_MouseDown(object sender, MouseEventArgs e)
         {
 
@@ -85,10 +85,19 @@ namespace Prototipo_CAI
                 if (hitTest.Item != null)
                 {
                     // Mostrar el menú contextual solo si se hace clic izquierdo en una fila
-                    lsvGenerarReserva.SelectedItems.Clear(); // Esto borra selecciones anteriores
-                    hitTest.Item.Selected = true; // Esto selecciona la fila en la que se hizo click
+                    lsvGenerarReserva.SelectedItems.Clear();
+                    hitTest.Item.Selected = true;
                     contextMenuStrip1.Show(lsvGenerarReserva, e.Location);
+                    if (lsvGenerarReserva.SelectedItems.Count > 0)
+                    {
+                        ListViewItem item = lsvGenerarReserva.SelectedItems[0];
+                        lsvGenerarReserva.Items.Remove(item);
+
+                    }
+
                 }
+
+
             }
 
         }
@@ -105,13 +114,13 @@ namespace Prototipo_CAI
             {
                 using (StreamReader sr = new StreamReader(rutaArchivo))
                 {
-                    string headerLine = sr.ReadLine(); 
+                    string headerLine = sr.ReadLine();
                     string[] columnNames = headerLine.Split(';');
 
-                    
+
                     foreach (string columnName in columnNames)
                     {
-                        lsvGenerarReserva.Columns.Add(columnName, 150); 
+
                     }
 
                     string dataLine;

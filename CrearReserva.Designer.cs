@@ -45,7 +45,7 @@
             // btnConfirmarGuardarReserva
             // 
             btnConfirmarGuardarReserva.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnConfirmarGuardarReserva.Location = new Point(944, 291);
+            btnConfirmarGuardarReserva.Location = new Point(690, 267);
             btnConfirmarGuardarReserva.Name = "btnConfirmarGuardarReserva";
             btnConfirmarGuardarReserva.Size = new Size(155, 34);
             btnConfirmarGuardarReserva.TabIndex = 15;
@@ -56,7 +56,7 @@
             // btnCancelarGenerarReserva
             // 
             btnCancelarGenerarReserva.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCancelarGenerarReserva.Location = new Point(1105, 291);
+            btnCancelarGenerarReserva.Location = new Point(851, 267);
             btnCancelarGenerarReserva.Name = "btnCancelarGenerarReserva";
             btnCancelarGenerarReserva.Size = new Size(128, 34);
             btnCancelarGenerarReserva.TabIndex = 14;
@@ -70,7 +70,7 @@
             lsvGenerarReserva.Cursor = Cursors.Hand;
             lsvGenerarReserva.Location = new Point(12, 58);
             lsvGenerarReserva.Name = "lsvGenerarReserva";
-            lsvGenerarReserva.Size = new Size(1221, 203);
+            lsvGenerarReserva.Size = new Size(967, 203);
             lsvGenerarReserva.TabIndex = 13;
             lsvGenerarReserva.UseCompatibleStateImageBehavior = false;
             lsvGenerarReserva.View = View.Details;
@@ -133,7 +133,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1259, 341);
+            ClientSize = new Size(1001, 316);
             Controls.Add(btnRefrescar);
             Controls.Add(btnConfirmarGuardarReserva);
             Controls.Add(btnCancelarGenerarReserva);

@@ -41,10 +41,6 @@
             cmbNacionalidad = new ComboBox();
             cmbGénero = new ComboBox();
             label7 = new Label();
-            label8 = new Label();
-            chkSiDis = new CheckBox();
-            chkNoDis = new CheckBox();
-            button1 = new Button();
             btnConfirmarGuardarReserva = new Button();
             btnCancelarGenerarReserva = new Button();
             SuspendLayout();
@@ -161,49 +157,10 @@
             label7.TabIndex = 13;
             label7.Text = "Ingresar Datos De Pasajero";
             // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(10, 222);
-            label8.Name = "label8";
-            label8.Size = new Size(162, 15);
-            label8.TabIndex = 14;
-            label8.Text = "¿Posee Alguna Discapacidad?";
-            // 
-            // chkSiDis
-            // 
-            chkSiDis.AutoSize = true;
-            chkSiDis.Location = new Point(16, 244);
-            chkSiDis.Name = "chkSiDis";
-            chkSiDis.Size = new Size(35, 19);
-            chkSiDis.TabIndex = 15;
-            chkSiDis.Text = "Si";
-            chkSiDis.UseVisualStyleBackColor = true;
-            // 
-            // chkNoDis
-            // 
-            chkNoDis.AutoSize = true;
-            chkNoDis.Location = new Point(61, 244);
-            chkNoDis.Name = "chkNoDis";
-            chkNoDis.Size = new Size(42, 19);
-            chkNoDis.TabIndex = 16;
-            chkNoDis.Text = "No";
-            chkNoDis.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(12, 269);
-            button1.Name = "button1";
-            button1.Size = new Size(118, 23);
-            button1.TabIndex = 17;
-            button1.Text = "Adjuntar CUD";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
             // btnConfirmarGuardarReserva
             // 
             btnConfirmarGuardarReserva.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnConfirmarGuardarReserva.Location = new Point(173, 348);
+            btnConfirmarGuardarReserva.Location = new Point(176, 237);
             btnConfirmarGuardarReserva.Name = "btnConfirmarGuardarReserva";
             btnConfirmarGuardarReserva.Size = new Size(155, 34);
             btnConfirmarGuardarReserva.TabIndex = 18;
@@ -214,7 +171,7 @@
             // btnCancelarGenerarReserva
             // 
             btnCancelarGenerarReserva.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCancelarGenerarReserva.Location = new Point(333, 348);
+            btnCancelarGenerarReserva.Location = new Point(336, 237);
             btnCancelarGenerarReserva.Name = "btnCancelarGenerarReserva";
             btnCancelarGenerarReserva.Size = new Size(128, 34);
             btnCancelarGenerarReserva.TabIndex = 19;
@@ -226,13 +183,9 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(476, 394);
+            ClientSize = new Size(476, 294);
             Controls.Add(btnCancelarGenerarReserva);
             Controls.Add(btnConfirmarGuardarReserva);
-            Controls.Add(button1);
-            Controls.Add(chkNoDis);
-            Controls.Add(chkSiDis);
-            Controls.Add(label8);
             Controls.Add(label7);
             Controls.Add(cmbGénero);
             Controls.Add(cmbNacionalidad);
@@ -268,10 +221,6 @@
         private ComboBox cmbNacionalidad;
         private ComboBox cmbGénero;
         private Label label7;
-        private Label label8;
-        private CheckBox chkSiDis;
-        private CheckBox chkNoDis;
-        private Button button1;
         private Button btnConfirmarGuardarReserva;
         private Button btnCancelarGenerarReserva;
     }

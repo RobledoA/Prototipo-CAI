@@ -38,26 +38,28 @@ namespace Prototipo_CAI
         }
         private void btnConfirmarGuardarReserva_Click(object sender, EventArgs e)
         {
-          
             string nombre = txtNombrep.Text;
             string cuit = txtCuitP.Text;
             string pasaporte = txtPasaporteP.Text;
             DateTime FechaNacimiento = dtpNacimientoP.Value;
             string Nacionalidad = cmbNacionalidad.SelectedItem.ToString();
             string Genero = cmbGénero.SelectedItem.ToString();
-            string seleccionSi = chkSiDis.Checked ? "Sí" : "No";
-            string seleccionNo = chkNoDis.Checked ? "Sí" : "No";
 
-            /* Ruta del archivo .txt lo reemplazas por la ruta en tu compu gasti los cargó en una carpeta,
-             cuando lo vemos todos juntos le preguntamos eso. Para probarlo mete el archivo en la ruta que más te guste*/
+            string rutaArchivo = "reservaCreada.txt";
 
-            string rutaArchivo = "reservaCreada.txt"; 
             try
             {
                 using (StreamWriter sw = new StreamWriter(rutaArchivo, true))
                 {
-                    sw.WriteLine($"Código;Nombre;Cuit;Pasaporte;Fecha de Nacimiento;Nacionalidad;Género;Discapacidad 'Sí';Discapacidad 'No'");
-                    sw.WriteLine($"-;{nombre};{cuit};{pasaporte};{FechaNacimiento.ToString("dd-MM-yyyy")};{Nacionalidad};{Genero};{seleccionSi};{seleccionNo}");
+                    // Verificar si el archivo está vacío
+                    if (new FileInfo(rutaArchivo).Length == 0)
+                    {
+                        // Si el archivo está vacío, escribir la fila de encabezado
+                        sw.WriteLine($"Código;Nombre;Cuit;Pasaporte;Fecha de Nacimiento;Nacionalidad;Género;");
+                    }
+
+                    // Escribir los datos del pasajero
+                    sw.WriteLine($"-;{nombre};{cuit};{pasaporte};{FechaNacimiento.ToString("dd-MM-yyyy")};{Nacionalidad};{Genero};");
 
                     sw.Close();
                 }
@@ -68,8 +70,8 @@ namespace Prototipo_CAI
             {
                 MessageBox.Show("Error al guardar los datos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            this.Close();
 
+            this.Close();
         }
 
         private void btnCancelarGenerarReserva_Click(object sender, EventArgs e)
