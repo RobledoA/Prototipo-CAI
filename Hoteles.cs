@@ -46,6 +46,14 @@ namespace Prototipo_CAI
             {
                 MessageBox.Show("Debe seleccionar un producto de la lista.");
             }
+            else
+            {
+                string codProducto = $"{lsvHoteles.SelectedItems[0].Text}";
+                MessageBox.Show(codProducto);
+                ListViewItem list = new ListViewItem(codProducto);
+
+                
+            }
 
             if (lsvHoteles.SelectedItems.Count > 0)
             {
@@ -87,8 +95,12 @@ namespace Prototipo_CAI
             //Por ahora lo dejamos así:
             else
             {
-                Itinerario itinerario = new Itinerario();
-                itinerario.ShowDialog();
+                var r = MessageBox.Show("Desea agregar datos de cliente?", "mesi", MessageBoxButtons.YesNo);
+                if (r == DialogResult.Yes)
+                {
+                    AgregarClientes agregarClientes = new AgregarClientes();
+                    agregarClientes.ShowDialog();
+                }
             }
         }
 

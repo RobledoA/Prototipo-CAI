@@ -288,7 +288,7 @@
             lblHuespedes.Name = "lblHuespedes";
             lblHuespedes.Size = new Size(132, 15);
             lblHuespedes.TabIndex = 15;
-            lblHuespedes.Text = "Cantidad de Huespedes";
+            lblHuespedes.Text = "Cantidad de Huéspedes";
             // 
             // cbCantHuespedes
             // 
@@ -325,17 +325,17 @@
             // 
             // btnCrearItinerario
             // 
-            btnCrearItinerario.Location = new Point(293, 216);
+            btnCrearItinerario.Location = new Point(271, 216);
             btnCrearItinerario.Name = "btnCrearItinerario";
-            btnCrearItinerario.Size = new Size(80, 26);
+            btnCrearItinerario.Size = new Size(102, 26);
             btnCrearItinerario.TabIndex = 25;
-            btnCrearItinerario.Text = "Confirmar";
+            btnCrearItinerario.Text = "Crear Itinerario";
             btnCrearItinerario.UseVisualStyleBackColor = true;
             btnCrearItinerario.Click += btnCrearItinerario_Click;
             // 
             // btnEliminarCarrito
             // 
-            btnEliminarCarrito.Location = new Point(212, 216);
+            btnEliminarCarrito.Location = new Point(191, 216);
             btnEliminarCarrito.Name = "btnEliminarCarrito";
             btnEliminarCarrito.Size = new Size(74, 26);
             btnEliminarCarrito.TabIndex = 26;
@@ -345,7 +345,7 @@
             // 
             // btnLimpiarCarrito
             // 
-            btnLimpiarCarrito.Location = new Point(130, 216);
+            btnLimpiarCarrito.Location = new Point(109, 216);
             btnLimpiarCarrito.Name = "btnLimpiarCarrito";
             btnLimpiarCarrito.Size = new Size(76, 26);
             btnLimpiarCarrito.TabIndex = 27;

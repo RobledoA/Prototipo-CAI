@@ -5,7 +5,7 @@
 5;20272970354;Luis Sánchez
 6;20188290128;Agustín Rodríguez
 7;27381606343;Camila Díaz
-8;20463175089;Martín González
+8;;
 9;27244078602;Lucía García
 10;20154623800;Diego Hernández
 11;27199467221;Valentina Suárez
