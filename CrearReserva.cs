@@ -33,7 +33,7 @@ namespace Prototipo_CAI
         {
             lsvGenerarReserva.View = View.Details; 
             lsvGenerarReserva.FullRowSelect = true; 
-            string rutaArchivo = "C:\\Users\\Alan\\Desktop\\reservaCreada.txt"; 
+            string rutaArchivo = "reservaCreada.txt"; 
 
             try
             {
@@ -95,7 +95,7 @@ namespace Prototipo_CAI
 
         private void btnRefrescar_Click(object sender, EventArgs e)
         {
-            string rutaArchivo = "C:\\Users\\Alan\\Desktop\\reservaCreada.txt"; // Ruta del archivo, reemplazala por una ruta en tu compu. Si el archivo no existe, se crea automaticamente cuando ingresas un pasajero
+            string rutaArchivo = "reservaCreada.txt";
 
             // Estp borra todos los elementos actuales en la lsv para no duplicarlos
             lsvGenerarReserva.Items.Clear();
