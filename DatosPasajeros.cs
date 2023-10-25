@@ -51,7 +51,7 @@ namespace Prototipo_CAI
             /* Ruta del archivo .txt lo reemplazas por la ruta en tu compu gasti los cargó en una carpeta,
              cuando lo vemos todos juntos le preguntamos eso. Para probarlo mete el archivo en la ruta que más te guste*/
 
-            string rutaArchivo = "C:\\Users\\Alan\\Desktop\\reservaCreada.txt"; 
+            string rutaArchivo = "reservaCreada.txt"; 
             try
             {
                 using (StreamWriter sw = new StreamWriter(rutaArchivo, true))
