@@ -16,6 +16,7 @@ namespace Prototipo_CAI
         public Itinerario()
         {
             InitializeComponent();
+            lsvItinerario.SelectedIndexChanged += lsvItinerario_SelectedIndexChanged;
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -126,6 +127,22 @@ namespace Prototipo_CAI
 
         private void label1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnCrearReserva_Click(object sender, EventArgs e)
+        {
+
+            if(lsvItinerario.SelectedItems.Count > 0)
+            {
+                CrearReserva crearReserva = new CrearReserva();
+
+                crearReserva.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un itinerario");
+            }
 
         }
     }
