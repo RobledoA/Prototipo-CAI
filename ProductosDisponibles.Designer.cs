@@ -35,7 +35,7 @@
             // btnAereos
             // 
             btnAereos.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            btnAereos.Location = new Point(58, 32);
+            btnAereos.Location = new Point(32, 33);
             btnAereos.Name = "btnAereos";
             btnAereos.Size = new Size(239, 52);
             btnAereos.TabIndex = 2;
@@ -46,7 +46,7 @@
             // btnHoteles
             // 
             btnHoteles.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            btnHoteles.Location = new Point(58, 104);
+            btnHoteles.Location = new Point(32, 105);
             btnHoteles.Name = "btnHoteles";
             btnHoteles.Size = new Size(239, 52);
             btnHoteles.TabIndex = 3;
@@ -58,7 +58,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(354, 186);
+            ClientSize = new Size(306, 186);
             Controls.Add(btnHoteles);
             Controls.Add(btnAereos);
             FormBorderStyle = FormBorderStyle.FixedSingle;

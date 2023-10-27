@@ -48,6 +48,10 @@ namespace Prototipo_CAI
                 ListViewItem item = lsvItinerario.SelectedItems[0];
                 lsvItinerario.Items.Remove(item);
             }
+            else
+            {
+                MessageBox.Show("Seleccione un itinerario.", "Error");
+            }
         }
 
 
@@ -141,9 +145,32 @@ namespace Prototipo_CAI
             }
             else
             {
-                MessageBox.Show("Seleccione un itinerario");
+                MessageBox.Show("Seleccione un itinerario.", "Error");
             }
 
+        }
+
+        private void btnNuevoItinerario_Click(object sender, EventArgs e)
+        {
+            var r = MessageBox.Show("Desea agregar datos de cliente?", "Crear Itinerario", MessageBoxButtons.YesNoCancel);
+            if (r == DialogResult.Yes)
+            {
+                AgregarClientes agregarClientes = new();
+                agregarClientes.ShowDialog();
+            }
+            if (r == DialogResult.No)
+            {
+                MessageBox.Show($"Se ha creado el itinerario correctamente. Su código de itinerario es {1}.", "Itinerario Creado");
+            }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (lsvItinerario.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Seleccione un itinerario.", "Error");
+            }
         }
     }
 

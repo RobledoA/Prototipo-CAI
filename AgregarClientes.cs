@@ -24,7 +24,7 @@ namespace Prototipo_CAI
             {
                 MessageBox.Show("Debe completar al menos un campo.", "Error");
             }
-            else if (!int.TryParse(txtCuilCuit.Text, out int salida))
+            else if (!string.IsNullOrWhiteSpace(txtCuilCuit.Text) && !int.TryParse(txtCuilCuit.Text, out int salida))
             {
                 MessageBox.Show("El cuil/cuit debe ser un número.", "Error");
             }

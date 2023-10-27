@@ -187,7 +187,6 @@
             btnAgregarItinerario.TabIndex = 7;
             btnAgregarItinerario.Text = "Agregar Itinerario";
             btnAgregarItinerario.UseVisualStyleBackColor = true;
-            btnAgregarItinerario.Click += btnCrearItinerario_Click;
             // 
             // cbClase
             // 

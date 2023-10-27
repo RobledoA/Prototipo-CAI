@@ -58,32 +58,7 @@ namespace Prototipo_CAI
                 vuelos.ShowDialog();
             }
         }
-        private void btnCrearItinerario_Click(object sender, EventArgs e)
-        {
-            if (lsvTarifas.Items.Count == 0)
-            {
-                MessageBox.Show("El carrito de productos no puede estar vacío.");
-            }
-            //Hay que ver a que pantalla te lleva este boton.
-            //Por ahora lo dejamos así:
-            else
-            {
-                Itinerarios itinerario = new Itinerarios();
-                itinerario.ShowDialog();
-            }
-        }
-        private void chkIdaVuelta_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chkIdaVuelta.Checked == true)
-            {
-                dtpFechaVuelta.Enabled = true;
-            }
-
-            if (chkIdaVuelta.Checked == false)
-            {
-                dtpFechaVuelta.Enabled = false;
-            }
-        }
+ 
         private void grpAgregarVuelos_Enter(object sender, EventArgs e)
         {
 
@@ -92,21 +67,6 @@ namespace Prototipo_CAI
         {
 
         }
-        private void button4_Click_1(object sender, EventArgs e)    //Agregar al Carrito
-        {
-            if (lsvAereos.SelectedItems.Count == 0)
-            {
-                MessageBox.Show("Debe seleccionar un producto de la lista.");
-            }
 
-            if (lsvAereos.SelectedItems.Count != 0)
-            {
-                ListViewItem item = new ListViewItem("0912");
-                item.SubItems.Add("Aéreo");
-                item.SubItems.Add("$650000");
-
-                lsvTarifas.Items.Add(item);
-            }
-        }
     }
 }

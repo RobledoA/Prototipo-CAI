@@ -77,9 +77,9 @@
             grpHoteles.Controls.Add(cmbCalifiacion);
             grpHoteles.Controls.Add(txtHabitaciones);
             grpHoteles.Controls.Add(label1);
-            grpHoteles.Location = new Point(12, 341);
+            grpHoteles.Location = new Point(12, 339);
             grpHoteles.Name = "grpHoteles";
-            grpHoteles.Size = new Size(477, 210);
+            grpHoteles.Size = new Size(477, 212);
             grpHoteles.TabIndex = 19;
             grpHoteles.TabStop = false;
             grpHoteles.Text = "Opciones de Búsqueda";
@@ -189,7 +189,6 @@
             lsvHoteles.TabIndex = 22;
             lsvHoteles.UseCompatibleStateImageBehavior = false;
             lsvHoteles.View = View.Details;
-            lsvHoteles.DoubleClick += lsvHoteles_DoubleClick;
             // 
             // hdCodigo
             // 
@@ -232,7 +231,7 @@
             // 
             // btnCrearItinerario
             // 
-            btnCrearItinerario.Location = new Point(361, 567);
+            btnCrearItinerario.Location = new Point(387, 557);
             btnCrearItinerario.Name = "btnCrearItinerario";
             btnCrearItinerario.Size = new Size(102, 26);
             btnCrearItinerario.TabIndex = 25;
@@ -253,7 +252,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1001, 653);
+            ClientSize = new Size(1005, 653);
             Controls.Add(label2);
             Controls.Add(btnCrearItinerario);
             Controls.Add(btnDetalles);

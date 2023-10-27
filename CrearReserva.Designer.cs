@@ -28,151 +28,261 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            lblNombrePasajero = new Label();
+            txtNombrePasajero = new TextBox();
+            txtDNIPasajero = new TextBox();
+            lblDNIPasajero = new Label();
+            txtPasaportePasajero = new TextBox();
+            lblPasaportePasajero = new Label();
+            dtpNacimientoP = new DateTimePicker();
+            lblFechaNacPasajero = new Label();
+            lblNacionalidadPasajero = new Label();
+            lblGeneroPasajero = new Label();
+            cmbNacionalidad = new ComboBox();
+            cmbGénero = new ComboBox();
             btnConfirmarGuardarReserva = new Button();
             btnCancelarGenerarReserva = new Button();
-            lsvGenerarReserva = new ListView();
-            contextMenuStrip2 = new ContextMenuStrip(components);
-            editarToolStripMenuItem = new ToolStripMenuItem();
-            eliminarToolStripMenuItem = new ToolStripMenuItem();
-            contextMenuStrip1 = new ContextMenuStrip(components);
+            checkedListBox1 = new CheckedListBox();
             btnAgregarPasajero = new Button();
-            lblDatapasajeros = new Label();
-            btnRefrescar = new Button();
-            label1 = new Label();
-            contextMenuStrip2.SuspendLayout();
+            listView1 = new ListView();
+            lblTarifasReserva = new Label();
+            gpbDatosPasajero = new GroupBox();
+            lblTarifasAsignadas = new Label();
+            gpbDatosPasajero.SuspendLayout();
             SuspendLayout();
+            // 
+            // lblNombrePasajero
+            // 
+            lblNombrePasajero.AutoSize = true;
+            lblNombrePasajero.Location = new Point(17, 29);
+            lblNombrePasajero.Name = "lblNombrePasajero";
+            lblNombrePasajero.Size = new Size(107, 15);
+            lblNombrePasajero.TabIndex = 0;
+            lblNombrePasajero.Text = "Nombre y Apellido";
+            // 
+            // txtNombrePasajero
+            // 
+            txtNombrePasajero.Location = new Point(17, 47);
+            txtNombrePasajero.Name = "txtNombrePasajero";
+            txtNombrePasajero.Size = new Size(216, 23);
+            txtNombrePasajero.TabIndex = 1;
+            // 
+            // txtDNIPasajero
+            // 
+            txtDNIPasajero.Location = new Point(250, 47);
+            txtDNIPasajero.Name = "txtDNIPasajero";
+            txtDNIPasajero.Size = new Size(216, 23);
+            txtDNIPasajero.TabIndex = 3;
+            // 
+            // lblDNIPasajero
+            // 
+            lblDNIPasajero.AutoSize = true;
+            lblDNIPasajero.Location = new Point(250, 29);
+            lblDNIPasajero.Name = "lblDNIPasajero";
+            lblDNIPasajero.Size = new Size(27, 15);
+            lblDNIPasajero.TabIndex = 2;
+            lblDNIPasajero.Text = "DNI";
+            // 
+            // txtPasaportePasajero
+            // 
+            txtPasaportePasajero.Location = new Point(17, 101);
+            txtPasaportePasajero.Name = "txtPasaportePasajero";
+            txtPasaportePasajero.Size = new Size(216, 23);
+            txtPasaportePasajero.TabIndex = 5;
+            // 
+            // lblPasaportePasajero
+            // 
+            lblPasaportePasajero.AutoSize = true;
+            lblPasaportePasajero.Location = new Point(17, 83);
+            lblPasaportePasajero.Name = "lblPasaportePasajero";
+            lblPasaportePasajero.Size = new Size(174, 15);
+            lblPasaportePasajero.TabIndex = 4;
+            lblPasaportePasajero.Text = "N° Pasaporte (De corresponder)";
+            // 
+            // dtpNacimientoP
+            // 
+            dtpNacimientoP.Location = new Point(250, 101);
+            dtpNacimientoP.Name = "dtpNacimientoP";
+            dtpNacimientoP.Size = new Size(216, 23);
+            dtpNacimientoP.TabIndex = 6;
+            // 
+            // lblFechaNacPasajero
+            // 
+            lblFechaNacPasajero.AutoSize = true;
+            lblFechaNacPasajero.Location = new Point(249, 83);
+            lblFechaNacPasajero.Name = "lblFechaNacPasajero";
+            lblFechaNacPasajero.Size = new Size(119, 15);
+            lblFechaNacPasajero.TabIndex = 7;
+            lblFechaNacPasajero.Text = "Fecha de Nacimiento";
+            // 
+            // lblNacionalidadPasajero
+            // 
+            lblNacionalidadPasajero.AutoSize = true;
+            lblNacionalidadPasajero.Location = new Point(14, 131);
+            lblNacionalidadPasajero.Name = "lblNacionalidadPasajero";
+            lblNacionalidadPasajero.Size = new Size(77, 15);
+            lblNacionalidadPasajero.TabIndex = 8;
+            lblNacionalidadPasajero.Text = "Nacionalidad";
+            // 
+            // lblGeneroPasajero
+            // 
+            lblGeneroPasajero.AutoSize = true;
+            lblGeneroPasajero.Location = new Point(249, 131);
+            lblGeneroPasajero.Name = "lblGeneroPasajero";
+            lblGeneroPasajero.Size = new Size(45, 15);
+            lblGeneroPasajero.TabIndex = 10;
+            lblGeneroPasajero.Text = "Género";
+            // 
+            // cmbNacionalidad
+            // 
+            cmbNacionalidad.FormattingEnabled = true;
+            cmbNacionalidad.Items.AddRange(new object[] { "Argentino", "Peruano", "Brasileño", "Paraguayo", "Uruguayo" });
+            cmbNacionalidad.Location = new Point(17, 149);
+            cmbNacionalidad.Name = "cmbNacionalidad";
+            cmbNacionalidad.Size = new Size(216, 23);
+            cmbNacionalidad.TabIndex = 11;
+            // 
+            // cmbGénero
+            // 
+            cmbGénero.FormattingEnabled = true;
+            cmbGénero.Items.AddRange(new object[] { "Masculino", "Femenino" });
+            cmbGénero.Location = new Point(250, 149);
+            cmbGénero.Name = "cmbGénero";
+            cmbGénero.Size = new Size(216, 23);
+            cmbGénero.TabIndex = 12;
             // 
             // btnConfirmarGuardarReserva
             // 
             btnConfirmarGuardarReserva.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnConfirmarGuardarReserva.Location = new Point(690, 254);
+            btnConfirmarGuardarReserva.Location = new Point(525, 545);
             btnConfirmarGuardarReserva.Name = "btnConfirmarGuardarReserva";
             btnConfirmarGuardarReserva.Size = new Size(155, 34);
-            btnConfirmarGuardarReserva.TabIndex = 15;
-            btnConfirmarGuardarReserva.Text = "Confirmar y Guardar";
+            btnConfirmarGuardarReserva.TabIndex = 18;
+            btnConfirmarGuardarReserva.Text = "Confirmar y Agregar";
             btnConfirmarGuardarReserva.UseVisualStyleBackColor = true;
-            btnConfirmarGuardarReserva.Click += btnConfirmarGuardarReserva_Click;
             // 
             // btnCancelarGenerarReserva
             // 
             btnCancelarGenerarReserva.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCancelarGenerarReserva.Location = new Point(851, 254);
+            btnCancelarGenerarReserva.Location = new Point(684, 545);
             btnCancelarGenerarReserva.Name = "btnCancelarGenerarReserva";
-            btnCancelarGenerarReserva.Size = new Size(128, 34);
-            btnCancelarGenerarReserva.TabIndex = 14;
+            btnCancelarGenerarReserva.Size = new Size(155, 34);
+            btnCancelarGenerarReserva.TabIndex = 19;
             btnCancelarGenerarReserva.Text = "Cancelar";
             btnCancelarGenerarReserva.UseVisualStyleBackColor = true;
-            btnCancelarGenerarReserva.Click += btnCancelarGenerarReserva_Click;
             // 
-            // lsvGenerarReserva
+            // checkedListBox1
             // 
-            lsvGenerarReserva.ContextMenuStrip = contextMenuStrip2;
-            lsvGenerarReserva.Cursor = Cursors.Hand;
-            lsvGenerarReserva.Location = new Point(12, 45);
-            lsvGenerarReserva.Name = "lsvGenerarReserva";
-            lsvGenerarReserva.Size = new Size(967, 203);
-            lsvGenerarReserva.TabIndex = 13;
-            lsvGenerarReserva.UseCompatibleStateImageBehavior = false;
-            lsvGenerarReserva.View = View.Details;
-            lsvGenerarReserva.SelectedIndexChanged += lsvGenerarReserva_SelectedIndexChanged;
-            // 
-            // contextMenuStrip2
-            // 
-            contextMenuStrip2.Items.AddRange(new ToolStripItem[] { editarToolStripMenuItem, eliminarToolStripMenuItem });
-            contextMenuStrip2.Name = "contextMenuStrip2";
-            contextMenuStrip2.Size = new Size(118, 48);
-            // 
-            // editarToolStripMenuItem
-            // 
-            editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            editarToolStripMenuItem.Size = new Size(117, 22);
-            editarToolStripMenuItem.Text = "Editar";
-            // 
-            // eliminarToolStripMenuItem
-            // 
-            eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            eliminarToolStripMenuItem.Size = new Size(117, 22);
-            eliminarToolStripMenuItem.Text = "Eliminar";
-            // 
-            // contextMenuStrip1
-            // 
-            contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(61, 4);
+            checkedListBox1.FormattingEnabled = true;
+            checkedListBox1.Location = new Point(491, 42);
+            checkedListBox1.Name = "checkedListBox1";
+            checkedListBox1.Size = new Size(320, 184);
+            checkedListBox1.TabIndex = 20;
             // 
             // btnAgregarPasajero
             // 
-            btnAgregarPasajero.Location = new Point(110, 16);
+            btnAgregarPasajero.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAgregarPasajero.Location = new Point(311, 192);
             btnAgregarPasajero.Name = "btnAgregarPasajero";
-            btnAgregarPasajero.Size = new Size(128, 23);
-            btnAgregarPasajero.TabIndex = 12;
-            btnAgregarPasajero.Text = "Agregar pasajero";
+            btnAgregarPasajero.RightToLeft = RightToLeft.Yes;
+            btnAgregarPasajero.Size = new Size(155, 34);
+            btnAgregarPasajero.TabIndex = 21;
+            btnAgregarPasajero.Text = "Agregar Pasajero";
             btnAgregarPasajero.UseVisualStyleBackColor = true;
-            btnAgregarPasajero.Click += btnAgregarPasajero_Click;
             // 
-            // lblDatapasajeros
+            // listView1
             // 
-            lblDatapasajeros.AutoSize = true;
-            lblDatapasajeros.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            lblDatapasajeros.Location = new Point(12, 9);
-            lblDatapasajeros.Name = "lblDatapasajeros";
-            lblDatapasajeros.Size = new Size(102, 28);
-            lblDatapasajeros.TabIndex = 11;
-            lblDatapasajeros.Text = " Pasajeros ";
+            listView1.Location = new Point(12, 40);
+            listView1.Name = "listView1";
+            listView1.Size = new Size(827, 251);
+            listView1.TabIndex = 22;
+            listView1.UseCompatibleStateImageBehavior = false;
             // 
-            // btnRefrescar
+            // lblTarifasReserva
             // 
-            btnRefrescar.Location = new Point(244, 16);
-            btnRefrescar.Name = "btnRefrescar";
-            btnRefrescar.Size = new Size(128, 23);
-            btnRefrescar.TabIndex = 16;
-            btnRefrescar.Text = "Refrescar Lista";
-            btnRefrescar.UseVisualStyleBackColor = true;
-            btnRefrescar.Click += btnRefrescar_Click;
+            lblTarifasReserva.AutoSize = true;
+            lblTarifasReserva.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTarifasReserva.Location = new Point(12, 9);
+            lblTarifasReserva.Name = "lblTarifasReserva";
+            lblTarifasReserva.Size = new Size(66, 28);
+            lblTarifasReserva.TabIndex = 23;
+            lblTarifasReserva.Text = "Tarifas";
             // 
-            // label1
+            // gpbDatosPasajero
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(392, 20);
-            label1.Name = "label1";
-            label1.Size = new Size(209, 15);
-            label1.TabIndex = 17;
-            label1.Text = "lista de tarifas con pasajeros asociados";
+            gpbDatosPasajero.Controls.Add(lblTarifasAsignadas);
+            gpbDatosPasajero.Controls.Add(txtDNIPasajero);
+            gpbDatosPasajero.Controls.Add(lblNombrePasajero);
+            gpbDatosPasajero.Controls.Add(txtNombrePasajero);
+            gpbDatosPasajero.Controls.Add(checkedListBox1);
+            gpbDatosPasajero.Controls.Add(btnAgregarPasajero);
+            gpbDatosPasajero.Controls.Add(lblDNIPasajero);
+            gpbDatosPasajero.Controls.Add(lblPasaportePasajero);
+            gpbDatosPasajero.Controls.Add(txtPasaportePasajero);
+            gpbDatosPasajero.Controls.Add(dtpNacimientoP);
+            gpbDatosPasajero.Controls.Add(cmbGénero);
+            gpbDatosPasajero.Controls.Add(lblFechaNacPasajero);
+            gpbDatosPasajero.Controls.Add(cmbNacionalidad);
+            gpbDatosPasajero.Controls.Add(lblNacionalidadPasajero);
+            gpbDatosPasajero.Controls.Add(lblGeneroPasajero);
+            gpbDatosPasajero.Location = new Point(12, 297);
+            gpbDatosPasajero.Name = "gpbDatosPasajero";
+            gpbDatosPasajero.Size = new Size(827, 242);
+            gpbDatosPasajero.TabIndex = 24;
+            gpbDatosPasajero.TabStop = false;
+            gpbDatosPasajero.Text = "Datos Pasajero";
+            // 
+            // lblTarifasAsignadas
+            // 
+            lblTarifasAsignadas.AutoSize = true;
+            lblTarifasAsignadas.Location = new Point(491, 24);
+            lblTarifasAsignadas.Name = "lblTarifasAsignadas";
+            lblTarifasAsignadas.Size = new Size(97, 15);
+            lblTarifasAsignadas.TabIndex = 22;
+            lblTarifasAsignadas.Text = "Tarifas Asignadas";
             // 
             // CrearReserva
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(994, 297);
-            Controls.Add(label1);
-            Controls.Add(btnRefrescar);
-            Controls.Add(btnConfirmarGuardarReserva);
+            ClientSize = new Size(851, 586);
+            Controls.Add(gpbDatosPasajero);
+            Controls.Add(lblTarifasReserva);
+            Controls.Add(listView1);
             Controls.Add(btnCancelarGenerarReserva);
-            Controls.Add(lsvGenerarReserva);
-            Controls.Add(btnAgregarPasajero);
-            Controls.Add(lblDatapasajeros);
+            Controls.Add(btnConfirmarGuardarReserva);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             Name = "CrearReserva";
-            Text = "CrearReserva";
+            Text = "Crear Reserva";
             Load += CrearReserva_Load;
-            contextMenuStrip2.ResumeLayout(false);
+            gpbDatosPasajero.ResumeLayout(false);
+            gpbDatosPasajero.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
+        private Label lblNombrePasajero;
+        private TextBox txtNombrePasajero;
+        private TextBox txtDNIPasajero;
+        private Label lblDNIPasajero;
+        private TextBox txtPasaportePasajero;
+        private Label lblPasaportePasajero;
+        private DateTimePicker dtpNacimientoP;
+        private Label lblFechaNacPasajero;
+        private Label lblNacionalidadPasajero;
+        private Label lblGeneroPasajero;
+        private ComboBox cmbNacionalidad;
+        private ComboBox cmbGénero;
         private Button btnConfirmarGuardarReserva;
         private Button btnCancelarGenerarReserva;
-        private ListView lsvGenerarReserva;
+        private CheckedListBox checkedListBox1;
         private Button btnAgregarPasajero;
-        private Label lblDatapasajeros;
-        private ContextMenuStrip contextMenuStrip1;
-        private ContextMenuStrip contextMenuStrip2;
-        private ToolStripMenuItem editarToolStripMenuItem;
-        private ToolStripMenuItem eliminarToolStripMenuItem;
-        private Button btnRefrescar;
-        private Label label1;
+        private ListView listView1;
+        private Label lblTarifasReserva;
+        private GroupBox gpbDatosPasajero;
+        private Label lblTarifasAsignadas;
     }
 }
