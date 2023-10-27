@@ -192,6 +192,8 @@
             Controls.Add(lblDireccion);
             Controls.Add(lblNombreHotel);
             Controls.Add(lsvServExtraHoteles);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "Habitaciones";
             Text = "Habitaciones";
             Load += Habitaciones_Load;

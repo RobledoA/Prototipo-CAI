@@ -134,6 +134,8 @@
             Controls.Add(btnConfirmarReserva);
             Controls.Add(btnNuevaReserva);
             Controls.Add(lsvReservas);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "Reservas";
             Text = "Reservas";
             Load += Reservas_Load;

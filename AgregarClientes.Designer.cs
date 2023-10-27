@@ -99,6 +99,8 @@
             Controls.Add(lblNombreCliente);
             Controls.Add(txtCuilCuit);
             Controls.Add(txtNombreCliente);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "AgregarClientes";
             Text = "AgregarClientes";
             ResumeLayout(false);

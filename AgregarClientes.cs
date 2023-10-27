@@ -19,10 +19,16 @@ namespace Prototipo_CAI
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+
             if (string.IsNullOrWhiteSpace(txtNombreCliente.Text) && string.IsNullOrWhiteSpace(txtCuilCuit.Text))
             {
                 MessageBox.Show("Debe completar al menos un campo.", "Error");
             }
+            else if (!int.TryParse(txtCuilCuit.Text, out int salida))
+            {
+                MessageBox.Show("El cuil/cuit debe ser un número.", "Error");
+            }
+
             else
             {
                 MessageBox.Show($"Se ha creado el itinerario correctamente. Su código de itinerario es {1}.", "Itinerario Creado");

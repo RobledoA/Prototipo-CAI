@@ -455,7 +455,9 @@
             Controls.Add(grpAgregarHoteles);
             Controls.Add(grpHoteles);
             Controls.Add(lblHoteles);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(3, 2, 3, 2);
+            MaximizeBox = false;
             Name = "Hoteles";
             Text = "Hoteles";
             Load += Hoteles_Load;

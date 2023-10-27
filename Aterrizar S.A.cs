@@ -11,7 +11,7 @@ namespace Prototipo_CAI
         }
         private void btnProdDisponibles_Click(object sender, EventArgs e)
         {
-            ProductosDisponibles productosDisponibles = new ProductosDisponibles();
+            ProductosDisponibles productosDisponibles = new();
             productosDisponibles.ShowDialog();
         }
 
@@ -22,15 +22,19 @@ namespace Prototipo_CAI
 
         private void btnItinerarios_Click(object sender, EventArgs e)
         {
-            Itinerario itinerario = new Itinerario();
+            Itinerarios itinerario = new();
             itinerario.ShowDialog();
         }
 
         private void btnReservas_Click(object sender, EventArgs e)
         {
-            Reservas reservas = new Reservas();
+            Reservas reservas = new();
             reservas.ShowDialog();
         }
 
+    }
+
+    public class Class1
+    {
     }
 }

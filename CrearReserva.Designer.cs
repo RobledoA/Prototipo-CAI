@@ -140,6 +140,8 @@
             Controls.Add(lsvGenerarReserva);
             Controls.Add(btnAgregarPasajero);
             Controls.Add(lblDatapasajeros);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "CrearReserva";
             Text = "CrearReserva";
             Load += CrearReserva_Load;

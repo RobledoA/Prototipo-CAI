@@ -199,6 +199,8 @@
             Controls.Add(label2);
             Controls.Add(txtNombrep);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "DatosPasajeros";
             Text = "DatosPasajeros";
             Load += DatosPasajeros_Load;

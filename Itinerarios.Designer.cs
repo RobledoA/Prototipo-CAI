@@ -1,6 +1,6 @@
 ﻿namespace Prototipo_CAI
 {
-    partial class Itinerario
+    partial class Itinerarios
     {
         /// <summary>
         /// Required designer variable.
@@ -38,7 +38,7 @@
             fileSystemWatcher1 = new FileSystemWatcher();
             txtBuscarItinerario = new TextBox();
             btnBuscarItinerario = new Button();
-            label1 = new Label();
+            lblItinerarios = new Label();
             btnCrearReserva = new Button();
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).BeginInit();
             SuspendLayout();
@@ -126,16 +126,16 @@
             btnBuscarItinerario.UseVisualStyleBackColor = true;
             btnBuscarItinerario.Click += btnBuscarItinerario_Click;
             // 
-            // label1
+            // lblItinerarios
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(26, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(96, 30);
-            label1.TabIndex = 10;
-            label1.Text = "Itinerario";
-            label1.Click += label1_Click;
+            lblItinerarios.AutoSize = true;
+            lblItinerarios.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblItinerarios.Location = new Point(26, 9);
+            lblItinerarios.Name = "lblItinerarios";
+            lblItinerarios.Size = new Size(105, 30);
+            lblItinerarios.TabIndex = 10;
+            lblItinerarios.Text = "Itinerarios";
+            lblItinerarios.Click += label1_Click;
             // 
             // btnCrearReserva
             // 
@@ -148,22 +148,24 @@
             btnCrearReserva.UseVisualStyleBackColor = true;
             btnCrearReserva.Click += btnCrearReserva_Click;
             // 
-            // Itinerario
+            // Itinerarios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(655, 269);
             Controls.Add(btnCrearReserva);
-            Controls.Add(label1);
+            Controls.Add(lblItinerarios);
             Controls.Add(txtBuscarItinerario);
             Controls.Add(btnBuscarItinerario);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(lsvItinerario);
-            Name = "Itinerario";
-            Text = "Itinerario";
-            Load += Itinerario_Load;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            Name = "Itinerarios";
+            Text = "Itinerarios";
+            Load += Itinerarios_Load;
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -181,7 +183,7 @@
         private FileSystemWatcher fileSystemWatcher1;
         private TextBox txtBuscarItinerario;
         private Button btnBuscarItinerario;
-        private Label label1;
+        private Label lblItinerarios;
         private Button btnCrearReserva;
     }
 }

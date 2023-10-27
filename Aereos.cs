@@ -68,7 +68,7 @@ namespace Prototipo_CAI
             //Por ahora lo dejamos así:
             else
             {
-                Itinerario itinerario = new Itinerario();
+                Itinerarios itinerario = new Itinerarios();
                 itinerario.ShowDialog();
             }
         }

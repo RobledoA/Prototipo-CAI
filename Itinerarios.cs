@@ -11,9 +11,9 @@ using System.IO;
 
 namespace Prototipo_CAI
 {
-    public partial class Itinerario : Form
+    public partial class Itinerarios : Form
     {
-        public Itinerario()
+        public Itinerarios()
         {
             InitializeComponent();
             lsvItinerario.SelectedIndexChanged += lsvItinerario_SelectedIndexChanged;
@@ -24,15 +24,15 @@ namespace Prototipo_CAI
 
         }
 
-        private void Itinerario_Load(object sender, EventArgs e)
+        private void Itinerarios_Load(object sender, EventArgs e)
         {
-            FileInfo fi = new FileInfo("itinerario.txt");
+            FileInfo fi = new("itinerario.txt");
             StreamReader sr = fi.OpenText();
             while (!sr.EndOfStream)
             {
                 string linea = sr.ReadLine();
                 string[] vector = linea.Split(';');
-                ListViewItem item = new ListViewItem(vector[0]);
+                ListViewItem item = new(vector[0]);
                 item.SubItems.Add(vector[1]);
                 item.SubItems.Add(vector[2]);
                 lsvItinerario.Items.Add(item);
@@ -95,13 +95,13 @@ namespace Prototipo_CAI
             else
             {
                 lsvItinerario.Items.Clear();
-                FileInfo fi = new FileInfo("itinerario.txt");
+                FileInfo fi = new("itinerario.txt");
                 StreamReader sr = fi.OpenText();
                 while (!sr.EndOfStream)
                 {
                     string linea = sr.ReadLine();
                     string[] vector = linea.Split(';');
-                    ListViewItem item = new ListViewItem(vector[0]);
+                    ListViewItem item = new(vector[0]);
                     item.SubItems.Add(vector[1]);
                     item.SubItems.Add(vector[2]);
                     lsvItinerario.Items.Add(item);
@@ -133,9 +133,9 @@ namespace Prototipo_CAI
         private void btnCrearReserva_Click(object sender, EventArgs e)
         {
 
-            if(lsvItinerario.SelectedItems.Count > 0)
+            if (lsvItinerario.SelectedItems.Count > 0)
             {
-                CrearReserva crearReserva = new CrearReserva();
+                CrearReserva crearReserva = new();
 
                 crearReserva.ShowDialog();
             }
@@ -146,4 +146,5 @@ namespace Prototipo_CAI
 
         }
     }
+
 }

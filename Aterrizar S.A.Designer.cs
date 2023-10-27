@@ -74,6 +74,8 @@
             Controls.Add(btnReservas);
             Controls.Add(btnProdDisponibles);
             Controls.Add(btnItinerarios);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "Form1";
             Text = "Aterrizar S.A.";
             Load += Form1_Load;

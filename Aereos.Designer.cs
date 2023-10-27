@@ -425,6 +425,8 @@
             Controls.Add(btnCrearItinerario);
             Controls.Add(btnDetalles);
             Controls.Add(lsvAereos);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "Aereos";
             Text = "Productos Disponibles";
             Load += Aereos_Load;

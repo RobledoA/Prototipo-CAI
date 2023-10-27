@@ -35,10 +35,9 @@
             // btnAereos
             // 
             btnAereos.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            btnAereos.Location = new Point(66, 43);
-            btnAereos.Margin = new Padding(3, 4, 3, 4);
+            btnAereos.Location = new Point(58, 32);
             btnAereos.Name = "btnAereos";
-            btnAereos.Size = new Size(273, 69);
+            btnAereos.Size = new Size(239, 52);
             btnAereos.TabIndex = 2;
             btnAereos.Text = "Aéreos";
             btnAereos.UseVisualStyleBackColor = true;
@@ -47,10 +46,9 @@
             // btnHoteles
             // 
             btnHoteles.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            btnHoteles.Location = new Point(66, 139);
-            btnHoteles.Margin = new Padding(3, 4, 3, 4);
+            btnHoteles.Location = new Point(58, 104);
             btnHoteles.Name = "btnHoteles";
-            btnHoteles.Size = new Size(273, 69);
+            btnHoteles.Size = new Size(239, 52);
             btnHoteles.TabIndex = 3;
             btnHoteles.Text = "Hoteles";
             btnHoteles.UseVisualStyleBackColor = true;
@@ -58,11 +56,14 @@
             // 
             // ProductosDisponibles
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(404, 248);
+            ClientSize = new Size(354, 186);
             Controls.Add(btnHoteles);
             Controls.Add(btnAereos);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(3, 2, 3, 2);
+            MaximizeBox = false;
             Name = "ProductosDisponibles";
             Text = "Productos Disponibles";
             ResumeLayout(false);

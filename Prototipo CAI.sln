@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prototipo CAI", "Prototipo CAI.csproj", "{7D6F507F-8AC5-4E98-9B96-B733412CE8EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prototipo CAI", "Prototipo CAI.csproj", "{7D6F507F-8AC5-4E98-9B96-B733412CE8EC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B8DE12A2-5E89-4051-A7F9-F7F52BDA61CE}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

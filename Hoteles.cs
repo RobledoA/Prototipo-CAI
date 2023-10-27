@@ -52,7 +52,7 @@ namespace Prototipo_CAI
                 MessageBox.Show(codProducto);
                 ListViewItem list = new ListViewItem(codProducto);
 
-                
+
             }
 
             if (lsvHoteles.SelectedItems.Count > 0)

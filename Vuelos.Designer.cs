@@ -46,13 +46,13 @@
             label8 = new Label();
             label9 = new Label();
             listView1 = new ListView();
-            listView2 = new ListView();
-            button3 = new Button();
             columnHeader1 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
+            listView2 = new ListView();
             columnHeader3 = new ColumnHeader();
             columnHeader4 = new ColumnHeader();
             columnHeader5 = new ColumnHeader();
+            button3 = new Button();
             listView3 = new ListView();
             columnHeader6 = new ColumnHeader();
             columnHeader7 = new ColumnHeader();
@@ -210,25 +210,6 @@
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
             // 
-            // listView2
-            // 
-            listView2.Columns.AddRange(new ColumnHeader[] { columnHeader3, columnHeader4, columnHeader5 });
-            listView2.Location = new Point(78, 444);
-            listView2.Name = "listView2";
-            listView2.Size = new Size(453, 97);
-            listView2.TabIndex = 22;
-            listView2.UseCompatibleStateImageBehavior = false;
-            listView2.View = View.Details;
-            // 
-            // button3
-            // 
-            button3.Location = new Point(424, 547);
-            button3.Name = "button3";
-            button3.Size = new Size(107, 29);
-            button3.TabIndex = 23;
-            button3.Text = "Salir";
-            button3.UseVisualStyleBackColor = true;
-            // 
             // columnHeader1
             // 
             columnHeader1.Text = "Aeropuerto";
@@ -238,6 +219,16 @@
             // 
             columnHeader2.Text = "Tiempo";
             columnHeader2.Width = 120;
+            // 
+            // listView2
+            // 
+            listView2.Columns.AddRange(new ColumnHeader[] { columnHeader3, columnHeader4, columnHeader5 });
+            listView2.Location = new Point(78, 444);
+            listView2.Name = "listView2";
+            listView2.Size = new Size(453, 97);
+            listView2.TabIndex = 22;
+            listView2.UseCompatibleStateImageBehavior = false;
+            listView2.View = View.Details;
             // 
             // columnHeader3
             // 
@@ -252,6 +243,15 @@
             // 
             columnHeader5.Text = "Tarifa ";
             columnHeader5.Width = 120;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(424, 547);
+            button3.Name = "button3";
+            button3.Size = new Size(107, 29);
+            button3.TabIndex = 23;
+            button3.Text = "Salir";
+            button3.UseVisualStyleBackColor = true;
             // 
             // listView3
             // 
@@ -309,6 +309,8 @@
             Controls.Add(label1);
             Controls.Add(textBox1);
             Controls.Add(lblCodVuelo);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "Vuelos";
             Text = "Vuelos";
             ResumeLayout(false);
