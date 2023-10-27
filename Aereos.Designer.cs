@@ -28,16 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ComboBox comboBox4;
             lsvAereos = new ListView();
             btnDetalles = new Button();
-            btnCrearItinerario = new Button();
-            button3 = new Button();
             grpAereos = new GroupBox();
-            chkIdaVuelta = new CheckBox();
             btnBuscarAereos = new Button();
-            label6 = new Label();
-            txtPasajeros = new TextBox();
             label5 = new Label();
             dtpFechaVuelta = new DateTimePicker();
             label2 = new Label();
@@ -46,39 +40,16 @@
             txtDestino = new TextBox();
             label3 = new Label();
             txtOrigen = new TextBox();
-            grpAgregarVuelos = new GroupBox();
-            lblinfantes = new Label();
-            comboBox6 = new ComboBox();
-            lblMenores = new Label();
-            comboBox5 = new ComboBox();
-            label13 = new Label();
-            lblContadorasientos = new Label();
-            label15 = new Label();
-            label17 = new Label();
-            label14 = new Label();
-            button4 = new Button();
-            comboBox3 = new ComboBox();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            grpTarifa = new GroupBox();
-            lsvTarifas = new ListView();
-            hdCodProd = new ColumnHeader();
-            hdTipoProducto = new ColumnHeader();
-            hdTarifa = new ColumnHeader();
             lbTitleProdDisponibles = new Label();
-            comboBox4 = new ComboBox();
+            btnAgregarItinerario = new Button();
+            cbClase = new ComboBox();
+            lblClase = new Label();
+            cbTipoPasajero = new ComboBox();
+            lblTipoPasajero = new Label();
+            label1 = new Label();
             grpAereos.SuspendLayout();
-            grpAgregarVuelos.SuspendLayout();
-            grpTarifa.SuspendLayout();
             SuspendLayout();
-            // 
-            // comboBox4
-            // 
-            comboBox4.Cursor = Cursors.Hand;
-            comboBox4.FormattingEnabled = true;
-            comboBox4.Location = new Point(13, 115);
-            comboBox4.Name = "comboBox4";
-            comboBox4.Size = new Size(196, 23);
-            comboBox4.TabIndex = 24;
             // 
             // lsvAereos
             // 
@@ -101,32 +72,12 @@
             btnDetalles.UseVisualStyleBackColor = true;
             btnDetalles.Click += btnDetalles_Click;
             // 
-            // btnCrearItinerario
-            // 
-            btnCrearItinerario.Location = new Point(991, 561);
-            btnCrearItinerario.Name = "btnCrearItinerario";
-            btnCrearItinerario.Size = new Size(115, 26);
-            btnCrearItinerario.TabIndex = 7;
-            btnCrearItinerario.Text = "Crear Itinerario";
-            btnCrearItinerario.UseVisualStyleBackColor = true;
-            btnCrearItinerario.Click += btnCrearItinerario_Click;
-            // 
-            // button3
-            // 
-            button3.Location = new Point(997, 240);
-            button3.Name = "button3";
-            button3.Size = new Size(115, 47);
-            button3.TabIndex = 9;
-            button3.Text = "Salir";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click_1;
-            // 
             // grpAereos
             // 
-            grpAereos.Controls.Add(chkIdaVuelta);
-            grpAereos.Controls.Add(btnBuscarAereos);
-            grpAereos.Controls.Add(label6);
-            grpAereos.Controls.Add(txtPasajeros);
+            grpAereos.Controls.Add(lblTipoPasajero);
+            grpAereos.Controls.Add(cbTipoPasajero);
+            grpAereos.Controls.Add(cbClase);
+            grpAereos.Controls.Add(lblClase);
             grpAereos.Controls.Add(label5);
             grpAereos.Controls.Add(dtpFechaVuelta);
             grpAereos.Controls.Add(label2);
@@ -137,47 +88,20 @@
             grpAereos.Controls.Add(txtOrigen);
             grpAereos.Location = new Point(22, 331);
             grpAereos.Name = "grpAereos";
-            grpAereos.Size = new Size(477, 210);
+            grpAereos.Size = new Size(477, 274);
             grpAereos.TabIndex = 11;
             grpAereos.TabStop = false;
             grpAereos.Text = "Opciones de Búsqueda";
             // 
-            // chkIdaVuelta
-            // 
-            chkIdaVuelta.AutoSize = true;
-            chkIdaVuelta.Location = new Point(36, 180);
-            chkIdaVuelta.Name = "chkIdaVuelta";
-            chkIdaVuelta.Size = new Size(87, 19);
-            chkIdaVuelta.TabIndex = 24;
-            chkIdaVuelta.Text = "Ida y Vuelta";
-            chkIdaVuelta.UseVisualStyleBackColor = true;
-            chkIdaVuelta.CheckedChanged += chkIdaVuelta_CheckedChanged;
-            // 
             // btnBuscarAereos
             // 
-            btnBuscarAereos.Location = new Point(242, 150);
+            btnBuscarAereos.Location = new Point(505, 433);
             btnBuscarAereos.Margin = new Padding(3, 2, 3, 2);
             btnBuscarAereos.Name = "btnBuscarAereos";
             btnBuscarAereos.Size = new Size(31, 31);
             btnBuscarAereos.TabIndex = 14;
             btnBuscarAereos.Text = "🔍";
             btnBuscarAereos.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(34, 136);
-            label6.Name = "label6";
-            label6.Size = new Size(123, 15);
-            label6.TabIndex = 11;
-            label6.Text = "Cantidad de Pasajeros";
-            // 
-            // txtPasajeros
-            // 
-            txtPasajeros.Location = new Point(35, 154);
-            txtPasajeros.Name = "txtPasajeros";
-            txtPasajeros.Size = new Size(200, 23);
-            txtPasajeros.TabIndex = 10;
             // 
             // label5
             // 
@@ -245,163 +169,6 @@
             txtOrigen.Size = new Size(199, 23);
             txtOrigen.TabIndex = 2;
             // 
-            // grpAgregarVuelos
-            // 
-            grpAgregarVuelos.Controls.Add(lblinfantes);
-            grpAgregarVuelos.Controls.Add(comboBox6);
-            grpAgregarVuelos.Controls.Add(lblMenores);
-            grpAgregarVuelos.Controls.Add(comboBox5);
-            grpAgregarVuelos.Controls.Add(label13);
-            grpAgregarVuelos.Controls.Add(comboBox4);
-            grpAgregarVuelos.Controls.Add(lblContadorasientos);
-            grpAgregarVuelos.Controls.Add(label15);
-            grpAgregarVuelos.Controls.Add(label17);
-            grpAgregarVuelos.Controls.Add(label14);
-            grpAgregarVuelos.Controls.Add(button4);
-            grpAgregarVuelos.Controls.Add(comboBox3);
-            grpAgregarVuelos.Location = new Point(504, 321);
-            grpAgregarVuelos.Margin = new Padding(3, 2, 3, 2);
-            grpAgregarVuelos.Name = "grpAgregarVuelos";
-            grpAgregarVuelos.Padding = new Padding(3, 2, 3, 2);
-            grpAgregarVuelos.Size = new Size(224, 282);
-            grpAgregarVuelos.TabIndex = 15;
-            grpAgregarVuelos.TabStop = false;
-            grpAgregarVuelos.Text = "Carrito";
-            grpAgregarVuelos.Enter += grpAgregarVuelos_Enter;
-            // 
-            // lblinfantes
-            // 
-            lblinfantes.AutoSize = true;
-            lblinfantes.Location = new Point(13, 192);
-            lblinfantes.Name = "lblinfantes";
-            lblinfantes.Size = new Size(49, 15);
-            lblinfantes.TabIndex = 29;
-            lblinfantes.Text = "Infantes";
-            // 
-            // comboBox6
-            // 
-            comboBox6.FormattingEnabled = true;
-            comboBox6.Location = new Point(13, 211);
-            comboBox6.Name = "comboBox6";
-            comboBox6.Size = new Size(196, 23);
-            comboBox6.TabIndex = 28;
-            // 
-            // lblMenores
-            // 
-            lblMenores.AutoSize = true;
-            lblMenores.Location = new Point(13, 145);
-            lblMenores.Name = "lblMenores";
-            lblMenores.Size = new Size(53, 15);
-            lblMenores.TabIndex = 27;
-            lblMenores.Text = "Menores";
-            // 
-            // comboBox5
-            // 
-            comboBox5.FormattingEnabled = true;
-            comboBox5.Location = new Point(13, 164);
-            comboBox5.Name = "comboBox5";
-            comboBox5.Size = new Size(196, 23);
-            comboBox5.TabIndex = 26;
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Location = new Point(13, 96);
-            label13.Name = "label13";
-            label13.Size = new Size(52, 15);
-            label13.TabIndex = 25;
-            label13.Text = "Mayores";
-            // 
-            // lblContadorasientos
-            // 
-            lblContadorasientos.AutoSize = true;
-            lblContadorasientos.Location = new Point(125, 75);
-            lblContadorasientos.Name = "lblContadorasientos";
-            lblContadorasientos.Size = new Size(13, 15);
-            lblContadorasientos.TabIndex = 23;
-            lblContadorasientos.Text = "0";
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Location = new Point(13, 83);
-            label15.Name = "label15";
-            label15.Size = new Size(0, 15);
-            label15.TabIndex = 19;
-            // 
-            // label17
-            // 
-            label17.AutoSize = true;
-            label17.Location = new Point(10, 74);
-            label17.Name = "label17";
-            label17.Size = new Size(119, 15);
-            label17.TabIndex = 22;
-            label17.Text = "Asientos Disponibles:";
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Location = new Point(13, 29);
-            label14.Name = "label14";
-            label14.Size = new Size(40, 15);
-            label14.TabIndex = 23;
-            label14.Text = "Clases";
-            // 
-            // button4
-            // 
-            button4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            button4.Location = new Point(13, 243);
-            button4.Name = "button4";
-            button4.Size = new Size(196, 26);
-            button4.TabIndex = 13;
-            button4.Text = "Agregar al Carrito \U0001f6d2";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click_1;
-            // 
-            // comboBox3
-            // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Items.AddRange(new object[] { "Economy", "Premium", "Business", "First" });
-            comboBox3.Location = new Point(13, 48);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(196, 23);
-            comboBox3.TabIndex = 22;
-            // 
-            // grpTarifa
-            // 
-            grpTarifa.Controls.Add(lsvTarifas);
-            grpTarifa.Location = new Point(744, 328);
-            grpTarifa.Name = "grpTarifa";
-            grpTarifa.Size = new Size(377, 224);
-            grpTarifa.TabIndex = 16;
-            grpTarifa.TabStop = false;
-            grpTarifa.Text = "Tarifas";
-            // 
-            // lsvTarifas
-            // 
-            lsvTarifas.Columns.AddRange(new ColumnHeader[] { hdCodProd, hdTipoProducto, hdTarifa });
-            lsvTarifas.Location = new Point(5, 29);
-            lsvTarifas.Name = "lsvTarifas";
-            lsvTarifas.Size = new Size(367, 181);
-            lsvTarifas.TabIndex = 0;
-            lsvTarifas.UseCompatibleStateImageBehavior = false;
-            lsvTarifas.View = View.Details;
-            // 
-            // hdCodProd
-            // 
-            hdCodProd.Text = "Código Producto";
-            hdCodProd.Width = 150;
-            // 
-            // hdTipoProducto
-            // 
-            hdTipoProducto.Text = "Producto";
-            hdTipoProducto.Width = 120;
-            // 
-            // hdTarifa
-            // 
-            hdTarifa.Text = "Tarifa";
-            hdTarifa.Width = 120;
-            // 
             // lbTitleProdDisponibles
             // 
             lbTitleProdDisponibles.AutoSize = true;
@@ -412,17 +179,70 @@
             lbTitleProdDisponibles.TabIndex = 17;
             lbTitleProdDisponibles.Text = "Aéreos";
             // 
+            // btnAgregarItinerario
+            // 
+            btnAgregarItinerario.Location = new Point(107, 293);
+            btnAgregarItinerario.Name = "btnAgregarItinerario";
+            btnAgregarItinerario.Size = new Size(108, 23);
+            btnAgregarItinerario.TabIndex = 7;
+            btnAgregarItinerario.Text = "Agregar Itinerario";
+            btnAgregarItinerario.UseVisualStyleBackColor = true;
+            btnAgregarItinerario.Click += btnCrearItinerario_Click;
+            // 
+            // cbClase
+            // 
+            cbClase.FormattingEnabled = true;
+            cbClase.Location = new Point(36, 151);
+            cbClase.Name = "cbClase";
+            cbClase.Size = new Size(199, 23);
+            cbClase.TabIndex = 27;
+            // 
+            // lblClase
+            // 
+            lblClase.AutoSize = true;
+            lblClase.Location = new Point(36, 133);
+            lblClase.Name = "lblClase";
+            lblClase.Size = new Size(35, 15);
+            lblClase.TabIndex = 26;
+            lblClase.Text = "Clase";
+            // 
+            // cbTipoPasajero
+            // 
+            cbTipoPasajero.FormattingEnabled = true;
+            cbTipoPasajero.Location = new Point(251, 151);
+            cbTipoPasajero.Name = "cbTipoPasajero";
+            cbTipoPasajero.Size = new Size(200, 23);
+            cbTipoPasajero.TabIndex = 28;
+            // 
+            // lblTipoPasajero
+            // 
+            lblTipoPasajero.AutoSize = true;
+            lblTipoPasajero.Location = new Point(250, 133);
+            lblTipoPasajero.Name = "lblTipoPasajero";
+            lblTipoPasajero.Size = new Size(77, 15);
+            lblTipoPasajero.TabIndex = 29;
+            lblTipoPasajero.Text = "Tipo Pasajero";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(896, 27);
+            label1.Name = "label1";
+            label1.RightToLeft = RightToLeft.Yes;
+            label1.Size = new Size(86, 15);
+            label1.TabIndex = 18;
+            label1.Text = "itinerario datos";
+            // 
             // Aereos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1131, 630);
+            ClientSize = new Size(999, 630);
+            Controls.Add(label1);
             Controls.Add(lbTitleProdDisponibles);
-            Controls.Add(grpTarifa);
-            Controls.Add(grpAgregarVuelos);
             Controls.Add(grpAereos);
-            Controls.Add(button3);
-            Controls.Add(btnCrearItinerario);
+            Controls.Add(btnAgregarItinerario);
+            Controls.Add(btnBuscarAereos);
             Controls.Add(btnDetalles);
             Controls.Add(lsvAereos);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -432,9 +252,6 @@
             Load += Aereos_Load;
             grpAereos.ResumeLayout(false);
             grpAereos.PerformLayout();
-            grpAgregarVuelos.ResumeLayout(false);
-            grpAgregarVuelos.PerformLayout();
-            grpTarifa.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -443,8 +260,6 @@
 
         private ListView lsvProductosDisponibles;
         private Button btnDetalles;
-        private Button btnCrearItinerario;
-        private Button button3;
         private GroupBox grpAereos;
         private Label label5;
         private DateTimePicker dtpFechaVuelta;
@@ -454,30 +269,15 @@
         private TextBox txtDestino;
         private Label label3;
         private TextBox txtOrigen;
-        private Label label6;
-        private TextBox txtPasajeros;
         private Button btnBuscarAereos;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private GroupBox grpAgregarVuelos;
-        private Button button4;
-        private Label label14;
-        private ComboBox comboBox3;
-        private Label label15;
-        private Label lblContadorasientos;
-        private Label label17;
-        private CheckBox chkIdaVuelta;
-        private Label label13;
-        private ComboBox comboBox4;
-        private Label lblMenores;
-        private ComboBox comboBox5;
-        private Label lblinfantes;
-        private ComboBox comboBox6;
-        private GroupBox grpTarifa;
-        private ListView lsvTarifas;
-        private ColumnHeader hdCodProd;
         private Label lbTitleProdDisponibles;
-        private ColumnHeader hdTipoProducto;
-        private ColumnHeader hdTarifa;
         private ListView lsvAereos;
+        private Label lblTipoPasajero;
+        private ComboBox cbTipoPasajero;
+        private ComboBox cbClase;
+        private Label lblClase;
+        private Button btnAgregarItinerario;
+        private Label label1;
     }
 }

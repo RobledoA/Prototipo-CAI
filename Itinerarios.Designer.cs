@@ -73,7 +73,7 @@
             // button1
             // 
             button1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(489, 53);
+            button1.Location = new Point(489, 47);
             button1.Name = "button1";
             button1.Size = new Size(145, 49);
             button1.TabIndex = 2;
@@ -83,17 +83,17 @@
             // button2
             // 
             button2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.Location = new Point(489, 108);
+            button2.Location = new Point(489, 102);
             button2.Name = "button2";
-            button2.Size = new Size(145, 49);
+            button2.Size = new Size(145, 65);
             button2.TabIndex = 4;
-            button2.Text = "Editar";
+            button2.Text = "Establecer como activo";
             button2.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
             button3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button3.Location = new Point(489, 163);
+            button3.Location = new Point(489, 173);
             button3.Name = "button3";
             button3.Size = new Size(145, 49);
             button3.TabIndex = 5;

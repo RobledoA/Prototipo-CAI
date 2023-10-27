@@ -39,13 +39,14 @@
             btnAgregarPasajero = new Button();
             lblDatapasajeros = new Label();
             btnRefrescar = new Button();
+            label1 = new Label();
             contextMenuStrip2.SuspendLayout();
             SuspendLayout();
             // 
             // btnConfirmarGuardarReserva
             // 
             btnConfirmarGuardarReserva.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnConfirmarGuardarReserva.Location = new Point(690, 267);
+            btnConfirmarGuardarReserva.Location = new Point(690, 254);
             btnConfirmarGuardarReserva.Name = "btnConfirmarGuardarReserva";
             btnConfirmarGuardarReserva.Size = new Size(155, 34);
             btnConfirmarGuardarReserva.TabIndex = 15;
@@ -56,7 +57,7 @@
             // btnCancelarGenerarReserva
             // 
             btnCancelarGenerarReserva.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCancelarGenerarReserva.Location = new Point(851, 267);
+            btnCancelarGenerarReserva.Location = new Point(851, 254);
             btnCancelarGenerarReserva.Name = "btnCancelarGenerarReserva";
             btnCancelarGenerarReserva.Size = new Size(128, 34);
             btnCancelarGenerarReserva.TabIndex = 14;
@@ -68,7 +69,7 @@
             // 
             lsvGenerarReserva.ContextMenuStrip = contextMenuStrip2;
             lsvGenerarReserva.Cursor = Cursors.Hand;
-            lsvGenerarReserva.Location = new Point(12, 58);
+            lsvGenerarReserva.Location = new Point(12, 45);
             lsvGenerarReserva.Name = "lsvGenerarReserva";
             lsvGenerarReserva.Size = new Size(967, 203);
             lsvGenerarReserva.TabIndex = 13;
@@ -129,11 +130,21 @@
             btnRefrescar.UseVisualStyleBackColor = true;
             btnRefrescar.Click += btnRefrescar_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(392, 20);
+            label1.Name = "label1";
+            label1.Size = new Size(209, 15);
+            label1.TabIndex = 17;
+            label1.Text = "lista de tarifas con pasajeros asociados";
+            // 
             // CrearReserva
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1001, 316);
+            ClientSize = new Size(994, 297);
+            Controls.Add(label1);
             Controls.Add(btnRefrescar);
             Controls.Add(btnConfirmarGuardarReserva);
             Controls.Add(btnCancelarGenerarReserva);
@@ -162,5 +173,6 @@
         private ToolStripMenuItem editarToolStripMenuItem;
         private ToolStripMenuItem eliminarToolStripMenuItem;
         private Button btnRefrescar;
+        private Label label1;
     }
 }

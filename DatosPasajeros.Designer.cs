@@ -43,6 +43,7 @@
             label7 = new Label();
             btnConfirmarGuardarReserva = new Button();
             btnCancelarGenerarReserva = new Button();
+            checkedListBox1 = new CheckedListBox();
             SuspendLayout();
             // 
             // label1
@@ -75,9 +76,9 @@
             label2.AutoSize = true;
             label2.Location = new Point(245, 62);
             label2.Name = "label2";
-            label2.Size = new Size(62, 15);
+            label2.Size = new Size(27, 15);
             label2.TabIndex = 2;
-            label2.Text = "CUIT/CUIL";
+            label2.Text = "DNI";
             // 
             // txtPasaporteP
             // 
@@ -179,11 +180,20 @@
             btnCancelarGenerarReserva.UseVisualStyleBackColor = true;
             btnCancelarGenerarReserva.Click += btnCancelarGenerarReserva_Click;
             // 
+            // checkedListBox1
+            // 
+            checkedListBox1.FormattingEnabled = true;
+            checkedListBox1.Location = new Point(483, 39);
+            checkedListBox1.Name = "checkedListBox1";
+            checkedListBox1.Size = new Size(142, 166);
+            checkedListBox1.TabIndex = 20;
+            // 
             // DatosPasajeros
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(476, 294);
+            ClientSize = new Size(637, 294);
+            Controls.Add(checkedListBox1);
             Controls.Add(btnCancelarGenerarReserva);
             Controls.Add(btnConfirmarGuardarReserva);
             Controls.Add(label7);
@@ -225,5 +235,6 @@
         private Label label7;
         private Button btnConfirmarGuardarReserva;
         private Button btnCancelarGenerarReserva;
+        private CheckedListBox checkedListBox1;
     }
 }

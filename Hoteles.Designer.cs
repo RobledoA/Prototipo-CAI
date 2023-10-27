@@ -41,25 +41,6 @@
             cmbCalifiacion = new ComboBox();
             txtHabitaciones = new TextBox();
             label1 = new Label();
-            grpAgregarHoteles = new GroupBox();
-            clbServExtras = new CheckedListBox();
-            lblServExtras = new Label();
-            lblContadorHabitaciones = new Label();
-            label12 = new Label();
-            label11 = new Label();
-            lblTHabitacion = new Label();
-            cbTipoHabitacion = new ComboBox();
-            lblHuespedes = new Label();
-            cbCantHuespedes = new ComboBox();
-            btnAgregarHoteles = new Button();
-            grpTarifa = new GroupBox();
-            btnCrearItinerario = new Button();
-            btnEliminarCarrito = new Button();
-            btnLimpiarCarrito = new Button();
-            lsvTarifas = new ListView();
-            hdCodProd = new ColumnHeader();
-            hdTipoProducto = new ColumnHeader();
-            hdTarifa = new ColumnHeader();
             lsvHoteles = new ListView();
             hdCodigo = new ColumnHeader();
             hdNombre = new ColumnHeader();
@@ -67,11 +48,10 @@
             hdDireccion = new ColumnHeader();
             hdCalificacion = new ColumnHeader();
             hdDisponibilidad = new ColumnHeader();
-            btnSalir = new Button();
             btnDetalles = new Button();
+            btnCrearItinerario = new Button();
+            label2 = new Label();
             grpHoteles.SuspendLayout();
-            grpAgregarHoteles.SuspendLayout();
-            grpTarifa.SuspendLayout();
             SuspendLayout();
             // 
             // lblHoteles
@@ -198,188 +178,6 @@
             label1.TabIndex = 13;
             label1.Text = "Calificación";
             // 
-            // grpAgregarHoteles
-            // 
-            grpAgregarHoteles.Controls.Add(clbServExtras);
-            grpAgregarHoteles.Controls.Add(lblServExtras);
-            grpAgregarHoteles.Controls.Add(lblContadorHabitaciones);
-            grpAgregarHoteles.Controls.Add(label12);
-            grpAgregarHoteles.Controls.Add(label11);
-            grpAgregarHoteles.Controls.Add(lblTHabitacion);
-            grpAgregarHoteles.Controls.Add(cbTipoHabitacion);
-            grpAgregarHoteles.Controls.Add(lblHuespedes);
-            grpAgregarHoteles.Controls.Add(cbCantHuespedes);
-            grpAgregarHoteles.Controls.Add(btnAgregarHoteles);
-            grpAgregarHoteles.Location = new Point(519, 282);
-            grpAgregarHoteles.Margin = new Padding(3, 2, 3, 2);
-            grpAgregarHoteles.Name = "grpAgregarHoteles";
-            grpAgregarHoteles.Padding = new Padding(3, 2, 3, 2);
-            grpAgregarHoteles.Size = new Size(224, 355);
-            grpAgregarHoteles.TabIndex = 20;
-            grpAgregarHoteles.TabStop = false;
-            grpAgregarHoteles.Text = "Carrito";
-            // 
-            // clbServExtras
-            // 
-            clbServExtras.FormattingEnabled = true;
-            clbServExtras.Location = new Point(14, 197);
-            clbServExtras.Name = "clbServExtras";
-            clbServExtras.Size = new Size(196, 112);
-            clbServExtras.TabIndex = 24;
-            // 
-            // lblServExtras
-            // 
-            lblServExtras.AutoSize = true;
-            lblServExtras.Location = new Point(13, 179);
-            lblServExtras.Name = "lblServExtras";
-            lblServExtras.Size = new Size(82, 15);
-            lblServExtras.TabIndex = 23;
-            lblServExtras.Text = "Servicios Extra";
-            // 
-            // lblContadorHabitaciones
-            // 
-            lblContadorHabitaciones.AutoSize = true;
-            lblContadorHabitaciones.Location = new Point(81, 80);
-            lblContadorHabitaciones.Name = "lblContadorHabitaciones";
-            lblContadorHabitaciones.Size = new Size(13, 15);
-            lblContadorHabitaciones.TabIndex = 21;
-            lblContadorHabitaciones.Text = "0";
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Location = new Point(13, 80);
-            label12.Name = "label12";
-            label12.Size = new Size(71, 15);
-            label12.TabIndex = 20;
-            label12.Text = "Disponibles:";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new Point(13, 89);
-            label11.Name = "label11";
-            label11.Size = new Size(0, 15);
-            label11.TabIndex = 19;
-            // 
-            // lblTHabitacion
-            // 
-            lblTHabitacion.AutoSize = true;
-            lblTHabitacion.Location = new Point(13, 33);
-            lblTHabitacion.Name = "lblTHabitacion";
-            lblTHabitacion.Size = new Size(112, 15);
-            lblTHabitacion.TabIndex = 17;
-            lblTHabitacion.Text = "Tipos de Habitación";
-            // 
-            // cbTipoHabitacion
-            // 
-            cbTipoHabitacion.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbTipoHabitacion.FormattingEnabled = true;
-            cbTipoHabitacion.Location = new Point(13, 52);
-            cbTipoHabitacion.Name = "cbTipoHabitacion";
-            cbTipoHabitacion.Size = new Size(196, 23);
-            cbTipoHabitacion.TabIndex = 16;
-            cbTipoHabitacion.SelectedIndexChanged += cbTipoHabitacion_SelectedIndexChanged;
-            // 
-            // lblHuespedes
-            // 
-            lblHuespedes.AutoSize = true;
-            lblHuespedes.Location = new Point(13, 118);
-            lblHuespedes.Name = "lblHuespedes";
-            lblHuespedes.Size = new Size(132, 15);
-            lblHuespedes.TabIndex = 15;
-            lblHuespedes.Text = "Cantidad de Huéspedes";
-            // 
-            // cbCantHuespedes
-            // 
-            cbCantHuespedes.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbCantHuespedes.FormattingEnabled = true;
-            cbCantHuespedes.Location = new Point(13, 137);
-            cbCantHuespedes.Name = "cbCantHuespedes";
-            cbCantHuespedes.Size = new Size(196, 23);
-            cbCantHuespedes.TabIndex = 14;
-            // 
-            // btnAgregarHoteles
-            // 
-            btnAgregarHoteles.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnAgregarHoteles.Location = new Point(14, 317);
-            btnAgregarHoteles.Name = "btnAgregarHoteles";
-            btnAgregarHoteles.Size = new Size(196, 26);
-            btnAgregarHoteles.TabIndex = 13;
-            btnAgregarHoteles.Text = "Agregar al Carrito \U0001f6d2";
-            btnAgregarHoteles.UseVisualStyleBackColor = true;
-            btnAgregarHoteles.Click += btnAgregarHoteles_Click;
-            // 
-            // grpTarifa
-            // 
-            grpTarifa.Controls.Add(btnCrearItinerario);
-            grpTarifa.Controls.Add(btnEliminarCarrito);
-            grpTarifa.Controls.Add(btnLimpiarCarrito);
-            grpTarifa.Controls.Add(lsvTarifas);
-            grpTarifa.Location = new Point(757, 305);
-            grpTarifa.Name = "grpTarifa";
-            grpTarifa.Size = new Size(377, 246);
-            grpTarifa.TabIndex = 21;
-            grpTarifa.TabStop = false;
-            grpTarifa.Text = "Tarifas";
-            // 
-            // btnCrearItinerario
-            // 
-            btnCrearItinerario.Location = new Point(271, 216);
-            btnCrearItinerario.Name = "btnCrearItinerario";
-            btnCrearItinerario.Size = new Size(102, 26);
-            btnCrearItinerario.TabIndex = 25;
-            btnCrearItinerario.Text = "Crear Itinerario";
-            btnCrearItinerario.UseVisualStyleBackColor = true;
-            btnCrearItinerario.Click += btnCrearItinerario_Click;
-            // 
-            // btnEliminarCarrito
-            // 
-            btnEliminarCarrito.Location = new Point(191, 216);
-            btnEliminarCarrito.Name = "btnEliminarCarrito";
-            btnEliminarCarrito.Size = new Size(74, 26);
-            btnEliminarCarrito.TabIndex = 26;
-            btnEliminarCarrito.Text = "Eliminar";
-            btnEliminarCarrito.UseVisualStyleBackColor = true;
-            btnEliminarCarrito.Click += btnEliminarCarrito_Click;
-            // 
-            // btnLimpiarCarrito
-            // 
-            btnLimpiarCarrito.Location = new Point(109, 216);
-            btnLimpiarCarrito.Name = "btnLimpiarCarrito";
-            btnLimpiarCarrito.Size = new Size(76, 26);
-            btnLimpiarCarrito.TabIndex = 27;
-            btnLimpiarCarrito.Text = "Limpiar";
-            btnLimpiarCarrito.UseVisualStyleBackColor = true;
-            btnLimpiarCarrito.Click += btnLimpiarCarrito_Click;
-            // 
-            // lsvTarifas
-            // 
-            lsvTarifas.Columns.AddRange(new ColumnHeader[] { hdCodProd, hdTipoProducto, hdTarifa });
-            lsvTarifas.FullRowSelect = true;
-            lsvTarifas.Location = new Point(5, 29);
-            lsvTarifas.MultiSelect = false;
-            lsvTarifas.Name = "lsvTarifas";
-            lsvTarifas.Size = new Size(367, 181);
-            lsvTarifas.TabIndex = 0;
-            lsvTarifas.UseCompatibleStateImageBehavior = false;
-            lsvTarifas.View = View.Details;
-            // 
-            // hdCodProd
-            // 
-            hdCodProd.Text = "Código Producto";
-            hdCodProd.Width = 103;
-            // 
-            // hdTipoProducto
-            // 
-            hdTipoProducto.Text = "Producto";
-            hdTipoProducto.Width = 160;
-            // 
-            // hdTarifa
-            // 
-            hdTarifa.Text = "Tarifa";
-            hdTarifa.Width = 100;
-            // 
             // lsvHoteles
             // 
             lsvHoteles.Columns.AddRange(new ColumnHeader[] { hdCodigo, hdNombre, hdCiudad, hdDireccion, hdCalificacion, hdDisponibilidad });
@@ -422,16 +220,6 @@
             hdDisponibilidad.Text = "Disponibilidad";
             hdDisponibilidad.Width = 110;
             // 
-            // btnSalir
-            // 
-            btnSalir.Location = new Point(1014, 230);
-            btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(115, 47);
-            btnSalir.TabIndex = 23;
-            btnSalir.Text = "Salir";
-            btnSalir.UseVisualStyleBackColor = true;
-            btnSalir.Click += btnSalir_Click;
-            // 
             // btnDetalles
             // 
             btnDetalles.Location = new Point(10, 284);
@@ -442,17 +230,34 @@
             btnDetalles.UseVisualStyleBackColor = true;
             btnDetalles.Click += btnDetalles_Click;
             // 
+            // btnCrearItinerario
+            // 
+            btnCrearItinerario.Location = new Point(361, 567);
+            btnCrearItinerario.Name = "btnCrearItinerario";
+            btnCrearItinerario.Size = new Size(102, 26);
+            btnCrearItinerario.TabIndex = 25;
+            btnCrearItinerario.Text = "Crear Itinerario";
+            btnCrearItinerario.UseVisualStyleBackColor = true;
+            btnCrearItinerario.Click += btnCrearItinerario_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(903, 19);
+            label2.Name = "label2";
+            label2.Size = new Size(86, 15);
+            label2.TabIndex = 26;
+            label2.Text = "itinerario datos";
+            // 
             // Hoteles
             // 
-            AcceptButton = btnAgregarHoteles;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1142, 653);
+            ClientSize = new Size(1001, 653);
+            Controls.Add(label2);
+            Controls.Add(btnCrearItinerario);
             Controls.Add(btnDetalles);
-            Controls.Add(btnSalir);
             Controls.Add(lsvHoteles);
-            Controls.Add(grpTarifa);
-            Controls.Add(grpAgregarHoteles);
             Controls.Add(grpHoteles);
             Controls.Add(lblHoteles);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -463,9 +268,6 @@
             Load += Hoteles_Load;
             grpHoteles.ResumeLayout(false);
             grpHoteles.PerformLayout();
-            grpAgregarHoteles.ResumeLayout(false);
-            grpAgregarHoteles.PerformLayout();
-            grpTarifa.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -485,21 +287,6 @@
         private ComboBox cmbCalifiacion;
         private TextBox txtHabitaciones;
         private Label label1;
-        private GroupBox grpAgregarHoteles;
-        private Label lblContadorHabitaciones;
-        private Label label12;
-        private Label label11;
-        private Label lblTHabitacion;
-        private ComboBox cbTipoHabitacion;
-        private Label lblHuespedes;
-        private ComboBox cbCantHuespedes;
-        private Button btnAgregarHoteles;
-        private GroupBox grpTarifa;
-        private ListView lsvTarifas;
-        private ColumnHeader hdCodProd;
-        private ColumnHeader hdTipoProducto;
-        private ColumnHeader hdTarifa;
-        private Button btnSalir;
         private ColumnHeader hdCodigo;
         private ColumnHeader hdNombre;
         private ColumnHeader hdCiudad;
@@ -507,11 +294,8 @@
         private ColumnHeader hdCalificacion;
         private ColumnHeader hdDisponibilidad;
         private Button btnDetalles;
-        private Button btnCrearItinerario;
         public ListView lsvHoteles;
-        private Label lblServExtras;
-        private CheckedListBox clbServExtras;
-        private Button btnEliminarCarrito;
-        private Button btnLimpiarCarrito;
+        private Button btnCrearItinerario;
+        private Label label2;
     }
 }

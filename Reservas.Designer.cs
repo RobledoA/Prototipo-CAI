@@ -33,11 +33,10 @@
             nombre = new ColumnHeader();
             fechaReserva = new ColumnHeader();
             estadoReserva = new ColumnHeader();
-            btnNuevaReserva = new Button();
             btnConfirmarReserva = new Button();
-            btnEditarReserva = new Button();
             btnBuscarReserva = new Button();
             txtBuscarReserva = new TextBox();
+            button1 = new Button();
             SuspendLayout();
             // 
             // lsvReservas
@@ -72,35 +71,15 @@
             estadoReserva.Text = "Estado";
             estadoReserva.Width = 150;
             // 
-            // btnNuevaReserva
-            // 
-            btnNuevaReserva.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnNuevaReserva.Location = new Point(402, 386);
-            btnNuevaReserva.Name = "btnNuevaReserva";
-            btnNuevaReserva.Size = new Size(118, 46);
-            btnNuevaReserva.TabIndex = 1;
-            btnNuevaReserva.Text = "Nuevo";
-            btnNuevaReserva.UseVisualStyleBackColor = true;
-            // 
             // btnConfirmarReserva
             // 
             btnConfirmarReserva.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnConfirmarReserva.Location = new Point(670, 386);
+            btnConfirmarReserva.Location = new Point(546, 386);
             btnConfirmarReserva.Name = "btnConfirmarReserva";
             btnConfirmarReserva.Size = new Size(118, 46);
             btnConfirmarReserva.TabIndex = 2;
             btnConfirmarReserva.Text = "Confirmar";
             btnConfirmarReserva.UseVisualStyleBackColor = true;
-            // 
-            // btnEditarReserva
-            // 
-            btnEditarReserva.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnEditarReserva.Location = new Point(536, 386);
-            btnEditarReserva.Name = "btnEditarReserva";
-            btnEditarReserva.Size = new Size(118, 46);
-            btnEditarReserva.TabIndex = 3;
-            btnEditarReserva.Text = "Editar";
-            btnEditarReserva.UseVisualStyleBackColor = true;
             // 
             // btnBuscarReserva
             // 
@@ -123,16 +102,25 @@
             txtBuscarReserva.TabIndex = 5;
             txtBuscarReserva.KeyDown += txtBuscarReserva_KeyDown;
             // 
+            // button1
+            // 
+            button1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.Location = new Point(670, 386);
+            button1.Name = "button1";
+            button1.Size = new Size(118, 46);
+            button1.TabIndex = 6;
+            button1.Text = "Cancelar";
+            button1.UseVisualStyleBackColor = true;
+            // 
             // Reservas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 444);
+            Controls.Add(button1);
             Controls.Add(txtBuscarReserva);
             Controls.Add(btnBuscarReserva);
-            Controls.Add(btnEditarReserva);
             Controls.Add(btnConfirmarReserva);
-            Controls.Add(btnNuevaReserva);
             Controls.Add(lsvReservas);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
@@ -146,14 +134,13 @@
         #endregion
 
         private ListView lsvReservas;
-        private Button btnNuevaReserva;
         private Button btnConfirmarReserva;
-        private Button btnEditarReserva;
         private Button btnBuscarReserva;
         private TextBox txtBuscarReserva;
         private ColumnHeader codReserva;
         private ColumnHeader nombre;
         private ColumnHeader fechaReserva;
         private ColumnHeader estadoReserva;
+        private Button button1;
     }
 }
