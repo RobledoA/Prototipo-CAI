@@ -19,7 +19,7 @@ namespace Prototipo_CAI.Entidades
         public DateTime FechaHasta { get; set; }
         public List<DiaHabitacion> DiasReservados { get; set; }
 
-        /*public List<DateTime> ObtenerDiasDisponibles()
+        public List<DateTime> ObtenerDiasDisponibles()
         {
             var totalDias = Enumerable.Range(0, (FechaHasta - FechaDesde).Days + 1) // Añadimos +1 para incluir el último día
                                       .Select(offset => FechaDesde.AddDays(offset))
@@ -30,6 +30,6 @@ namespace Prototipo_CAI.Entidades
                                              .ToList();
 
             return totalDias.Except(diasOcupados).ToList();
-        }*/
+        }
     }
 }
