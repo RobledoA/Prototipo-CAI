@@ -39,7 +39,7 @@ namespace Prototipo_CAI
 
             sr.Close();*/
 
-            dtpFechaVuelta.Enabled = false;
+            dtpFechaVueltaAereos.Enabled = false;
         }
         private void button3_Click_1(object sender, EventArgs e)
         {
@@ -58,7 +58,7 @@ namespace Prototipo_CAI
                 vuelos.ShowDialog();
             }
         }
- 
+
         private void grpAgregarVuelos_Enter(object sender, EventArgs e)
         {
 
@@ -68,5 +68,9 @@ namespace Prototipo_CAI
 
         }
 
+        private void txtDestino_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

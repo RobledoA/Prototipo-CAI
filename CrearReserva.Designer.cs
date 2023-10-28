@@ -42,9 +42,9 @@
             cmbGénero = new ComboBox();
             btnConfirmarGuardarReserva = new Button();
             btnCancelarGenerarReserva = new Button();
-            checkedListBox1 = new CheckedListBox();
+            chklbTarifasAsignadas = new CheckedListBox();
             btnAgregarPasajero = new Button();
-            listView1 = new ListView();
+            lsvTarifasReserva = new ListView();
             lblTarifasReserva = new Label();
             gpbDatosPasajero = new GroupBox();
             lblTarifasAsignadas = new Label();
@@ -171,13 +171,13 @@
             btnCancelarGenerarReserva.Text = "Cancelar";
             btnCancelarGenerarReserva.UseVisualStyleBackColor = true;
             // 
-            // checkedListBox1
+            // chklbTarifasAsignadas
             // 
-            checkedListBox1.FormattingEnabled = true;
-            checkedListBox1.Location = new Point(491, 42);
-            checkedListBox1.Name = "checkedListBox1";
-            checkedListBox1.Size = new Size(320, 184);
-            checkedListBox1.TabIndex = 20;
+            chklbTarifasAsignadas.FormattingEnabled = true;
+            chklbTarifasAsignadas.Location = new Point(491, 42);
+            chklbTarifasAsignadas.Name = "chklbTarifasAsignadas";
+            chklbTarifasAsignadas.Size = new Size(320, 184);
+            chklbTarifasAsignadas.TabIndex = 20;
             // 
             // btnAgregarPasajero
             // 
@@ -190,13 +190,13 @@
             btnAgregarPasajero.Text = "Agregar Pasajero";
             btnAgregarPasajero.UseVisualStyleBackColor = true;
             // 
-            // listView1
+            // lsvTarifasReserva
             // 
-            listView1.Location = new Point(12, 40);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(827, 251);
-            listView1.TabIndex = 22;
-            listView1.UseCompatibleStateImageBehavior = false;
+            lsvTarifasReserva.Location = new Point(12, 40);
+            lsvTarifasReserva.Name = "lsvTarifasReserva";
+            lsvTarifasReserva.Size = new Size(827, 251);
+            lsvTarifasReserva.TabIndex = 22;
+            lsvTarifasReserva.UseCompatibleStateImageBehavior = false;
             // 
             // lblTarifasReserva
             // 
@@ -214,7 +214,7 @@
             gpbDatosPasajero.Controls.Add(txtDNIPasajero);
             gpbDatosPasajero.Controls.Add(lblNombrePasajero);
             gpbDatosPasajero.Controls.Add(txtNombrePasajero);
-            gpbDatosPasajero.Controls.Add(checkedListBox1);
+            gpbDatosPasajero.Controls.Add(chklbTarifasAsignadas);
             gpbDatosPasajero.Controls.Add(btnAgregarPasajero);
             gpbDatosPasajero.Controls.Add(lblDNIPasajero);
             gpbDatosPasajero.Controls.Add(lblPasaportePasajero);
@@ -248,7 +248,7 @@
             ClientSize = new Size(851, 586);
             Controls.Add(gpbDatosPasajero);
             Controls.Add(lblTarifasReserva);
-            Controls.Add(listView1);
+            Controls.Add(lsvTarifasReserva);
             Controls.Add(btnCancelarGenerarReserva);
             Controls.Add(btnConfirmarGuardarReserva);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -278,9 +278,9 @@
         private ComboBox cmbGénero;
         private Button btnConfirmarGuardarReserva;
         private Button btnCancelarGenerarReserva;
-        private CheckedListBox checkedListBox1;
+        private CheckedListBox chklbTarifasAsignadas;
         private Button btnAgregarPasajero;
-        private ListView listView1;
+        private ListView lsvTarifasReserva;
         private Label lblTarifasReserva;
         private GroupBox gpbDatosPasajero;
         private Label lblTarifasAsignadas;
