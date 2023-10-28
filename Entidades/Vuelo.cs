@@ -10,21 +10,21 @@ namespace Prototipo_CAI.Entidades
         public int Codigo { get; set; }
         public string Origen { get; set; }
         public string Destino { get; set; }
-        public int Plazas { get; set; }
         public DateTime FechaHoraSalida { get; set; }
         public DateTime FechaHoraLlegada { get; set; }
-        public DateTime TiempoUso { get; set; }
+        public TimeOnly TiempoVuelo { get; set; }
         public string Aerolinea { get; set; }
-        public Tarifa Tarifa { get; set; }
+        public TarifaVuelo[] Tarifas { get; set; }
 
         public void ReservarVuelo()
         {
-            // Lógica para reservar el vuelo
+           // Lógica para reservar el vuelo
+           // No útil en el contexto actual
         }
 
-        public void ObtenerAsientosDisponibles()
+        public void CalcularTiempoVuelo()
         {
-            // Lógica para obtener asientos disponibles
+            //Calcula el tiempo entre fecha salida y fecha llegada
         }
     }
 }

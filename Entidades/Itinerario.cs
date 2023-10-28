@@ -9,7 +9,7 @@ namespace Prototipo_CAI.Entidades
     public class Itinerario
     {
         public List<Asiento> AsientosReservados { get; set; }
-        public List<DiaHabitacion> HabitacionesReservadas { get; set; }
+        public List<Habitacion> HabitacionesReservadas { get; set; }
         public int CodigoItinerario { get; set; }
         public string NombreCliente { get; set; }
         public int CUILCUIT { get; set; }

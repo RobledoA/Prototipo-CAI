@@ -10,7 +10,7 @@ namespace Prototipo_CAI.Entidades
         public string Codigo { get; set; }
         public string Posicion { get; set; }
         public Reserva ReservaAsociada { get; set; }
-        public Tarifa TarifaAsociada { get; set; }
+        public TarifaVuelo TarifaAsociada { get; set; }
 
         public decimal Precio()
         {

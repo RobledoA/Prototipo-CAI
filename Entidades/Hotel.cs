@@ -9,13 +9,14 @@ namespace Prototipo_CAI.Entidades
     {
         public int Codigo { get; set; }
         public string Nombre { get; set; }
+        public string codigoCiudad { get; set; }
         public string Direccion { get; set; }
         public int Calificacion { get; set; }
-        public List<Habitacion> Habitaciones { get; set; }
+        public List<TipoHabitacion> Disponibilidad { get; set; }
 
-        public int Disponibilidad()
+        public int CalcularDisponibilidad()
         {
-            return Habitaciones.Count;
+            return Disponibilidad.Count;
         }
     }
 }

@@ -7,24 +7,24 @@
       <FileName>Entidades\Asiento.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Prototipo_CAI.Entidades.DiaHabitacion">
+  <Class Name="Prototipo_CAI.Entidades.Habitacion">
     <Position X="2.75" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAgAACAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
-      <FileName>Entidades\DiaHabitacion.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Entidades\Habitacion.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Prototipo_CAI.Entidades.Habitacion">
+  <Class Name="Prototipo_CAI.Entidades.TipoHabitacion">
     <Position X="6.25" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAQAAQAAAAAAAiAAAAAkAAAAQAAAAAgAAAIg=</HashCode>
-      <FileName>Entidades\Habitacion.cs</FileName>
+      <HashCode>AAQAAAAAAAAAQAAAAAAAgAAAAAEAAAAQAAAAAgAAAIA=</HashCode>
+      <FileName>Entidades\TipoHabitacion.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Prototipo_CAI.Entidades.Hotel">
     <Position X="8.5" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAgAAAAQAAAAAAACAAgAAAIAAAAAAAAIAAAAAAAAA=</HashCode>
+      <HashCode>AAAAgAAAAQAAAAAAACAAgAAQAAAAAAAAAIAAAAAAAAA=</HashCode>
       <FileName>Entidades\Hotel.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -42,17 +42,17 @@
       <FileName>Entidades\Reserva.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Prototipo_CAI.Entidades.Tarifa">
+  <Class Name="Prototipo_CAI.Entidades.TarifaVuelo">
     <Position X="8.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACACAgCAAAAhAAAAAAAAAAAAAAAAAACAAAAACAAAA=</HashCode>
-      <FileName>Entidades\Tarifa.cs</FileName>
+      <FileName>Entidades\TarifaVuelo.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Prototipo_CAI.Entidades.Vuelo">
     <Position X="10.25" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAQABAAQAAABAAAAAAQAAAgAAAAAAAEAAAggAQAAA=</HashCode>
+      <HashCode>AAAAAABAASAAAAAAAAAAQAAIABAAAAAAEAAAAgAQAAA=</HashCode>
       <FileName>Entidades\Vuelo.cs</FileName>
     </TypeIdentifier>
   </Class>

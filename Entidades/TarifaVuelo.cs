@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Prototipo_CAI.Entidades
 {
-    public class Tarifa
+    public class TarifaVuelo
     {
         public int Id { get; set; }
         public char Clase { get; set; }
