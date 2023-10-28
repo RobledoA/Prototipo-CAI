@@ -45,19 +45,6 @@ namespace Prototipo_CAI
         {
             this.Close();
         }
-        private void btnDetalles_Click(object sender, EventArgs e)
-        {
-            Vuelos vuelos = new Vuelos();
-
-            if (lsvAereos.SelectedItems.Count == 0)
-            {
-                MessageBox.Show("Seleccione un producto de la lista.");
-            }
-            else
-            {
-                vuelos.ShowDialog();
-            }
-        }
 
         private void grpAgregarVuelos_Enter(object sender, EventArgs e)
         {

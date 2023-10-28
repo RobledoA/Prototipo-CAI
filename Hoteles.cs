@@ -40,20 +40,6 @@ namespace Prototipo_CAI
             sr.Close();
         }
 
-        //Corregí un bug que si clickeabas en "ver detalle" sin haber seleccionado nada, el programa se crasheaba
-        private void btnDetalles_Click(object sender, EventArgs e)
-        {
-            if (lsvHoteles.SelectedItems.Count == 0)
-            {
-                MessageBox.Show("Seleccione un producto de la lista.");
-            }
-            else
-            {
-                Habitaciones habitaciones = new Habitaciones();
-                habitaciones.SetDatosHotel(lsvHoteles.SelectedItems[0]);
-                habitaciones.ShowDialog();
-            }
-        }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
