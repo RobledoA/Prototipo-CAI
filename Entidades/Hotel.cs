@@ -12,7 +12,6 @@ namespace Prototipo_CAI.Entidades
         public string Direccion { get; set; }
         public int Calificacion { get; set; }
         public List<Habitacion> Habitaciones { get; set; }
-        public List<ServicioExtraHotel> ServiciosExtra { get; set; }
 
         public int Disponibilidad()
         {

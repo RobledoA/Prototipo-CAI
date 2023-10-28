@@ -34,6 +34,7 @@
             cmbTipoPasajeroAereos = new ComboBox();
             cmbClaseAereos = new ComboBox();
             lblClaseAereos = new Label();
+            btnBuscarAereos = new Button();
             lblFechaVueltaAereos = new Label();
             dtpFechaVueltaAereos = new DateTimePicker();
             lblFechaIdaAereos = new Label();
@@ -42,7 +43,6 @@
             txtDestinoAereos = new TextBox();
             lblOrigenAereos = new Label();
             txtOrigenAereos = new TextBox();
-            btnBuscarAereos = new Button();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             lblAereos = new Label();
             btnAgregarItinerarioAereos = new Button();
@@ -60,6 +60,7 @@
             lsvAereos.TabIndex = 0;
             lsvAereos.UseCompatibleStateImageBehavior = false;
             lsvAereos.View = View.Details;
+            lsvAereos.SelectedIndexChanged += lsvAereos_SelectedIndexChanged;
             // 
             // grpAereos
             // 
@@ -116,6 +117,16 @@
             lblClaseAereos.Size = new Size(35, 15);
             lblClaseAereos.TabIndex = 26;
             lblClaseAereos.Text = "Clase";
+            // 
+            // btnBuscarAereos
+            // 
+            btnBuscarAereos.Location = new Point(420, 197);
+            btnBuscarAereos.Margin = new Padding(3, 2, 3, 2);
+            btnBuscarAereos.Name = "btnBuscarAereos";
+            btnBuscarAereos.Size = new Size(31, 31);
+            btnBuscarAereos.TabIndex = 14;
+            btnBuscarAereos.Text = "🔍";
+            btnBuscarAereos.UseVisualStyleBackColor = true;
             // 
             // lblFechaVueltaAereos
             // 
@@ -183,16 +194,6 @@
             txtOrigenAereos.Name = "txtOrigenAereos";
             txtOrigenAereos.Size = new Size(199, 23);
             txtOrigenAereos.TabIndex = 2;
-            // 
-            // btnBuscarAereos
-            // 
-            btnBuscarAereos.Location = new Point(420, 197);
-            btnBuscarAereos.Margin = new Padding(3, 2, 3, 2);
-            btnBuscarAereos.Name = "btnBuscarAereos";
-            btnBuscarAereos.Size = new Size(31, 31);
-            btnBuscarAereos.TabIndex = 14;
-            btnBuscarAereos.Text = "🔍";
-            btnBuscarAereos.UseVisualStyleBackColor = true;
             // 
             // lblAereos
             // 

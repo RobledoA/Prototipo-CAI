@@ -24,5 +24,9 @@ namespace Prototipo_CAI
 
         }
 
+        private void txtNombrePasajero_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

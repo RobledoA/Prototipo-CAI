@@ -16,7 +16,6 @@ namespace Prototipo_CAI.Entidades
         public DateTime TiempoUso { get; set; }
         public string Aerolinea { get; set; }
         public Tarifa Tarifa { get; set; }
-        public List<ServicioExtraVuelo> ServiciosExtra { get; set; }
 
         public void ReservarVuelo()
         {

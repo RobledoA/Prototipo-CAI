@@ -59,5 +59,10 @@ namespace Prototipo_CAI
         {
 
         }
+
+        private void lsvAereos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

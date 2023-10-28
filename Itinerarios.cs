@@ -172,6 +172,11 @@ namespace Prototipo_CAI
                 MessageBox.Show("Seleccione un itinerario.", "Error");
             }
         }
+
+        private void lsvItinerario_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

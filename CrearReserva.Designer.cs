@@ -66,6 +66,7 @@
             txtNombrePasajero.Name = "txtNombrePasajero";
             txtNombrePasajero.Size = new Size(216, 23);
             txtNombrePasajero.TabIndex = 1;
+            txtNombrePasajero.TextChanged += txtNombrePasajero_TextChanged;
             // 
             // txtDNIPasajero
             // 

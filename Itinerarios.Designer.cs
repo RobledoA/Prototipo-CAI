@@ -54,6 +54,7 @@
             lsvItinerario.TabIndex = 1;
             lsvItinerario.UseCompatibleStateImageBehavior = false;
             lsvItinerario.View = View.Details;
+            lsvItinerario.SelectedIndexChanged += lsvItinerario_SelectedIndexChanged_1;
             // 
             // CodItinerario
             // 
