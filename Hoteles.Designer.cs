@@ -48,7 +48,7 @@
             hdDireccion = new ColumnHeader();
             hdCalificacion = new ColumnHeader();
             hdDisponibilidad = new ColumnHeader();
-            btnCrearItinerario = new Button();
+            btnAgregarItinerarioHoteles = new Button();
             lblItinerarioActivo = new Label();
             grpHoteles.SuspendLayout();
             SuspendLayout();
@@ -218,15 +218,15 @@
             hdDisponibilidad.Text = "Disponibilidad";
             hdDisponibilidad.Width = 110;
             // 
-            // btnCrearItinerario
+            // btnAgregarItinerarioHoteles
             // 
-            btnCrearItinerario.Location = new Point(887, 293);
-            btnCrearItinerario.Name = "btnCrearItinerario";
-            btnCrearItinerario.Size = new Size(102, 26);
-            btnCrearItinerario.TabIndex = 25;
-            btnCrearItinerario.Text = "Crear Itinerario";
-            btnCrearItinerario.UseVisualStyleBackColor = true;
-            btnCrearItinerario.Click += btnCrearItinerario_Click;
+            btnAgregarItinerarioHoteles.Location = new Point(887, 293);
+            btnAgregarItinerarioHoteles.Name = "btnAgregarItinerarioHoteles";
+            btnAgregarItinerarioHoteles.Size = new Size(102, 26);
+            btnAgregarItinerarioHoteles.TabIndex = 25;
+            btnAgregarItinerarioHoteles.Text = "Crear Itinerario";
+            btnAgregarItinerarioHoteles.UseVisualStyleBackColor = true;
+            btnAgregarItinerarioHoteles.Click += btnCrearItinerario_Click;
             // 
             // lblItinerarioActivo
             // 
@@ -243,7 +243,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1005, 653);
             Controls.Add(lblItinerarioActivo);
-            Controls.Add(btnCrearItinerario);
+            Controls.Add(btnAgregarItinerarioHoteles);
             Controls.Add(lsvHoteles);
             Controls.Add(grpHoteles);
             Controls.Add(lblHoteles);
@@ -281,7 +281,7 @@
         private ColumnHeader hdCalificacion;
         private ColumnHeader hdDisponibilidad;
         public ListView lsvHoteles;
-        private Button btnCrearItinerario;
+        private Button btnAgregarItinerarioHoteles;
         private Label lblItinerarioActivo;
     }
 }

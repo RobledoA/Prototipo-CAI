@@ -46,7 +46,7 @@ namespace Prototipo_CAI
             this.Close();
         }
 
-        private void btnCrearItinerario_Click(object sender, EventArgs e)
+        private void btnAgregarItinerarioHoteles_Click(object sender, EventArgs e)
         {
 
         }
