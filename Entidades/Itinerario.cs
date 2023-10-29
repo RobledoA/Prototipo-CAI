@@ -29,7 +29,7 @@ namespace Prototipo_CAI.Entidades
             return total;
         }
 
-        private decimal PrecioTotalHabitacion()
+        /*private decimal PrecioTotalHabitacion()
         {
             decimal total = 0;
             foreach (var Habitacion in HabitacionesReservadas)
@@ -37,11 +37,11 @@ namespace Prototipo_CAI.Entidades
                 total += Habitacion.HabitacionRef.TarifaDiaria;
             }
             return total;
-        }
+        }*/
 
-        public decimal PrecioTotal()
+        /*public decimal PrecioTotal()
         {
             return PrecioTotalAsientos() + PrecioTotalHabitacion();
-        }
+        }*/
     }
 }
