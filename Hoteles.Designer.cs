@@ -226,7 +226,7 @@
             btnAgregarItinerarioHoteles.TabIndex = 25;
             btnAgregarItinerarioHoteles.Text = "Crear Itinerario";
             btnAgregarItinerarioHoteles.UseVisualStyleBackColor = true;
-            btnAgregarItinerarioHoteles.Click += btnCrearItinerario_Click;
+
             // 
             // lblItinerarioActivo
             // 
