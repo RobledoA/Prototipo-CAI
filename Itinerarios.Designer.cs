@@ -40,6 +40,7 @@
             btnBuscarItinerario = new Button();
             lblItinerarios = new Label();
             btnCrearReservaItinerario = new Button();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).BeginInit();
             SuspendLayout();
             // 
@@ -47,11 +48,10 @@
             // 
             lsvItinerario.Columns.AddRange(new ColumnHeader[] { CodItinerario, CUILCUIT, Nombre });
             lsvItinerario.FullRowSelect = true;
-            lsvItinerario.Location = new Point(30, 63);
-            lsvItinerario.Margin = new Padding(3, 4, 3, 4);
+            lsvItinerario.Location = new Point(12, 47);
             lsvItinerario.MultiSelect = false;
             lsvItinerario.Name = "lsvItinerario";
-            lsvItinerario.Size = new Size(539, 232);
+            lsvItinerario.Size = new Size(472, 243);
             lsvItinerario.TabIndex = 1;
             lsvItinerario.UseCompatibleStateImageBehavior = false;
             lsvItinerario.View = View.Details;
@@ -75,10 +75,9 @@
             // btnNuevoItinerario
             // 
             btnNuevoItinerario.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnNuevoItinerario.Location = new Point(587, 63);
-            btnNuevoItinerario.Margin = new Padding(3, 4, 3, 4);
+            btnNuevoItinerario.Location = new Point(494, 9);
             btnNuevoItinerario.Name = "btnNuevoItinerario";
-            btnNuevoItinerario.Size = new Size(166, 65);
+            btnNuevoItinerario.Size = new Size(145, 49);
             btnNuevoItinerario.TabIndex = 2;
             btnNuevoItinerario.Text = "Nuevo";
             btnNuevoItinerario.UseVisualStyleBackColor = true;
@@ -87,10 +86,9 @@
             // btnEstItinerarioActivo
             // 
             btnEstItinerarioActivo.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnEstItinerarioActivo.Location = new Point(587, 136);
-            btnEstItinerarioActivo.Margin = new Padding(3, 4, 3, 4);
+            btnEstItinerarioActivo.Location = new Point(494, 119);
             btnEstItinerarioActivo.Name = "btnEstItinerarioActivo";
-            btnEstItinerarioActivo.Size = new Size(166, 87);
+            btnEstItinerarioActivo.Size = new Size(145, 65);
             btnEstItinerarioActivo.TabIndex = 4;
             btnEstItinerarioActivo.Text = "Establecer como activo";
             btnEstItinerarioActivo.UseVisualStyleBackColor = true;
@@ -99,10 +97,9 @@
             // btnEliminarItinerario
             // 
             btnEliminarItinerario.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnEliminarItinerario.Location = new Point(587, 231);
-            btnEliminarItinerario.Margin = new Padding(3, 4, 3, 4);
+            btnEliminarItinerario.Location = new Point(494, 189);
             btnEliminarItinerario.Name = "btnEliminarItinerario";
-            btnEliminarItinerario.Size = new Size(166, 65);
+            btnEliminarItinerario.Size = new Size(145, 49);
             btnEliminarItinerario.TabIndex = 5;
             btnEliminarItinerario.Text = "Eliminar";
             btnEliminarItinerario.UseVisualStyleBackColor = true;
@@ -116,20 +113,18 @@
             // txtBuscarItinerario
             // 
             txtBuscarItinerario.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtBuscarItinerario.Location = new Point(30, 304);
-            txtBuscarItinerario.Margin = new Padding(3, 4, 3, 4);
+            txtBuscarItinerario.Location = new Point(220, 9);
             txtBuscarItinerario.Name = "txtBuscarItinerario";
             txtBuscarItinerario.PlaceholderText = "Filtrar por...";
-            txtBuscarItinerario.Size = new Size(260, 34);
+            txtBuscarItinerario.Size = new Size(228, 29);
             txtBuscarItinerario.TabIndex = 8;
             // 
             // btnBuscarItinerario
             // 
             btnBuscarItinerario.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnBuscarItinerario.Location = new Point(297, 303);
-            btnBuscarItinerario.Margin = new Padding(3, 4, 3, 4);
+            btnBuscarItinerario.Location = new Point(454, 8);
             btnBuscarItinerario.Name = "btnBuscarItinerario";
-            btnBuscarItinerario.Size = new Size(35, 41);
+            btnBuscarItinerario.Size = new Size(31, 31);
             btnBuscarItinerario.TabIndex = 7;
             btnBuscarItinerario.Text = "🔍";
             btnBuscarItinerario.UseVisualStyleBackColor = true;
@@ -139,9 +134,9 @@
             // 
             lblItinerarios.AutoSize = true;
             lblItinerarios.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblItinerarios.Location = new Point(30, 12);
+            lblItinerarios.Location = new Point(12, 9);
             lblItinerarios.Name = "lblItinerarios";
-            lblItinerarios.Size = new Size(135, 37);
+            lblItinerarios.Size = new Size(105, 30);
             lblItinerarios.TabIndex = 10;
             lblItinerarios.Text = "Itinerarios";
             lblItinerarios.Click += label1_Click;
@@ -149,20 +144,30 @@
             // btnCrearReservaItinerario
             // 
             btnCrearReservaItinerario.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCrearReservaItinerario.Location = new Point(432, 305);
-            btnCrearReservaItinerario.Margin = new Padding(3, 4, 3, 4);
+            btnCrearReservaItinerario.Location = new Point(494, 244);
             btnCrearReservaItinerario.Name = "btnCrearReservaItinerario";
-            btnCrearReservaItinerario.Size = new Size(149, 37);
+            btnCrearReservaItinerario.Size = new Size(145, 46);
             btnCrearReservaItinerario.TabIndex = 11;
             btnCrearReservaItinerario.Text = "Crear Reserva";
             btnCrearReservaItinerario.UseVisualStyleBackColor = true;
             btnCrearReservaItinerario.Click += btnCrearReserva_Click;
             // 
+            // button1
+            // 
+            button1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.Location = new Point(494, 64);
+            button1.Name = "button1";
+            button1.Size = new Size(145, 49);
+            button1.TabIndex = 12;
+            button1.Text = "Datos cliente";
+            button1.UseVisualStyleBackColor = true;
+            // 
             // Itinerarios
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(778, 352);
+            ClientSize = new Size(655, 304);
+            Controls.Add(button1);
             Controls.Add(btnCrearReservaItinerario);
             Controls.Add(lblItinerarios);
             Controls.Add(txtBuscarItinerario);
@@ -172,7 +177,6 @@
             Controls.Add(btnNuevoItinerario);
             Controls.Add(lsvItinerario);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             Name = "Itinerarios";
             Text = "Itinerarios";
@@ -196,5 +200,6 @@
         private Button btnBuscarItinerario;
         private Label lblItinerarios;
         private Button btnCrearReservaItinerario;
+        private Button button1;
     }
 }

@@ -74,11 +74,11 @@
             // btnConfirmarReserva
             // 
             btnConfirmarReserva.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnConfirmarReserva.Location = new Point(546, 386);
+            btnConfirmarReserva.Location = new Point(422, 386);
             btnConfirmarReserva.Name = "btnConfirmarReserva";
-            btnConfirmarReserva.Size = new Size(118, 46);
+            btnConfirmarReserva.Size = new Size(168, 46);
             btnConfirmarReserva.TabIndex = 2;
-            btnConfirmarReserva.Text = "Confirmar";
+            btnConfirmarReserva.Text = "Confirmar reserva";
             btnConfirmarReserva.UseVisualStyleBackColor = true;
             // 
             // btnBuscarReserva
@@ -105,11 +105,11 @@
             // btnCancelarReserva
             // 
             btnCancelarReserva.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCancelarReserva.Location = new Point(670, 386);
+            btnCancelarReserva.Location = new Point(596, 386);
             btnCancelarReserva.Name = "btnCancelarReserva";
-            btnCancelarReserva.Size = new Size(118, 46);
+            btnCancelarReserva.Size = new Size(192, 46);
             btnCancelarReserva.TabIndex = 6;
-            btnCancelarReserva.Text = "Cancelar";
+            btnCancelarReserva.Text = "Cancelar Reserva";
             btnCancelarReserva.UseVisualStyleBackColor = true;
             // 
             // Reservas

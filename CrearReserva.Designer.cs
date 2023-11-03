@@ -41,13 +41,13 @@
             cmbNacionalidad = new ComboBox();
             cmbGénero = new ComboBox();
             btnConfirmarGuardarReserva = new Button();
-            btnCancelarGenerarReserva = new Button();
             chklbTarifasAsignadas = new CheckedListBox();
             btnAgregarPasajero = new Button();
             lsvTarifasReserva = new ListView();
-            lblTarifasReserva = new Label();
             gpbDatosPasajero = new GroupBox();
             lblTarifasAsignadas = new Label();
+            button1 = new Button();
+            button2 = new Button();
             gpbDatosPasajero.SuspendLayout();
             SuspendLayout();
             // 
@@ -155,22 +155,12 @@
             // btnConfirmarGuardarReserva
             // 
             btnConfirmarGuardarReserva.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnConfirmarGuardarReserva.Location = new Point(525, 545);
+            btnConfirmarGuardarReserva.Location = new Point(684, 545);
             btnConfirmarGuardarReserva.Name = "btnConfirmarGuardarReserva";
             btnConfirmarGuardarReserva.Size = new Size(155, 34);
             btnConfirmarGuardarReserva.TabIndex = 18;
-            btnConfirmarGuardarReserva.Text = "Confirmar y Agregar";
+            btnConfirmarGuardarReserva.Text = "Cerrar";
             btnConfirmarGuardarReserva.UseVisualStyleBackColor = true;
-            // 
-            // btnCancelarGenerarReserva
-            // 
-            btnCancelarGenerarReserva.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCancelarGenerarReserva.Location = new Point(684, 545);
-            btnCancelarGenerarReserva.Name = "btnCancelarGenerarReserva";
-            btnCancelarGenerarReserva.Size = new Size(155, 34);
-            btnCancelarGenerarReserva.TabIndex = 19;
-            btnCancelarGenerarReserva.Text = "Cancelar";
-            btnCancelarGenerarReserva.UseVisualStyleBackColor = true;
             // 
             // chklbTarifasAsignadas
             // 
@@ -183,31 +173,20 @@
             // btnAgregarPasajero
             // 
             btnAgregarPasajero.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnAgregarPasajero.Location = new Point(311, 192);
+            btnAgregarPasajero.Location = new Point(12, 274);
             btnAgregarPasajero.Name = "btnAgregarPasajero";
-            btnAgregarPasajero.RightToLeft = RightToLeft.Yes;
-            btnAgregarPasajero.Size = new Size(155, 34);
+            btnAgregarPasajero.Size = new Size(393, 34);
             btnAgregarPasajero.TabIndex = 21;
-            btnAgregarPasajero.Text = "Agregar Pasajero";
+            btnAgregarPasajero.Text = "Agregar v v v";
             btnAgregarPasajero.UseVisualStyleBackColor = true;
             // 
             // lsvTarifasReserva
             // 
-            lsvTarifasReserva.Location = new Point(12, 40);
+            lsvTarifasReserva.Location = new Point(12, 330);
             lsvTarifasReserva.Name = "lsvTarifasReserva";
-            lsvTarifasReserva.Size = new Size(827, 251);
+            lsvTarifasReserva.Size = new Size(827, 209);
             lsvTarifasReserva.TabIndex = 22;
             lsvTarifasReserva.UseCompatibleStateImageBehavior = false;
-            // 
-            // lblTarifasReserva
-            // 
-            lblTarifasReserva.AutoSize = true;
-            lblTarifasReserva.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            lblTarifasReserva.Location = new Point(12, 9);
-            lblTarifasReserva.Name = "lblTarifasReserva";
-            lblTarifasReserva.Size = new Size(66, 28);
-            lblTarifasReserva.TabIndex = 23;
-            lblTarifasReserva.Text = "Tarifas";
             // 
             // gpbDatosPasajero
             // 
@@ -216,7 +195,6 @@
             gpbDatosPasajero.Controls.Add(lblNombrePasajero);
             gpbDatosPasajero.Controls.Add(txtNombrePasajero);
             gpbDatosPasajero.Controls.Add(chklbTarifasAsignadas);
-            gpbDatosPasajero.Controls.Add(btnAgregarPasajero);
             gpbDatosPasajero.Controls.Add(lblDNIPasajero);
             gpbDatosPasajero.Controls.Add(lblPasaportePasajero);
             gpbDatosPasajero.Controls.Add(txtPasaportePasajero);
@@ -226,7 +204,7 @@
             gpbDatosPasajero.Controls.Add(cmbNacionalidad);
             gpbDatosPasajero.Controls.Add(lblNacionalidadPasajero);
             gpbDatosPasajero.Controls.Add(lblGeneroPasajero);
-            gpbDatosPasajero.Location = new Point(12, 297);
+            gpbDatosPasajero.Location = new Point(12, 12);
             gpbDatosPasajero.Name = "gpbDatosPasajero";
             gpbDatosPasajero.Size = new Size(827, 242);
             gpbDatosPasajero.TabIndex = 24;
@@ -242,16 +220,37 @@
             lblTarifasAsignadas.TabIndex = 22;
             lblTarifasAsignadas.Text = "Tarifas Asignadas";
             // 
+            // button1
+            // 
+            button1.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.Location = new Point(446, 274);
+            button1.Name = "button1";
+            button1.Size = new Size(393, 34);
+            button1.TabIndex = 25;
+            button1.Text = "Eliminar ^ ^ ^";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            button2.Location = new Point(523, 545);
+            button2.Name = "button2";
+            button2.Size = new Size(155, 34);
+            button2.TabIndex = 26;
+            button2.Text = "Crear reserva";
+            button2.UseVisualStyleBackColor = true;
+            // 
             // CrearReserva
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(851, 586);
+            Controls.Add(button2);
+            Controls.Add(button1);
             Controls.Add(gpbDatosPasajero);
-            Controls.Add(lblTarifasReserva);
             Controls.Add(lsvTarifasReserva);
-            Controls.Add(btnCancelarGenerarReserva);
             Controls.Add(btnConfirmarGuardarReserva);
+            Controls.Add(btnAgregarPasajero);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             Name = "CrearReserva";
@@ -260,7 +259,6 @@
             gpbDatosPasajero.ResumeLayout(false);
             gpbDatosPasajero.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -278,12 +276,12 @@
         private ComboBox cmbNacionalidad;
         private ComboBox cmbGénero;
         private Button btnConfirmarGuardarReserva;
-        private Button btnCancelarGenerarReserva;
         private CheckedListBox chklbTarifasAsignadas;
         private Button btnAgregarPasajero;
         private ListView lsvTarifasReserva;
-        private Label lblTarifasReserva;
         private GroupBox gpbDatosPasajero;
         private Label lblTarifasAsignadas;
+        private Button button1;
+        private Button button2;
     }
 }
