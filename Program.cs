@@ -15,11 +15,7 @@ internal static class Program
 
         //HotelesAlmacen.Grabar();
         //VuelosAlmacen.Grabar();
-        //AsientosAlmacen.Grabar();
-        //HabitacionesAlmacen.Grabar();
         //ItinerariosAlmacen.Grabar();
         //ReservasAlmacen.Grabar();
-        //TarifasVuelosAlmacen.Grabar();
-        //TiposHabitacionesAlmacen.Grabar();
     }
 }

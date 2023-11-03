@@ -8,18 +8,14 @@ namespace Prototipo_CAI;
 
 public class Itinerario
 {
-    public List<Asiento> AsientosReservados { get; set; }
-    public List<Habitacion> HabitacionesReservadas { get; set; }
     public int CodigoItinerario { get; set; }
-    public string NombreCliente { get; set; }
     public int CUILCUIT { get; set; }
-
-    public bool EstaReservado(Asiento asiento)
-    {
-        return AsientosReservados.Contains(asiento);
-    }
-
-    private decimal PrecioTotalAsientos()
+    public List<Disponibilidad> Disponibilidades { get; set; }
+    public bool EstaReservado { get; set; }
+    public string NombreCliente { get; set; }
+    public List<TarifaVuelo> TarifasVuelos { get; set; }
+    
+    /*private decimal PrecioTotalAsientos()
     {
         decimal total = 0;
         foreach (var asiento in AsientosReservados)
@@ -27,7 +23,7 @@ public class Itinerario
             total += asiento.Precio();
         }
         return total;
-    }
+    }*/
 
     /*private decimal PrecioTotalHabitacion()
     {

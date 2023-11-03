@@ -7,17 +7,16 @@ namespace Prototipo_CAI;
 
 public class TarifaVuelo
 {
-    public int Id { get; set; }
+    public int CodigoTarifaVuelo { get; set; }
     public char Clase { get; set; }
+    public int CodigoVuelo { get; set; }
+    public decimal Precio { get; set; }
+    public int TarifasVuelosDisponibles { get; set; }
     public char TipoPasajero { get; set; }
-    public decimal PrecioBase { get; set; }
-    public decimal Impuestos { get; set; }
-    public decimal Comision { get; set; }
-    public List<Asiento> Asientos { get; set; }
 
-    public decimal CalcularPrecioFinal()
+    /*public decimal CalcularPrecioFinal()
     {
         // Obtenemos el Precio final de la instancia
         return PrecioBase * (1 + Impuestos) * (1 + Comision);
-    }
+    }*/
 }

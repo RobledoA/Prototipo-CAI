@@ -5,19 +5,17 @@ using System.Text;
 
 namespace Prototipo_CAI;
 
-public class TipoHabitacion
+public class Disponibilidad
 {
-    //public int Codigo { get; set; }
+    public int CodigoDisponibilidad { get; set; }
+    public int CodigoHotel { get; set; }
     public string Nombre { get; set; }
-    public decimal TarifaDiaria { get; set; }
-    //public Hotel HotelReferenciado { get; set; }
     public int Capacidad { get; set; }
     public int Adultos { get; set; }
-    public int Menores { get; set; }
     public int Infantes { get; set; }
-    /*public DateTime FechaDesde { get; set; }
-    public DateTime FechaHasta { get; set; }*/ // por ahora se borra, desp veremos
+    public int Menores { get; set; }
     public List<Habitacion> DiasDisponibles { get; set; }
+    public decimal TarifaDiaria { get; set; }
 
     /*public List<DateTime> ObtenerDiasDisponibles()
     {
