@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Prototipo_CAI;
-
-public class Reserva
+internal class AereosModel
 {
 }

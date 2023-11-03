@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Prototipo_CAI;
 
-public class Habitacion
+internal class ProductosDisponiblesModel
 {
-    public DateOnly Fecha { get; set; }
-    public int HabitacionesDisponibles { get; set; }
 }
