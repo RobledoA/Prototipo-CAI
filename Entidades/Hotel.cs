@@ -7,7 +7,7 @@ namespace Prototipo_CAI;
 
 public class Hotel
 {
-    public int CodigoHotel { get; set; }
+    public string CodigoHotel { get; set; }
     public int Calificacion { get; set; }
     public string CodigoCiudad { get; set; }
     public string Direccion { get; set; }

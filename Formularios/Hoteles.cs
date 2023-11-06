@@ -51,6 +51,18 @@ namespace Prototipo_CAI
 
         }
 
-
+        private void lblItinerarioActivo_Click(object sender, EventArgs e)
+        {/*
+            Hotel a = HotelesAlmacen.Hoteles[0];
+            MessageBox.Show($"{a.CodigoHotel},{a.Calificacion}, {a.CodigoCiudad}, {a.Direccion}, {a.Nombre}");
+            foreach (Disponibilidad b in a.Disponibilidades)
+            {
+                MessageBox.Show($"{b.CodigoDisponibilidad}, {b.CodigoHotel}, {b.Nombre}, {b.Capacidad}, {b.Adultos}, {b.Menores}, {b.Infantes}, {b.TarifaDiaria}");
+                foreach (Habitacion c in b.DiasDisponibles)
+                {
+                    MessageBox.Show($"{c.CodigoDisponibilidad}, {c.Fecha}, {c.HabitacionesDisponibles}");
+                }
+            }*/
+        }
     }
 }

@@ -39,7 +39,7 @@ namespace Prototipo_CAI
 
             sr.Close();*/
 
-            dtpFechaVueltaAereos.Enabled = false;
+            //dtpFechaVueltaAereos.Enabled = false;
         }
         private void button3_Click_1(object sender, EventArgs e)
         {
