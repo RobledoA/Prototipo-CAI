@@ -13,9 +13,4 @@ public class Hotel
     public string Direccion { get; set; }
     public List<Disponibilidad> Disponibilidades { get; set; }
     public string Nombre { get; set; }
-
-    /*public int Disponibilidad()
-    {
-        return Disponibilidades.Count;
-    }*/
 }

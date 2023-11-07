@@ -42,12 +42,14 @@
             txtHabitacionesHoteles = new TextBox();
             lblCalificacionHoteles = new Label();
             lsvHoteles = new ListView();
-            hdCodigo = new ColumnHeader();
-            hdNombre = new ColumnHeader();
-            hdCiudad = new ColumnHeader();
-            hdDireccion = new ColumnHeader();
-            hdCalificacion = new ColumnHeader();
-            hdDisponibilidad = new ColumnHeader();
+            columnHeader1 = new ColumnHeader();
+            columnHeader2 = new ColumnHeader();
+            columnHeader3 = new ColumnHeader();
+            columnHeader4 = new ColumnHeader();
+            columnHeader5 = new ColumnHeader();
+            columnHeader6 = new ColumnHeader();
+            columnHeader7 = new ColumnHeader();
+            columnHeader8 = new ColumnHeader();
             btnAgregarItinerarioHoteles = new Button();
             lblItinerarioActivo = new Label();
             grpHoteles.SuspendLayout();
@@ -179,44 +181,47 @@
             // 
             // lsvHoteles
             // 
-            lsvHoteles.Columns.AddRange(new ColumnHeader[] { hdCodigo, hdNombre, hdCiudad, hdDireccion, hdCalificacion, hdDisponibilidad });
+            lsvHoteles.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader5, columnHeader6, columnHeader7, columnHeader8 });
             lsvHoteles.FullRowSelect = true;
-            lsvHoteles.Location = new Point(10, 50);
+            lsvHoteles.Location = new Point(12, 40);
             lsvHoteles.MultiSelect = false;
             lsvHoteles.Name = "lsvHoteles";
-            lsvHoteles.Size = new Size(979, 228);
+            lsvHoteles.Size = new Size(436, 228);
             lsvHoteles.TabIndex = 22;
             lsvHoteles.UseCompatibleStateImageBehavior = false;
             lsvHoteles.View = View.Details;
             // 
-            // hdCodigo
+            // columnHeader1
             // 
-            hdCodigo.Text = "Código";
-            hdCodigo.Width = 65;
+            columnHeader1.Width = 100;
             // 
-            // hdNombre
+            // columnHeader2
             // 
-            hdNombre.Text = "Nombre";
-            hdNombre.Width = 200;
+            columnHeader2.Width = 100;
             // 
-            // hdCiudad
+            // columnHeader3
             // 
-            hdCiudad.Text = "Ciudad";
+            columnHeader3.Width = 100;
             // 
-            // hdDireccion
+            // columnHeader4
             // 
-            hdDireccion.Text = "Dirección";
-            hdDireccion.Width = 200;
+            columnHeader4.Width = 100;
             // 
-            // hdCalificacion
+            // columnHeader5
             // 
-            hdCalificacion.Text = "Calificación";
-            hdCalificacion.Width = 90;
+            columnHeader5.Width = 100;
             // 
-            // hdDisponibilidad
+            // columnHeader6
             // 
-            hdDisponibilidad.Text = "Disponibilidad";
-            hdDisponibilidad.Width = 110;
+            columnHeader6.Width = 100;
+            // 
+            // columnHeader7
+            // 
+            columnHeader7.Width = 100;
+            // 
+            // columnHeader8
+            // 
+            columnHeader8.Width = 100;
             // 
             // btnAgregarItinerarioHoteles
             // 
@@ -274,14 +279,16 @@
         private ComboBox cmbCalificacionHoteles;
         private TextBox txtHabitacionesHoteles;
         private Label lblCalificacionHoteles;
-        private ColumnHeader hdCodigo;
-        private ColumnHeader hdNombre;
-        private ColumnHeader hdCiudad;
-        private ColumnHeader hdDireccion;
-        private ColumnHeader hdCalificacion;
-        private ColumnHeader hdDisponibilidad;
         public ListView lsvHoteles;
         private Button btnAgregarItinerarioHoteles;
         private Label lblItinerarioActivo;
+        private ColumnHeader columnHeader1;
+        private ColumnHeader columnHeader2;
+        private ColumnHeader columnHeader3;
+        private ColumnHeader columnHeader4;
+        private ColumnHeader columnHeader5;
+        private ColumnHeader columnHeader6;
+        private ColumnHeader columnHeader7;
+        private ColumnHeader columnHeader8;
     }
 }
