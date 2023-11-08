@@ -30,6 +30,7 @@
         {
             lblHoteles = new Label();
             grpHoteles = new GroupBox();
+            btnLimpiarFiltros = new Button();
             btnBuscarHoteles = new Button();
             lblFechaHastaHoteles = new Label();
             lblUbicacionHoteles = new Label();
@@ -42,6 +43,17 @@
             txtHabitacionesHoteles = new TextBox();
             lblCalificacionHoteles = new Label();
             lsvHoteles = new ListView();
+            hdCodHotel = new ColumnHeader();
+            hdNombre = new ColumnHeader();
+            hdCalificacion = new ColumnHeader();
+            hdCiudad = new ColumnHeader();
+            hdHabitacion = new ColumnHeader();
+            hdTarifa = new ColumnHeader();
+            hdCapacidad = new ColumnHeader();
+            btnAgregarItinerarioHoteles = new Button();
+            lblItinerarioActivo = new Label();
+            button1 = new Button();
+            lsvHotelesAgregados = new ListView();
             columnHeader1 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
             columnHeader3 = new ColumnHeader();
@@ -49,9 +61,6 @@
             columnHeader5 = new ColumnHeader();
             columnHeader6 = new ColumnHeader();
             columnHeader7 = new ColumnHeader();
-            columnHeader8 = new ColumnHeader();
-            btnAgregarItinerarioHoteles = new Button();
-            lblItinerarioActivo = new Label();
             grpHoteles.SuspendLayout();
             SuspendLayout();
             // 
@@ -67,6 +76,7 @@
             // 
             // grpHoteles
             // 
+            grpHoteles.Controls.Add(btnLimpiarFiltros);
             grpHoteles.Controls.Add(btnBuscarHoteles);
             grpHoteles.Controls.Add(lblFechaHastaHoteles);
             grpHoteles.Controls.Add(lblUbicacionHoteles);
@@ -78,27 +88,39 @@
             grpHoteles.Controls.Add(cmbCalificacionHoteles);
             grpHoteles.Controls.Add(txtHabitacionesHoteles);
             grpHoteles.Controls.Add(lblCalificacionHoteles);
-            grpHoteles.Location = new Point(12, 339);
+            grpHoteles.Location = new Point(10, 274);
             grpHoteles.Name = "grpHoteles";
-            grpHoteles.Size = new Size(477, 212);
+            grpHoteles.Size = new Size(1057, 88);
             grpHoteles.TabIndex = 19;
             grpHoteles.TabStop = false;
             grpHoteles.Text = "Opciones de Búsqueda";
             // 
+            // btnLimpiarFiltros
+            // 
+            btnLimpiarFiltros.Location = new Point(1010, 48);
+            btnLimpiarFiltros.Margin = new Padding(3, 2, 3, 2);
+            btnLimpiarFiltros.Name = "btnLimpiarFiltros";
+            btnLimpiarFiltros.Size = new Size(32, 32);
+            btnLimpiarFiltros.TabIndex = 17;
+            btnLimpiarFiltros.Text = "\U0001f9f9";
+            btnLimpiarFiltros.UseVisualStyleBackColor = true;
+            btnLimpiarFiltros.Click += btnLimpiarFiltros_Click;
+            // 
             // btnBuscarHoteles
             // 
-            btnBuscarHoteles.Location = new Point(242, 150);
+            btnBuscarHoteles.Location = new Point(1010, 14);
             btnBuscarHoteles.Margin = new Padding(3, 2, 3, 2);
             btnBuscarHoteles.Name = "btnBuscarHoteles";
-            btnBuscarHoteles.Size = new Size(31, 31);
+            btnBuscarHoteles.Size = new Size(32, 32);
             btnBuscarHoteles.TabIndex = 15;
             btnBuscarHoteles.Text = "🔍";
             btnBuscarHoteles.UseVisualStyleBackColor = true;
+            btnBuscarHoteles.Click += btnBuscarHoteles_Click;
             // 
             // lblFechaHastaHoteles
             // 
             lblFechaHastaHoteles.AutoSize = true;
-            lblFechaHastaHoteles.Location = new Point(250, 87);
+            lblFechaHastaHoteles.Location = new Point(630, 28);
             lblFechaHastaHoteles.Name = "lblFechaHastaHoteles";
             lblFechaHastaHoteles.RightToLeft = RightToLeft.Yes;
             lblFechaHastaHoteles.Size = new Size(71, 15);
@@ -108,7 +130,7 @@
             // lblUbicacionHoteles
             // 
             lblUbicacionHoteles.AutoSize = true;
-            lblUbicacionHoteles.Location = new Point(34, 38);
+            lblUbicacionHoteles.Location = new Point(26, 29);
             lblUbicacionHoteles.Name = "lblUbicacionHoteles";
             lblUbicacionHoteles.Size = new Size(60, 15);
             lblUbicacionHoteles.TabIndex = 16;
@@ -116,23 +138,25 @@
             // 
             // dtpFechaHastaHoteles
             // 
-            dtpFechaHastaHoteles.Location = new Point(251, 104);
+            dtpFechaHastaHoteles.Format = DateTimePickerFormat.Short;
+            dtpFechaHastaHoteles.Location = new Point(630, 47);
             dtpFechaHastaHoteles.Name = "dtpFechaHastaHoteles";
-            dtpFechaHastaHoteles.RightToLeft = RightToLeft.Yes;
-            dtpFechaHastaHoteles.Size = new Size(200, 23);
+            dtpFechaHastaHoteles.RightToLeft = RightToLeft.No;
+            dtpFechaHastaHoteles.Size = new Size(150, 23);
             dtpFechaHastaHoteles.TabIndex = 14;
+            dtpFechaHastaHoteles.Value = new DateTime(2023, 1, 1, 0, 0, 0, 0);
             // 
             // txtUbicacionHoteles
             // 
-            txtUbicacionHoteles.Location = new Point(35, 55);
+            txtUbicacionHoteles.Location = new Point(26, 47);
             txtUbicacionHoteles.Name = "txtUbicacionHoteles";
-            txtUbicacionHoteles.Size = new Size(200, 23);
+            txtUbicacionHoteles.Size = new Size(150, 23);
             txtUbicacionHoteles.TabIndex = 15;
             // 
             // lblFechaDesdeHoteles
             // 
             lblFechaDesdeHoteles.AutoSize = true;
-            lblFechaDesdeHoteles.Location = new Point(34, 87);
+            lblFechaDesdeHoteles.Location = new Point(429, 29);
             lblFechaDesdeHoteles.Name = "lblFechaDesdeHoteles";
             lblFechaDesdeHoteles.Size = new Size(73, 15);
             lblFechaDesdeHoteles.TabIndex = 13;
@@ -141,39 +165,42 @@
             // lblCantHabitacionesHoteles
             // 
             lblCantHabitacionesHoteles.AutoSize = true;
-            lblCantHabitacionesHoteles.Location = new Point(34, 138);
+            lblCantHabitacionesHoteles.Location = new Point(827, 28);
             lblCantHabitacionesHoteles.Name = "lblCantHabitacionesHoteles";
-            lblCantHabitacionesHoteles.Size = new Size(143, 15);
+            lblCantHabitacionesHoteles.Size = new Size(123, 15);
             lblCantHabitacionesHoteles.TabIndex = 13;
-            lblCantHabitacionesHoteles.Text = "Cantidad de Habitaciones";
+            lblCantHabitacionesHoteles.Text = "Cant. de Habitaciones";
             // 
             // dtpFechaDesdeHoteles
             // 
-            dtpFechaDesdeHoteles.Location = new Point(35, 104);
+            dtpFechaDesdeHoteles.Format = DateTimePickerFormat.Short;
+            dtpFechaDesdeHoteles.Location = new Point(429, 47);
             dtpFechaDesdeHoteles.Name = "dtpFechaDesdeHoteles";
-            dtpFechaDesdeHoteles.Size = new Size(200, 23);
+            dtpFechaDesdeHoteles.Size = new Size(150, 23);
             dtpFechaDesdeHoteles.TabIndex = 12;
+            dtpFechaDesdeHoteles.Value = new DateTime(2023, 1, 1, 0, 0, 0, 0);
             // 
             // cmbCalificacionHoteles
             // 
+            cmbCalificacionHoteles.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbCalificacionHoteles.FormattingEnabled = true;
-            cmbCalificacionHoteles.Items.AddRange(new object[] { "1", "2", "3", "4", "5" });
-            cmbCalificacionHoteles.Location = new Point(250, 55);
+            cmbCalificacionHoteles.Items.AddRange(new object[] { "★", "★★", "★★★", "★★★★", "★★★★★" });
+            cmbCalificacionHoteles.Location = new Point(225, 47);
             cmbCalificacionHoteles.Name = "cmbCalificacionHoteles";
-            cmbCalificacionHoteles.Size = new Size(199, 23);
+            cmbCalificacionHoteles.Size = new Size(150, 23);
             cmbCalificacionHoteles.TabIndex = 14;
             // 
             // txtHabitacionesHoteles
             // 
-            txtHabitacionesHoteles.Location = new Point(35, 155);
+            txtHabitacionesHoteles.Location = new Point(827, 47);
             txtHabitacionesHoteles.Name = "txtHabitacionesHoteles";
-            txtHabitacionesHoteles.Size = new Size(200, 23);
+            txtHabitacionesHoteles.Size = new Size(150, 23);
             txtHabitacionesHoteles.TabIndex = 12;
             // 
             // lblCalificacionHoteles
             // 
             lblCalificacionHoteles.AutoSize = true;
-            lblCalificacionHoteles.Location = new Point(247, 38);
+            lblCalificacionHoteles.Location = new Point(225, 29);
             lblCalificacionHoteles.Name = "lblCalificacionHoteles";
             lblCalificacionHoteles.Size = new Size(69, 15);
             lblCalificacionHoteles.TabIndex = 13;
@@ -181,72 +208,134 @@
             // 
             // lsvHoteles
             // 
-            lsvHoteles.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader5, columnHeader6, columnHeader7, columnHeader8 });
+            lsvHoteles.Columns.AddRange(new ColumnHeader[] { hdCodHotel, hdNombre, hdCalificacion, hdCiudad, hdHabitacion, hdTarifa, hdCapacidad });
             lsvHoteles.FullRowSelect = true;
-            lsvHoteles.Location = new Point(12, 40);
+            lsvHoteles.Location = new Point(10, 40);
             lsvHoteles.MultiSelect = false;
             lsvHoteles.Name = "lsvHoteles";
-            lsvHoteles.Size = new Size(436, 228);
+            lsvHoteles.Size = new Size(459, 228);
             lsvHoteles.TabIndex = 22;
             lsvHoteles.UseCompatibleStateImageBehavior = false;
             lsvHoteles.View = View.Details;
+            lsvHoteles.SelectedIndexChanged += lsvHoteles_SelectedIndexChanged;
             // 
-            // columnHeader1
+            // hdCodHotel
             // 
-            columnHeader1.Width = 100;
+            hdCodHotel.Width = 1;
             // 
-            // columnHeader2
+            // hdNombre
             // 
-            columnHeader2.Width = 100;
+            hdNombre.Text = "Nombre";
+            hdNombre.Width = 125;
             // 
-            // columnHeader3
+            // hdCalificacion
             // 
-            columnHeader3.Width = 100;
+            hdCalificacion.Text = "Calificacion";
+            hdCalificacion.Width = 75;
             // 
-            // columnHeader4
+            // hdCiudad
             // 
-            columnHeader4.Width = 100;
+            hdCiudad.Text = "Ciudad";
+            hdCiudad.Width = 55;
             // 
-            // columnHeader5
+            // hdHabitacion
             // 
-            columnHeader5.Width = 100;
+            hdHabitacion.Text = "Tipo Hab.";
+            hdHabitacion.Width = 80;
             // 
-            // columnHeader6
+            // hdTarifa
             // 
-            columnHeader6.Width = 100;
+            hdTarifa.Text = "Tarifa";
+            hdTarifa.Width = 54;
             // 
-            // columnHeader7
+            // hdCapacidad
             // 
-            columnHeader7.Width = 100;
-            // 
-            // columnHeader8
-            // 
-            columnHeader8.Width = 100;
+            hdCapacidad.Text = "Capac.";
+            hdCapacidad.Width = 48;
             // 
             // btnAgregarItinerarioHoteles
             // 
-            btnAgregarItinerarioHoteles.Location = new Point(887, 293);
+            btnAgregarItinerarioHoteles.Location = new Point(489, 67);
             btnAgregarItinerarioHoteles.Name = "btnAgregarItinerarioHoteles";
             btnAgregarItinerarioHoteles.Size = new Size(102, 26);
             btnAgregarItinerarioHoteles.TabIndex = 25;
-            btnAgregarItinerarioHoteles.Text = "Crear Itinerario";
+            btnAgregarItinerarioHoteles.Text = "Agregar >>>";
             btnAgregarItinerarioHoteles.UseVisualStyleBackColor = true;
+            btnAgregarItinerarioHoteles.Click += btnAgregarItinerarioHoteles_Click;
             // 
             // lblItinerarioActivo
             // 
             lblItinerarioActivo.AutoSize = true;
-            lblItinerarioActivo.Location = new Point(903, 19);
+            lblItinerarioActivo.Location = new Point(958, 9);
             lblItinerarioActivo.Name = "lblItinerarioActivo";
             lblItinerarioActivo.Size = new Size(86, 15);
             lblItinerarioActivo.TabIndex = 26;
             lblItinerarioActivo.Text = "itinerario datos";
-            lblItinerarioActivo.Click += lblItinerarioActivo_Click;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(489, 218);
+            button1.Name = "button1";
+            button1.Size = new Size(102, 26);
+            button1.TabIndex = 28;
+            button1.Text = "<<< Eliminar";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // lsvHotelesAgregados
+            // 
+            lsvHotelesAgregados.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader5, columnHeader6, columnHeader7 });
+            lsvHotelesAgregados.FullRowSelect = true;
+            lsvHotelesAgregados.Location = new Point(610, 40);
+            lsvHotelesAgregados.MultiSelect = false;
+            lsvHotelesAgregados.Name = "lsvHotelesAgregados";
+            lsvHotelesAgregados.Size = new Size(459, 228);
+            lsvHotelesAgregados.TabIndex = 29;
+            lsvHotelesAgregados.UseCompatibleStateImageBehavior = false;
+            lsvHotelesAgregados.View = View.Details;
+            lsvHotelesAgregados.SelectedIndexChanged += lsvHotelesAgregados_SelectedIndexChanged;
+            // 
+            // columnHeader1
+            // 
+            columnHeader1.Width = 1;
+            // 
+            // columnHeader2
+            // 
+            columnHeader2.Text = "Nombre";
+            columnHeader2.Width = 125;
+            // 
+            // columnHeader3
+            // 
+            columnHeader3.Text = "Calificacion";
+            columnHeader3.Width = 75;
+            // 
+            // columnHeader4
+            // 
+            columnHeader4.Text = "Ciudad";
+            columnHeader4.Width = 55;
+            // 
+            // columnHeader5
+            // 
+            columnHeader5.Text = "Tipo Hab.";
+            columnHeader5.Width = 80;
+            // 
+            // columnHeader6
+            // 
+            columnHeader6.Text = "Tarifa";
+            columnHeader6.Width = 54;
+            // 
+            // columnHeader7
+            // 
+            columnHeader7.Text = "Capac.";
+            columnHeader7.Width = 48;
             // 
             // Hoteles
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1005, 653);
+            ClientSize = new Size(1081, 370);
+            Controls.Add(lsvHotelesAgregados);
+            Controls.Add(button1);
             Controls.Add(lblItinerarioActivo);
             Controls.Add(btnAgregarItinerarioHoteles);
             Controls.Add(lsvHoteles);
@@ -282,6 +371,15 @@
         public ListView lsvHoteles;
         private Button btnAgregarItinerarioHoteles;
         private Label lblItinerarioActivo;
+        private ColumnHeader hdNombre;
+        private ColumnHeader hdCalificacion;
+        private ColumnHeader hdCiudad;
+        private ColumnHeader hdHabitacion;
+        private ColumnHeader hdTarifa;
+        private ColumnHeader hdCapacidad;
+        private Button button1;
+        private ColumnHeader hdCodHotel;
+        public ListView lsvHotelesAgregados;
         private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader2;
         private ColumnHeader columnHeader3;
@@ -289,6 +387,6 @@
         private ColumnHeader columnHeader5;
         private ColumnHeader columnHeader6;
         private ColumnHeader columnHeader7;
-        private ColumnHeader columnHeader8;
+        private Button btnLimpiarFiltros;
     }
 }
