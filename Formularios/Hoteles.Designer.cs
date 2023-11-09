@@ -61,6 +61,7 @@
             columnHeader5 = new ColumnHeader();
             columnHeader6 = new ColumnHeader();
             columnHeader7 = new ColumnHeader();
+            lblHotelEnItinerario = new Label();
             grpHoteles.SuspendLayout();
             SuspendLayout();
             // 
@@ -68,11 +69,11 @@
             // 
             lblHoteles.AutoSize = true;
             lblHoteles.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblHoteles.Location = new Point(10, 7);
+            lblHoteles.Location = new Point(11, 9);
             lblHoteles.Name = "lblHoteles";
-            lblHoteles.Size = new Size(83, 30);
+            lblHoteles.Size = new Size(156, 37);
             lblHoteles.TabIndex = 18;
-            lblHoteles.Text = "Hoteles";
+            lblHoteles.Text = "Disponibles";
             // 
             // grpHoteles
             // 
@@ -88,19 +89,20 @@
             grpHoteles.Controls.Add(cmbCalificacionHoteles);
             grpHoteles.Controls.Add(txtHabitacionesHoteles);
             grpHoteles.Controls.Add(lblCalificacionHoteles);
-            grpHoteles.Location = new Point(10, 274);
+            grpHoteles.Location = new Point(11, 365);
+            grpHoteles.Margin = new Padding(3, 4, 3, 4);
             grpHoteles.Name = "grpHoteles";
-            grpHoteles.Size = new Size(1057, 88);
+            grpHoteles.Padding = new Padding(3, 4, 3, 4);
+            grpHoteles.Size = new Size(1208, 117);
             grpHoteles.TabIndex = 19;
             grpHoteles.TabStop = false;
             grpHoteles.Text = "Opciones de Búsqueda";
             // 
             // btnLimpiarFiltros
             // 
-            btnLimpiarFiltros.Location = new Point(1010, 48);
-            btnLimpiarFiltros.Margin = new Padding(3, 2, 3, 2);
+            btnLimpiarFiltros.Location = new Point(1154, 64);
             btnLimpiarFiltros.Name = "btnLimpiarFiltros";
-            btnLimpiarFiltros.Size = new Size(32, 32);
+            btnLimpiarFiltros.Size = new Size(37, 43);
             btnLimpiarFiltros.TabIndex = 17;
             btnLimpiarFiltros.Text = "\U0001f9f9";
             btnLimpiarFiltros.UseVisualStyleBackColor = true;
@@ -108,10 +110,9 @@
             // 
             // btnBuscarHoteles
             // 
-            btnBuscarHoteles.Location = new Point(1010, 14);
-            btnBuscarHoteles.Margin = new Padding(3, 2, 3, 2);
+            btnBuscarHoteles.Location = new Point(1154, 19);
             btnBuscarHoteles.Name = "btnBuscarHoteles";
-            btnBuscarHoteles.Size = new Size(32, 32);
+            btnBuscarHoteles.Size = new Size(37, 43);
             btnBuscarHoteles.TabIndex = 15;
             btnBuscarHoteles.Text = "🔍";
             btnBuscarHoteles.UseVisualStyleBackColor = true;
@@ -120,63 +121,66 @@
             // lblFechaHastaHoteles
             // 
             lblFechaHastaHoteles.AutoSize = true;
-            lblFechaHastaHoteles.Location = new Point(630, 28);
+            lblFechaHastaHoteles.Location = new Point(720, 37);
             lblFechaHastaHoteles.Name = "lblFechaHastaHoteles";
             lblFechaHastaHoteles.RightToLeft = RightToLeft.Yes;
-            lblFechaHastaHoteles.Size = new Size(71, 15);
+            lblFechaHastaHoteles.Size = new Size(89, 20);
             lblFechaHastaHoteles.TabIndex = 15;
             lblFechaHastaHoteles.Text = "Fecha Hasta";
             // 
             // lblUbicacionHoteles
             // 
             lblUbicacionHoteles.AutoSize = true;
-            lblUbicacionHoteles.Location = new Point(26, 29);
+            lblUbicacionHoteles.Location = new Point(30, 39);
             lblUbicacionHoteles.Name = "lblUbicacionHoteles";
-            lblUbicacionHoteles.Size = new Size(60, 15);
+            lblUbicacionHoteles.Size = new Size(75, 20);
             lblUbicacionHoteles.TabIndex = 16;
             lblUbicacionHoteles.Text = "Ubicación";
             // 
             // dtpFechaHastaHoteles
             // 
             dtpFechaHastaHoteles.Format = DateTimePickerFormat.Short;
-            dtpFechaHastaHoteles.Location = new Point(630, 47);
+            dtpFechaHastaHoteles.Location = new Point(720, 63);
+            dtpFechaHastaHoteles.Margin = new Padding(3, 4, 3, 4);
             dtpFechaHastaHoteles.Name = "dtpFechaHastaHoteles";
             dtpFechaHastaHoteles.RightToLeft = RightToLeft.No;
-            dtpFechaHastaHoteles.Size = new Size(150, 23);
+            dtpFechaHastaHoteles.Size = new Size(171, 27);
             dtpFechaHastaHoteles.TabIndex = 14;
             dtpFechaHastaHoteles.Value = new DateTime(2023, 1, 1, 0, 0, 0, 0);
             // 
             // txtUbicacionHoteles
             // 
-            txtUbicacionHoteles.Location = new Point(26, 47);
+            txtUbicacionHoteles.Location = new Point(30, 63);
+            txtUbicacionHoteles.Margin = new Padding(3, 4, 3, 4);
             txtUbicacionHoteles.Name = "txtUbicacionHoteles";
-            txtUbicacionHoteles.Size = new Size(150, 23);
+            txtUbicacionHoteles.Size = new Size(171, 27);
             txtUbicacionHoteles.TabIndex = 15;
             // 
             // lblFechaDesdeHoteles
             // 
             lblFechaDesdeHoteles.AutoSize = true;
-            lblFechaDesdeHoteles.Location = new Point(429, 29);
+            lblFechaDesdeHoteles.Location = new Point(490, 39);
             lblFechaDesdeHoteles.Name = "lblFechaDesdeHoteles";
-            lblFechaDesdeHoteles.Size = new Size(73, 15);
+            lblFechaDesdeHoteles.Size = new Size(93, 20);
             lblFechaDesdeHoteles.TabIndex = 13;
             lblFechaDesdeHoteles.Text = "Fecha Desde";
             // 
             // lblCantHabitacionesHoteles
             // 
             lblCantHabitacionesHoteles.AutoSize = true;
-            lblCantHabitacionesHoteles.Location = new Point(827, 28);
+            lblCantHabitacionesHoteles.Location = new Point(945, 37);
             lblCantHabitacionesHoteles.Name = "lblCantHabitacionesHoteles";
-            lblCantHabitacionesHoteles.Size = new Size(123, 15);
+            lblCantHabitacionesHoteles.Size = new Size(154, 20);
             lblCantHabitacionesHoteles.TabIndex = 13;
             lblCantHabitacionesHoteles.Text = "Cant. de Habitaciones";
             // 
             // dtpFechaDesdeHoteles
             // 
             dtpFechaDesdeHoteles.Format = DateTimePickerFormat.Short;
-            dtpFechaDesdeHoteles.Location = new Point(429, 47);
+            dtpFechaDesdeHoteles.Location = new Point(490, 63);
+            dtpFechaDesdeHoteles.Margin = new Padding(3, 4, 3, 4);
             dtpFechaDesdeHoteles.Name = "dtpFechaDesdeHoteles";
-            dtpFechaDesdeHoteles.Size = new Size(150, 23);
+            dtpFechaDesdeHoteles.Size = new Size(171, 27);
             dtpFechaDesdeHoteles.TabIndex = 12;
             dtpFechaDesdeHoteles.Value = new DateTime(2023, 1, 1, 0, 0, 0, 0);
             // 
@@ -185,24 +189,26 @@
             cmbCalificacionHoteles.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbCalificacionHoteles.FormattingEnabled = true;
             cmbCalificacionHoteles.Items.AddRange(new object[] { "★", "★★", "★★★", "★★★★", "★★★★★" });
-            cmbCalificacionHoteles.Location = new Point(225, 47);
+            cmbCalificacionHoteles.Location = new Point(257, 63);
+            cmbCalificacionHoteles.Margin = new Padding(3, 4, 3, 4);
             cmbCalificacionHoteles.Name = "cmbCalificacionHoteles";
-            cmbCalificacionHoteles.Size = new Size(150, 23);
+            cmbCalificacionHoteles.Size = new Size(171, 28);
             cmbCalificacionHoteles.TabIndex = 14;
             // 
             // txtHabitacionesHoteles
             // 
-            txtHabitacionesHoteles.Location = new Point(827, 47);
+            txtHabitacionesHoteles.Location = new Point(945, 63);
+            txtHabitacionesHoteles.Margin = new Padding(3, 4, 3, 4);
             txtHabitacionesHoteles.Name = "txtHabitacionesHoteles";
-            txtHabitacionesHoteles.Size = new Size(150, 23);
+            txtHabitacionesHoteles.Size = new Size(171, 27);
             txtHabitacionesHoteles.TabIndex = 12;
             // 
             // lblCalificacionHoteles
             // 
             lblCalificacionHoteles.AutoSize = true;
-            lblCalificacionHoteles.Location = new Point(225, 29);
+            lblCalificacionHoteles.Location = new Point(257, 39);
             lblCalificacionHoteles.Name = "lblCalificacionHoteles";
-            lblCalificacionHoteles.Size = new Size(69, 15);
+            lblCalificacionHoteles.Size = new Size(86, 20);
             lblCalificacionHoteles.TabIndex = 13;
             lblCalificacionHoteles.Text = "Calificación";
             // 
@@ -210,10 +216,11 @@
             // 
             lsvHoteles.Columns.AddRange(new ColumnHeader[] { hdCodHotel, hdNombre, hdCalificacion, hdCiudad, hdHabitacion, hdTarifa, hdCapacidad });
             lsvHoteles.FullRowSelect = true;
-            lsvHoteles.Location = new Point(10, 40);
+            lsvHoteles.Location = new Point(11, 53);
+            lsvHoteles.Margin = new Padding(3, 4, 3, 4);
             lsvHoteles.MultiSelect = false;
             lsvHoteles.Name = "lsvHoteles";
-            lsvHoteles.Size = new Size(459, 228);
+            lsvHoteles.Size = new Size(524, 303);
             lsvHoteles.TabIndex = 22;
             lsvHoteles.UseCompatibleStateImageBehavior = false;
             lsvHoteles.View = View.Details;
@@ -255,9 +262,10 @@
             // 
             // btnAgregarItinerarioHoteles
             // 
-            btnAgregarItinerarioHoteles.Location = new Point(489, 67);
+            btnAgregarItinerarioHoteles.Location = new Point(559, 89);
+            btnAgregarItinerarioHoteles.Margin = new Padding(3, 4, 3, 4);
             btnAgregarItinerarioHoteles.Name = "btnAgregarItinerarioHoteles";
-            btnAgregarItinerarioHoteles.Size = new Size(102, 26);
+            btnAgregarItinerarioHoteles.Size = new Size(117, 35);
             btnAgregarItinerarioHoteles.TabIndex = 25;
             btnAgregarItinerarioHoteles.Text = "Agregar >>>";
             btnAgregarItinerarioHoteles.UseVisualStyleBackColor = true;
@@ -266,17 +274,18 @@
             // lblItinerarioActivo
             // 
             lblItinerarioActivo.AutoSize = true;
-            lblItinerarioActivo.Location = new Point(958, 9);
+            lblItinerarioActivo.Location = new Point(1095, 12);
             lblItinerarioActivo.Name = "lblItinerarioActivo";
-            lblItinerarioActivo.Size = new Size(86, 15);
+            lblItinerarioActivo.Size = new Size(110, 20);
             lblItinerarioActivo.TabIndex = 26;
             lblItinerarioActivo.Text = "itinerario datos";
             // 
             // button1
             // 
-            button1.Location = new Point(489, 218);
+            button1.Location = new Point(559, 291);
+            button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
-            button1.Size = new Size(102, 26);
+            button1.Size = new Size(117, 35);
             button1.TabIndex = 28;
             button1.Text = "<<< Eliminar";
             button1.UseVisualStyleBackColor = true;
@@ -286,10 +295,11 @@
             // 
             lsvHotelesAgregados.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader5, columnHeader6, columnHeader7 });
             lsvHotelesAgregados.FullRowSelect = true;
-            lsvHotelesAgregados.Location = new Point(610, 40);
+            lsvHotelesAgregados.Location = new Point(697, 53);
+            lsvHotelesAgregados.Margin = new Padding(3, 4, 3, 4);
             lsvHotelesAgregados.MultiSelect = false;
             lsvHotelesAgregados.Name = "lsvHotelesAgregados";
-            lsvHotelesAgregados.Size = new Size(459, 228);
+            lsvHotelesAgregados.Size = new Size(524, 303);
             lsvHotelesAgregados.TabIndex = 29;
             lsvHotelesAgregados.UseCompatibleStateImageBehavior = false;
             lsvHotelesAgregados.View = View.Details;
@@ -329,11 +339,22 @@
             columnHeader7.Text = "Capac.";
             columnHeader7.Width = 48;
             // 
+            // lblHotelEnItinerario
+            // 
+            lblHotelEnItinerario.AutoSize = true;
+            lblHotelEnItinerario.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblHotelEnItinerario.Location = new Point(697, 9);
+            lblHotelEnItinerario.Name = "lblHotelEnItinerario";
+            lblHotelEnItinerario.Size = new Size(188, 37);
+            lblHotelEnItinerario.TabIndex = 31;
+            lblHotelEnItinerario.Text = "En el itinerario";
+            // 
             // Hoteles
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1081, 370);
+            ClientSize = new Size(1235, 493);
+            Controls.Add(lblHotelEnItinerario);
             Controls.Add(lsvHotelesAgregados);
             Controls.Add(button1);
             Controls.Add(lblItinerarioActivo);
@@ -342,10 +363,9 @@
             Controls.Add(grpHoteles);
             Controls.Add(lblHoteles);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             Name = "Hoteles";
-            Text = "Hoteles";
+            Text = "Hoteles Disponibles";
             Load += Hoteles_Load;
             grpHoteles.ResumeLayout(false);
             grpHoteles.PerformLayout();
@@ -388,5 +408,6 @@
         private ColumnHeader columnHeader6;
         private ColumnHeader columnHeader7;
         private Button btnLimpiarFiltros;
+        private Label lblHotelEnItinerario;
     }
 }
