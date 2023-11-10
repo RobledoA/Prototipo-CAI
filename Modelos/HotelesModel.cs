@@ -25,7 +25,6 @@ internal class HotelesModel
                 item.SubItems.Add(Convert.ToString(disp.Capacidad));
                 listViewItem.Add(item);
             }
-
         }
         return listViewItem;
     }

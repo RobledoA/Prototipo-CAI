@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace Prototipo_CAI;
 
-internal class ModuloItinerarios
+internal static class ModuloItinerarios
 {
+    public static List<Itinerario> CargarListaItinerarios()
+    {
+        return ItinerariosAlmacen.Itinerarios;
+    }
 }
