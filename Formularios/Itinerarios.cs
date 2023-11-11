@@ -16,7 +16,6 @@ public partial class Itinerarios : Form
     public Itinerarios()
     {
         InitializeComponent();
-        lsvItinerario.SelectedIndexChanged += lsvItinerario_SelectedIndexChanged; //H
     }
 
     private void Itinerarios_Load(object sender, EventArgs e)
@@ -62,22 +61,17 @@ public partial class Itinerarios : Form
                 //Equals sirve para comprar dos cosas y ver si son iguales en este caso lo ingresado en el txtbox con lo que está en la lsv
                 if (idElemento.Equals(idItinerario, StringComparison.OrdinalIgnoreCase))
                 {
-
                     lsvItinerario.Items.Clear();
-
                     lsvItinerario.Items.Add(item);
-
                 }
                 if (cuit.Equals(idItinerario, StringComparison.OrdinalIgnoreCase))
                 {
                     lsvItinerario.Items.Clear();
-
                     lsvItinerario.Items.Add(item);
                 }
                 if (razonsocial.Equals(idItinerario, StringComparison.OrdinalIgnoreCase))
                 {
                     lsvItinerario.Items.Clear();
-
                     lsvItinerario.Items.Add(item);
                 }
             }
@@ -96,31 +90,11 @@ public partial class Itinerarios : Form
                 item.SubItems.Add(vector[1]);
                 item.SubItems.Add(vector[2]);
                 lsvItinerario.Items.Add(item);
-
             }
 
             sr.Close();
         }
-
-
-
     }
-
-    private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-    {
-
-    }
-
-    private void lsvItinerario_SelectedIndexChanged(object sender, EventArgs e)
-    {
-
-    }
-
-    private void label1_Click(object sender, EventArgs e)
-    {
-
-    }
-
     private void btnCrearReserva_Click(object sender, EventArgs e)
     {
 
@@ -134,7 +108,6 @@ public partial class Itinerarios : Form
         {
             MessageBox.Show("Seleccione un itinerario.", "Error");
         }
-
     }
 
     private void btnNuevoItinerario_Click(object sender, EventArgs e)
@@ -149,7 +122,6 @@ public partial class Itinerarios : Form
         {
             MessageBox.Show($"Se ha creado el itinerario correctamente. Su código de itinerario es {1}.", "Itinerario Creado");
         }
-
     }
 
     private void button2_Click(object sender, EventArgs e)
@@ -158,10 +130,5 @@ public partial class Itinerarios : Form
         {
             MessageBox.Show("Seleccione un itinerario.", "Error");
         }
-    }
-
-    private void lsvItinerario_SelectedIndexChanged_1(object sender, EventArgs e)
-    {
-
     }
 }

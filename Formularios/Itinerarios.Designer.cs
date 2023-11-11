@@ -56,7 +56,6 @@
             lsvItinerario.TabIndex = 1;
             lsvItinerario.UseCompatibleStateImageBehavior = false;
             lsvItinerario.View = View.Details;
-            lsvItinerario.SelectedIndexChanged += lsvItinerario_SelectedIndexChanged_1;
             // 
             // CodItinerario
             // 
@@ -145,7 +144,6 @@
             lblItinerarios.Size = new Size(135, 37);
             lblItinerarios.TabIndex = 10;
             lblItinerarios.Text = "Itinerarios";
-            lblItinerarios.Click += label1_Click;
             // 
             // btnCrearReservaItinerario
             // 
