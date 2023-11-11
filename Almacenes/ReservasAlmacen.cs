@@ -13,13 +13,38 @@ internal static class ReservasAlmacen
 
     static ReservasAlmacen()
     {
-        var reservasJson = File.ReadAllText("Reservas.json");
-        Reservas = JsonConvert.DeserializeObject<List<Reserva>>(reservasJson);
+        try
+        {
+            var reservasJson = File.ReadAllText("Reservas.json");
+            Reservas = JsonConvert.DeserializeObject<List<Reserva>>(reservasJson);
+        }
+        catch (JsonSerializationException ex)
+        {
+            MessageBox.Show($"Error de carga JSON: {ex.Message}");
+            if (ex.InnerException != null)
+            {
+               MessageBox.Show($"Excepción: {ex.InnerException.Message}");
+            }
+            Reservas = new List<Reserva>();
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show($"Error desconocido: {ex.Message}");
+            Reservas = new List<Reserva>();
+        }
     }
+
 
     public static void Grabar()
     {
         var reservasJson = JsonConvert.SerializeObject(Reservas);
         File.WriteAllText("Reservas.json", reservasJson);
     }
+
+    /*static ReservasAlmacen()
+   {
+       var reservasJson = File.ReadAllText("Reservas.json");
+       Reservas = JsonConvert.DeserializeObject<List<Reserva>>(reservasJson);
+   }*/
+
 }

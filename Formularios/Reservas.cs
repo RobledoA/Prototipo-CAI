@@ -19,21 +19,11 @@ namespace Prototipo_CAI
 
         private void Reservas_Load(object sender, EventArgs e)
         {
-            FileInfo fi = new FileInfo("reservas.txt");
-            StreamReader sr = fi.OpenText();
-            while (!sr.EndOfStream)
+            ReservasModel model = new ReservasModel();
+            foreach (ListViewItem item in model.FormatoReservas())
             {
-                string linea = sr.ReadLine();
-                string[] vector = linea.Split(';');
-                ListViewItem item = new ListViewItem(vector[0]);
-                item.SubItems.Add(vector[1]);
-                item.SubItems.Add(vector[2]);
-                item.SubItems.Add(vector[3]);
                 lsvReservas.Items.Add(item);
-
             }
-
-            sr.Close();
         }
 
         private void txtBuscarReserva_KeyDown(object sender, KeyEventArgs e)

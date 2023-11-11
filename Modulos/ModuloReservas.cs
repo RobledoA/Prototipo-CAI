@@ -7,5 +7,9 @@ using System.Threading.Tasks;
 namespace Prototipo_CAI;
 
 internal class ModuloReservas
-{    
+{
+    public static List<Reserva> CargarListaReservas()
+    {
+        return ReservasAlmacen.Reservas;
+    }
 }
