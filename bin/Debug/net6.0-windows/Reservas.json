@@ -1,0 +1,42 @@
+{
+  "Reservas": [
+    {
+      "CodigoReserva": 1,
+      "EstadoReserva": "Confirmada",
+      "FechaReserva": "2023-11-10T08:00:00",
+      "ItinerarioAsociado": {
+        "Origen": "Ciudad A",
+        "Destino": "Ciudad B",
+        "FechaSalida": "2023-11-15T10:00:00",
+        "FechaLlegada": "2023-11-15T12:00:00"
+      },
+      "TarifasPasajeros": [
+        {
+          "NombrePasajero": "Pasajero 1",
+          "Tarifa": 200.0
+        },
+        {
+          "NombrePasajero": "Pasajero 2",
+          "Tarifa": 180.0
+        }
+      }
+    },
+    {
+      "CodigoReserva": 2,
+      "EstadoReserva": "Pendiente",
+      "FechaReserva": "2023-11-12T14:30:00",
+      "ItinerarioAsociado": {
+        "Origen": "Ciudad C",
+        "Destino": "Ciudad D",
+        "FechaSalida": "2023-11-20T09:45:00",
+        "FechaLlegada": "2023-11-20T11:45:00"
+      },
+      "TarifasPasajeros": [
+        {
+          "NombrePasajero": "Pasajero 3",
+          "Tarifa": 220.0
+        }
+      }
+    }
+  ]
+}
