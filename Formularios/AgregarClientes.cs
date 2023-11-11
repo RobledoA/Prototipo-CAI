@@ -19,21 +19,21 @@ namespace Prototipo_CAI
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            string nombreRZ = txtNombreCliente.Text;
+            string cuilcuit = txtCuilCuit.Text;
+            string errores = AgregarClientesModel.ValidarCampos(nombreRZ, cuilcuit);
 
-            if (string.IsNullOrWhiteSpace(txtNombreCliente.Text) && string.IsNullOrWhiteSpace(txtCuilCuit.Text))
-            {
-                MessageBox.Show("Debe completar al menos un campo.", "Error");
-            }
-            else if (!string.IsNullOrWhiteSpace(txtCuilCuit.Text) && !int.TryParse(txtCuilCuit.Text, out int salida))
-            {
-                MessageBox.Show("El cuil/cuit debe ser un número.", "Error");
-            }
-
-            else
+            if (string.IsNullOrEmpty(errores))
             {
                 MessageBox.Show($"Se ha creado el itinerario correctamente. Su código de itinerario es {1}.", "Itinerario Creado");
-                Close();
             }
+            else
+            {
+                MessageBox.Show(errores, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            Close();
+
+            //Se debería agregar los datos del cliente en la lista del formulario "Itinerario".
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

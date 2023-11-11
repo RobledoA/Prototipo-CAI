@@ -26,73 +26,49 @@ public partial class Itinerarios : Form
             lsvItinerario.Items.Add(item);
         }
     }
-
-    private void button3_Click(object sender, EventArgs e)
+    private void btnNuevoItinerario_Click(object sender, EventArgs e)
     {
-        if (lsvItinerario.SelectedItems.Count > 0)
+        var r = MessageBox.Show("Desea agregar datos de cliente?", "Crear Itinerario", MessageBoxButtons.YesNoCancel);
+        if (r == DialogResult.Yes)
         {
-            ListViewItem item = lsvItinerario.SelectedItems[0];
-            lsvItinerario.Items.Remove(item);
+            AgregarClientes agregarClientes = new();
+            agregarClientes.ShowDialog();
+
+            //Acá hay que agregar los datos de la pantalla "AgregarClientes".
         }
-        else
+        if (r == DialogResult.No)
+        {
+            MessageBox.Show($"Se ha creado el itinerario correctamente. Su código de itinerario es {6}.", "Itinerario Creado");
+            //Habría que hacer un contador para el código itinerario.
+
+            var item = new ListViewItem();
+            item.Text = "6";
+            item.SubItems.Add("");
+            item.SubItems.Add("");
+
+            lsvItinerario.Items.Add(item);
+        }
+    }
+    private void btnDatosCliente_Click(object sender, EventArgs e)
+    {
+
+    }
+    private void btnEstItinerarioActivo_Click(object sender, EventArgs e)
+    {
+        if (lsvItinerario.SelectedItems.Count == 0)
         {
             MessageBox.Show("Seleccione un itinerario.", "Error");
         }
     }
-
-
-    /*Esto se puede mejorar con una función y llamar a la función directamente esto es una gronchada. También se puede agregar la función de 
-    presionar enter y buscar*/
-    private void btnBuscarItinerario_Click(object sender, EventArgs e)
+    private void btnEliminarItinerario_Click(object sender, EventArgs e)
     {
-
-        string idItinerario = txtBuscarItinerario.Text;
-
-        if (!string.IsNullOrWhiteSpace(idItinerario))
+        if (lsvItinerario.SelectedItems.Count == 0)
         {
-            //lsvItinerario.SelectedItems.Clear();  pa que sirve esto
-
-            foreach (ListViewItem item in lsvItinerario.Items)
-            {
-                string idElemento = item.Text;
-                string cuit = item.SubItems[0].Text;
-                string razonsocial = item.SubItems[1].Text;
-
-                //Equals sirve para comprar dos cosas y ver si son iguales en este caso lo ingresado en el txtbox con lo que está en la lsv
-                if (idElemento.Equals(idItinerario, StringComparison.OrdinalIgnoreCase))
-                {
-                    lsvItinerario.Items.Clear();
-                    lsvItinerario.Items.Add(item);
-                }
-                if (cuit.Equals(idItinerario, StringComparison.OrdinalIgnoreCase))
-                {
-                    lsvItinerario.Items.Clear();
-                    lsvItinerario.Items.Add(item);
-                }
-                if (razonsocial.Equals(idItinerario, StringComparison.OrdinalIgnoreCase))
-                {
-                    lsvItinerario.Items.Clear();
-                    lsvItinerario.Items.Add(item);
-                }
-            }
+            MessageBox.Show("Debe seleccionar un producto de la lista.", "Error");
         }
-
         else
         {
-            lsvItinerario.Items.Clear();
-            FileInfo fi = new("itinerario.txt");
-            StreamReader sr = fi.OpenText();
-            while (!sr.EndOfStream)
-            {
-                string linea = sr.ReadLine();
-                string[] vector = linea.Split(';');
-                ListViewItem item = new(vector[0]);
-                item.SubItems.Add(vector[1]);
-                item.SubItems.Add(vector[2]);
-                lsvItinerario.Items.Add(item);
-            }
-
-            sr.Close();
+            lsvItinerario.SelectedItems[0].Remove();
         }
     }
     private void btnCrearReserva_Click(object sender, EventArgs e)
@@ -109,26 +85,42 @@ public partial class Itinerarios : Form
             MessageBox.Show("Seleccione un itinerario.", "Error");
         }
     }
-
-    private void btnNuevoItinerario_Click(object sender, EventArgs e)
+    /*Esto se puede mejorar con una función y llamar a la función directamente esto es una gronchada. También se puede agregar la función de 
+    presionar enter y buscar*/
+    private void btnBuscarItinerario_Click(object sender, EventArgs e)
     {
-        var r = MessageBox.Show("Desea agregar datos de cliente?", "Crear Itinerario", MessageBoxButtons.YesNoCancel);
-        if (r == DialogResult.Yes)
+        string idItinerario = txtBuscarItinerario.Text;
+
+        if (!string.IsNullOrWhiteSpace(idItinerario))
         {
-            AgregarClientes agregarClientes = new();
-            agregarClientes.ShowDialog();
-        }
-        if (r == DialogResult.No)
-        {
-            MessageBox.Show($"Se ha creado el itinerario correctamente. Su código de itinerario es {1}.", "Itinerario Creado");
+            //lsvItinerario.SelectedItems.Clear(); 
+
+            foreach (ListViewItem item in lsvItinerario.Items)
+            {
+                string codigo = item.Text;
+                string cuit = item.SubItems[0].Text;
+                string razonsocial = item.SubItems[1].Text;
+
+                //Equals sirve para comprar dos cosas y ver si son iguales en este caso lo ingresado en el txtbox con lo que está en la lsv
+                if (codigo.Equals(idItinerario, StringComparison.OrdinalIgnoreCase))
+                {
+                    lsvItinerario.Items.Clear();
+                    lsvItinerario.Items.Add(item);
+                }
+                if (cuit.Equals(idItinerario, StringComparison.OrdinalIgnoreCase))
+                {
+                    lsvItinerario.Items.Clear();
+                    lsvItinerario.Items.Add(item);
+                }
+                if (razonsocial.Equals(idItinerario, StringComparison.OrdinalIgnoreCase))
+                {
+                    lsvItinerario.Items.Clear();
+                    lsvItinerario.Items.Add(item);
+                }
+            }
         }
     }
 
-    private void button2_Click(object sender, EventArgs e)
-    {
-        if (lsvItinerario.SelectedItems.Count == 0)
-        {
-            MessageBox.Show("Seleccione un itinerario.", "Error");
-        }
-    }
+
+
 }

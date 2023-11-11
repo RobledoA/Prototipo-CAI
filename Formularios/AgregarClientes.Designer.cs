@@ -55,18 +55,18 @@
             lblNombreCliente.AutoSize = true;
             lblNombreCliente.Location = new Point(41, 29);
             lblNombreCliente.Name = "lblNombreCliente";
-            lblNombreCliente.Size = new Size(128, 15);
+            lblNombreCliente.Size = new Size(122, 15);
             lblNombreCliente.TabIndex = 2;
-            lblNombreCliente.Text = "Nombre / Razón Social";
+            lblNombreCliente.Text = "Nombre/Razón Social";
             // 
             // lblCuilCuit
             // 
             lblCuilCuit.AutoSize = true;
             lblCuilCuit.Location = new Point(41, 86);
             lblCuilCuit.Name = "lblCuilCuit";
-            lblCuilCuit.Size = new Size(68, 15);
+            lblCuilCuit.Size = new Size(62, 15);
             lblCuilCuit.TabIndex = 3;
-            lblCuilCuit.Text = "CUIL / CUIT";
+            lblCuilCuit.Text = "CUIL/CUIT";
             // 
             // btnCancelar
             // 
