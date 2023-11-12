@@ -16,6 +16,7 @@ internal class ReservasModel
         foreach (Reserva reservas in listReservas)
         {
             ListViewItem item = new ListViewItem(reservas.CodigoReserva.ToString());
+            item.SubItems.Add(reservas.ToString()); //Acá iría lo de razón social 
             item.SubItems.Add(reservas.FechaReserva.ToString());
             item.SubItems.Add(reservas.EstadoReserva);
             listViewItem.Add(item);

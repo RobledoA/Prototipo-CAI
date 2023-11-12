@@ -80,6 +80,7 @@
             btnConfirmarReserva.TabIndex = 2;
             btnConfirmarReserva.Text = "Confirmar reserva";
             btnConfirmarReserva.UseVisualStyleBackColor = true;
+            btnConfirmarReserva.Click += btnConfirmarReserva_Click;
             // 
             // btnBuscarReserva
             // 
@@ -111,6 +112,7 @@
             btnCancelarReserva.TabIndex = 6;
             btnCancelarReserva.Text = "Cancelar Reserva";
             btnCancelarReserva.UseVisualStyleBackColor = true;
+            btnCancelarReserva.Click += btnCancelarReserva_Click;
             // 
             // Reservas
             // 
