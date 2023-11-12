@@ -38,9 +38,38 @@ namespace Prototipo_CAI
 
         public void BuscarReserva(string codReserva)
         {
-            // TO DO
-            MessageBox.Show(codReserva);
+            ReservasModel model = new ReservasModel();
+            List<ListViewItem> reservas = model.FormatoReservas();
 
+            if (string.IsNullOrWhiteSpace(codReserva))
+            {
+                lsvReservas.Items.Clear();
+                lsvReservas.Items.AddRange(reservas.ToArray());
+            }
+            else
+            {
+                bool reservaEncontrada = false;
+                foreach (ListViewItem item in reservas)
+                {
+                    if (item.SubItems.Count > 0 && item.SubItems[0].Text == codReserva)
+                    {
+                        lsvReservas.Items.Clear();
+                        lsvReservas.Items.Add(item);
+
+                        item.SubItems[3].Text = "";
+
+                        ReservasAlmacen.Grabar();
+
+                        reservaEncontrada = true;
+                        break;
+                    }
+                }
+
+                if (!reservaEncontrada)
+                {
+                    MessageBox.Show("No se encontró ninguna reserva con el código: " + codReserva);
+                }
+            }
         }
 
         private void btnBuscarReserva_Click(object sender, EventArgs e)
