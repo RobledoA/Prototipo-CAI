@@ -1,0 +1,31 @@
+[
+  {
+    "CodigoItinerario": "1",
+    "CUILCUIT": "20126316631",
+    "NombreCliente": "Juan Pérez"
+  },
+
+  {
+    "CodigoItinerario": "2",
+    "CUILCUIT": "27302648674",
+    "NombreCliente": "María López"
+  },
+
+  {
+    "CodigoItinerario": "3",
+    "CUILCUIT": "20726015822",
+    "NombreCliente": "Pedro Gomez"
+  },
+
+  {
+    "CodigoItinerario": "4",
+    "CUILCUIT": "27313310594",
+    "NombreCliente": "Ana Fernández"
+  },
+
+  {
+    "CodigoItinerario": "5",
+    "CUILCUIT": "20272970354",
+    "NombreCliente": "Luis Sánchez"
+  }
+]
