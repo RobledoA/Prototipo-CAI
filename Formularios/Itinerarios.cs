@@ -44,6 +44,7 @@ public partial class Itinerarios : Form
 
             MessageBox.Show($"Se ha creado el itinerario correctamente. Su código de itinerario es {codigoSiguiente}.",
                 "Itinerario Creado");
+            //Falta que se agregue al Json.
 
             //Esto debería ir en otro lado?
             var item = new ListViewItem();
