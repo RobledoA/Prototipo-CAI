@@ -23,5 +23,11 @@ internal class ItinerariosModel
 
         return listViewItem;
     }
+
+    public void CambiarItinerarioActivo(string codItinerario)
+    {
+        Itinerario itinerario = ModuloItinerarios.BuscarItinerario(codItinerario);
+        ModuloItinerarios.EstablecerItinerarioActivo(itinerario);
+    }
     
 }

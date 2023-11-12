@@ -59,6 +59,13 @@ public partial class Itinerarios : Form
         {
             MessageBox.Show("Seleccione un itinerario.", "Error");
         }
+        else
+        {
+            string codItinerario = lsvItinerario.SelectedItems[0].Text;
+            ItinerariosModel model = new ItinerariosModel();
+            model.CambiarItinerarioActivo(codItinerario);
+            MessageBox.Show($"Se ha establecido el itinerario {codItinerario} como activo.");
+        }
     }
     private void btnEliminarItinerario_Click(object sender, EventArgs e)
     {

@@ -21,7 +21,21 @@ namespace Prototipo_CAI
         private void Hoteles_Load(object sender, EventArgs e)
         {
             HotelesModel model = new HotelesModel();
-            foreach (ListViewItem item in model.FormatoHoteles())
+            if (ModuloItinerarios.ItinerarioActivo == null)
+            {
+                MessageBox.Show("Si desea agregar productos, establezca un itinerario como activo en el menú Itinerarios.", "Advertencia");
+            }
+            else
+            {
+                btnAgregarItinerarioHoteles.Enabled = true;
+                btnEliminarItinerarioHotel.Enabled = true;
+                lblItinerarioActivo.Text = $"Itinerario Nº{ModuloItinerarios.ItinerarioActivo.CodigoItinerario.ToString()}";
+                foreach (ListViewItem list in model.CargarHotelesItinerarioActivo())
+                {
+                    lsvHotelesAgregados.Items.Add(list);
+                }
+            }
+            foreach (ListViewItem item in model.CargarHoteles())
             {
                 lsvHoteles.Items.Add(item);
             }
@@ -78,7 +92,7 @@ namespace Prototipo_CAI
             dtpFechaHastaHoteles.Text = "01/01/2023";
             txtHabitacionesHoteles.Clear();
             HotelesModel model = new HotelesModel();
-            foreach (ListViewItem item in model.FormatoHoteles())
+            foreach (ListViewItem item in model.CargarHoteles())
             {
                 lsvHoteles.Items.Add(item);
             }
@@ -100,6 +114,13 @@ namespace Prototipo_CAI
             {
                 MessageBox.Show(errores, "Error");
             }
+        }
+
+        private void Hoteles_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            /*HotelesModel model = new HotelesModel();
+            lsvHotelesAgregados.Items.CopyTo*/
+            
         }
     }
 }

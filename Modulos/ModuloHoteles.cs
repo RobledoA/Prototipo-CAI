@@ -55,6 +55,38 @@ internal static class ModuloHoteles
         return errores;
     }
 
+    public static Hotel ObtenerInfoHotel(string codHotel)
+    {
+        foreach (Hotel hotel in HotelesAlmacen.Hoteles)
+        {
+            if (codHotel == hotel.CodigoHotel)
+            {
+                return hotel;
+            }
+        }
+
+        return null;
+    }
+
+    public static Disponibilidad ObtenerInfoDisponibilidad(string codHotel, string codDisponibilidad)
+    {
+        foreach (Hotel hotel in HotelesAlmacen.Hoteles)
+        {
+            if (codHotel == hotel.CodigoHotel)
+            {
+                foreach (Disponibilidad disp in hotel.Disponibilidades)
+                {
+                    if (codDisponibilidad == Convert.ToString(disp.CodigoDisponibilidad))
+                    {
+                        return disp;
+                    }
+                }
+            }
+        }
+        return null;
+    }
+
+
     /*public static string FiltrarHoteles(string ubicacion, string calificacion, string fechaDesde, string fechaHasta, string cantHabitaciones)
     {
         List<Hotel> list = new List<Hotel>();
