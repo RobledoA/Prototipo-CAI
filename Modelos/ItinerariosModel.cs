@@ -29,5 +29,4 @@ internal class ItinerariosModel
         Itinerario itinerario = ModuloItinerarios.BuscarItinerario(codItinerario);
         ModuloItinerarios.EstablecerItinerarioActivo(itinerario);
     }
-    
 }

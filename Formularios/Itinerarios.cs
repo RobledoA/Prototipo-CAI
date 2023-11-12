@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Prototipo_CAI;
 
@@ -18,9 +19,9 @@ public partial class Itinerarios : Form
         InitializeComponent();
     }
 
+    ItinerariosModel model = new ItinerariosModel();
     private void Itinerarios_Load(object sender, EventArgs e)
     {
-        ItinerariosModel model = new ItinerariosModel();
         foreach (ListViewItem item in model.FormatoItinerarios())
         {
             lsvItinerario.Items.Add(item);
@@ -38,11 +39,15 @@ public partial class Itinerarios : Form
         }
         if (r == DialogResult.No)
         {
-            MessageBox.Show($"Se ha creado el itinerario correctamente. Su código de itinerario es {6}.", "Itinerario Creado");
-            //Habría que hacer un contador para el código itinerario.
+            int ultimoCodigo = lsvItinerario.Items.Count; 
+            int codigoSiguiente = ultimoCodigo + 1; //No sirve si se elemina un Itinerario.
 
+            MessageBox.Show($"Se ha creado el itinerario correctamente. Su código de itinerario es {codigoSiguiente}.",
+                "Itinerario Creado");
+
+            //Esto debería ir en otro lado?
             var item = new ListViewItem();
-            item.Text = "6";
+            item.Text = codigoSiguiente.ToString();
             item.SubItems.Add("");
             item.SubItems.Add("");
 
@@ -62,7 +67,6 @@ public partial class Itinerarios : Form
         else
         {
             string codItinerario = lsvItinerario.SelectedItems[0].Text;
-            ItinerariosModel model = new ItinerariosModel();
             model.CambiarItinerarioActivo(codItinerario);
             MessageBox.Show($"Se ha establecido el itinerario {codItinerario} como activo.");
         }
@@ -71,11 +75,12 @@ public partial class Itinerarios : Form
     {
         if (lsvItinerario.SelectedItems.Count == 0)
         {
-            MessageBox.Show("Debe seleccionar un producto de la lista.", "Error");
+            MessageBox.Show("Debe seleccionar un itinerario de la lista.", "Error");
         }
         else
         {
             lsvItinerario.SelectedItems[0].Remove();
+            //Falta que lo elimine del Json.
         }
     }
     private void btnCrearReserva_Click(object sender, EventArgs e)
