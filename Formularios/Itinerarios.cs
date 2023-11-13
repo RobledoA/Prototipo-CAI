@@ -20,6 +20,7 @@ public partial class Itinerarios : Form
     }
 
     ItinerariosModel model = new ItinerariosModel();
+
     private void Itinerarios_Load(object sender, EventArgs e)
     {
         foreach (ListViewItem item in model.FormatoItinerarios())
@@ -27,6 +28,7 @@ public partial class Itinerarios : Form
             lsvItinerario.Items.Add(item);
         }
     }
+
     private void btnNuevoItinerario_Click(object sender, EventArgs e)
     {
         var r = MessageBox.Show("Desea agregar datos de cliente?", "Crear Itinerario", MessageBoxButtons.YesNoCancel);
@@ -39,7 +41,7 @@ public partial class Itinerarios : Form
         }
         if (r == DialogResult.No)
         {
-            int ultimoCodigo = lsvItinerario.Items.Count; 
+            int ultimoCodigo = ItinerariosAlmacen.Itinerarios.Count;
             int codigoSiguiente = ultimoCodigo + 1; //No sirve si se elemina un Itinerario.
 
             MessageBox.Show($"Se ha creado el itinerario correctamente. Su código de itinerario es {codigoSiguiente}.",
@@ -55,10 +57,12 @@ public partial class Itinerarios : Form
             lsvItinerario.Items.Add(item);
         }
     }
+
     private void btnDatosCliente_Click(object sender, EventArgs e)
     {
 
     }
+
     private void btnEstItinerarioActivo_Click(object sender, EventArgs e)
     {
         if (lsvItinerario.SelectedItems.Count == 0)
@@ -72,6 +76,7 @@ public partial class Itinerarios : Form
             MessageBox.Show($"Se ha establecido el itinerario {codItinerario} como activo.");
         }
     }
+
     private void btnEliminarItinerario_Click(object sender, EventArgs e)
     {
         if (lsvItinerario.SelectedItems.Count == 0)
@@ -84,6 +89,7 @@ public partial class Itinerarios : Form
             //Falta que lo elimine del Json.
         }
     }
+
     private void btnCrearReserva_Click(object sender, EventArgs e)
     {
 
@@ -98,8 +104,10 @@ public partial class Itinerarios : Form
             MessageBox.Show("Seleccione un itinerario.", "Error");
         }
     }
-    /*Esto se puede mejorar con una función y llamar a la función directamente esto es una gronchada. También se puede agregar la función de 
+
+    /*Esto se puede mejorar con una función y llamar a la función directamente esto es una *****. También se puede agregar la función de 
     presionar enter y buscar*/
+
     private void btnBuscarItinerario_Click(object sender, EventArgs e)
     {
         string idItinerario = txtBuscarItinerario.Text;

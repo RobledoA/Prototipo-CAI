@@ -9,11 +9,13 @@ namespace Prototipo_CAI;
 
 internal static class ModuloItinerarios
 {
+    public static List<Itinerario> Itinerarios = ItinerariosAlmacen.Itinerarios;
+
     public static Itinerario ItinerarioActivo;
 
     public static List<Itinerario> CargarListaItinerarios()
     {
-        return ItinerariosAlmacen.Itinerarios;
+        return Itinerarios;
     }
 
     public static void EstablecerItinerarioActivo(Itinerario itinerario)
@@ -23,7 +25,7 @@ internal static class ModuloItinerarios
 
     public static Itinerario BuscarItinerario(string codItinerario)
     {
-        foreach (Itinerario itinerario in ItinerariosAlmacen.Itinerarios)
+        foreach (Itinerario itinerario in Itinerarios)
         {
             if (Convert.ToInt32(codItinerario) == itinerario.CodigoItinerario)
             {

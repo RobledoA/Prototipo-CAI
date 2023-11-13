@@ -12,6 +12,7 @@ internal class HotelesModel
 {
     public List<ListViewItem> FormatoHoteles(List<Hotel> listHotel)
     {
+        HotelesModel model = new HotelesModel();
         List<ListViewItem> listViewItem = new List<ListViewItem>();
         foreach (Hotel hotel in listHotel)
         {
@@ -19,7 +20,7 @@ internal class HotelesModel
             {
                 ListViewItem item = new ListViewItem(Convert.ToString(disp.CodigoDisponibilidad));
                 item.SubItems.Add(hotel.Nombre);
-                item.SubItems.Add(ModuloHoteles.ConversorCalificacion(hotel.Calificacion));
+                item.SubItems.Add(model.ConversorCalificacion(hotel.Calificacion));
                 item.SubItems.Add(hotel.CodigoCiudad);
                 item.SubItems.Add(disp.Nombre);
                 item.SubItems.Add($"${Convert.ToString(disp.TarifaDiaria)}");
@@ -32,13 +33,14 @@ internal class HotelesModel
 
     public List<ListViewItem> FormatoItinerarioHoteles(List<Disponibilidad> listDisponibilidades)
     {
+        HotelesModel model = new HotelesModel();
         List<ListViewItem> listViewItem = new List<ListViewItem>();
         foreach (Disponibilidad disp in listDisponibilidades)
         {
             Hotel hotel = ModuloHoteles.ObtenerInfoHotel(Convert.ToString(disp.CodigoHotel));
             ListViewItem item = new ListViewItem(Convert.ToString(disp.CodigoDisponibilidad));
             item.SubItems.Add(hotel.Nombre);
-            item.SubItems.Add(ModuloHoteles.ConversorCalificacion(hotel.Calificacion));
+            item.SubItems.Add(model.ConversorCalificacion(hotel.Calificacion));
             item.SubItems.Add(hotel.CodigoCiudad);
             item.SubItems.Add(disp.Nombre);
             item.SubItems.Add($"${Convert.ToString(disp.TarifaDiaria)}");
@@ -104,5 +106,15 @@ internal class HotelesModel
             return "El número ingresado debe ser mayor a 0.\n";
         }
         return "";
+    }
+
+    public string ConversorCalificacion(int calificacion)
+    {
+        string estrellas = "";
+        for (int i = 1; i <= calificacion; i++)
+        {
+            estrellas += "★";
+        }
+        return estrellas;
     }
 }

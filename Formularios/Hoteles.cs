@@ -28,7 +28,7 @@ namespace Prototipo_CAI
             else
             {
                 btnAgregarItinerarioHoteles.Enabled = true;
-                btnEliminarItinerarioHotel.Enabled = true;
+                btnQuitarItinerarioHotel.Enabled = true;
                 lblItinerarioActivo.Text = $"Itinerario Nº{ModuloItinerarios.ItinerarioActivo.CodigoItinerario.ToString()}";
                 foreach (ListViewItem list in model.CargarHotelesItinerarioActivo())
                 {
@@ -41,12 +41,10 @@ namespace Prototipo_CAI
             }
         }
 
-
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
 
         private void lsvHoteles_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -71,7 +69,7 @@ namespace Prototipo_CAI
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnQuitarItinerarioHoteles_Click(object sender, EventArgs e)
         {
             if (lsvHotelesAgregados.SelectedItems.Count == 0)
             {
@@ -121,7 +119,7 @@ namespace Prototipo_CAI
         {
             /*HotelesModel model = new HotelesModel();
             lsvHotelesAgregados.Items.CopyTo*/
-            
+
         }
     }
 }

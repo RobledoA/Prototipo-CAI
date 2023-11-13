@@ -50,6 +50,7 @@ public partial class Aereos : Form
     {
         lsvAereos.SelectedItems.Clear();
     }
+
     private void btnAgregarItinerarioAereos_Click(object sender, EventArgs e)
     {
 

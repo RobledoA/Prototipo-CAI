@@ -52,7 +52,7 @@
             hdCapacidad = new ColumnHeader();
             btnAgregarItinerarioHoteles = new Button();
             lblItinerarioActivo = new Label();
-            btnEliminarItinerarioHotel = new Button();
+            btnQuitarItinerarioHotel = new Button();
             lsvHotelesAgregados = new ListView();
             columnHeader1 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
@@ -276,16 +276,15 @@
             lblItinerarioActivo.Text = "NO HAY ITINERARIO ACTIVO";
             lblItinerarioActivo.TextAlign = ContentAlignment.TopRight;
             // 
-            // btnEliminarItinerarioHotel
+            // btnQuitarItinerarioHotel
             // 
-            btnEliminarItinerarioHotel.Enabled = false;
-            btnEliminarItinerarioHotel.Location = new Point(489, 218);
-            btnEliminarItinerarioHotel.Name = "btnEliminarItinerarioHotel";
-            btnEliminarItinerarioHotel.Size = new Size(102, 26);
-            btnEliminarItinerarioHotel.TabIndex = 28;
-            btnEliminarItinerarioHotel.Text = "<<< Eliminar";
-            btnEliminarItinerarioHotel.UseVisualStyleBackColor = true;
-            btnEliminarItinerarioHotel.Click += button1_Click;
+            btnQuitarItinerarioHotel.Enabled = false;
+            btnQuitarItinerarioHotel.Location = new Point(489, 218);
+            btnQuitarItinerarioHotel.Name = "btnQuitarItinerarioHotel";
+            btnQuitarItinerarioHotel.Size = new Size(102, 26);
+            btnQuitarItinerarioHotel.TabIndex = 28;
+            btnQuitarItinerarioHotel.Text = "<<< Eliminar";
+            btnQuitarItinerarioHotel.UseVisualStyleBackColor = true;
             // 
             // lsvHotelesAgregados
             // 
@@ -351,7 +350,7 @@
             ClientSize = new Size(1081, 370);
             Controls.Add(lblHotelEnItinerario);
             Controls.Add(lsvHotelesAgregados);
-            Controls.Add(btnEliminarItinerarioHotel);
+            Controls.Add(btnQuitarItinerarioHotel);
             Controls.Add(lblItinerarioActivo);
             Controls.Add(btnAgregarItinerarioHoteles);
             Controls.Add(lsvHoteles);
@@ -394,7 +393,7 @@
         private ColumnHeader hdHabitacion;
         private ColumnHeader hdTarifa;
         private ColumnHeader hdCapacidad;
-        private Button btnEliminarItinerarioHotel;
+        private Button btnQuitarItinerarioHotel;
         private ColumnHeader hdCodHotel;
         public ListView lsvHotelesAgregados;
         private ColumnHeader columnHeader1;

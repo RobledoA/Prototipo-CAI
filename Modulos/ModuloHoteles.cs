@@ -9,24 +9,16 @@ namespace Prototipo_CAI;
 
 internal static class ModuloHoteles
 {
+    public static List<Hotel> Hoteles = HotelesAlmacen.Hoteles;
+
     public static List<Hotel> CargarListaHoteles()
     {
-        return HotelesAlmacen.Hoteles;
-    }
-
-    public static string ConversorCalificacion(int calificacion)
-    {
-        string estrellas = "";
-        for (int i = 1; i <= calificacion; i++)
-        {
-            estrellas+="★";
-        }
-        return estrellas;
+        return Hoteles;
     }
 
     public static Hotel ObtenerInfoHotel(string codHotel)
     {
-        foreach (Hotel hotel in HotelesAlmacen.Hoteles)
+        foreach (Hotel hotel in Hoteles)
         {
             if (codHotel == hotel.CodigoHotel)
             {
@@ -39,7 +31,7 @@ internal static class ModuloHoteles
 
     public static Disponibilidad ObtenerInfoDisponibilidad(string codHotel, string codDisponibilidad)
     {
-        foreach (Hotel hotel in HotelesAlmacen.Hoteles)
+        foreach (Hotel hotel in Hoteles)
         {
             if (codHotel == hotel.CodigoHotel)
             {
@@ -54,7 +46,6 @@ internal static class ModuloHoteles
         }
         return null;
     }
-
 
     /*public static string FiltrarHoteles(string ubicacion, string calificacion, string fechaDesde, string fechaHasta, string cantHabitaciones)
     {
