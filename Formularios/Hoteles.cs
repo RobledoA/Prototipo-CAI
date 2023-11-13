@@ -100,12 +100,13 @@ namespace Prototipo_CAI
 
         private void btnBuscarHoteles_Click(object sender, EventArgs e)
         {
+            HotelesModel model = new();
             string ubicacion = txtUbicacionHoteles.Text;
             string calificacion = cmbCalificacionHoteles.Text;
             string fechaDesde = dtpFechaDesdeHoteles.Text;
             string fechaHasta = dtpFechaHastaHoteles.Text;
             string cantHabitaciones = txtHabitacionesHoteles.Text;
-            string errores = ModuloHoteles.ValidarFiltros(ubicacion, calificacion, fechaDesde, fechaHasta, cantHabitaciones);
+            string errores = model.ValidarFiltros(ubicacion, calificacion, fechaDesde, fechaHasta, cantHabitaciones);
             if (string.IsNullOrEmpty(errores))
             {
                 MessageBox.Show("Todo piola");

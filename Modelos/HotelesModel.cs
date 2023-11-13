@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -66,4 +67,42 @@ internal class HotelesModel
         return true;
     }
 
+    public string ValidarFiltros(string ubicacion, string calificacion, string fechaDesde, string fechaHasta, string cantHabitaciones)
+    {
+        string errores = "";
+        if (string.IsNullOrWhiteSpace(ubicacion + calificacion + cantHabitaciones) && fechaDesde == "01/01/2023" && fechaHasta == "01/01/2023")
+        {
+            errores += "Debe seleccionar un filtro.\n";
+            return errores;
+        }
+        if (!string.IsNullOrWhiteSpace(ubicacion) && !(Regex.IsMatch(ubicacion, @"^[a-zA-Z]+$") && ubicacion.Length == 3))
+        {
+            errores += "La ubicación debe ser un código formado por 3 letras.\n";
+        }
+        if ((!String.Equals(fechaDesde, "01/01/2023") && Convert.ToDateTime(fechaDesde) < DateTime.Now) || (!String.Equals(fechaHasta, "01/01/2023") && Convert.ToDateTime(fechaHasta) < DateTime.Now))
+        {
+            errores += "Cualquier fecha ingresada no puede ser anterior a la fecha actual.\n";
+        }
+        if (!string.IsNullOrWhiteSpace(cantHabitaciones))
+        {
+            errores += ValidarNumeroEntero(cantHabitaciones);
+        }
+
+
+        return errores;
+    }
+
+    public string ValidarNumeroEntero(string numero)
+    {
+        int salida;
+        if (!int.TryParse(numero, out salida))
+        {
+            return "El dato ingresado debe ser un número entero.\n";
+        }
+        else if (salida <= 0)
+        {
+            return "El número ingresado debe ser mayor a 0.\n";
+        }
+        return "";
+    }
 }
