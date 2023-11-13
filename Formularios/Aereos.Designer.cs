@@ -51,11 +51,11 @@
             txtOrigenAereos = new TextBox();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             btnAgregarItinerarioAereos = new Button();
-            lblItinerarioActivo = new Label();
             lblAereosDisponibles = new Label();
             lblAereoEnItinerario = new Label();
             lsvItinerarioAereos = new ListView();
             btnQuitarItinerarioAereos = new Button();
+            lblItinerarioActivo = new Label();
             grpAereos.SuspendLayout();
             SuspendLayout();
             // 
@@ -237,15 +237,6 @@
             btnAgregarItinerarioAereos.Text = "Agregar >>>";
             btnAgregarItinerarioAereos.UseVisualStyleBackColor = true;
             // 
-            // lblItinerarioActivo
-            // 
-            lblItinerarioActivo.Location = new Point(867, 11);
-            lblItinerarioActivo.Name = "lblItinerarioActivo";
-            lblItinerarioActivo.RightToLeft = RightToLeft.Yes;
-            lblItinerarioActivo.Size = new Size(120, 25);
-            lblItinerarioActivo.TabIndex = 18;
-            lblItinerarioActivo.Text = "itinerario datos";
-            // 
             // lblAereosDisponibles
             // 
             lblAereosDisponibles.AutoSize = true;
@@ -286,15 +277,26 @@
             btnQuitarItinerarioAereos.Text = "<<< Quitar";
             btnQuitarItinerarioAereos.UseVisualStyleBackColor = true;
             // 
+            // lblItinerarioActivo
+            // 
+            lblItinerarioActivo.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblItinerarioActivo.Location = new Point(856, 12);
+            lblItinerarioActivo.Name = "lblItinerarioActivo";
+            lblItinerarioActivo.RightToLeft = RightToLeft.No;
+            lblItinerarioActivo.Size = new Size(213, 18);
+            lblItinerarioActivo.TabIndex = 27;
+            lblItinerarioActivo.Text = "NO HAY ITINERARIO ACTIVO";
+            lblItinerarioActivo.TextAlign = ContentAlignment.TopRight;
+            // 
             // Aereos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1081, 394);
+            Controls.Add(lblItinerarioActivo);
             Controls.Add(btnQuitarItinerarioAereos);
             Controls.Add(lblAereoEnItinerario);
             Controls.Add(lsvItinerarioAereos);
-            Controls.Add(lblItinerarioActivo);
             Controls.Add(lblAereosDisponibles);
             Controls.Add(grpAereos);
             Controls.Add(btnAgregarItinerarioAereos);
@@ -329,7 +331,6 @@
         private ComboBox cmbClaseAereos;
         private Label lblClaseAereos;
         private Button btnAgregarItinerarioAereos;
-        private Label lblItinerarioActivo;
         private Label lblAereosDisponibles;
         private Label lblAereoEnItinerario;
         private ListView lsvItinerarioAereos;
@@ -346,5 +347,6 @@
         private ColumnHeader columnHeader2;
         private ColumnHeader columnHeader3;
         private ColumnHeader columnHeader4;
+        private Label lblItinerarioActivo;
     }
 }

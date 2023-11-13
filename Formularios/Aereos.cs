@@ -20,7 +20,7 @@ public partial class Aereos : Form
     private void Aereos_Load(object sender, EventArgs e)
     {
         AereosModel model = new();
-        /*if (ModuloItinerarios.ItinerarioActivo == null)
+        if (ModuloItinerarios.ItinerarioActivo == null)
         {
             MessageBox.Show("Si desea agregar productos, establezca un itinerario como activo en el menú Itinerarios.", "Advertencia");
         }
@@ -29,11 +29,11 @@ public partial class Aereos : Form
             btnAgregarItinerarioAereos.Enabled = true;
             btnQuitarItinerarioAereos.Enabled = true;
             lblItinerarioActivo.Text = $"Itinerario Nº{ModuloItinerarios.ItinerarioActivo.CodigoItinerario.ToString()}";
-            foreach (ListViewItem list in model.CargarHotelesItinerarioActivo())
+            /*foreach (ListViewItem list in model.CargarHotelesItinerarioActivo())
             {
                 lsvHotelesAgregados.Items.Add(list);
-            }
-        }*/
+            }*/
+        }
         foreach (ListViewItem item in model.CargarVuelos())
         {
             lsvAereos.Items.Add(item);

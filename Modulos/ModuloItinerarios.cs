@@ -42,4 +42,9 @@ internal static class ModuloItinerarios
             ItinerarioActivo.Disponibilidades.Add(disp);
         }
     }
+
+    public static Itinerario LlamarItinerarioActivo()
+    {
+        return ItinerarioActivo;
+    }
 }
