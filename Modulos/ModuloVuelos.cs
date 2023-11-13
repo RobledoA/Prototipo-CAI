@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,4 +9,8 @@ namespace Prototipo_CAI;
 
 internal class ModuloVuelos
 {
+    public static List<Vuelo> CargarListaVuelos()
+    {
+        return VuelosAlmacen.Vuelos;
+    }
 }

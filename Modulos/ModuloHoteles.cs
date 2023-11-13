@@ -52,8 +52,8 @@ internal static class ModuloHoteles
                 errores += "La cantidad de habitaciones debe ser mayor que 0.\n";
             }
         }
-        return errores;
-    }
+        return errores; //MOVER AL MODEL
+    } ///
 
     public static Hotel ObtenerInfoHotel(string codHotel)
     {

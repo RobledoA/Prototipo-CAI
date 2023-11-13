@@ -19,27 +19,67 @@ public partial class Aereos : Form
 
     private void Aereos_Load(object sender, EventArgs e)
     {
-        /*FileInfo fi = new FileInfo("aereos.txt");
-        StreamReader sr = fi.OpenText();
-        while (!sr.EndOfStream)
+        AereosModel model = new();
+        /*if (ModuloItinerarios.ItinerarioActivo == null)
         {
-            string linea = sr.ReadLine();
-            string[] vector = linea.Split(';');
-            ListViewItem item = new ListViewItem(vector[0]);
-            item.SubItems.Add(vector[1]);
-            item.SubItems.Add(vector[2]);
-            item.SubItems.Add(vector[3]);
-            item.SubItems.Add(vector[4]);
-            item.SubItems.Add(vector[5]);
-            item.SubItems.Add(vector[6]);
-            item.SubItems.Add(vector[7]);
-            item.SubItems.Add(vector[8]);
+            MessageBox.Show("Si desea agregar productos, establezca un itinerario como activo en el menú Itinerarios.", "Advertencia");
+        }
+        else
+        {
+            btnAgregarItinerarioAereos.Enabled = true;
+            btnQuitarItinerarioAereos.Enabled = true;
+            lblItinerarioActivo.Text = $"Itinerario Nº{ModuloItinerarios.ItinerarioActivo.CodigoItinerario.ToString()}";
+            foreach (ListViewItem list in model.CargarHotelesItinerarioActivo())
+            {
+                lsvHotelesAgregados.Items.Add(list);
+            }
+        }*/
+        foreach (ListViewItem item in model.CargarVuelos())
+        {
             lsvAereos.Items.Add(item);
         }
 
-        sr.Close();*/
+    }
 
-        //dtpFechaVueltaAereos.Enabled = false;
+    private void lsvAereos_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        lsvItinerarioAereos.SelectedItems.Clear();
+    }
+
+    private void lsvAereosSeleccionados_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        lsvAereos.SelectedItems.Clear();
+    }
+    private void btnAgregarItinerarioAereos_Click(object sender, EventArgs e)
+    {
+
+        if (lsvAereos.SelectedItems.Count == 0)
+        {
+            MessageBox.Show("Debe seleccionar un vuelo de la lista izquierda para poder agregarlo", "Error");
+        }
+        else
+        {
+            ListViewItem item = lsvAereos.SelectedItems[0];
+            lsvItinerarioAereos.Items.Add((ListViewItem)item.Clone());
+
+        }
+    }
+
+    private void lsvItinerarioAereos_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    private void btnQuitarItinerarioAereos_Click(object sender, EventArgs e)
+    {
+        if (lsvItinerarioAereos.SelectedItems.Count > 0)
+        {
+            lsvItinerarioAereos.Items.Remove(lsvItinerarioAereos.SelectedItems[0]);
+        }
+        else
+        {
+            MessageBox.Show("Debe seleccionar un vuelo de la lista derecha para poder quitarlo", "Error");
+        }
     }
 
 }

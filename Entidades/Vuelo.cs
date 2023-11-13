@@ -14,7 +14,7 @@ public class Vuelo
     public DateTime FechaHoraLlegada { get; set; }
     public string Origen { get; set; }
     public TarifaVuelo[] Tarifas { get; set; }
-    public TimeOnly TiempoVuelo { get; set; }
+    public string TiempoVuelo { get; set; }
 
 
     /*public void CalcularTiempoVuelo()
