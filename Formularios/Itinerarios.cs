@@ -142,6 +142,13 @@ public partial class Itinerarios : Form
         }
     }
 
+    private void panelMenuItinerario_Paint(object sender, PaintEventArgs e)
+    {
 
+    }
 
+    private void iconButton1_Click(object sender, EventArgs e)
+    {
+
+    }
 }
