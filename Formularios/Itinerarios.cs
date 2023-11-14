@@ -29,7 +29,9 @@ public partial class Itinerarios : Form
         }
     }
 
-    private void btnNuevoItinerario_Click(object sender, EventArgs e)
+
+
+    private void iconbtnNuevoItinerario_Click(object sender, EventArgs e)
     {
         var r = MessageBox.Show("Desea agregar datos de cliente?", "Crear Itinerario", MessageBoxButtons.YesNoCancel);
         if (r == DialogResult.Yes)
@@ -58,12 +60,12 @@ public partial class Itinerarios : Form
         }
     }
 
-    private void btnDatosCliente_Click(object sender, EventArgs e)
+    private void iconbtnDatosCliente_Click(object sender, EventArgs e)
     {
-
+        //ni idea, codear
     }
 
-    private void btnEstItinerarioActivo_Click(object sender, EventArgs e)
+    private void iconbtnEstItinerarioActivo_Click(object sender, EventArgs e)
     {
         if (lsvItinerario.SelectedItems.Count == 0)
         {
@@ -77,7 +79,7 @@ public partial class Itinerarios : Form
         }
     }
 
-    private void btnEliminarItinerario_Click(object sender, EventArgs e)
+    private void iconbtnEliminarItinerario_Click(object sender, EventArgs e)
     {
         if (lsvItinerario.SelectedItems.Count == 0)
         {
@@ -90,9 +92,8 @@ public partial class Itinerarios : Form
         }
     }
 
-    private void btnCrearReserva_Click(object sender, EventArgs e)
+    private void iconbtnCrearReservaItinerario_Click(object sender, EventArgs e)
     {
-
         if (lsvItinerario.SelectedItems.Count > 0)
         {
             CrearReserva crearReserva = new();
@@ -104,6 +105,8 @@ public partial class Itinerarios : Form
             MessageBox.Show("Seleccione un itinerario.", "Error");
         }
     }
+
+
 
     /*Esto se puede mejorar con una función y llamar a la función directamente esto es una *****. También se puede agregar la función de 
     presionar enter y buscar*/
@@ -142,13 +145,7 @@ public partial class Itinerarios : Form
         }
     }
 
-    private void panelMenuItinerario_Paint(object sender, PaintEventArgs e)
-    {
 
-    }
 
-    private void iconButton1_Click(object sender, EventArgs e)
-    {
 
-    }
 }
