@@ -30,6 +30,7 @@ public partial class Itinerarios : Form
         bordeIzquierdo = new Panel(); // inicializo lo de arriba
         bordeIzquierdo.Size = new Size(7, 60); //el 60 es igual al tamaño del boton
         panelMenuItinerario.Controls.Add(bordeIzquierdo); //lo agregamos al panel
+        Size = new Size(740, 346);
     }
 
     //nuevos metodos
@@ -70,9 +71,29 @@ public partial class Itinerarios : Form
 
     // ////////////////////////////////////////////////////////////////////////////////////////
 
+    private void mostrarDatos()
+    {
+        Size = new Size(1050, 346);
+        iconbtnNuevoItinerario.Enabled = false;
+        //iconbtnNuevoItinerario.ForeColor = System.Drawing.Color.White;
+        iconbtnDatosCliente.Enabled = false;
+        //iconbtnDatosCliente.ForeColor = System.Drawing.Color.White;
+        iconbtnEstItinerarioActivo.Enabled = false;
+        //iconbtnEstItinerarioActivo.ForeColor = System.Drawing.Color.White;
+        iconbtnEliminarItinerario.Enabled = false;
+        //iconbtnEliminarItinerario.ForeColor= System.Drawing.Color.White;
+        iconbtnCrearReservaItinerario.Enabled = false;
+        //iconbtnCrearReservaItinerario.ForeColor = System.Drawing.Color.White;
+    }
 
+    private void esconderDatos()
+    {
+        Size = new Size(740, 346);
+        txtNombreCliente.Clear();
+        txtCuilCuit.Clear();
+    }
 
-
+    // ////////////////////////////////////////////////////////////////////////////////////////
 
 
     ItinerariosModel model = new ItinerariosModel();
@@ -94,8 +115,7 @@ public partial class Itinerarios : Form
         var r = MessageBox.Show("Desea agregar datos de cliente?", "Crear Itinerario", MessageBoxButtons.YesNoCancel);
         if (r == DialogResult.Yes)
         {
-            AgregarClientes agregarClientes = new();
-            agregarClientes.ShowDialog();
+            mostrarDatos();
 
             //Acá hay que agregar los datos de la pantalla "AgregarClientes".
         }
@@ -120,6 +140,7 @@ public partial class Itinerarios : Form
 
     private void iconbtnDatosCliente_Click(object sender, EventArgs e)
     {
+        mostrarDatos();
         botonActivado(sender, System.Drawing.Color.FromArgb(255, 255, 255));
         //ni idea, codear
     }
@@ -172,9 +193,6 @@ public partial class Itinerarios : Form
     }
 
 
-
-
-
     /*Esto se puede mejorar con una función y llamar a la función directamente esto es una *****. También se puede agregar la función de 
     presionar enter y buscar*/
 
@@ -212,7 +230,28 @@ public partial class Itinerarios : Form
         }
     }
 
+    private void btnAceptar_Click(object sender, EventArgs e)
+    {
+        string nombreRZ = txtNombreCliente.Text;
+        string cuilcuit = txtCuilCuit.Text;
+        string errores = ItinerariosModel.ValidarCampos(nombreRZ, cuilcuit);
 
+        if (string.IsNullOrEmpty(errores))
+        {
+            MessageBox.Show($"Se ha creado el itinerario correctamente. Su código de itinerario es {1}.", "Itinerario Creado");
+            esconderDatos();
+        }
+        else
+        {
+            MessageBox.Show(errores, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+        
+    
+        //Se debería agregar los datos del cliente en la lista del formulario "Itinerario".
+    }
 
-
+    private void btnCancelar_Click(object sender, EventArgs e)
+    {
+        Close();
+    }
 }

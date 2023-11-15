@@ -42,8 +42,16 @@
             iconbtnEstItinerarioActivo = new FontAwesome.Sharp.IconButton();
             iconbtnDatosCliente = new FontAwesome.Sharp.IconButton();
             iconbtnNuevoItinerario = new FontAwesome.Sharp.IconButton();
+            panel1 = new Panel();
+            btnAceptar = new Button();
+            btnCancelar = new Button();
+            lblCuilCuit = new Label();
+            lblNombreCliente = new Label();
+            txtCuilCuit = new TextBox();
+            txtNombreCliente = new TextBox();
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).BeginInit();
             panelMenuItinerario.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // lsvItinerario
@@ -234,12 +242,89 @@
             iconbtnNuevoItinerario.UseVisualStyleBackColor = true;
             iconbtnNuevoItinerario.Click += iconbtnNuevoItinerario_Click;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(165, 182, 196);
+            panel1.Controls.Add(btnAceptar);
+            panel1.Controls.Add(btnCancelar);
+            panel1.Controls.Add(lblCuilCuit);
+            panel1.Controls.Add(lblNombreCliente);
+            panel1.Controls.Add(txtCuilCuit);
+            panel1.Controls.Add(txtNombreCliente);
+            panel1.Location = new Point(727, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(306, 307);
+            panel1.TabIndex = 14;
+            // 
+            // btnAceptar
+            // 
+            btnAceptar.BackColor = Color.FromArgb(214, 237, 255);
+            btnAceptar.FlatAppearance.BorderSize = 0;
+            btnAceptar.FlatStyle = FlatStyle.Flat;
+            btnAceptar.Location = new Point(19, 211);
+            btnAceptar.Name = "btnAceptar";
+            btnAceptar.Size = new Size(276, 23);
+            btnAceptar.TabIndex = 12;
+            btnAceptar.Text = "Aceptar";
+            btnAceptar.UseVisualStyleBackColor = false;
+            btnAceptar.Click += btnAceptar_Click;
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.BackColor = Color.FromArgb(214, 237, 255);
+            btnCancelar.FlatAppearance.BorderSize = 0;
+            btnCancelar.FlatStyle = FlatStyle.Flat;
+            btnCancelar.Location = new Point(19, 240);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(276, 23);
+            btnCancelar.TabIndex = 11;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = false;
+            btnCancelar.Click += btnCancelar_Click;
+            // 
+            // lblCuilCuit
+            // 
+            lblCuilCuit.AutoSize = true;
+            lblCuilCuit.ForeColor = Color.White;
+            lblCuilCuit.Location = new Point(53, 128);
+            lblCuilCuit.Name = "lblCuilCuit";
+            lblCuilCuit.Size = new Size(62, 15);
+            lblCuilCuit.TabIndex = 10;
+            lblCuilCuit.Text = "CUIL/CUIT";
+            // 
+            // lblNombreCliente
+            // 
+            lblNombreCliente.AutoSize = true;
+            lblNombreCliente.ForeColor = Color.White;
+            lblNombreCliente.Location = new Point(2, 74);
+            lblNombreCliente.Name = "lblNombreCliente";
+            lblNombreCliente.Size = new Size(122, 15);
+            lblNombreCliente.TabIndex = 9;
+            lblNombreCliente.Text = "Nombre/Razón Social";
+            // 
+            // txtCuilCuit
+            // 
+            txtCuilCuit.BackColor = Color.FromArgb(214, 237, 255);
+            txtCuilCuit.Location = new Point(128, 128);
+            txtCuilCuit.Name = "txtCuilCuit";
+            txtCuilCuit.Size = new Size(176, 23);
+            txtCuilCuit.TabIndex = 8;
+            // 
+            // txtNombreCliente
+            // 
+            txtNombreCliente.BackColor = Color.FromArgb(214, 237, 255);
+            txtNombreCliente.Location = new Point(128, 71);
+            txtNombreCliente.Name = "txtNombreCliente";
+            txtNombreCliente.Size = new Size(176, 23);
+            txtNombreCliente.TabIndex = 7;
+            // 
             // Itinerarios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(214, 237, 255);
-            ClientSize = new Size(724, 307);
+            ClientSize = new Size(1034, 307);
+            Controls.Add(panel1);
             Controls.Add(panelMenuItinerario);
             Controls.Add(lblItinerarios);
             Controls.Add(txtBuscarItinerario);
@@ -252,6 +337,8 @@
             Load += Itinerarios_Load;
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).EndInit();
             panelMenuItinerario.ResumeLayout(false);
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -277,5 +364,12 @@
         private FontAwesome.Sharp.IconButton iconbtnEliminarItinerario;
         private FontAwesome.Sharp.IconButton iconbtnEstItinerarioActivo;
         private FontAwesome.Sharp.IconButton iconbtnDatosCliente;
+        private Panel panel1;
+        private Button btnAceptar;
+        private Button btnCancelar;
+        private Label lblCuilCuit;
+        private Label lblNombreCliente;
+        private TextBox txtCuilCuit;
+        private TextBox txtNombreCliente;
     }
 }
