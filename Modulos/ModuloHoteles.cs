@@ -12,7 +12,6 @@ internal static class ModuloHoteles
     public static List<Hotel> Hoteles = HotelesAlmacen.Hoteles;
     public static List<Hotel> list = new List<Hotel>();
 
-
     public static List<Hotel> CargarListaHoteles()
     {
         return Hoteles;
@@ -80,40 +79,37 @@ internal static class ModuloHoteles
             }
         }
 
-        /*if (!string.Equals(fechaDesde, "01/01/2023") && !string.Equals(fechaHasta, "01/01/2023"))
+        if (!string.Equals(fechaDesde, "01/01/2023") && !string.Equals(fechaHasta, "01/01/2023"))
         {
             foreach (Hotel hotel in list)
             {
-                foreach (Disponibilidad disp in hotel.Disponibilidades)
+                foreach (Disponibilidad disp in hotel.Disponibilidades.ToList())
                 {
-                    if (!FiltrarDisponibilidad(disp, fechaDesde, fechaHasta, cantHabitaciones))
+                    if (!ObtenerDispFecha(disp, fechaDesde, fechaHasta, Convert.ToInt32(cantHabitaciones)))
                     {
                         hotel.Disponibilidades.Remove(disp);
                     }
                 }
 
             }
-        }*/
+        }
 
         return list;
     }
 
-    /*public static bool FiltrarDisponibilidad(Disponibilidad disp, string fechaDesde, string fechaHasta, string cantHabitaciones)
+    public static bool ObtenerDispFecha(Disponibilidad disp, string fechaDesde, string fechaHasta, int cantHabitaciones)
     {
-        bool flag = true;
-        for (DateTime date = Convert.ToDateTime(fechaDesde); date <= Convert.ToDateTime(fechaHasta); date.AddDays(1))
+
+        for (DateTime date = Convert.ToDateTime(fechaDesde); date <= Convert.ToDateTime(fechaHasta); date.AddDays(1.0))
         {
-            foreach (Habitacion habitacion in (disp.DiasDisponibles.Sort))
+            int salida;
+            if (!disp.DiasDisponibles.TryGetValue(date, out salida) || salida <= cantHabitaciones)
             {
-                if (date == habitacion.Fecha && Convert.ToInt32(cantHabitaciones) <= habitacion.HabitacionesDisponibles) //posible bug con cantDisponibles NULL desp lo arreglo
-                {
-                    break;
-                }
-                flag = false;
+                return false;
             }
         }
-        return flag;
-    }*/
+        return true;
+    }
 
     /*public int CompareTo(object o)
     {

@@ -14,9 +14,18 @@ public class Disponibilidad
     public int Adultos { get; set; }
     public int Infantes { get; set; }
     public int Menores { get; set; }
-    public List<Habitacion> DiasDisponibles { get; set; }
+    public Dictionary<DateTime, int> DiasDisponibles { get; set; }
     public decimal TarifaDiaria { get; set; }
+    //public List<Habitacion> DiasDisponibles { get; set; }  CAMBIOS CLASE DISP
+    
 
+
+
+    /*private void tuMadre()
+    {
+        DiasDisponibles.TryGetValue()
+    }*/
+    
     /*public List<DateTime> ObtenerDiasDisponibles()
     {
         var totalDias = Enumerable.Range(0, (FechaHasta - FechaDesde).Days + 1) // Añadimos +1 para incluir el último día
