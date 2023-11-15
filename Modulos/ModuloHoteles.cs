@@ -10,6 +10,8 @@ namespace Prototipo_CAI;
 internal static class ModuloHoteles
 {
     public static List<Hotel> Hoteles = HotelesAlmacen.Hoteles;
+    public static List<Hotel> list = new List<Hotel>();
+
 
     public static List<Hotel> CargarListaHoteles()
     {
@@ -47,23 +49,29 @@ internal static class ModuloHoteles
         return null;
     }
 
-    /*public static string FiltrarHoteles(string ubicacion, string calificacion, string fechaDesde, string fechaHasta, string cantHabitaciones)
+    public static List<Hotel> BuscarHoteles(string ubicacion, string calificacion, string fechaDesde, string fechaHasta, string cantHabitaciones)
     {
-        List<Hotel> list = new List<Hotel>();
+        
+
+        foreach (Hotel hotel in Hoteles)
+        {
+            list.Add(hotel);
+        }
+
         if (!string.IsNullOrEmpty(ubicacion))
         {
-            foreach (Hotel hotel in HotelesAlmacen.Hoteles)
+            foreach (Hotel hotel in list.ToList())
             {
-                if (hotel.CodigoCiudad == ubicacion)
+                if (hotel.CodigoCiudad != ubicacion)
                 {
-                    list.Add(hotel);
+                    list.Remove(hotel);
                 }
             }
         }
-        
+
         if (!string.IsNullOrEmpty(calificacion))
         {
-            foreach (Hotel hotel in list)
+            foreach (Hotel hotel in list.ToList())
             {
                 if (Convert.ToString(hotel.Calificacion) != calificacion)
                 {
@@ -72,19 +80,44 @@ internal static class ModuloHoteles
             }
         }
 
-        if (!string.Equals(fechaDesde,"01/01/2023"))
+        if (!string.Equals(fechaDesde, "01/01/2023") && !string.Equals(fechaHasta, "01/01/2023"))
         {
             foreach (Hotel hotel in list)
             {
-                for (DateTime date = Convert.ToDateTime(fechaDesde); date <= Convert.ToDateTime(fechaHasta); date.AddDays(1))
+                foreach (Disponibilidad disp in hotel.Disponibilidades)
                 {
-
+                    if (!FiltrarDisponibilidad(disp, fechaDesde, fechaHasta, cantHabitaciones))
+                    {
+                        hotel.Disponibilidades.Remove(disp);
+                    }
                 }
+
             }
         }
 
+        return list;
+    }
 
+    public static bool FiltrarDisponibilidad(Disponibilidad disp, string fechaDesde, string fechaHasta, string cantHabitaciones)
+    {
+        bool flag = true;
+        for (DateTime date = Convert.ToDateTime(fechaDesde); date <= Convert.ToDateTime(fechaHasta); date.AddDays(1))
+        {
+            foreach (Habitacion habitacion in (disp.DiasDisponibles.Sort))
+            {
+                if (date == habitacion.Fecha && Convert.ToInt32(cantHabitaciones) <= habitacion.HabitacionesDisponibles) //posible bug con cantDisponibles NULL desp lo arreglo
+                {
+                    break;
+                }
+                flag = false;
+            }
+        }
+        return flag;
+    }
 
+    /*public int CompareTo(object o)
+    {
+        ModuloHoteles moduloHoteles = (ModuloHoteles)o;
     }*/
 
 }

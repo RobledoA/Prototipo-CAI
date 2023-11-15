@@ -8,6 +8,6 @@ namespace Prototipo_CAI;
 public class Habitacion
 {
     public int CodigoDisponibilidad { get; set; }
-    public DateOnly Fecha { get; set; }
+    public DateTime Fecha { get; set; }
     public int HabitacionesDisponibles { get; set; }
 }

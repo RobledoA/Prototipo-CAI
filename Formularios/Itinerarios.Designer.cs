@@ -48,12 +48,13 @@
             // 
             // lsvItinerario
             // 
+            lsvItinerario.BackColor = Color.FromArgb(214, 237, 255);
             lsvItinerario.Columns.AddRange(new ColumnHeader[] { CodItinerario, CUILCUIT, Nombre });
             lsvItinerario.FullRowSelect = true;
             lsvItinerario.Location = new Point(226, 50);
             lsvItinerario.MultiSelect = false;
             lsvItinerario.Name = "lsvItinerario";
-            lsvItinerario.Size = new Size(473, 246);
+            lsvItinerario.Size = new Size(486, 246);
             lsvItinerario.TabIndex = 1;
             lsvItinerario.UseCompatibleStateImageBehavior = false;
             lsvItinerario.View = View.Details;
@@ -71,7 +72,7 @@
             // Nombre
             // 
             Nombre.Text = "Nombre/Razón Social";
-            Nombre.Width = 235;
+            Nombre.Width = 225;
             // 
             // fileSystemWatcher1
             // 
@@ -80,11 +81,11 @@
             // 
             // txtBuscarItinerario
             // 
-            txtBuscarItinerario.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtBuscarItinerario.Location = new Point(435, 8);
+            txtBuscarItinerario.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtBuscarItinerario.Location = new Point(435, 10);
             txtBuscarItinerario.Name = "txtBuscarItinerario";
             txtBuscarItinerario.PlaceholderText = "Filtrar por...";
-            txtBuscarItinerario.Size = new Size(228, 29);
+            txtBuscarItinerario.Size = new Size(228, 26);
             txtBuscarItinerario.TabIndex = 8;
             // 
             // btnBuscarItinerario
@@ -101,10 +102,10 @@
             // lblItinerarios
             // 
             lblItinerarios.AutoSize = true;
-            lblItinerarios.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblItinerarios.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblItinerarios.Location = new Point(226, 8);
             lblItinerarios.Name = "lblItinerarios";
-            lblItinerarios.Size = new Size(105, 30);
+            lblItinerarios.Size = new Size(106, 25);
             lblItinerarios.TabIndex = 10;
             lblItinerarios.Text = "Itinerarios";
             // 
@@ -236,7 +237,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(716, 307);
+            BackColor = Color.FromArgb(214, 237, 255);
+            ClientSize = new Size(724, 307);
             Controls.Add(panelMenuItinerario);
             Controls.Add(lblItinerarios);
             Controls.Add(txtBuscarItinerario);

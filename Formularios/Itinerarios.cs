@@ -10,14 +10,70 @@ using System.Windows.Forms;
 using System.IO;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
+
+
+using FontAwesome.Sharp; //nuevo 
+using System.Drawing.Text;
+using System.Windows.Media;
+
 namespace Prototipo_CAI;
 
 public partial class Itinerarios : Form
 {
+
+
+    private IconButton botonActual; //boton en el que estamos
+    private Panel bordeIzquierdo; // para poner un borde izquierdo al boton
     public Itinerarios()
     {
         InitializeComponent();
+        bordeIzquierdo = new Panel(); // inicializo lo de arriba
+        bordeIzquierdo.Size = new Size(7, 60); //el 60 es igual al tamaño del boton
+        panelMenuItinerario.Controls.Add(bordeIzquierdo); //lo agregamos al panel
     }
+
+    //nuevos metodos
+    private void botonActivado(object sender, System.Drawing.Color color)
+    {
+        if (sender != null)
+        {
+            BotonDesactivado();
+            //boton
+            botonActual = (IconButton)sender; // asignamos el boton actual al boton remitente 
+            botonActual.BackColor = System.Drawing.Color.FromArgb(36, 72, 100);
+            botonActual.ForeColor = color;
+            //botonActual.TextAlign = ContentAlignment.MiddleCenter;
+            botonActual.IconColor = color;
+            //botonActual.TextImageRelation = TextImageRelation.TextBeforeImage;
+            //botonActual.ImageAlign = ContentAlignment.MiddleRight;
+
+            //ahora el borde del boton
+            bordeIzquierdo.BackColor = color;
+            bordeIzquierdo.Location = new Point(0, botonActual.Location.Y);
+            bordeIzquierdo.Visible = true;
+            bordeIzquierdo.BringToFront();
+        }
+    }
+
+    private void BotonDesactivado()
+    {
+        if (botonActual != null)
+        {
+            botonActual.BackColor = System.Drawing.Color.FromArgb(8, 32, 50);
+            botonActual.ForeColor = System.Drawing.Color.White;
+            //botonActual.TextAlign = ContentAlignment.MiddleLeft;
+            botonActual.IconColor = System.Drawing.Color.White;
+            //botonActual.TextImageRelation = TextImageRelation.ImageBeforeText;
+            //botonActual.ImageAlign = ContentAlignment.MiddleLeft;
+        }
+    }
+
+    // ////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
 
     ItinerariosModel model = new ItinerariosModel();
 
@@ -33,6 +89,8 @@ public partial class Itinerarios : Form
 
     private void iconbtnNuevoItinerario_Click(object sender, EventArgs e)
     {
+        botonActivado(sender, System.Drawing.Color.FromArgb(255, 255, 255));
+
         var r = MessageBox.Show("Desea agregar datos de cliente?", "Crear Itinerario", MessageBoxButtons.YesNoCancel);
         if (r == DialogResult.Yes)
         {
@@ -62,11 +120,14 @@ public partial class Itinerarios : Form
 
     private void iconbtnDatosCliente_Click(object sender, EventArgs e)
     {
+        botonActivado(sender, System.Drawing.Color.FromArgb(255, 255, 255));
         //ni idea, codear
     }
 
     private void iconbtnEstItinerarioActivo_Click(object sender, EventArgs e)
     {
+        botonActivado(sender, System.Drawing.Color.FromArgb(255, 255, 255));
+
         if (lsvItinerario.SelectedItems.Count == 0)
         {
             MessageBox.Show("Seleccione un itinerario.", "Error");
@@ -81,6 +142,8 @@ public partial class Itinerarios : Form
 
     private void iconbtnEliminarItinerario_Click(object sender, EventArgs e)
     {
+        botonActivado(sender, System.Drawing.Color.FromArgb(255, 255, 255));
+
         if (lsvItinerario.SelectedItems.Count == 0)
         {
             MessageBox.Show("Debe seleccionar un itinerario de la lista.", "Error");
@@ -94,6 +157,8 @@ public partial class Itinerarios : Form
 
     private void iconbtnCrearReservaItinerario_Click(object sender, EventArgs e)
     {
+        botonActivado(sender, System.Drawing.Color.FromArgb(255, 255, 255));
+
         if (lsvItinerario.SelectedItems.Count > 0)
         {
             CrearReserva crearReserva = new();
@@ -105,6 +170,8 @@ public partial class Itinerarios : Form
             MessageBox.Show("Seleccione un itinerario.", "Error");
         }
     }
+
+
 
 
 

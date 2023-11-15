@@ -107,12 +107,22 @@ namespace Prototipo_CAI
             string errores = model.ValidarFiltros(ubicacion, calificacion, fechaDesde, fechaHasta, cantHabitaciones);
             if (string.IsNullOrEmpty(errores))
             {
-                MessageBox.Show("Todo piola");
+                List<ListViewItem> hotelesFiltrados = model.FiltrarHoteles(ubicacion, calificacion, fechaDesde, fechaHasta, cantHabitaciones);
+                lsvHoteles.Items.Clear();
+                foreach (ListViewItem item in hotelesFiltrados)
+                {
+                    lsvHoteles.Items.Add(item);
+                }
+                if (hotelesFiltrados.Count == 0)
+                {
+                    MessageBox.Show("No se han encontrado hoteles que coincidan con los filtros. Por favor, intente nuevamente.");
+                }
             }
             else
             {
                 MessageBox.Show(errores, "Error");
             }
+            
         }
 
         private void Hoteles_FormClosed(object sender, FormClosedEventArgs e)

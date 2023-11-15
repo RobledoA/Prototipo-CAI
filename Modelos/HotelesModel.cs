@@ -81,10 +81,10 @@ internal class HotelesModel
         {
             errores += "La ubicación debe ser un código formado por 3 letras.\n";
         }
-        if ((!String.Equals(fechaDesde, "01/01/2023") && Convert.ToDateTime(fechaDesde) < DateTime.Now) || (!String.Equals(fechaHasta, "01/01/2023") && Convert.ToDateTime(fechaHasta) < DateTime.Now))
+       /* if ((!String.Equals(fechaDesde, "01/01/2023") && Convert.ToDateTime(fechaDesde) < DateTime.Now) || (!String.Equals(fechaHasta, "01/01/2023") && Convert.ToDateTime(fechaHasta) < DateTime.Now))
         {
             errores += "Cualquier fecha ingresada no puede ser anterior a la fecha actual.\n";
-        }
+        }*/
         if (!string.IsNullOrWhiteSpace(cantHabitaciones))
         {
             errores += ValidarNumeroEntero(cantHabitaciones);
@@ -116,5 +116,16 @@ internal class HotelesModel
             estrellas += "★";
         }
         return estrellas;
+    }
+
+    public List<ListViewItem> FiltrarHoteles(string ubicacion, string calificacion, string fechaDesde, string fechaHasta, string cantHabitaciones)
+    {
+        List<Hotel> hotelesFiltrados = ModuloHoteles.BuscarHoteles(ubicacion, calificacion, fechaDesde, fechaHasta, cantHabitaciones);
+        List<ListViewItem> listViewHoteles = new();
+        foreach (ListViewItem item in FormatoHoteles(hotelesFiltrados))
+        {
+            listViewHoteles.Add(item);
+        }
+        return listViewHoteles;
     }
 }
