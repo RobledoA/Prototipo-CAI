@@ -18,6 +18,31 @@ namespace Prototipo_CAI
             InitializeComponent();
         }
 
+        private void txtBuscarReserva_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                BuscarReserva(txtBuscarReserva.Text);
+
+            }
+        }
+        private void btnBuscarReserva_Click(object sender, EventArgs e)
+        {
+            BuscarReserva(txtBuscarReserva.Text);
+        }
+
+        private void btnConfirmarReserva_Click(object sender, EventArgs e)
+        {
+            ConfirmarReserva();
+        }
+        private void btnCancelarReserva_Click(object sender, EventArgs e)
+        {
+            CancelarReservas();
+        }
+
+
+
+        //procedimientos que responden al formulario
         private void Reservas_Load(object sender, EventArgs e)
         {
             ReservasModel model = new ReservasModel();
@@ -27,14 +52,126 @@ namespace Prototipo_CAI
             }
         }
 
-        private void txtBuscarReserva_KeyDown(object sender, KeyEventArgs e)
+        private void ConfirmarReserva()
         {
-            if (e.KeyCode == Keys.Enter)
+            if (lsvReservas.SelectedItems.Count > 0)
             {
-                BuscarReserva(txtBuscarReserva.Text);
+                int indiceSeleccionado = lsvReservas.SelectedItems[0].Index;
 
+                List<Reserva> listReservas = ModuloReservas.CargarListaReservas();
+
+                if (indiceSeleccionado >= 0 && indiceSeleccionado < listReservas.Count)
+                {
+                    Reserva reservaSeleccionada = listReservas[indiceSeleccionado];
+                    if (reservaSeleccionada.EstadoReserva.Equals("Cancelado", StringComparison.OrdinalIgnoreCase))
+                    {
+                        MessageBox.Show("Esta reserva está cancelada y no se puede confirmar.");
+                    }
+                    else if (reservaSeleccionada.EstadoReserva.Equals("Confirmado", StringComparison.OrdinalIgnoreCase))
+                    {
+                        MessageBox.Show("Esta reserva ya ha sido confirmada.");
+                    }
+                    else
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea confirmar esta reserva?", "Confirmar Reserva", MessageBoxButtons.YesNoCancel);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            reservaSeleccionada.EstadoReserva = "Confirmado";
+
+                            ReservasAlmacen.Grabar();
+                            ActualizarListView();
+                        }
+
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione una reserva válida.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una reserva antes de confirmar.");
             }
         }
+
+
+
+        private void CancelarReservas()
+        {
+
+            if (lsvReservas.SelectedItems.Count > 0)
+            {
+                int indiceSeleccionado = lsvReservas.SelectedItems[0].Index;
+                List<Reserva> listReservas = ModuloReservas.CargarListaReservas();
+                if (indiceSeleccionado >= 0 && indiceSeleccionado < listReservas.Count)
+                {
+                    Reserva reservaSeleccionada = listReservas[indiceSeleccionado];
+                    if (reservaSeleccionada.EstadoReserva.Equals("Cancelado", StringComparison.OrdinalIgnoreCase))
+                    {
+                        MessageBox.Show("Esta reserva ya ha sido cancelada.");
+                    }
+                    else
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea cancelar esta reserva?", "Confirmar Reserva", MessageBoxButtons.YesNoCancel);
+                        if (result == DialogResult.Yes)
+                        {
+
+                            reservaSeleccionada.EstadoReserva = "Cancelado";
+                            ReservasAlmacen.Grabar();
+                            ActualizarListView();
+                        }
+                        else if (result == DialogResult.No)
+                        {
+
+                        }
+                        else
+                        {
+
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione una reserva válida.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una reserva antes de confirmar.");
+            }
+        }
+
+        private void ActualizarListView()
+        {
+            lsvReservas.Items.Clear();
+            ReservasModel model = new ReservasModel();
+            foreach (ListViewItem item in model.FormatoReservas())
+            {
+                lsvReservas.Items.Add(item);
+            }
+        }
+
+        private void CambiarEstadoReserva(ListViewItem item)
+        {
+            // Cambiar el estado de la reserva
+            if (item.SubItems.Count > 3 && item.SubItems[3].Text == "Confirmado")
+            {
+                item.SubItems[3].Text = "Cancelado";
+            }
+            else if (item.SubItems.Count > 3 && item.SubItems[3].Text == "Cancelado")
+            {
+                item.SubItems[3].Text = "Confirmado";
+            }
+
+            // Guardar los cambios
+            ReservasAlmacen.Grabar();
+
+            // Actualizar el ListView
+            ActualizarListView();
+        }
+
 
         public void BuscarReserva(string codReserva)
         {
@@ -56,9 +193,15 @@ namespace Prototipo_CAI
                         lsvReservas.Items.Clear();
                         lsvReservas.Items.Add(item);
 
-                        item.SubItems[3].Text = "";
+                        string estadoActual = item.SubItems[3].Text;
+                        MessageBox.Show("Estado actual de la reserva: " + estadoActual);
 
-                        ReservasAlmacen.Grabar();
+                        DialogResult result = MessageBox.Show("¿Desea cambiar el estado de esta reserva?", "Cambiar Estado", MessageBoxButtons.YesNo);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            CambiarEstadoReserva(item);
+                        }
 
                         reservaEncontrada = true;
                         break;
@@ -70,91 +213,7 @@ namespace Prototipo_CAI
                     MessageBox.Show("No se encontró ninguna reserva con el código: " + codReserva);
                 }
             }
-        }
 
-        private void btnBuscarReserva_Click(object sender, EventArgs e)
-        {
-            BuscarReserva(txtBuscarReserva.Text);
-        }
-
-        private void btnConfirmarReserva_Click(object sender, EventArgs e)
-        {
-            if (lsvReservas.SelectedItems.Count > 0)
-            {
-     
-                int indiceSeleccionado = lsvReservas.SelectedItems[0].Index;
-
-           
-                List<Reserva> listReservas = ModuloReservas.CargarListaReservas();
-
-            
-                if (indiceSeleccionado >= 0 && indiceSeleccionado < listReservas.Count)
-                {
-                   
-                    listReservas[indiceSeleccionado].EstadoReserva = "Confirmado";
-
-      
-                    ReservasAlmacen.Grabar();
-
-                 
-                    ActualizarListView();
-                }
-                else
-                {
-                    MessageBox.Show("Seleccione una reserva válida.");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Seleccione una reserva antes de confirmar.");
-            }
-        
-
-    }
-
-        private void ActualizarListView()
-        {
-          
-            lsvReservas.Items.Clear();
-
-           
-            ReservasModel model = new ReservasModel();
-            foreach (ListViewItem item in model.FormatoReservas())
-            {
-                lsvReservas.Items.Add(item);
-            }
-        }
-
-        private void btnCancelarReserva_Click(object sender, EventArgs e)
-        {
-            if (lsvReservas.SelectedItems.Count > 0)
-            {
-                
-                int indiceSeleccionado = lsvReservas.SelectedItems[0].Index;
-
-                
-                List<Reserva> listReservas = ModuloReservas.CargarListaReservas();
-
-               
-                if (indiceSeleccionado >= 0 && indiceSeleccionado < listReservas.Count)
-                {
-                    
-                    listReservas[indiceSeleccionado].EstadoReserva = "Cancelado";
-
-                 
-                    ReservasAlmacen.Grabar();
-
-                    ActualizarListView();
-                }
-                else
-                {
-                    MessageBox.Show("Seleccione una reserva válida.");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Seleccione una reserva antes de confirmar.");
-            }
         }
     }
 }
