@@ -20,8 +20,6 @@ namespace Prototipo_CAI;
 
 public partial class Itinerarios : Form
 {
-
-
     private IconButton botonActual; //boton en el que estamos
     private Panel bordeIzquierdo; // para poner un borde izquierdo al boton
     public Itinerarios()
@@ -91,12 +89,17 @@ public partial class Itinerarios : Form
         Size = new Size(740, 346);
         txtNombreCliente.Clear();
         txtCuilCuit.Clear();
+        iconbtnNuevoItinerario.Enabled = true;
+        iconbtnDatosCliente.Enabled = true;
+        iconbtnEstItinerarioActivo.Enabled = true;
+        iconbtnEliminarItinerario.Enabled = true;
+        iconbtnCrearReservaItinerario.Enabled = true;
     }
 
     // ////////////////////////////////////////////////////////////////////////////////////////
 
 
-    ItinerariosModel model = new ItinerariosModel();
+    ItinerariosModel model = new();
 
     private void Itinerarios_Load(object sender, EventArgs e)
     {
@@ -105,8 +108,6 @@ public partial class Itinerarios : Form
             lsvItinerario.Items.Add(item);
         }
     }
-
-
 
     private void iconbtnNuevoItinerario_Click(object sender, EventArgs e)
     {
@@ -131,7 +132,7 @@ public partial class Itinerarios : Form
             //Esto debería ir en otro lado?
             var item = new ListViewItem();
             item.Text = codigoSiguiente.ToString();
-            item.SubItems.Add("");
+            item.SubItems.Add("");  
             item.SubItems.Add("");
 
             lsvItinerario.Items.Add(item);
@@ -140,9 +141,26 @@ public partial class Itinerarios : Form
 
     private void iconbtnDatosCliente_Click(object sender, EventArgs e)
     {
-        mostrarDatos();
         botonActivado(sender, System.Drawing.Color.FromArgb(255, 255, 255));
-        //ni idea, codear
+     
+        
+        if (lsvItinerario.SelectedItems.Count == 0)
+        {
+            MessageBox.Show("Selecciona un itinerario de la lista.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            return;
+        }
+
+        lsvItinerario.Enabled = false;
+        mostrarDatos();
+
+        Itinerario ItinerarioSeleccionado = (Itinerario)lsvItinerario.SelectedItems[0].Tag;
+
+        txtNombreCliente.Text = ItinerarioSeleccionado.NombreCliente;
+        txtCuilCuit.Text = ItinerarioSeleccionado.CUILCUIT.ToString();
+        //ItinerarioSeleccionado.Disponibilidades = null;
+        //ItinerarioSeleccionado.EstaReservado = false;
+        //ItinerarioSeleccionado.CodigoItinerario = 0;
+        //ItinerarioSeleccionado.TarifasVuelos = null;
     }
 
     private void iconbtnEstItinerarioActivo_Click(object sender, EventArgs e)
@@ -192,25 +210,66 @@ public partial class Itinerarios : Form
         }
     }
 
-
     /*Esto se puede mejorar con una función y llamar a la función directamente esto es una *****. También se puede agregar la función de 
     presionar enter y buscar*/
 
     private void btnBuscarItinerario_Click(object sender, EventArgs e)
     {
-        string idItinerario = txtBuscarItinerario.Text;
+        BuscarItinerario(txtBuscarItinerario.Text);
+    }
 
+
+    private void btnAceptar_Click(object sender, EventArgs e)
+    {
+        Itinerario clienteAModificar = (Itinerario)lsvItinerario.SelectedItems[0].Tag;
+        Itinerario clienteNuevaVersion = new Itinerario();
+
+        string nombreRZ = txtNombreCliente.Text;
+        string cuilcuit = txtCuilCuit.Text;
+        string errores = model.ValidarCampos(nombreRZ, cuilcuit);
+
+        if (!string.IsNullOrEmpty(errores))
+        {
+            MessageBox.Show(errores, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);         
+        }
+        else
+        {
+            MessageBox.Show($"Se ha creado el itinerario correctamente. Su código de itinerario es {1}.", "Itinerario Creado");
+        }
+
+        clienteNuevaVersion.NombreCliente = txtNombreCliente.Text;
+        clienteNuevaVersion.CUILCUIT = Convert.ToInt64(txtCuilCuit.Text);
+
+        model.ModificarCliente(clienteAModificar, clienteNuevaVersion);
+        var item = lsvItinerario.SelectedItems[0];
+        item.Text = clienteAModificar.NombreCliente;
+        item.SubItems[1].Text = clienteAModificar.CUILCUIT.ToString();
+        esconderDatos();
+    }
+
+    private void btnCancelar_Click(object sender, EventArgs e)
+    {
+        esconderDatos();
+    }
+
+    private void txtBuscarItinerario_KeyDown(object sender, KeyEventArgs e)
+    {
+        if (e.KeyCode == Keys.Enter)
+        {
+            BuscarItinerario(txtBuscarItinerario.Text);
+        }
+    }
+
+    public void BuscarItinerario(string idItinerario)
+    {
         if (!string.IsNullOrWhiteSpace(idItinerario))
         {
-            //lsvItinerario.SelectedItems.Clear(); 
-
             foreach (ListViewItem item in lsvItinerario.Items)
             {
                 string codigo = item.Text;
                 string cuit = item.SubItems[0].Text;
                 string razonsocial = item.SubItems[1].Text;
 
-                //Equals sirve para comprar dos cosas y ver si son iguales en este caso lo ingresado en el txtbox con lo que está en la lsv
                 if (codigo.Equals(idItinerario, StringComparison.OrdinalIgnoreCase))
                 {
                     lsvItinerario.Items.Clear();
@@ -221,37 +280,23 @@ public partial class Itinerarios : Form
                     lsvItinerario.Items.Clear();
                     lsvItinerario.Items.Add(item);
                 }
+                /*
                 if (razonsocial.Equals(idItinerario, StringComparison.OrdinalIgnoreCase))
                 {
                     lsvItinerario.Items.Clear();
                     lsvItinerario.Items.Add(item);
                 }
+                */
             }
-        }
-    }
-
-    private void btnAceptar_Click(object sender, EventArgs e)
-    {
-        string nombreRZ = txtNombreCliente.Text;
-        string cuilcuit = txtCuilCuit.Text;
-        string errores = ItinerariosModel.ValidarCampos(nombreRZ, cuilcuit);
-
-        if (string.IsNullOrEmpty(errores))
-        {
-            MessageBox.Show($"Se ha creado el itinerario correctamente. Su código de itinerario es {1}.", "Itinerario Creado");
-            esconderDatos();
         }
         else
         {
-            MessageBox.Show(errores, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            MessageBox.Show("Debe indicar el itinerario a buscar.");
         }
-        
-    
-        //Se debería agregar los datos del cliente en la lista del formulario "Itinerario".
     }
 
-    private void btnCancelar_Click(object sender, EventArgs e)
+    private void lsvItinerario_SelectedIndexChanged(object sender, EventArgs e)
     {
-        Close();
+
     }
 }

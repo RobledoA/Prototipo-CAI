@@ -82,5 +82,4 @@ public partial class Aereos : Form
             MessageBox.Show("Debe seleccionar un vuelo de la lista derecha para poder quitarlo", "Error");
         }
     }
-
 }

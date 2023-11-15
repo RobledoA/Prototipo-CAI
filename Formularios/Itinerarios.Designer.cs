@@ -43,6 +43,7 @@
             iconbtnDatosCliente = new FontAwesome.Sharp.IconButton();
             iconbtnNuevoItinerario = new FontAwesome.Sharp.IconButton();
             panel1 = new Panel();
+            btnNombreSubmenu = new Label();
             btnAceptar = new Button();
             btnCancelar = new Button();
             lblCuilCuit = new Label();
@@ -67,6 +68,7 @@
             lsvItinerario.TabIndex = 1;
             lsvItinerario.UseCompatibleStateImageBehavior = false;
             lsvItinerario.View = View.Details;
+            lsvItinerario.SelectedIndexChanged += lsvItinerario_SelectedIndexChanged;
             // 
             // CodItinerario
             // 
@@ -91,7 +93,7 @@
             // txtBuscarItinerario
             // 
             txtBuscarItinerario.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            txtBuscarItinerario.Location = new Point(435, 12);
+            txtBuscarItinerario.Location = new Point(456, 12);
             txtBuscarItinerario.Name = "txtBuscarItinerario";
             txtBuscarItinerario.PlaceholderText = "Filtrar por...";
             txtBuscarItinerario.Size = new Size(228, 25);
@@ -100,7 +102,7 @@
             // btnBuscarItinerario
             // 
             btnBuscarItinerario.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnBuscarItinerario.Location = new Point(669, 8);
+            btnBuscarItinerario.Location = new Point(690, 8);
             btnBuscarItinerario.Name = "btnBuscarItinerario";
             btnBuscarItinerario.Size = new Size(31, 31);
             btnBuscarItinerario.TabIndex = 7;
@@ -244,7 +246,8 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(165, 182, 196);
+            panel1.BackColor = Color.White;
+            panel1.Controls.Add(btnNombreSubmenu);
             panel1.Controls.Add(btnAceptar);
             panel1.Controls.Add(btnCancelar);
             panel1.Controls.Add(lblCuilCuit);
@@ -256,12 +259,23 @@
             panel1.Size = new Size(306, 307);
             panel1.TabIndex = 14;
             // 
+            // btnNombreSubmenu
+            // 
+            btnNombreSubmenu.AutoSize = true;
+            btnNombreSubmenu.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnNombreSubmenu.Location = new Point(19, 12);
+            btnNombreSubmenu.Name = "btnNombreSubmenu";
+            btnNombreSubmenu.Size = new Size(79, 30);
+            btnNombreSubmenu.TabIndex = 15;
+            btnNombreSubmenu.Text = "asdada";
+            // 
             // btnAceptar
             // 
-            btnAceptar.BackColor = Color.FromArgb(214, 237, 255);
+            btnAceptar.BackColor = Color.FromArgb(8, 32, 50);
             btnAceptar.FlatAppearance.BorderSize = 0;
             btnAceptar.FlatStyle = FlatStyle.Flat;
-            btnAceptar.Location = new Point(19, 211);
+            btnAceptar.ForeColor = Color.White;
+            btnAceptar.Location = new Point(19, 217);
             btnAceptar.Name = "btnAceptar";
             btnAceptar.Size = new Size(276, 23);
             btnAceptar.TabIndex = 12;
@@ -271,10 +285,11 @@
             // 
             // btnCancelar
             // 
-            btnCancelar.BackColor = Color.FromArgb(214, 237, 255);
+            btnCancelar.BackColor = Color.FromArgb(8, 32, 50);
             btnCancelar.FlatAppearance.BorderSize = 0;
             btnCancelar.FlatStyle = FlatStyle.Flat;
-            btnCancelar.Location = new Point(19, 240);
+            btnCancelar.ForeColor = Color.White;
+            btnCancelar.Location = new Point(19, 246);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(276, 23);
             btnCancelar.TabIndex = 11;
@@ -285,8 +300,8 @@
             // lblCuilCuit
             // 
             lblCuilCuit.AutoSize = true;
-            lblCuilCuit.ForeColor = Color.White;
-            lblCuilCuit.Location = new Point(53, 128);
+            lblCuilCuit.ForeColor = Color.Black;
+            lblCuilCuit.Location = new Point(19, 120);
             lblCuilCuit.Name = "lblCuilCuit";
             lblCuilCuit.Size = new Size(62, 15);
             lblCuilCuit.TabIndex = 10;
@@ -295,8 +310,8 @@
             // lblNombreCliente
             // 
             lblNombreCliente.AutoSize = true;
-            lblNombreCliente.ForeColor = Color.White;
-            lblNombreCliente.Location = new Point(2, 74);
+            lblNombreCliente.ForeColor = Color.Black;
+            lblNombreCliente.Location = new Point(19, 62);
             lblNombreCliente.Name = "lblNombreCliente";
             lblNombreCliente.Size = new Size(122, 15);
             lblNombreCliente.TabIndex = 9;
@@ -305,17 +320,17 @@
             // txtCuilCuit
             // 
             txtCuilCuit.BackColor = Color.FromArgb(214, 237, 255);
-            txtCuilCuit.Location = new Point(128, 128);
+            txtCuilCuit.Location = new Point(19, 140);
             txtCuilCuit.Name = "txtCuilCuit";
-            txtCuilCuit.Size = new Size(176, 23);
+            txtCuilCuit.Size = new Size(276, 23);
             txtCuilCuit.TabIndex = 8;
             // 
             // txtNombreCliente
             // 
             txtNombreCliente.BackColor = Color.FromArgb(214, 237, 255);
-            txtNombreCliente.Location = new Point(128, 71);
+            txtNombreCliente.Location = new Point(19, 80);
             txtNombreCliente.Name = "txtNombreCliente";
-            txtNombreCliente.Size = new Size(176, 23);
+            txtNombreCliente.Size = new Size(276, 23);
             txtNombreCliente.TabIndex = 7;
             // 
             // Itinerarios
@@ -371,5 +386,6 @@
         private Label lblNombreCliente;
         private TextBox txtCuilCuit;
         private TextBox txtNombreCliente;
+        private Label btnNombreSubmenu;
     }
 }

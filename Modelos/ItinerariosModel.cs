@@ -30,9 +30,15 @@ internal class ItinerariosModel
         ModuloItinerarios.EstablecerItinerarioActivo(itinerario);
     }
 
+    public string ModificarCliente(Itinerario ClienteAModificar, Itinerario ClienteNuevaVersion)
+    {
+        ClienteAModificar.NombreCliente = ClienteNuevaVersion.NombreCliente;
+        ClienteAModificar.CUILCUIT = ClienteNuevaVersion.CUILCUIT;
 
-    //lo que pasamos de agregarClientes
-    public static string ValidarCampos(string nombreRZ, string cuilcuit)
+        return null;
+    }
+    
+    public string ValidarCampos(string nombreRZ, string cuilcuit)
     {
         string errores = "";
 
@@ -59,7 +65,4 @@ internal class ItinerariosModel
 
         return errores;
     }
-
-
-
 }
