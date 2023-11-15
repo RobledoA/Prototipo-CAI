@@ -49,12 +49,13 @@
             // lsvItinerario
             // 
             lsvItinerario.BackColor = Color.FromArgb(214, 237, 255);
+            lsvItinerario.BorderStyle = BorderStyle.None;
             lsvItinerario.Columns.AddRange(new ColumnHeader[] { CodItinerario, CUILCUIT, Nombre });
             lsvItinerario.FullRowSelect = true;
-            lsvItinerario.Location = new Point(226, 50);
+            lsvItinerario.Location = new Point(226, 45);
             lsvItinerario.MultiSelect = false;
             lsvItinerario.Name = "lsvItinerario";
-            lsvItinerario.Size = new Size(486, 246);
+            lsvItinerario.Size = new Size(495, 262);
             lsvItinerario.TabIndex = 1;
             lsvItinerario.UseCompatibleStateImageBehavior = false;
             lsvItinerario.View = View.Details;
@@ -72,7 +73,7 @@
             // Nombre
             // 
             Nombre.Text = "Nombre/Razón Social";
-            Nombre.Width = 225;
+            Nombre.Width = 235;
             // 
             // fileSystemWatcher1
             // 
@@ -81,11 +82,11 @@
             // 
             // txtBuscarItinerario
             // 
-            txtBuscarItinerario.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtBuscarItinerario.Location = new Point(435, 10);
+            txtBuscarItinerario.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            txtBuscarItinerario.Location = new Point(435, 12);
             txtBuscarItinerario.Name = "txtBuscarItinerario";
             txtBuscarItinerario.PlaceholderText = "Filtrar por...";
-            txtBuscarItinerario.Size = new Size(228, 26);
+            txtBuscarItinerario.Size = new Size(228, 25);
             txtBuscarItinerario.TabIndex = 8;
             // 
             // btnBuscarItinerario
@@ -102,10 +103,10 @@
             // lblItinerarios
             // 
             lblItinerarios.AutoSize = true;
-            lblItinerarios.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblItinerarios.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblItinerarios.Location = new Point(226, 8);
             lblItinerarios.Name = "lblItinerarios";
-            lblItinerarios.Size = new Size(106, 25);
+            lblItinerarios.Size = new Size(105, 30);
             lblItinerarios.TabIndex = 10;
             lblItinerarios.Text = "Itinerarios";
             // 

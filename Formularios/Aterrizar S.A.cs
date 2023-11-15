@@ -9,19 +9,23 @@ namespace Prototipo_CAI
         {
             InitializeComponent();
             subpaneles();
-            Size = new System.Drawing.Size(373, 365);
+            Size = new System.Drawing.Size(360, 410);
+
         }
 
         private void subpaneles()
         {
             panelSubmenu.Visible = false;
+            iconbtnVolver.Visible = false;
         }
 
-        private void esconderSubpaneles()
+        private void esconderPaneles()
         {
             if (panelSubmenu.Visible == true)
             {
-                panelSubmenu.Visible = false;
+                iconbtnReservas.Visible = false;
+                iconbtnProductosDisponibles.Visible = false;
+                iconbtnItinerario.Visible = false;
             }
         }
 
@@ -29,8 +33,9 @@ namespace Prototipo_CAI
         {
             if (submenu.Visible == false)
             {
-                Size = new System.Drawing.Size(373, 365);
+                Size = new System.Drawing.Size(360, 410);
                 submenu.Visible = true;
+                iconbtnVolver.Visible = true;
             }
         }
 
@@ -43,8 +48,7 @@ namespace Prototipo_CAI
         private void iconbtnProductosDisponibles_Click(object sender, EventArgs e)
         {
             mostrarSubpaneles(panelSubmenu);
-            ProductosDisponibles productosDisponibles = new();
-            productosDisponibles.ShowDialog();
+            esconderPaneles();
         }
 
         private void iconbtnReservas_Click(object sender, EventArgs e)
@@ -53,9 +57,26 @@ namespace Prototipo_CAI
             reservas.ShowDialog();
         }
 
-        private void panelMenuPrincipal_Paint(object sender, PaintEventArgs e)
-        {
 
+        private void iconbtnVolver_Click(object sender, EventArgs e)
+        {
+            iconbtnReservas.Visible = true;
+            iconbtnProductosDisponibles.Visible = true;
+            iconbtnItinerario.Visible = true;
+            iconbtnVolver.Visible = false;
+            panelSubmenu.Visible = false;
+        }
+
+        private void iconbtnAereos_Click(object sender, EventArgs e)
+        {
+            Aereos clasesVuelo = new Aereos();
+            clasesVuelo.ShowDialog();
+        }
+
+        private void iconbtnHoteles_Click(object sender, EventArgs e)
+        {
+            Hoteles hoteles = new Hoteles();
+            hoteles.ShowDialog();
         }
     }
 

@@ -80,7 +80,7 @@ internal static class ModuloHoteles
             }
         }
 
-        if (!string.Equals(fechaDesde, "01/01/2023") && !string.Equals(fechaHasta, "01/01/2023"))
+        /*if (!string.Equals(fechaDesde, "01/01/2023") && !string.Equals(fechaHasta, "01/01/2023"))
         {
             foreach (Hotel hotel in list)
             {
@@ -93,12 +93,12 @@ internal static class ModuloHoteles
                 }
 
             }
-        }
+        }*/
 
         return list;
     }
 
-    public static bool FiltrarDisponibilidad(Disponibilidad disp, string fechaDesde, string fechaHasta, string cantHabitaciones)
+    /*public static bool FiltrarDisponibilidad(Disponibilidad disp, string fechaDesde, string fechaHasta, string cantHabitaciones)
     {
         bool flag = true;
         for (DateTime date = Convert.ToDateTime(fechaDesde); date <= Convert.ToDateTime(fechaHasta); date.AddDays(1))
@@ -113,7 +113,7 @@ internal static class ModuloHoteles
             }
         }
         return flag;
-    }
+    }*/
 
     /*public int CompareTo(object o)
     {

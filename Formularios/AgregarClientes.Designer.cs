@@ -34,26 +34,30 @@
             lblCuilCuit = new Label();
             btnCancelar = new Button();
             btnAceptar = new Button();
+            label1 = new Label();
             SuspendLayout();
             // 
             // txtNombreCliente
             // 
-            txtNombreCliente.Location = new Point(41, 47);
+            txtNombreCliente.BackColor = Color.FromArgb(214, 237, 255);
+            txtNombreCliente.Location = new Point(138, 48);
             txtNombreCliente.Name = "txtNombreCliente";
-            txtNombreCliente.Size = new Size(247, 23);
+            txtNombreCliente.Size = new Size(176, 23);
             txtNombreCliente.TabIndex = 0;
             // 
             // txtCuilCuit
             // 
-            txtCuilCuit.Location = new Point(41, 104);
+            txtCuilCuit.BackColor = Color.FromArgb(214, 237, 255);
+            txtCuilCuit.Location = new Point(138, 105);
             txtCuilCuit.Name = "txtCuilCuit";
-            txtCuilCuit.Size = new Size(247, 23);
+            txtCuilCuit.Size = new Size(176, 23);
             txtCuilCuit.TabIndex = 1;
             // 
             // lblNombreCliente
             // 
             lblNombreCliente.AutoSize = true;
-            lblNombreCliente.Location = new Point(41, 29);
+            lblNombreCliente.ForeColor = Color.White;
+            lblNombreCliente.Location = new Point(12, 51);
             lblNombreCliente.Name = "lblNombreCliente";
             lblNombreCliente.Size = new Size(122, 15);
             lblNombreCliente.TabIndex = 2;
@@ -62,7 +66,8 @@
             // lblCuilCuit
             // 
             lblCuilCuit.AutoSize = true;
-            lblCuilCuit.Location = new Point(41, 86);
+            lblCuilCuit.ForeColor = Color.White;
+            lblCuilCuit.Location = new Point(63, 105);
             lblCuilCuit.Name = "lblCuilCuit";
             lblCuilCuit.Size = new Size(62, 15);
             lblCuilCuit.TabIndex = 3;
@@ -70,29 +75,46 @@
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(239, 154);
+            btnCancelar.BackColor = Color.FromArgb(214, 237, 255);
+            btnCancelar.FlatAppearance.BorderSize = 0;
+            btnCancelar.FlatStyle = FlatStyle.Flat;
+            btnCancelar.Location = new Point(13, 189);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(75, 23);
+            btnCancelar.Size = new Size(302, 23);
             btnCancelar.TabIndex = 4;
             btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.UseVisualStyleBackColor = false;
             btnCancelar.Click += btnCancelar_Click;
             // 
             // btnAceptar
             // 
-            btnAceptar.Location = new Point(158, 154);
+            btnAceptar.BackColor = Color.FromArgb(214, 237, 255);
+            btnAceptar.FlatAppearance.BorderSize = 0;
+            btnAceptar.FlatStyle = FlatStyle.Flat;
+            btnAceptar.Location = new Point(13, 151);
             btnAceptar.Name = "btnAceptar";
-            btnAceptar.Size = new Size(75, 23);
+            btnAceptar.Size = new Size(302, 23);
             btnAceptar.TabIndex = 5;
             btnAceptar.Text = "Aceptar";
-            btnAceptar.UseVisualStyleBackColor = true;
+            btnAceptar.UseVisualStyleBackColor = false;
             btnAceptar.Click += btnAceptar_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(87, 133);
+            label1.Name = "label1";
+            label1.Size = new Size(38, 15);
+            label1.TabIndex = 6;
+            label1.Text = "label1";
             // 
             // AgregarClientes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(337, 189);
+            BackColor = Color.FromArgb(8, 32, 50);
+            ClientSize = new Size(327, 255);
+            Controls.Add(label1);
             Controls.Add(btnAceptar);
             Controls.Add(btnCancelar);
             Controls.Add(lblCuilCuit);
@@ -115,5 +137,6 @@
         private Label lblCuilCuit;
         private Button btnCancelar;
         private Button btnAceptar;
+        private Label label1;
     }
 }
