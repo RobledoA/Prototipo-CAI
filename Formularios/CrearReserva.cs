@@ -42,13 +42,12 @@ namespace Prototipo_CAI
 
             if(string.IsNullOrWhiteSpace(errores))
             {
-
+                
             }
             else
             {
                 MessageBox.Show(errores, "Error");
             }
-
         }
     }
 }
