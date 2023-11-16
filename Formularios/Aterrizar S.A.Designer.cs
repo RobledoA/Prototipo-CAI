@@ -188,6 +188,7 @@
             panelLogo.Name = "panelLogo";
             panelLogo.Size = new Size(345, 85);
             panelLogo.TabIndex = 0;
+            panelLogo.Paint += panelLogo_Paint;
             // 
             // Form1
             // 

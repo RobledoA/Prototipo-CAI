@@ -383,6 +383,7 @@
             Controls.Add(txtBuscarItinerario);
             Controls.Add(lsvItinerario);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Location = new Point(50, 50);
             MaximizeBox = false;
             Name = "Itinerarios";
             Text = "Itinerarios";

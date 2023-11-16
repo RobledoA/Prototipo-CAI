@@ -169,6 +169,8 @@ public partial class Itinerarios : Form
         botonActivado(sender, System.Drawing.Color.FromArgb(255, 255, 255));
         btnAceptar.Enabled = false;
         lblNombreSubmenu.Text = "Editar cliente";
+        btnModificar.Enabled = true;
+
 
         if (lsvItinerario.SelectedItems.Count == 0)
         {

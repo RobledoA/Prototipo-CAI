@@ -10,6 +10,7 @@ namespace Prototipo_CAI
             InitializeComponent();
             subpaneles();
             Size = new System.Drawing.Size(360, 410);
+            this.StartPosition = FormStartPosition.CenterScreen;
 
         }
 
@@ -77,6 +78,11 @@ namespace Prototipo_CAI
         {
             Hoteles hoteles = new Hoteles();
             hoteles.ShowDialog();
+        }
+
+        private void panelLogo_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 
