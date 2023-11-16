@@ -257,7 +257,7 @@
             btnModificar.FlatAppearance.BorderSize = 0;
             btnModificar.FlatStyle = FlatStyle.Flat;
             btnModificar.ForeColor = Color.White;
-            btnModificar.Location = new Point(19, 188);
+            btnModificar.Location = new Point(19, 199);
             btnModificar.Name = "btnModificar";
             btnModificar.Size = new Size(276, 23);
             btnModificar.TabIndex = 16;
@@ -281,7 +281,7 @@
             btnAceptar.FlatAppearance.BorderSize = 0;
             btnAceptar.FlatStyle = FlatStyle.Flat;
             btnAceptar.ForeColor = Color.White;
-            btnAceptar.Location = new Point(19, 217);
+            btnAceptar.Location = new Point(19, 228);
             btnAceptar.Name = "btnAceptar";
             btnAceptar.Size = new Size(276, 23);
             btnAceptar.TabIndex = 12;
@@ -295,7 +295,7 @@
             btnCancelar.FlatAppearance.BorderSize = 0;
             btnCancelar.FlatStyle = FlatStyle.Flat;
             btnCancelar.ForeColor = Color.White;
-            btnCancelar.Location = new Point(19, 246);
+            btnCancelar.Location = new Point(19, 257);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(276, 23);
             btnCancelar.TabIndex = 11;

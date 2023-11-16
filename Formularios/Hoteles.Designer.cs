@@ -69,6 +69,7 @@
             // 
             lblHoteles.AutoSize = true;
             lblHoteles.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblHoteles.ForeColor = Color.White;
             lblHoteles.Location = new Point(10, 7);
             lblHoteles.Name = "lblHoteles";
             lblHoteles.Size = new Size(120, 30);
@@ -77,6 +78,7 @@
             // 
             // grpHoteles
             // 
+            grpHoteles.BackColor = SystemColors.ActiveCaption;
             grpHoteles.Controls.Add(btnLimpiarFiltros);
             grpHoteles.Controls.Add(btnBuscarHoteles);
             grpHoteles.Controls.Add(lblFechaHastaHoteles);
@@ -89,7 +91,8 @@
             grpHoteles.Controls.Add(cmbCalificacionHoteles);
             grpHoteles.Controls.Add(txtHabitacionesHoteles);
             grpHoteles.Controls.Add(lblCalificacionHoteles);
-            grpHoteles.Location = new Point(10, 274);
+            grpHoteles.ForeColor = Color.White;
+            grpHoteles.Location = new Point(12, 320);
             grpHoteles.Name = "grpHoteles";
             grpHoteles.Size = new Size(1057, 88);
             grpHoteles.TabIndex = 19;
@@ -121,6 +124,7 @@
             // lblFechaHastaHoteles
             // 
             lblFechaHastaHoteles.AutoSize = true;
+            lblFechaHastaHoteles.ForeColor = Color.White;
             lblFechaHastaHoteles.Location = new Point(630, 28);
             lblFechaHastaHoteles.Name = "lblFechaHastaHoteles";
             lblFechaHastaHoteles.RightToLeft = RightToLeft.Yes;
@@ -131,6 +135,7 @@
             // lblUbicacionHoteles
             // 
             lblUbicacionHoteles.AutoSize = true;
+            lblUbicacionHoteles.ForeColor = Color.White;
             lblUbicacionHoteles.Location = new Point(26, 29);
             lblUbicacionHoteles.Name = "lblUbicacionHoteles";
             lblUbicacionHoteles.Size = new Size(60, 15);
@@ -157,6 +162,7 @@
             // lblFechaDesdeHoteles
             // 
             lblFechaDesdeHoteles.AutoSize = true;
+            lblFechaDesdeHoteles.ForeColor = Color.White;
             lblFechaDesdeHoteles.Location = new Point(429, 29);
             lblFechaDesdeHoteles.Name = "lblFechaDesdeHoteles";
             lblFechaDesdeHoteles.Size = new Size(73, 15);
@@ -166,6 +172,7 @@
             // lblCantHabitacionesHoteles
             // 
             lblCantHabitacionesHoteles.AutoSize = true;
+            lblCantHabitacionesHoteles.ForeColor = Color.White;
             lblCantHabitacionesHoteles.Location = new Point(827, 28);
             lblCantHabitacionesHoteles.Name = "lblCantHabitacionesHoteles";
             lblCantHabitacionesHoteles.Size = new Size(123, 15);
@@ -201,6 +208,7 @@
             // lblCalificacionHoteles
             // 
             lblCalificacionHoteles.AutoSize = true;
+            lblCalificacionHoteles.ForeColor = Color.White;
             lblCalificacionHoteles.Location = new Point(225, 29);
             lblCalificacionHoteles.Name = "lblCalificacionHoteles";
             lblCalificacionHoteles.Size = new Size(69, 15);
@@ -209,12 +217,13 @@
             // 
             // lsvHoteles
             // 
+            lsvHoteles.BackColor = Color.FromArgb(156, 184, 205);
             lsvHoteles.Columns.AddRange(new ColumnHeader[] { hdCodHotel, hdNombre, hdCalificacion, hdCiudad, hdHabitacion, hdTarifa, hdCapacidad });
             lsvHoteles.FullRowSelect = true;
             lsvHoteles.Location = new Point(10, 40);
             lsvHoteles.MultiSelect = false;
             lsvHoteles.Name = "lsvHoteles";
-            lsvHoteles.Size = new Size(459, 228);
+            lsvHoteles.Size = new Size(459, 261);
             lsvHoteles.TabIndex = 22;
             lsvHoteles.UseCompatibleStateImageBehavior = false;
             lsvHoteles.View = View.Details;
@@ -256,18 +265,23 @@
             // 
             // btnAgregarItinerarioHoteles
             // 
+            btnAgregarItinerarioHoteles.BackColor = Color.FromArgb(8, 32, 50);
             btnAgregarItinerarioHoteles.Enabled = false;
-            btnAgregarItinerarioHoteles.Location = new Point(489, 67);
+            btnAgregarItinerarioHoteles.FlatAppearance.BorderSize = 0;
+            btnAgregarItinerarioHoteles.FlatStyle = FlatStyle.Flat;
+            btnAgregarItinerarioHoteles.ForeColor = Color.White;
+            btnAgregarItinerarioHoteles.Location = new Point(489, 120);
             btnAgregarItinerarioHoteles.Name = "btnAgregarItinerarioHoteles";
             btnAgregarItinerarioHoteles.Size = new Size(102, 26);
             btnAgregarItinerarioHoteles.TabIndex = 25;
             btnAgregarItinerarioHoteles.Text = "Agregar >>>";
-            btnAgregarItinerarioHoteles.UseVisualStyleBackColor = true;
+            btnAgregarItinerarioHoteles.UseVisualStyleBackColor = false;
             btnAgregarItinerarioHoteles.Click += btnAgregarItinerarioHoteles_Click;
             // 
             // lblItinerarioActivo
             // 
             lblItinerarioActivo.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblItinerarioActivo.ForeColor = Color.White;
             lblItinerarioActivo.Location = new Point(854, 11);
             lblItinerarioActivo.Name = "lblItinerarioActivo";
             lblItinerarioActivo.RightToLeft = RightToLeft.No;
@@ -278,22 +292,27 @@
             // 
             // btnQuitarItinerarioHotel
             // 
+            btnQuitarItinerarioHotel.BackColor = Color.FromArgb(8, 32, 50);
             btnQuitarItinerarioHotel.Enabled = false;
-            btnQuitarItinerarioHotel.Location = new Point(489, 218);
+            btnQuitarItinerarioHotel.FlatAppearance.BorderSize = 0;
+            btnQuitarItinerarioHotel.FlatStyle = FlatStyle.Flat;
+            btnQuitarItinerarioHotel.ForeColor = Color.White;
+            btnQuitarItinerarioHotel.Location = new Point(489, 175);
             btnQuitarItinerarioHotel.Name = "btnQuitarItinerarioHotel";
             btnQuitarItinerarioHotel.Size = new Size(102, 26);
             btnQuitarItinerarioHotel.TabIndex = 28;
             btnQuitarItinerarioHotel.Text = "<<< Eliminar";
-            btnQuitarItinerarioHotel.UseVisualStyleBackColor = true;
+            btnQuitarItinerarioHotel.UseVisualStyleBackColor = false;
             // 
             // lsvHotelesAgregados
             // 
+            lsvHotelesAgregados.BackColor = Color.FromArgb(156, 184, 205);
             lsvHotelesAgregados.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader5, columnHeader6, columnHeader7 });
             lsvHotelesAgregados.FullRowSelect = true;
             lsvHotelesAgregados.Location = new Point(610, 40);
             lsvHotelesAgregados.MultiSelect = false;
             lsvHotelesAgregados.Name = "lsvHotelesAgregados";
-            lsvHotelesAgregados.Size = new Size(459, 228);
+            lsvHotelesAgregados.Size = new Size(459, 261);
             lsvHotelesAgregados.TabIndex = 29;
             lsvHotelesAgregados.UseCompatibleStateImageBehavior = false;
             lsvHotelesAgregados.View = View.Details;
@@ -337,6 +356,7 @@
             // 
             lblHotelEnItinerario.AutoSize = true;
             lblHotelEnItinerario.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblHotelEnItinerario.ForeColor = Color.White;
             lblHotelEnItinerario.Location = new Point(610, 7);
             lblHotelEnItinerario.Name = "lblHotelEnItinerario";
             lblHotelEnItinerario.Size = new Size(146, 30);
@@ -347,7 +367,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1081, 370);
+            BackColor = Color.FromArgb(86, 124, 153);
+            ClientSize = new Size(1098, 420);
             Controls.Add(lblHotelEnItinerario);
             Controls.Add(lsvHotelesAgregados);
             Controls.Add(btnQuitarItinerarioHotel);

@@ -122,7 +122,7 @@ public partial class Hoteles : Form
         {
             MessageBox.Show(errores, "Error");
         }
-        
+
     }
 
     private void Hoteles_FormClosed(object sender, FormClosedEventArgs e)
