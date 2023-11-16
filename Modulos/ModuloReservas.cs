@@ -14,4 +14,161 @@ internal class ModuloReservas
     {
         return Reservas;
     }
+
+    public static void EliminarReserva(string codReserva)
+    {
+        foreach (Reserva reserva in Reservas)
+        {
+            if (string.Equals(reserva.CodigoReserva.ToString(), codReserva))
+            {
+                Reservas.Remove(reserva);
+                return;
+            }
+        }
+    }
+
+    public static void BuscarReserva(ListView listView, string textoBusqueda)
+    {
+        bool encontrada = false;
+
+        foreach (ListViewItem item in listView.Items)
+        {
+            if (item.SubItems.Count > 0 && item.SubItems[0].Text.Equals(textoBusqueda))
+            {
+                item.BackColor = Color.Orange;
+                item.ForeColor = Color.White;
+
+                item.EnsureVisible();
+
+                encontrada = true;
+            }
+            else
+            {
+                item.BackColor = SystemColors.Window;
+                item.ForeColor = SystemColors.WindowText;
+            }
+        }
+
+        if (!encontrada)
+        {
+            MessageBox.Show("No se encontraron reservas con ese código.");
+        }
+    }
+
+    public static int ActualizarListView(ListView listView, ReservasModel model, int indiceSeleccionado)
+    {
+        if (listView.SelectedItems.Count > 0)
+        {
+            indiceSeleccionado = listView.SelectedItems[0].Index;
+        }
+        else
+        {
+            indiceSeleccionado = -1;
+        }
+
+        listView.Items.Clear();
+
+        foreach (ListViewItem item in model.FormatoReservas())
+        {
+            listView.Items.Add(item);
+        }
+
+        if (indiceSeleccionado >= 0 && indiceSeleccionado < listView.Items.Count)
+        {
+            listView.Items[indiceSeleccionado].Selected = true;
+        }
+
+        return indiceSeleccionado;
+    }
+
+    public static void CancelarReservas(ListView listView)
+    {
+        if (listView.SelectedItems.Count > 0)
+        {
+            int indiceSeleccionado = listView.SelectedItems[0].Index;
+            List<Reserva> listReservas = CargarListaReservas();
+
+            if (indiceSeleccionado >= 0 && indiceSeleccionado < listReservas.Count)
+            {
+                Reserva reservaSeleccionada = listReservas[indiceSeleccionado];
+
+                if (reservaSeleccionada.EstadoReserva.Equals("Cancelado", StringComparison.OrdinalIgnoreCase))
+                {
+                    MessageBox.Show("Esta reserva ya ha sido cancelada.");
+                }
+                else
+                {
+                    DialogResult result = MessageBox.Show("¿Desea cancelar esta reserva?", "Confirmar Reserva", MessageBoxButtons.YesNoCancel);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        reservaSeleccionada.EstadoReserva = "Cancelado";
+                        ReservasAlmacen.Grabar();
+                    }
+                    // No es necesario manejar el caso de DialogResult.No o DialogResult.Cancel en este contexto
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una reserva válida.");
+            }
+        }
+        else
+        {
+            MessageBox.Show("Seleccione una reserva antes de confirmar.");
+        }
+    }
+
+
+    public static void ConfirmarReserva(ListView listView)
+    {
+        if (listView.SelectedItems.Count > 0)
+        {
+            int indiceSeleccionado = listView.SelectedItems[0].Index;
+            List<Reserva> listReservas = CargarListaReservas();
+
+            if (indiceSeleccionado >= 0 && indiceSeleccionado < listReservas.Count)
+            {
+                Reserva reservaSeleccionada = listReservas[indiceSeleccionado];
+
+                if (reservaSeleccionada.EstadoReserva.Equals("Cancelado", StringComparison.OrdinalIgnoreCase))
+                {
+                    MessageBox.Show("Esta reserva está cancelada y no se puede confirmar.");
+                }
+                else if (reservaSeleccionada.EstadoReserva.Equals("Confirmado", StringComparison.OrdinalIgnoreCase))
+                {
+                    MessageBox.Show("Esta reserva ya ha sido confirmada.");
+                }
+                else
+                {
+                    DialogResult result = MessageBox.Show("¿Desea confirmar esta reserva?", "Confirmar Reserva", MessageBoxButtons.YesNoCancel);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        reservaSeleccionada.EstadoReserva = "Confirmado";
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una reserva válida.");
+            }
+        }
+        else
+        {
+            MessageBox.Show("Seleccione una reserva antes de confirmar.");
+        }
+    }
+
+    public static void CargarReservas(ListView listView)
+    {
+        ReservasModel model = new ReservasModel();
+
+        listView.Items.Clear();
+
+        foreach (ListViewItem item in model.FormatoReservas())
+        {
+            listView.Items.Add(item);
+        }
+    }
 }

@@ -30,4 +30,34 @@ internal class ReservasModel
 
         return listViewItems;
     }
+
+    public static void BorrarReserva(string CodigoReserva)
+    {
+        ModuloReservas.EliminarReserva(CodigoReserva);
+    }
+
+    public static void BuscarReserva(ListView listView, string codReserva)
+    {
+        ModuloReservas.BuscarReserva(listView, codReserva);
+    }
+
+    public static void ActualizarListView(ListView listView, ReservasModel model, int indiceSeleccionado)
+    {
+
+    }
+
+    public static void CancelarReserva(ListView listView)
+    {
+        ModuloReservas.CancelarReservas(listView);
+    }
+
+    public static void ConfirmarReserva(ListView listView)
+    {
+        ModuloReservas.ConfirmarReserva(listView);
+    }
+
+    public static void Actualizar(ListView listView)
+    {
+        ModuloReservas.CargarReservas(listView);
+    }
 }
