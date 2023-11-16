@@ -122,7 +122,7 @@ public partial class Itinerarios : Form
         btnAceptar.Enabled = true;
         lblNombreSubmenu.Text = "Nuevo cliente";
 
-        var r = MessageBox.Show("Desea agregar datos de cliente?", "Crear Itinerario", MessageBoxButtons.YesNo);
+        var r = MessageBox.Show("Desea agregar datos de cliente?", "Crear Itinerario", MessageBoxButtons.YesNoCancel);
         if (r == DialogResult.Yes)
         {
             mostrarDatos();
@@ -150,7 +150,7 @@ public partial class Itinerarios : Form
         string cuilcuit = txtCuilCuit.Text;
         string errores = model.ValidarCampos(nombreRZ, cuilcuit);
 
-        if (string.IsNullOrEmpty(errores))
+        if (string.IsNullOrWhiteSpace(errores))
         {
             int ultimoCodigo = ItinerariosAlmacen.Itinerarios.Last().CodigoItinerario;
             int codigoSiguiente = ultimoCodigo + 1;

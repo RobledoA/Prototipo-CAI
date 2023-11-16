@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Prototipo_CAI;
@@ -36,6 +37,10 @@ internal class ItinerariosModel
         {          
             return "El campo Nombre/Razón Social no debe estar vacío.";
         }
+        if (!string.IsNullOrWhiteSpace(nombre) && !(Regex.IsMatch(nombre, @"^[a-zA-Z]+$")))
+        {
+            return "El campo Nombre/Razón Social no debe ser numérico.\n";
+        }
         if (cuilcuit.Length > 30)
         {
             return "El campo Nombre/Razón Social debe tener menos de 30 caracteres.";
@@ -64,6 +69,10 @@ internal class ItinerariosModel
         {
             errores += "El campo Nombre/Razón Social no debe estar vacío.\n";
         }
+        if (!string.IsNullOrWhiteSpace(nombreRZ) && !(Regex.IsMatch(nombreRZ, @"^[a-zA-Z]+$")))
+        {
+            errores += "El campo Nombre/Razón Social no debe ser numérico.\n";
+        }
         if (nombreRZ.Length > 30)
         {
             errores += "El campo Nombre/Razón Social debe tener menos de 30 caracteres.\n";
@@ -83,7 +92,6 @@ internal class ItinerariosModel
 
         return errores;
     }
-
 
     public void ModificarItinerario(string codItinerario, string nombre, string CUIL)
     {
@@ -107,5 +115,4 @@ internal class ItinerariosModel
 
         ModuloItinerarios.AgregarItinerario(itinerario);
     }
-
 }

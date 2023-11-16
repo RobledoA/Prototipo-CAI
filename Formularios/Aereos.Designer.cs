@@ -40,6 +40,7 @@
             hdFechaLlegada = new ColumnHeader();
             hdTiempoVuelo = new ColumnHeader();
             hdAerolinea = new ColumnHeader();
+            hdCodigoTarifaVuelo = new ColumnHeader();
             grpAereos = new GroupBox();
             iconbtnLimpiarBuscarItinerario = new FontAwesome.Sharp.IconButton();
             lblTipoPasajeroAereos = new Label();
@@ -70,7 +71,6 @@
             columnHeader13 = new ColumnHeader();
             columnHeader14 = new ColumnHeader();
             columnHeader15 = new ColumnHeader();
-            hdCodigoTarifaVuelo = new ColumnHeader();
             grpAereos.SuspendLayout();
             SuspendLayout();
             // 
@@ -140,6 +140,10 @@
             // hdAerolinea
             // 
             hdAerolinea.Text = "Aerolinea";
+            // 
+            // hdCodigoTarifaVuelo
+            // 
+            hdCodigoTarifaVuelo.Width = 1;
             // 
             // grpAereos
             // 
@@ -223,9 +227,9 @@
             lblFechaIdaAereos.AutoSize = true;
             lblFechaIdaAereos.Location = new Point(398, 29);
             lblFechaIdaAereos.Name = "lblFechaIdaAereos";
-            lblFechaIdaAereos.Size = new Size(57, 15);
+            lblFechaIdaAereos.Size = new Size(72, 15);
             lblFechaIdaAereos.TabIndex = 7;
-            lblFechaIdaAereos.Text = "Fecha Ida";
+            lblFechaIdaAereos.Text = "Fecha Salida";
             lblFechaIdaAereos.Click += lblFechaIdaAereos_Click;
             // 
             // dtFechaDesdeAereos
@@ -399,10 +403,6 @@
             // columnHeader15
             // 
             columnHeader15.Text = "Aerolinea";
-            // 
-            // hdCodigoTarifaVuelo
-            // 
-            hdCodigoTarifaVuelo.Width = 1;
             // 
             // Aereos
             // 

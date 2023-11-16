@@ -11,7 +11,6 @@ namespace Prototipo_CAI
             subpaneles();
             Size = new System.Drawing.Size(360, 410);
             this.StartPosition = FormStartPosition.CenterScreen;
-
         }
 
         private void subpaneles()
@@ -58,7 +57,6 @@ namespace Prototipo_CAI
             reservas.ShowDialog();
         }
 
-
         private void iconbtnVolver_Click(object sender, EventArgs e)
         {
             iconbtnReservas.Visible = true;
@@ -85,5 +83,4 @@ namespace Prototipo_CAI
 
         }
     }
-
 }

@@ -39,7 +39,7 @@
             lblNacionalidadPasajero = new Label();
             lblGeneroPasajero = new Label();
             cmbNacionalidad = new ComboBox();
-            cmbGénero = new ComboBox();
+            cmbGenero = new ComboBox();
             btnConfirmarGuardarReserva = new Button();
             chklbTarifasAsignadas = new CheckedListBox();
             btnAgregarPasajero = new Button();
@@ -142,21 +142,21 @@
             // 
             cmbNacionalidad.BackColor = Color.White;
             cmbNacionalidad.FormattingEnabled = true;
-            cmbNacionalidad.Items.AddRange(new object[] { "Argentino", "Peruano", "Brasileño", "Paraguayo", "Uruguayo" });
+            cmbNacionalidad.Items.AddRange(new object[] { "Afganistán", "Albania", "Alemania", "Andorra", "Angola", "Antigua y Barbuda", "Arabia Saudita", "Argelia", "Argentina", "Armenia", "Australia", "Austria", "Azerbaiyán", "Bahamas", "Bahréin", "Bangladesh", "Barbados", "Bélgica", "Belice", "Benín", "Bielorrusia", "Birmania (Myanmar)", "Bolivia", "Bosnia y Herzegovina", "Botsuana", "Brasil", "Brunéi", "Bulgaria", "Burkina Faso", "Burundi", "Bután", "Cabo Verde", "Camboya", "Camerún", "Canadá", "Catar", "Chad", "Chile", "China", "Chipre", "Ciudad del Vaticano", "Colombia", "Comoras", "Corea del Norte", "Corea del Sur", "Costa de Marfil", "Costa Rica", "Croacia", "Cuba", "Dinamarca", "Dominica", "Ecuador", "Egipto", "El Salvador", "Emiratos Árabes Unidos", "Eritrea", "Eslovaquia", "Eslovenia", "España", "Estados Unidos", "Estonia", "Eswatini", "Etiopía", "Filipinas", "Finlandia", "Fiyi", "Francia", "Gabón", "Gambia", "Georgia", "Ghana", "Granada", "Grecia", "Guatemala", "Guyana", "Guinea", "Guinea-Bissau", "Guinea Ecuatorial", "Haití", "Honduras", "Hungría", "India", "Indonesia", "Irak", "Irán", "Irlanda", "Islandia", "Islas Marshall", "Islas Salomón", "Israel", "Italia", "Jamaica", "Japón", "Jordania", "Kazajistán", "Kenia", "Kirguistán", "Kiribati", "Kuwait", "Laos", "Lesoto", "Letonia", "Líbano", "Liberia", "Libia", "Liechtenstein", "Lituania", "Luxemburgo", "Macedonia del Norte", "Madagascar", "Malasia", "Malaui", "Maldivas", "Malí", "Malta", "Marruecos", "Mauricio", "Mauritania", "México", "Micronesia", "Moldavia", "Mónaco", "Mongolia", "Montenegro", "Mozambique", "Namibia", "Nauru", "Nepal", "Nicaragua", "Níger", "Nigeria", "Noruega", "Nueva Zelanda", "Omán", "Países Bajos", "Pakistán", "Palaos", "Panamá", "Papúa Nueva Guinea", "Paraguay", "Perú", "Polonia", "Portugal", "Reino Unido", "República Centroafricana", "República Checa", "República Democrática del Congo", "República Dominicana", "Ruanda", "Rumanía", "Rusia", "Samoa", "San Cristóbal y Nieves", "San Marino", "San Vicente y las Granadinas", "Santa Lucía", "Santo Tomé y Príncipe", "Senegal", "Serbia", "Seychelles", "Sierra Leona", "Singapur", "Siria", "Somalia", "Sri Lanka", "Suazilandia", "Sudáfrica", "Sudán", "Sudán del Sur", "Suecia", "Suiza", "Surinam", "Tailandia", "Tanzania", "Tayikistán", "Timor Oriental", "Togo", "Tonga", "Trinidad y Tobago", "Túnez", "Turkmenistán", "Turquía", "Tuvalu", "Ucrania", "Uganda", "Uruguay", "Uzbekistán", "Vanuatu", "Venezuela", "Vietnam", "Yemen", "Yibuti", "Zambia", "Zimbabue" });
             cmbNacionalidad.Location = new Point(17, 149);
             cmbNacionalidad.Name = "cmbNacionalidad";
             cmbNacionalidad.Size = new Size(216, 23);
             cmbNacionalidad.TabIndex = 11;
             // 
-            // cmbGénero
+            // cmbGenero
             // 
-            cmbGénero.BackColor = Color.White;
-            cmbGénero.FormattingEnabled = true;
-            cmbGénero.Items.AddRange(new object[] { "Masculino", "Femenino" });
-            cmbGénero.Location = new Point(250, 149);
-            cmbGénero.Name = "cmbGénero";
-            cmbGénero.Size = new Size(216, 23);
-            cmbGénero.TabIndex = 12;
+            cmbGenero.BackColor = Color.White;
+            cmbGenero.FormattingEnabled = true;
+            cmbGenero.Items.AddRange(new object[] { "Masculino", "Femenino", "Otro..." });
+            cmbGenero.Location = new Point(250, 149);
+            cmbGenero.Name = "cmbGenero";
+            cmbGenero.Size = new Size(216, 23);
+            cmbGenero.TabIndex = 12;
             // 
             // btnConfirmarGuardarReserva
             // 
@@ -195,6 +195,7 @@
             btnAgregarPasajero.TabIndex = 21;
             btnAgregarPasajero.Text = "Agregar v v v";
             btnAgregarPasajero.UseVisualStyleBackColor = false;
+            btnAgregarPasajero.Click += btnAgregarPasajero_Click;
             // 
             // lsvTarifasReserva
             // 
@@ -216,7 +217,7 @@
             gpbDatosPasajero.Controls.Add(lblPasaportePasajero);
             gpbDatosPasajero.Controls.Add(txtPasaportePasajero);
             gpbDatosPasajero.Controls.Add(dtpNacimientoP);
-            gpbDatosPasajero.Controls.Add(cmbGénero);
+            gpbDatosPasajero.Controls.Add(cmbGenero);
             gpbDatosPasajero.Controls.Add(lblFechaNacPasajero);
             gpbDatosPasajero.Controls.Add(cmbNacionalidad);
             gpbDatosPasajero.Controls.Add(lblNacionalidadPasajero);
@@ -300,7 +301,7 @@
         private Label lblNacionalidadPasajero;
         private Label lblGeneroPasajero;
         private ComboBox cmbNacionalidad;
-        private ComboBox cmbGénero;
+        private ComboBox cmbGenero;
         private Button btnConfirmarGuardarReserva;
         private CheckedListBox chklbTarifasAsignadas;
         private Button btnAgregarPasajero;

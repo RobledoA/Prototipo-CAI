@@ -14,6 +14,7 @@ namespace Prototipo_CAI
 {
     public partial class CrearReserva : Form
     {
+        CrearReservaModel model = new CrearReservaModel();
         public CrearReserva()
         {
             InitializeComponent();
@@ -26,6 +27,28 @@ namespace Prototipo_CAI
 
         private void txtNombrePasajero_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnAgregarPasajero_Click(object sender, EventArgs e)
+        {
+            string nombreApellido = txtNombrePasajero.Text;
+            string dni = txtDNIPasajero.Text;
+            string nroPasaporte = txtPasaportePasajero.Text;
+            DateTime fechaNac = dtpNacimientoP.Value.Date;
+            string nacionalidad = cmbNacionalidad.Text;
+            string genero = cmbGenero.Text;
+
+            string errores = model.ValidarCampos(nombreApellido, dni, nroPasaporte, fechaNac, nacionalidad, genero);
+
+            if(string.IsNullOrWhiteSpace(errores))
+            {
+
+            }
+            else
+            {
+                MessageBox.Show(errores, "Error");
+            }
 
         }
     }

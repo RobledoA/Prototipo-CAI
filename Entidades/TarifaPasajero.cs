@@ -9,9 +9,9 @@ namespace Prototipo_CAI;
 public class TarifaPasajero
 {
     public string Nombre { get; set; }
-    public int DNI { get; set; }
-    public int Pasaporte { get; set; }
-    public DateOnly FechaNacimiento { get; set; }
+    public int DNI { get; set; }    
+    public string Pasaporte { get; set; }      //Son de 3 letras y 6 números.
+    public DateTime FechaNacimiento { get; set; }
     public string Nacionalidad { get; set; }
     public string Genero { get; set; }
     public DisponibilidadItinerario DisponibilidadesAsociadas { get; set; }
