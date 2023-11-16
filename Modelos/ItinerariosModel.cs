@@ -48,7 +48,7 @@ internal class ItinerariosModel
         {
             return "El campo CUIL/CUIT debe tener 11 dígitos.";
         }
-        if (!Int64.TryParse(cuilcuit, out long cuilcuitNumero))
+        if (!long.TryParse(cuilcuit, out long cuilcuitNumero))
         {
             return "El campo CUIL/CUIT debe ser numérico.";
         }

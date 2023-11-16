@@ -271,9 +271,9 @@
             lblNombreSubmenu.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblNombreSubmenu.Location = new Point(19, 12);
             lblNombreSubmenu.Name = "lblNombreSubmenu";
-            lblNombreSubmenu.Size = new Size(79, 30);
+            lblNombreSubmenu.Size = new Size(69, 30);
             lblNombreSubmenu.TabIndex = 15;
-            lblNombreSubmenu.Text = "asdada";
+            lblNombreSubmenu.Text = "AAAA";
             // 
             // btnAceptar
             // 

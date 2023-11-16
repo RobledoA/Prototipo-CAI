@@ -90,7 +90,6 @@ internal static class ModuloHoteles
                         hotel.Disponibilidades.Remove(disp);
                     }
                 }
-
             }
         }
 
