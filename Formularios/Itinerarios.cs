@@ -128,21 +128,7 @@ public partial class Itinerarios : Form
 
             //Acá hay que agregar los datos de la pantalla "AgregarClientes".
         }
-        if (r == DialogResult.No)
-        {
-            int ultimoCodigo = ItinerariosAlmacen.Itinerarios.Last().CodigoItinerario;
-            int codigoSiguiente = ultimoCodigo + 1; //No sirve si se elemina un Itinerario.
-            model.AgregarItinerario(codigoSiguiente, "", "");
 
-            MessageBox.Show($"Se ha creado el itinerario correctamente. Su código de itinerario es {codigoSiguiente}.", "Itinerario Creado");
-
-            var item = new ListViewItem();
-            item.Text = codigoSiguiente.ToString();
-            item.SubItems.Add("");
-            item.SubItems.Add("");
-
-            lsvItinerario.Items.Add(item);
-        }
     }
 
     private void btnAceptar_Click(object sender, EventArgs e)
@@ -297,50 +283,64 @@ public partial class Itinerarios : Form
 
     /*Esto se puede mejorar con una función y llamar a la función directamente esto es una *****. También se puede agregar la función de 
     presionar enter y buscar*/
-    private void btnBuscarItinerario_Click(object sender, EventArgs e)
+
+    private void iconbtnBuscarItinerario_Click(object sender, EventArgs e)
     {
         BuscarItinerario(txtBuscarItinerario.Text);
     }
-    /*
-        * AGREGAR
-        private void btnLimpiarBuscarItinerario_Click(object sender, EventArgs e)
-        {
-        lsvItinerario.Items.Clear();
 
+    private void iconbtnLimpiarBuscarItinerario_Click(object sender, EventArgs e)
+    {
+        lsvItinerario.Items.Clear();
         foreach (ListViewItem item in model.FormatoItinerarios())
         {
             lsvItinerario.Items.Add(item);
         }
-        }
-        */
+        txtBuscarItinerario.Clear();
+    }
 
-    public void BuscarItinerario(string idItinerario)
+
+    public void BuscarItinerario(string textoBuscador)
     {
-        if (!string.IsNullOrWhiteSpace(idItinerario))
+        if (!string.IsNullOrWhiteSpace(textoBuscador))
         {
+            var contador = 0;
+
             foreach (ListViewItem item in lsvItinerario.Items)
             {
                 string codigo = item.Text;
-                string cuit = item.SubItems[0].Text;
-                string razonsocial = item.SubItems[1].Text;
+                string cuit = item.SubItems[1].Text;
+                string razonsocial = item.SubItems[2].Text;
 
-                if (codigo.Equals(idItinerario, StringComparison.OrdinalIgnoreCase))
+                if (codigo.Equals(textoBuscador, StringComparison.OrdinalIgnoreCase))
+                {
+                    if(contador == 0)
+                        lsvItinerario.Items.Clear();
+
+                    lsvItinerario.Items.Add(item);
+                    contador++;
+                    
+                }
+                else if (cuit.Equals(textoBuscador, StringComparison.OrdinalIgnoreCase))
+                {
+                    if (contador == 0)
+                        lsvItinerario.Items.Clear();
+
+                    lsvItinerario.Items.Add(item);
+                    contador++;
+                }
+                else if (razonsocial.ToLower().Contains(textoBuscador.ToLower()))
+                {
+                    if (contador == 0)
+                        lsvItinerario.Items.Clear();
+
+                    lsvItinerario.Items.Add(item);
+                    contador++;
+                }
+                else if(contador == 0)
                 {
                     lsvItinerario.Items.Clear();
-                    lsvItinerario.Items.Add(item);
                 }
-                if (cuit.Equals(idItinerario, StringComparison.OrdinalIgnoreCase))
-                {
-                    lsvItinerario.Items.Clear();
-                    lsvItinerario.Items.Add(item);
-                }
-                /* NO FUNCIONA
-                if (razonsocial.Equals(idItinerario, StringComparison.OrdinalIgnoreCase))
-                {
-                    lsvItinerario.Items.Clear();
-                    lsvItinerario.Items.Add(item);
-                }
-                */
             }
         }
         else
@@ -369,6 +369,9 @@ public partial class Itinerarios : Form
     }
 
 
-    #endregion 
+    #endregion
+
+
+
 
 }

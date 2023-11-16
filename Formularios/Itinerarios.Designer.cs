@@ -34,7 +34,6 @@
             Nombre = new ColumnHeader();
             fileSystemWatcher1 = new FileSystemWatcher();
             txtBuscarItinerario = new TextBox();
-            btnBuscarItinerario = new Button();
             lblItinerarios = new Label();
             panelMenuItinerario = new Panel();
             iconbtnCrearReservaItinerario = new FontAwesome.Sharp.IconButton();
@@ -51,6 +50,8 @@
             lblNombreCliente = new Label();
             txtCuilCuit = new TextBox();
             txtNombreCliente = new TextBox();
+            iconbtnLimpiarBuscarItinerario = new FontAwesome.Sharp.IconButton();
+            iconbtnBuscarItinerario = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).BeginInit();
             panelMenuItinerario.SuspendLayout();
             panel1.SuspendLayout();
@@ -92,23 +93,13 @@
             // 
             // txtBuscarItinerario
             // 
+            txtBuscarItinerario.BackColor = Color.White;
             txtBuscarItinerario.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            txtBuscarItinerario.Location = new Point(456, 12);
+            txtBuscarItinerario.Location = new Point(421, 13);
             txtBuscarItinerario.Name = "txtBuscarItinerario";
             txtBuscarItinerario.PlaceholderText = "Filtrar por...";
             txtBuscarItinerario.Size = new Size(228, 25);
             txtBuscarItinerario.TabIndex = 8;
-            // 
-            // btnBuscarItinerario
-            // 
-            btnBuscarItinerario.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnBuscarItinerario.Location = new Point(690, 8);
-            btnBuscarItinerario.Name = "btnBuscarItinerario";
-            btnBuscarItinerario.Size = new Size(31, 31);
-            btnBuscarItinerario.TabIndex = 7;
-            btnBuscarItinerario.Text = "🔍";
-            btnBuscarItinerario.UseVisualStyleBackColor = true;
-            btnBuscarItinerario.Click += btnBuscarItinerario_Click;
             // 
             // lblItinerarios
             // 
@@ -348,17 +339,48 @@
             txtNombreCliente.Size = new Size(276, 23);
             txtNombreCliente.TabIndex = 7;
             // 
+            // iconbtnLimpiarBuscarItinerario
+            // 
+            iconbtnLimpiarBuscarItinerario.BackColor = Color.White;
+            iconbtnLimpiarBuscarItinerario.FlatStyle = FlatStyle.Flat;
+            iconbtnLimpiarBuscarItinerario.IconChar = FontAwesome.Sharp.IconChar.RotateForward;
+            iconbtnLimpiarBuscarItinerario.IconColor = Color.Black;
+            iconbtnLimpiarBuscarItinerario.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconbtnLimpiarBuscarItinerario.IconSize = 20;
+            iconbtnLimpiarBuscarItinerario.Location = new Point(686, 13);
+            iconbtnLimpiarBuscarItinerario.Name = "iconbtnLimpiarBuscarItinerario";
+            iconbtnLimpiarBuscarItinerario.Size = new Size(25, 25);
+            iconbtnLimpiarBuscarItinerario.TabIndex = 15;
+            iconbtnLimpiarBuscarItinerario.UseVisualStyleBackColor = false;
+            iconbtnLimpiarBuscarItinerario.Click += iconbtnLimpiarBuscarItinerario_Click;
+            // 
+            // iconbtnBuscarItinerario
+            // 
+            iconbtnBuscarItinerario.BackColor = Color.White;
+            iconbtnBuscarItinerario.FlatStyle = FlatStyle.Flat;
+            iconbtnBuscarItinerario.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            iconbtnBuscarItinerario.IconColor = Color.Black;
+            iconbtnBuscarItinerario.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconbtnBuscarItinerario.IconSize = 20;
+            iconbtnBuscarItinerario.Location = new Point(655, 13);
+            iconbtnBuscarItinerario.Name = "iconbtnBuscarItinerario";
+            iconbtnBuscarItinerario.Size = new Size(25, 25);
+            iconbtnBuscarItinerario.TabIndex = 16;
+            iconbtnBuscarItinerario.UseVisualStyleBackColor = false;
+            iconbtnBuscarItinerario.Click += iconbtnBuscarItinerario_Click;
+            // 
             // Itinerarios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(214, 237, 255);
             ClientSize = new Size(1034, 307);
+            Controls.Add(iconbtnBuscarItinerario);
+            Controls.Add(iconbtnLimpiarBuscarItinerario);
             Controls.Add(panel1);
             Controls.Add(panelMenuItinerario);
             Controls.Add(lblItinerarios);
             Controls.Add(txtBuscarItinerario);
-            Controls.Add(btnBuscarItinerario);
             Controls.Add(lsvItinerario);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
@@ -384,7 +406,6 @@
         private ColumnHeader Nombre;
         private FileSystemWatcher fileSystemWatcher1;
         private TextBox txtBuscarItinerario;
-        private Button btnBuscarItinerario;
         private Label lblItinerarios;
         private Button btnCrearReservaItinerario;
         private Button btnDatosCliente;
@@ -403,5 +424,7 @@
         private TextBox txtNombreCliente;
         private Label lblNombreSubmenu;
         private Button btnModificar;
+        private FontAwesome.Sharp.IconButton iconbtnLimpiarBuscarItinerario;
+        private FontAwesome.Sharp.IconButton iconbtnBuscarItinerario;
     }
 }
