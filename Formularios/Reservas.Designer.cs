@@ -37,16 +37,18 @@
             btnBuscarReserva = new Button();
             txtBuscarReserva = new TextBox();
             btnCancelarReserva = new Button();
+            iconbtnBuscarItinerario = new FontAwesome.Sharp.IconButton();
             SuspendLayout();
             // 
             // lsvReservas
             // 
+            lsvReservas.BackColor = Color.White;
             lsvReservas.Columns.AddRange(new ColumnHeader[] { codReserva, nombre, fechaReserva, estadoReserva });
             lsvReservas.FullRowSelect = true;
             lsvReservas.Location = new Point(12, 12);
             lsvReservas.MultiSelect = false;
             lsvReservas.Name = "lsvReservas";
-            lsvReservas.Size = new Size(776, 360);
+            lsvReservas.Size = new Size(776, 387);
             lsvReservas.TabIndex = 0;
             lsvReservas.UseCompatibleStateImageBehavior = false;
             lsvReservas.View = View.Details;
@@ -73,21 +75,25 @@
             // 
             // btnConfirmarReserva
             // 
-            btnConfirmarReserva.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnConfirmarReserva.Location = new Point(422, 386);
+            btnConfirmarReserva.BackColor = Color.FromArgb(8, 32, 50);
+            btnConfirmarReserva.FlatAppearance.BorderSize = 0;
+            btnConfirmarReserva.FlatStyle = FlatStyle.Flat;
+            btnConfirmarReserva.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnConfirmarReserva.ForeColor = Color.White;
+            btnConfirmarReserva.Location = new Point(524, 405);
             btnConfirmarReserva.Name = "btnConfirmarReserva";
-            btnConfirmarReserva.Size = new Size(168, 46);
+            btnConfirmarReserva.Size = new Size(129, 35);
             btnConfirmarReserva.TabIndex = 2;
             btnConfirmarReserva.Text = "Confirmar reserva";
-            btnConfirmarReserva.UseVisualStyleBackColor = true;
+            btnConfirmarReserva.UseVisualStyleBackColor = false;
             btnConfirmarReserva.Click += btnConfirmarReserva_Click;
             // 
             // btnBuscarReserva
             // 
             btnBuscarReserva.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnBuscarReserva.Location = new Point(213, 394);
+            btnBuscarReserva.Location = new Point(218, 406);
             btnBuscarReserva.Name = "btnBuscarReserva";
-            btnBuscarReserva.Size = new Size(31, 31);
+            btnBuscarReserva.Size = new Size(29, 25);
             btnBuscarReserva.TabIndex = 4;
             btnBuscarReserva.Text = "🔍";
             btnBuscarReserva.UseVisualStyleBackColor = true;
@@ -95,30 +101,50 @@
             // 
             // txtBuscarReserva
             // 
-            txtBuscarReserva.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtBuscarReserva.Location = new Point(12, 395);
+            txtBuscarReserva.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            txtBuscarReserva.Location = new Point(12, 407);
             txtBuscarReserva.Name = "txtBuscarReserva";
             txtBuscarReserva.PlaceholderText = "Ingrese Código de Reserva...";
-            txtBuscarReserva.Size = new Size(200, 29);
+            txtBuscarReserva.Size = new Size(200, 25);
             txtBuscarReserva.TabIndex = 5;
             txtBuscarReserva.KeyDown += txtBuscarReserva_KeyDown;
             // 
             // btnCancelarReserva
             // 
-            btnCancelarReserva.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCancelarReserva.Location = new Point(596, 386);
+            btnCancelarReserva.BackColor = Color.FromArgb(8, 32, 50);
+            btnCancelarReserva.FlatAppearance.BorderSize = 0;
+            btnCancelarReserva.FlatStyle = FlatStyle.Flat;
+            btnCancelarReserva.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCancelarReserva.ForeColor = Color.White;
+            btnCancelarReserva.Location = new Point(659, 405);
             btnCancelarReserva.Name = "btnCancelarReserva";
-            btnCancelarReserva.Size = new Size(192, 46);
+            btnCancelarReserva.Size = new Size(129, 35);
             btnCancelarReserva.TabIndex = 6;
             btnCancelarReserva.Text = "Cancelar Reserva";
-            btnCancelarReserva.UseVisualStyleBackColor = true;
+            btnCancelarReserva.UseVisualStyleBackColor = false;
             btnCancelarReserva.Click += btnCancelarReserva_Click;
+            // 
+            // iconbtnBuscarItinerario
+            // 
+            iconbtnBuscarItinerario.BackColor = Color.White;
+            iconbtnBuscarItinerario.FlatStyle = FlatStyle.Flat;
+            iconbtnBuscarItinerario.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            iconbtnBuscarItinerario.IconColor = Color.Black;
+            iconbtnBuscarItinerario.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconbtnBuscarItinerario.IconSize = 20;
+            iconbtnBuscarItinerario.Location = new Point(253, 406);
+            iconbtnBuscarItinerario.Name = "iconbtnBuscarItinerario";
+            iconbtnBuscarItinerario.Size = new Size(25, 25);
+            iconbtnBuscarItinerario.TabIndex = 17;
+            iconbtnBuscarItinerario.UseVisualStyleBackColor = false;
             // 
             // Reservas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(86, 124, 153);
             ClientSize = new Size(800, 444);
+            Controls.Add(iconbtnBuscarItinerario);
             Controls.Add(btnCancelarReserva);
             Controls.Add(txtBuscarReserva);
             Controls.Add(btnBuscarReserva);
@@ -144,5 +170,6 @@
         private ColumnHeader fechaReserva;
         private ColumnHeader estadoReserva;
         private Button btnCancelarReserva;
+        private FontAwesome.Sharp.IconButton iconbtnBuscarItinerario;
     }
 }

@@ -314,12 +314,12 @@ public partial class Itinerarios : Form
 
                 if (codigo.Equals(textoBuscador, StringComparison.OrdinalIgnoreCase))
                 {
-                    if(contador == 0)
+                    if (contador == 0)
                         lsvItinerario.Items.Clear();
 
                     lsvItinerario.Items.Add(item);
                     contador++;
-                    
+
                 }
                 else if (cuit.Equals(textoBuscador, StringComparison.OrdinalIgnoreCase))
                 {
@@ -337,7 +337,7 @@ public partial class Itinerarios : Form
                     lsvItinerario.Items.Add(item);
                     contador++;
                 }
-                else if(contador == 0)
+                else if (contador == 0)
                 {
                     lsvItinerario.Items.Clear();
                 }
