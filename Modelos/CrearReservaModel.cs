@@ -18,7 +18,7 @@ internal class CrearReservaModel
         {
             errores += "El Nombre y Apellido no debe estar vacío.\n";
         }
-        else if(!(Regex.IsMatch(nombreApellido, @"^[a-zA-Z]+$")))
+        else if (!(Regex.IsMatch(nombreApellido, @"^[a-zA-Z\s]+$")))
         {
             errores += "El Nombre y Apellido no debe contener caracteres numéricos o símbolos.\n";
             

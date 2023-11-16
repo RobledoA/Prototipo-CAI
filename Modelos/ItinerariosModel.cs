@@ -38,7 +38,7 @@ internal class ItinerariosModel
         {          
             return "El Nombre/Razón Social no debe estar vacío.";
         }
-        if (!string.IsNullOrWhiteSpace(nombre) && !(Regex.IsMatch(nombre, @"^[a-zA-Z]+$")))
+        if (!string.IsNullOrWhiteSpace(nombre) && !(Regex.IsMatch(nombre, @"^[a-zA-Z\s]+$")))
         {
             return "El Nombre/Razón Social no debe contener caracteres numéricos o símbolos.\n";
         }
@@ -70,7 +70,7 @@ internal class ItinerariosModel
         {
             errores += "El Nombre/Razón Social no debe estar vacío.\n";
         }
-        if (!string.IsNullOrWhiteSpace(nombreRZ) && !(Regex.IsMatch(nombreRZ, @"^[a-zA-Z]+$")))
+        if (!string.IsNullOrWhiteSpace(nombreRZ) && !(Regex.IsMatch(nombreRZ, @"^[a-zA-Z\s]+$")))
         {
             errores += "El Nombre/Razón Social no debe contener caracteres numéricos o símbolos.\n";
         }
