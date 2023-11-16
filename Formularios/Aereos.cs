@@ -151,4 +151,17 @@ public partial class Aereos : Form
         cmbTipoPasajeroAereos.SelectedIndex = -1;
         cmbClaseAereos.SelectedIndex = -1;
     }
+
+    private void lsvAereos_ColumnWidthChanged_1(object sender, ColumnWidthChangedEventArgs e)
+    {
+        if (lsvAereos.Columns[e.ColumnIndex].Width < 50)
+        {
+            lsvAereos.Columns[e.ColumnIndex].Width = 50;
+        }
+    }
+
+    private void lblFechaIdaAereos_Click(object sender, EventArgs e)
+    {
+
+    }
 }

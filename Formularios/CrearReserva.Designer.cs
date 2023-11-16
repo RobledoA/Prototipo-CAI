@@ -62,6 +62,7 @@
             // 
             // txtNombrePasajero
             // 
+            txtNombrePasajero.BackColor = Color.White;
             txtNombrePasajero.Location = new Point(17, 47);
             txtNombrePasajero.Name = "txtNombrePasajero";
             txtNombrePasajero.Size = new Size(216, 23);
@@ -70,6 +71,7 @@
             // 
             // txtDNIPasajero
             // 
+            txtDNIPasajero.BackColor = Color.White;
             txtDNIPasajero.Location = new Point(250, 47);
             txtDNIPasajero.Name = "txtDNIPasajero";
             txtDNIPasajero.Size = new Size(216, 23);
@@ -86,6 +88,7 @@
             // 
             // txtPasaportePasajero
             // 
+            txtPasaportePasajero.BackColor = Color.White;
             txtPasaportePasajero.Location = new Point(17, 101);
             txtPasaportePasajero.Name = "txtPasaportePasajero";
             txtPasaportePasajero.Size = new Size(216, 23);
@@ -102,6 +105,7 @@
             // 
             // dtpNacimientoP
             // 
+            dtpNacimientoP.CalendarMonthBackground = Color.White;
             dtpNacimientoP.Location = new Point(250, 101);
             dtpNacimientoP.Name = "dtpNacimientoP";
             dtpNacimientoP.Size = new Size(216, 23);
@@ -136,6 +140,7 @@
             // 
             // cmbNacionalidad
             // 
+            cmbNacionalidad.BackColor = Color.White;
             cmbNacionalidad.FormattingEnabled = true;
             cmbNacionalidad.Items.AddRange(new object[] { "Argentino", "Peruano", "Brasileño", "Paraguayo", "Uruguayo" });
             cmbNacionalidad.Location = new Point(17, 149);
@@ -145,6 +150,7 @@
             // 
             // cmbGénero
             // 
+            cmbGénero.BackColor = Color.White;
             cmbGénero.FormattingEnabled = true;
             cmbGénero.Items.AddRange(new object[] { "Masculino", "Femenino" });
             cmbGénero.Location = new Point(250, 149);
@@ -154,34 +160,45 @@
             // 
             // btnConfirmarGuardarReserva
             // 
+            btnConfirmarGuardarReserva.BackColor = Color.FromArgb(8, 32, 50);
+            btnConfirmarGuardarReserva.FlatAppearance.BorderSize = 0;
+            btnConfirmarGuardarReserva.FlatStyle = FlatStyle.Flat;
             btnConfirmarGuardarReserva.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnConfirmarGuardarReserva.ForeColor = Color.White;
             btnConfirmarGuardarReserva.Location = new Point(684, 545);
             btnConfirmarGuardarReserva.Name = "btnConfirmarGuardarReserva";
             btnConfirmarGuardarReserva.Size = new Size(155, 34);
             btnConfirmarGuardarReserva.TabIndex = 18;
             btnConfirmarGuardarReserva.Text = "Cerrar";
-            btnConfirmarGuardarReserva.UseVisualStyleBackColor = true;
+            btnConfirmarGuardarReserva.UseVisualStyleBackColor = false;
             // 
             // chklbTarifasAsignadas
             // 
+            chklbTarifasAsignadas.BackColor = Color.FromArgb(156, 184, 205);
+            chklbTarifasAsignadas.BorderStyle = BorderStyle.None;
             chklbTarifasAsignadas.FormattingEnabled = true;
             chklbTarifasAsignadas.Location = new Point(491, 42);
             chklbTarifasAsignadas.Name = "chklbTarifasAsignadas";
-            chklbTarifasAsignadas.Size = new Size(320, 184);
+            chklbTarifasAsignadas.Size = new Size(320, 180);
             chklbTarifasAsignadas.TabIndex = 20;
             // 
             // btnAgregarPasajero
             // 
+            btnAgregarPasajero.BackColor = Color.FromArgb(8, 32, 50);
+            btnAgregarPasajero.FlatAppearance.BorderSize = 0;
+            btnAgregarPasajero.FlatStyle = FlatStyle.Flat;
             btnAgregarPasajero.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAgregarPasajero.ForeColor = Color.White;
             btnAgregarPasajero.Location = new Point(12, 274);
             btnAgregarPasajero.Name = "btnAgregarPasajero";
             btnAgregarPasajero.Size = new Size(393, 34);
             btnAgregarPasajero.TabIndex = 21;
             btnAgregarPasajero.Text = "Agregar v v v";
-            btnAgregarPasajero.UseVisualStyleBackColor = true;
+            btnAgregarPasajero.UseVisualStyleBackColor = false;
             // 
             // lsvTarifasReserva
             // 
+            lsvTarifasReserva.BackColor = Color.FromArgb(156, 184, 205);
             lsvTarifasReserva.Location = new Point(12, 330);
             lsvTarifasReserva.Name = "lsvTarifasReserva";
             lsvTarifasReserva.Size = new Size(827, 209);
@@ -222,28 +239,37 @@
             // 
             // button1
             // 
+            button1.BackColor = Color.FromArgb(8, 32, 50);
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.ForeColor = Color.White;
             button1.Location = new Point(446, 274);
             button1.Name = "button1";
             button1.Size = new Size(393, 34);
             button1.TabIndex = 25;
             button1.Text = "Eliminar ^ ^ ^";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             // 
             // button2
             // 
+            button2.BackColor = Color.FromArgb(8, 32, 50);
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            button2.ForeColor = Color.White;
             button2.Location = new Point(523, 545);
             button2.Name = "button2";
             button2.Size = new Size(155, 34);
             button2.TabIndex = 26;
             button2.Text = "Crear reserva";
-            button2.UseVisualStyleBackColor = true;
+            button2.UseVisualStyleBackColor = false;
             // 
             // CrearReserva
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(86, 124, 153);
             ClientSize = new Size(851, 586);
             Controls.Add(button2);
             Controls.Add(button1);

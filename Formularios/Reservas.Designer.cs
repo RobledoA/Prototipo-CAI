@@ -42,7 +42,7 @@
             // 
             // lsvReservas
             // 
-            lsvReservas.BackColor = Color.White;
+            lsvReservas.BackColor = Color.FromArgb(156, 184, 205);
             lsvReservas.Columns.AddRange(new ColumnHeader[] { codReserva, nombre, fechaReserva, estadoReserva });
             lsvReservas.FullRowSelect = true;
             lsvReservas.Location = new Point(12, 12);
