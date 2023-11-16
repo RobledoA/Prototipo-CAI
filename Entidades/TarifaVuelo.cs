@@ -9,7 +9,7 @@ public class TarifaVuelo
 {
     public int CodigoTarifaVuelo { get; set; }
     public char Clase { get; set; }
-    public int CodigoVuelo { get; set; }
+    public string CodigoVuelo { get; set; }
     public decimal Precio { get; set; }
     public int TarifasVuelosDisponibles { get; set; }
     public char TipoPasajero { get; set; }

@@ -7,7 +7,7 @@ namespace Prototipo_CAI;
 
 public class Vuelo
 {
-    public int CodigoVuelo { get; set; }
+    public string CodigoVuelo { get; set; }
     public string Aerolinea { get; set; }
     public string Destino { get; set; }
     public DateTime FechaHoraSalida { get; set; }

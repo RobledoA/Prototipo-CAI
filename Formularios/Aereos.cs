@@ -95,12 +95,16 @@ public partial class Aereos : Form
         string textoFiltroOrigen = txtOrigenAereos.Text.ToLower();
         string textoFiltroDestino = txtDestinoAereos.Text.ToLower();
         DateTime fechaSeleccionada = dtFechaDesdeAereos.Value.Date;
-        DateTime fechaPredeterminada = dtFechaDesdeAereos.MinDate; // No hay predeterminada pero x las dudas
+        DateTime fechaPredeterminada = new DateTime(1999, 1, 1); ; // No hay predeterminada pero x las dudas
+        string textoTipoPasajero = cmbTipoPasajeroAereos.Text;
+        string textoClase = cmbClaseAereos.Text;
 
         List<ListViewItem> itemsFiltrados = todosLosVuelos.Where(item =>
-            (string.IsNullOrWhiteSpace(textoFiltroOrigen) || item.SubItems[4].Text.ToLower().Contains(textoFiltroOrigen)) &&
+            (string.IsNullOrWhiteSpace(textoFiltroOrigen) || item.SubItems[3].Text.ToLower().Contains(textoFiltroOrigen)) &&
             (string.IsNullOrWhiteSpace(textoFiltroDestino) || item.SubItems[1].Text.ToLower().Contains(textoFiltroDestino)) &&
-            (fechaSeleccionada == fechaPredeterminada || DateTime.Parse(item.SubItems[2].Text).Date >= fechaSeleccionada)).ToList();
+            (fechaSeleccionada == fechaPredeterminada || DateTime.Parse(item.SubItems[2].Text).Date == fechaSeleccionada) &&
+            (string.IsNullOrWhiteSpace(textoTipoPasajero) || string.Equals(item.SubItems[4].Text, textoTipoPasajero)) &&
+            (string.IsNullOrWhiteSpace(textoClase) || string.Equals(item.SubItems[5].Text, textoClase))).ToList();
 
         lsvAereos.Items.Clear();
         foreach (var item in itemsFiltrados)
@@ -132,5 +136,19 @@ public partial class Aereos : Form
     private void cmbClaseAereos_SelectedIndexChanged(object sender, EventArgs e)
     {
         FiltrarVuelos();
+    }
+
+    private void dtFechaDesdeAereos_CloseUp(object sender, EventArgs e)
+    {
+        FiltrarVuelos();
+    }
+
+    private void btnLimpiarFiltros_Click(object sender, EventArgs e)
+    {
+        txtOrigenAereos.Clear();
+        txtDestinoAereos.Clear();
+        dtFechaDesdeAereos.Value = new DateTime(1999, 1, 1);
+        cmbTipoPasajeroAereos.SelectedIndex = -1;
+        cmbClaseAereos.SelectedIndex = -1;
     }
 }

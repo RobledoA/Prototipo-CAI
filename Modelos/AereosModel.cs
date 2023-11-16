@@ -12,16 +12,23 @@ internal class AereosModel
         List<ListViewItem> listViewItems = new List<ListViewItem>();
         foreach (Vuelo vuelo in list)
         {
-            ListViewItem item = new ListViewItem(vuelo.CodigoVuelo.ToString());
-            item.SubItems.Add(vuelo.Destino);
-            item.SubItems.Add(vuelo.FechaHoraSalida.ToString()); // Formato de fecha y hora
-            item.SubItems.Add(vuelo.FechaHoraLlegada.ToString());
-            item.SubItems.Add(vuelo.Origen);
-            item.SubItems.Add(vuelo.TiempoVuelo);
-            item.SubItems.Add(vuelo.Aerolinea);
-            // Agregar detalles de las tarifas si es necesario
+            foreach (TarifaVuelo tarifa in vuelo.Tarifas)
+            {
+                ListViewItem item = new ListViewItem(vuelo.CodigoVuelo.ToString());
+                item.SubItems.Add(vuelo.Destino);
+                item.SubItems.Add(vuelo.FechaHoraSalida.ToString()); // Formato de fecha y hora
+                item.SubItems.Add(vuelo.Origen);
+                item.SubItems.Add(tarifa.TipoPasajero.ToString());
+                item.SubItems.Add(tarifa.Clase.ToString());
+                item.SubItems.Add(tarifa.Precio.ToString());
+                item.SubItems.Add(tarifa.TarifasVuelosDisponibles.ToString());
+                item.SubItems.Add(vuelo.FechaHoraLlegada.ToString());
+                item.SubItems.Add(vuelo.TiempoVuelo);
+                item.SubItems.Add(vuelo.Aerolinea);
 
-            listViewItems.Add(item);
+                listViewItems.Add(item);
+            }
+            
         }
 
         return listViewItems;
