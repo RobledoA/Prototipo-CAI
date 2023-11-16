@@ -159,6 +159,7 @@ public partial class Itinerarios : Form
             item.Text = codigoSiguiente.ToString();
             item.SubItems.Add(cuilcuit);
             item.SubItems.Add(nombreRZ);
+            item.SubItems.Add("False");
 
             lsvItinerario.Items.Add(item);
 
@@ -267,7 +268,7 @@ public partial class Itinerarios : Form
     #region Crear reserva
     private void iconbtnCrearReservaItinerario_Click(object sender, EventArgs e)
     {
-        botonActivado(sender, System.Drawing.Color.FromArgb(255, 255, 255));      
+        botonActivado(sender, System.Drawing.Color.FromArgb(255, 255, 255));
 
         if (lsvItinerario.SelectedItems.Count > 0)
         {
@@ -280,7 +281,7 @@ public partial class Itinerarios : Form
             {
                 CrearReserva crearReserva = new();
                 crearReserva.ShowDialog();
-            }         
+            }
         }
         else
         {
@@ -378,4 +379,8 @@ public partial class Itinerarios : Form
     }
     #endregion
 
+    private void lsvItinerario_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
 }

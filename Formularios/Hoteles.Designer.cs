@@ -30,8 +30,8 @@
         {
             lblHoteles = new Label();
             grpHoteles = new GroupBox();
-            btnLimpiarFiltros = new Button();
-            btnBuscarHoteles = new Button();
+            iconbtnBuscarHoteles = new FontAwesome.Sharp.IconButton();
+            iconbtnLimpiarBuscarHoteles = new FontAwesome.Sharp.IconButton();
             lblFechaHastaHoteles = new Label();
             lblUbicacionHoteles = new Label();
             dtpFechaHastaHoteles = new DateTimePicker();
@@ -79,8 +79,8 @@
             // grpHoteles
             // 
             grpHoteles.BackColor = SystemColors.ActiveCaption;
-            grpHoteles.Controls.Add(btnLimpiarFiltros);
-            grpHoteles.Controls.Add(btnBuscarHoteles);
+            grpHoteles.Controls.Add(iconbtnBuscarHoteles);
+            grpHoteles.Controls.Add(iconbtnLimpiarBuscarHoteles);
             grpHoteles.Controls.Add(lblFechaHastaHoteles);
             grpHoteles.Controls.Add(lblUbicacionHoteles);
             grpHoteles.Controls.Add(dtpFechaHastaHoteles);
@@ -99,27 +99,35 @@
             grpHoteles.TabStop = false;
             grpHoteles.Text = "Opciones de Búsqueda";
             // 
-            // btnLimpiarFiltros
+            // iconbtnBuscarHoteles
             // 
-            btnLimpiarFiltros.Location = new Point(1010, 49);
-            btnLimpiarFiltros.Margin = new Padding(3, 2, 3, 2);
-            btnLimpiarFiltros.Name = "btnLimpiarFiltros";
-            btnLimpiarFiltros.Size = new Size(32, 32);
-            btnLimpiarFiltros.TabIndex = 17;
-            btnLimpiarFiltros.Text = "\U0001f9f9";
-            btnLimpiarFiltros.UseVisualStyleBackColor = true;
-            btnLimpiarFiltros.Click += btnLimpiarFiltros_Click;
+            iconbtnBuscarHoteles.BackColor = Color.White;
+            iconbtnBuscarHoteles.FlatStyle = FlatStyle.Flat;
+            iconbtnBuscarHoteles.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            iconbtnBuscarHoteles.IconColor = Color.Black;
+            iconbtnBuscarHoteles.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconbtnBuscarHoteles.IconSize = 20;
+            iconbtnBuscarHoteles.Location = new Point(1014, 23);
+            iconbtnBuscarHoteles.Name = "iconbtnBuscarHoteles";
+            iconbtnBuscarHoteles.Size = new Size(25, 25);
+            iconbtnBuscarHoteles.TabIndex = 19;
+            iconbtnBuscarHoteles.UseVisualStyleBackColor = false;
+            iconbtnBuscarHoteles.Click += iconbtnBuscarHoteles_Click;
             // 
-            // btnBuscarHoteles
+            // iconbtnLimpiarBuscarHoteles
             // 
-            btnBuscarHoteles.Location = new Point(1010, 15);
-            btnBuscarHoteles.Margin = new Padding(3, 2, 3, 2);
-            btnBuscarHoteles.Name = "btnBuscarHoteles";
-            btnBuscarHoteles.Size = new Size(32, 32);
-            btnBuscarHoteles.TabIndex = 15;
-            btnBuscarHoteles.Text = "🔍";
-            btnBuscarHoteles.UseVisualStyleBackColor = true;
-            btnBuscarHoteles.Click += btnBuscarHoteles_Click;
+            iconbtnLimpiarBuscarHoteles.BackColor = Color.White;
+            iconbtnLimpiarBuscarHoteles.FlatStyle = FlatStyle.Flat;
+            iconbtnLimpiarBuscarHoteles.IconChar = FontAwesome.Sharp.IconChar.RotateForward;
+            iconbtnLimpiarBuscarHoteles.IconColor = Color.Black;
+            iconbtnLimpiarBuscarHoteles.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconbtnLimpiarBuscarHoteles.IconSize = 20;
+            iconbtnLimpiarBuscarHoteles.Location = new Point(1014, 54);
+            iconbtnLimpiarBuscarHoteles.Name = "iconbtnLimpiarBuscarHoteles";
+            iconbtnLimpiarBuscarHoteles.Size = new Size(25, 25);
+            iconbtnLimpiarBuscarHoteles.TabIndex = 18;
+            iconbtnLimpiarBuscarHoteles.UseVisualStyleBackColor = false;
+            iconbtnLimpiarBuscarHoteles.Click += iconbtnLimpiarBuscarHoteles_Click;
             // 
             // lblFechaHastaHoteles
             // 
@@ -369,7 +377,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(86, 124, 153);
-            ClientSize = new Size(1098, 420);
+            ClientSize = new Size(1078, 420);
             Controls.Add(lblHotelEnItinerario);
             Controls.Add(lsvHotelesAgregados);
             Controls.Add(btnQuitarItinerarioHotel);
@@ -395,7 +403,6 @@
 
         private Label lblHoteles;
         private GroupBox grpHoteles;
-        private Button btnBuscarHoteles;
         private Label lblFechaHastaHoteles;
         private Label lblUbicacionHoteles;
         private DateTimePicker dtpFechaHastaHoteles;
@@ -425,7 +432,8 @@
         private ColumnHeader columnHeader5;
         private ColumnHeader columnHeader6;
         private ColumnHeader columnHeader7;
-        private Button btnLimpiarFiltros;
         private Label lblHotelEnItinerario;
+        private FontAwesome.Sharp.IconButton iconbtnBuscarHoteles;
+        private FontAwesome.Sharp.IconButton iconbtnLimpiarBuscarHoteles;
     }
 }

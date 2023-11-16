@@ -15,6 +15,7 @@ public partial class Hoteles : Form
     public Hoteles()
     {
         InitializeComponent();
+
     }
 
 
@@ -81,22 +82,22 @@ public partial class Hoteles : Form
         }
     }
 
-    private void btnLimpiarFiltros_Click(object sender, EventArgs e)
+    private void Hoteles_FormClosed(object sender, FormClosedEventArgs e)
     {
-        lsvHoteles.Items.Clear();
-        txtUbicacionHoteles.Clear();
-        cmbCalificacionHoteles.SelectedIndex = -1;
-        dtpFechaDesdeHoteles.Text = "01/01/2023";
-        dtpFechaHastaHoteles.Text = "01/01/2023";
-        txtHabitacionesHoteles.Clear();
-        HotelesModel model = new HotelesModel();
-        foreach (ListViewItem item in model.CargarHoteles())
+        if (!lblItinerarioActivo.Text.Equals("NO HAY ITINERARIO ACTIVO"))
         {
-            lsvHoteles.Items.Add(item);
+            HotelesModel model = new();
+            List<ListViewItem> list = new List<ListViewItem>();
+            foreach (ListViewItem item in lsvHotelesAgregados.Items)
+            {
+                MessageBox.Show(item.Text);
+                list.Add(item);
+            }
+            model.ActualizarHotelesItinerarioActivo(list);
         }
     }
 
-    private void btnBuscarHoteles_Click(object sender, EventArgs e)
+    private void iconbtnBuscarHoteles_Click(object sender, EventArgs e)
     {
         HotelesModel model = new();
         string ubicacion = txtUbicacionHoteles.Text;
@@ -122,21 +123,20 @@ public partial class Hoteles : Form
         {
             MessageBox.Show(errores, "Error");
         }
-
     }
 
-    private void Hoteles_FormClosed(object sender, FormClosedEventArgs e)
+    private void iconbtnLimpiarBuscarHoteles_Click(object sender, EventArgs e)
     {
-        if (!lblItinerarioActivo.Text.Equals("NO HAY ITINERARIO ACTIVO"))
+        lsvHoteles.Items.Clear();
+        txtUbicacionHoteles.Clear();
+        cmbCalificacionHoteles.SelectedIndex = -1;
+        dtpFechaDesdeHoteles.Text = "01/01/2023";
+        dtpFechaHastaHoteles.Text = "01/01/2023";
+        txtHabitacionesHoteles.Clear();
+        HotelesModel model = new HotelesModel();
+        foreach (ListViewItem item in model.CargarHoteles())
         {
-            HotelesModel model = new();
-            List<ListViewItem> list = new List<ListViewItem>();
-            foreach (ListViewItem item in lsvHotelesAgregados.Items)
-            {
-                MessageBox.Show(item.Text);
-                list.Add(item);
-            }
-            model.ActualizarHotelesItinerarioActivo(list);
+            lsvHoteles.Items.Add(item);
         }
     }
 }

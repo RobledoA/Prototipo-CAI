@@ -34,10 +34,10 @@
             fechaReserva = new ColumnHeader();
             estadoReserva = new ColumnHeader();
             btnConfirmarReserva = new Button();
-            btnBuscarReserva = new Button();
             txtBuscarReserva = new TextBox();
             btnCancelarReserva = new Button();
             iconbtnBuscarItinerario = new FontAwesome.Sharp.IconButton();
+            iconbtnRefrescaBuscarReserva = new FontAwesome.Sharp.IconButton();
             SuspendLayout();
             // 
             // lsvReservas
@@ -52,6 +52,7 @@
             lsvReservas.TabIndex = 0;
             lsvReservas.UseCompatibleStateImageBehavior = false;
             lsvReservas.View = View.Details;
+            lsvReservas.SelectedIndexChanged += lsvReservas_SelectedIndexChanged;
             // 
             // codReserva
             // 
@@ -88,19 +89,9 @@
             btnConfirmarReserva.UseVisualStyleBackColor = false;
             btnConfirmarReserva.Click += btnConfirmarReserva_Click;
             // 
-            // btnBuscarReserva
-            // 
-            btnBuscarReserva.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnBuscarReserva.Location = new Point(218, 406);
-            btnBuscarReserva.Name = "btnBuscarReserva";
-            btnBuscarReserva.Size = new Size(29, 25);
-            btnBuscarReserva.TabIndex = 4;
-            btnBuscarReserva.Text = "🔍";
-            btnBuscarReserva.UseVisualStyleBackColor = true;
-            btnBuscarReserva.Click += btnBuscarReserva_Click;
-            // 
             // txtBuscarReserva
             // 
+            txtBuscarReserva.BackColor = Color.White;
             txtBuscarReserva.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txtBuscarReserva.Location = new Point(12, 407);
             txtBuscarReserva.Name = "txtBuscarReserva";
@@ -132,11 +123,27 @@
             iconbtnBuscarItinerario.IconColor = Color.Black;
             iconbtnBuscarItinerario.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconbtnBuscarItinerario.IconSize = 20;
-            iconbtnBuscarItinerario.Location = new Point(253, 406);
+            iconbtnBuscarItinerario.Location = new Point(218, 407);
             iconbtnBuscarItinerario.Name = "iconbtnBuscarItinerario";
             iconbtnBuscarItinerario.Size = new Size(25, 25);
             iconbtnBuscarItinerario.TabIndex = 17;
             iconbtnBuscarItinerario.UseVisualStyleBackColor = false;
+            iconbtnBuscarItinerario.Click += iconbtnBuscarItinerario_Click;
+            // 
+            // iconbtnRefrescaBuscarReserva
+            // 
+            iconbtnRefrescaBuscarReserva.BackColor = Color.White;
+            iconbtnRefrescaBuscarReserva.FlatStyle = FlatStyle.Flat;
+            iconbtnRefrescaBuscarReserva.IconChar = FontAwesome.Sharp.IconChar.ArrowsRotate;
+            iconbtnRefrescaBuscarReserva.IconColor = Color.Black;
+            iconbtnRefrescaBuscarReserva.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconbtnRefrescaBuscarReserva.IconSize = 20;
+            iconbtnRefrescaBuscarReserva.Location = new Point(249, 407);
+            iconbtnRefrescaBuscarReserva.Name = "iconbtnRefrescaBuscarReserva";
+            iconbtnRefrescaBuscarReserva.Size = new Size(25, 25);
+            iconbtnRefrescaBuscarReserva.TabIndex = 18;
+            iconbtnRefrescaBuscarReserva.UseVisualStyleBackColor = false;
+            iconbtnRefrescaBuscarReserva.Click += iconbtnRefrescaBuscarReserva_Click_1;
             // 
             // Reservas
             // 
@@ -144,10 +151,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(86, 124, 153);
             ClientSize = new Size(800, 444);
+            Controls.Add(iconbtnRefrescaBuscarReserva);
             Controls.Add(iconbtnBuscarItinerario);
             Controls.Add(btnCancelarReserva);
             Controls.Add(txtBuscarReserva);
-            Controls.Add(btnBuscarReserva);
             Controls.Add(btnConfirmarReserva);
             Controls.Add(lsvReservas);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -163,7 +170,6 @@
 
         private ListView lsvReservas;
         private Button btnConfirmarReserva;
-        private Button btnBuscarReserva;
         private TextBox txtBuscarReserva;
         private ColumnHeader codReserva;
         private ColumnHeader nombre;
@@ -171,5 +177,6 @@
         private ColumnHeader estadoReserva;
         private Button btnCancelarReserva;
         private FontAwesome.Sharp.IconButton iconbtnBuscarItinerario;
+        private FontAwesome.Sharp.IconButton iconbtnRefrescaBuscarReserva;
     }
 }

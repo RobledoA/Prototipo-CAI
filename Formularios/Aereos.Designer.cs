@@ -185,7 +185,7 @@
             // lblTipoPasajeroAereos
             // 
             lblTipoPasajeroAereos.AutoSize = true;
-            lblTipoPasajeroAereos.Location = new Point(645, 29);
+            lblTipoPasajeroAereos.Location = new Point(695, 29);
             lblTipoPasajeroAereos.Name = "lblTipoPasajeroAereos";
             lblTipoPasajeroAereos.Size = new Size(77, 15);
             lblTipoPasajeroAereos.TabIndex = 29;
@@ -196,7 +196,7 @@
             cmbTipoPasajeroAereos.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbTipoPasajeroAereos.FormattingEnabled = true;
             cmbTipoPasajeroAereos.Items.AddRange(new object[] { "A", "M", "I" });
-            cmbTipoPasajeroAereos.Location = new Point(645, 47);
+            cmbTipoPasajeroAereos.Location = new Point(695, 47);
             cmbTipoPasajeroAereos.Name = "cmbTipoPasajeroAereos";
             cmbTipoPasajeroAereos.Size = new Size(161, 23);
             cmbTipoPasajeroAereos.TabIndex = 28;
@@ -207,7 +207,7 @@
             cmbClaseAereos.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbClaseAereos.FormattingEnabled = true;
             cmbClaseAereos.Items.AddRange(new object[] { "E", "P", "B", "F" });
-            cmbClaseAereos.Location = new Point(839, 47);
+            cmbClaseAereos.Location = new Point(901, 47);
             cmbClaseAereos.Name = "cmbClaseAereos";
             cmbClaseAereos.Size = new Size(161, 23);
             cmbClaseAereos.TabIndex = 27;
@@ -216,7 +216,7 @@
             // lblClaseAereos
             // 
             lblClaseAereos.AutoSize = true;
-            lblClaseAereos.Location = new Point(839, 29);
+            lblClaseAereos.Location = new Point(901, 29);
             lblClaseAereos.Name = "lblClaseAereos";
             lblClaseAereos.Size = new Size(35, 15);
             lblClaseAereos.TabIndex = 26;
@@ -225,7 +225,7 @@
             // lblFechaIdaAereos
             // 
             lblFechaIdaAereos.AutoSize = true;
-            lblFechaIdaAereos.Location = new Point(398, 29);
+            lblFechaIdaAereos.Location = new Point(435, 29);
             lblFechaIdaAereos.Name = "lblFechaIdaAereos";
             lblFechaIdaAereos.Size = new Size(72, 15);
             lblFechaIdaAereos.TabIndex = 7;
@@ -235,9 +235,9 @@
             // dtFechaDesdeAereos
             // 
             dtFechaDesdeAereos.Format = DateTimePickerFormat.Short;
-            dtFechaDesdeAereos.Location = new Point(398, 47);
+            dtFechaDesdeAereos.Location = new Point(435, 47);
             dtFechaDesdeAereos.Name = "dtFechaDesdeAereos";
-            dtFechaDesdeAereos.Size = new Size(211, 23);
+            dtFechaDesdeAereos.Size = new Size(195, 23);
             dtFechaDesdeAereos.TabIndex = 6;
             dtFechaDesdeAereos.CloseUp += dtFechaDesdeAereos_CloseUp;
             dtFechaDesdeAereos.ValueChanged += dtFechaDesdeAereos_ValueChanged;
@@ -245,7 +245,7 @@
             // lblDestinoAereos
             // 
             lblDestinoAereos.AutoSize = true;
-            lblDestinoAereos.Location = new Point(210, 29);
+            lblDestinoAereos.Location = new Point(223, 29);
             lblDestinoAereos.Name = "lblDestinoAereos";
             lblDestinoAereos.Size = new Size(47, 15);
             lblDestinoAereos.TabIndex = 5;
@@ -253,7 +253,7 @@
             // 
             // txtDestinoAereos
             // 
-            txtDestinoAereos.Location = new Point(210, 47);
+            txtDestinoAereos.Location = new Point(223, 47);
             txtDestinoAereos.Name = "txtDestinoAereos";
             txtDestinoAereos.Size = new Size(161, 23);
             txtDestinoAereos.TabIndex = 4;
@@ -279,6 +279,7 @@
             // btnAgregarItinerarioAereos
             // 
             btnAgregarItinerarioAereos.BackColor = Color.FromArgb(8, 32, 50);
+            btnAgregarItinerarioAereos.Enabled = false;
             btnAgregarItinerarioAereos.FlatAppearance.BorderSize = 0;
             btnAgregarItinerarioAereos.FlatStyle = FlatStyle.Flat;
             btnAgregarItinerarioAereos.ForeColor = Color.White;
@@ -315,6 +316,7 @@
             // btnQuitarItinerarioAereos
             // 
             btnQuitarItinerarioAereos.BackColor = Color.FromArgb(8, 32, 50);
+            btnQuitarItinerarioAereos.Enabled = false;
             btnQuitarItinerarioAereos.FlatAppearance.BorderSize = 0;
             btnQuitarItinerarioAereos.FlatStyle = FlatStyle.Flat;
             btnQuitarItinerarioAereos.ForeColor = Color.White;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace Prototipo_CAI;
 
@@ -44,7 +45,7 @@ internal class ModuloReservas
             }
             else
             {
-                item.BackColor = SystemColors.Window;
+                item.BackColor = System.Drawing.Color.FromArgb(156, 184, 205);
                 item.ForeColor = SystemColors.WindowText;
             }
         }
@@ -98,12 +99,11 @@ internal class ModuloReservas
                 }
                 else
                 {
-                    DialogResult result = MessageBox.Show("¿Desea cancelar esta reserva?", "Confirmar Reserva", MessageBoxButtons.YesNoCancel);
+                    DialogResult result = MessageBox.Show("¿Desea cancelar esta reserva?", "Cancelar reserva", MessageBoxButtons.YesNo);
 
                     if (result == DialogResult.Yes)
                     {
                         reservaSeleccionada.EstadoReserva = "Cancelado";
-                        ReservasAlmacen.Grabar();
                     }
                     // No es necesario manejar el caso de DialogResult.No o DialogResult.Cancel en este contexto
                 }

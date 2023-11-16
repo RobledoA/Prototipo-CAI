@@ -25,10 +25,6 @@ namespace Prototipo_CAI
                 BuscarReserva(txtBuscarReserva.Text);
             }
         }
-        private void btnBuscarReserva_Click(object sender, EventArgs e)
-        {
-            BuscarReserva(txtBuscarReserva.Text);
-        }
 
         private void btnConfirmarReserva_Click(object sender, EventArgs e)
         {
@@ -44,15 +40,6 @@ namespace Prototipo_CAI
         {
             ReservasModel.Actualizar(lsvReservas);
         }
-        private void ConfirmarReserva()
-        {
-            ModuloReservas.ConfirmarReserva(lsvReservas);
-        }
-
-        private void CancelarReservas()
-        {
-            ReservasModel.CancelarReserva(lsvReservas);
-        }
 
         private void BuscarReserva(string codReserva)
         {
@@ -60,6 +47,21 @@ namespace Prototipo_CAI
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            ReservasModel.Actualizar(lsvReservas);
+        }
+
+        private void lsvReservas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iconbtnBuscarItinerario_Click(object sender, EventArgs e)
+        {
+            BuscarReserva(txtBuscarReserva.Text);
+        }
+
+        private void iconbtnRefrescaBuscarReserva_Click_1(object sender, EventArgs e)
         {
             ReservasModel.Actualizar(lsvReservas);
         }

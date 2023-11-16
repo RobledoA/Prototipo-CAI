@@ -40,9 +40,9 @@ namespace Prototipo_CAI
 
             string errores = model.ValidarCampos(nombreApellido, dni, fechaNac, nacionalidad, genero);
 
-            if(string.IsNullOrWhiteSpace(errores))
+            if (string.IsNullOrWhiteSpace(errores))
             {
-                
+
             }
             else
             {
