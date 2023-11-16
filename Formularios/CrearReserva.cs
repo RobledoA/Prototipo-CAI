@@ -34,12 +34,11 @@ namespace Prototipo_CAI
         {
             string nombreApellido = txtNombrePasajero.Text;
             string dni = txtDNIPasajero.Text;
-            string nroPasaporte = txtPasaportePasajero.Text;
             DateTime fechaNac = dtpNacimientoP.Value.Date;
             string nacionalidad = cmbNacionalidad.Text;
             string genero = cmbGenero.Text;
 
-            string errores = model.ValidarCampos(nombreApellido, dni, nroPasaporte, fechaNac, nacionalidad, genero);
+            string errores = model.ValidarCampos(nombreApellido, dni, fechaNac, nacionalidad, genero);
 
             if(string.IsNullOrWhiteSpace(errores))
             {

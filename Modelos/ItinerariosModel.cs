@@ -35,27 +35,27 @@ internal class ItinerariosModel
     {
         if (string.IsNullOrWhiteSpace(nombre))
         {          
-            return "El campo Nombre/Razón Social no debe estar vacío.";
+            return "El Nombre/Razón Social no debe estar vacío.";
         }
         if (!string.IsNullOrWhiteSpace(nombre) && !(Regex.IsMatch(nombre, @"^[a-zA-Z]+$")))
         {
-            return "El campo Nombre/Razón Social no debe ser numérico.\n";
+            return "El Nombre/Razón Social no debe contener caracteres numéricos o símbolos.\n";
         }
         if (cuilcuit.Length > 30)
         {
-            return "El campo Nombre/Razón Social debe tener menos de 30 caracteres.";
+            return "El Nombre/Razón Social debe tener menos de 30 caracteres.";
         }
         if (string.IsNullOrWhiteSpace(cuilcuit))
         {
-            return "El campo CUIL/CUIT no debe estar vacío.";
+            return "El CUIL/CUIT no debe estar vacío.";
         }
         if (cuilcuit.Length != 11)
         {
-            return "El campo CUIL/CUIT debe tener 11 dígitos.";
+            return "El CUIL/CUIT debe tener 11 dígitos.";
         }
         if (!long.TryParse(cuilcuit, out long cuilcuitNumero))
         {
-            return "El campo CUIL/CUIT debe ser numérico.";
+            return "El CUIL/CUIT debe ser numérico.";
         }
       
         return null;
@@ -67,27 +67,27 @@ internal class ItinerariosModel
 
         if (string.IsNullOrWhiteSpace(nombreRZ))
         {
-            errores += "El campo Nombre/Razón Social no debe estar vacío.\n";
+            errores += "El Nombre/Razón Social no debe estar vacío.\n";
         }
         if (!string.IsNullOrWhiteSpace(nombreRZ) && !(Regex.IsMatch(nombreRZ, @"^[a-zA-Z]+$")))
         {
-            errores += "El campo Nombre/Razón Social no debe ser numérico.\n";
+            errores += "El Nombre/Razón Social no debe contener caracteres numéricos o símbolos.\n";
         }
         if (nombreRZ.Length > 30)
         {
-            errores += "El campo Nombre/Razón Social debe tener menos de 30 caracteres.\n";
+            errores += "El Nombre/Razón Social debe tener menos de 30 caracteres.\n";
         }
         if (string.IsNullOrWhiteSpace(cuilcuit))
         {
-            errores += "El campo CUIL/CUIT no debe estar vacío.\n";
+            errores += "El  CUIL/CUIT no debe estar vacío.\n";
         }
         if (!long.TryParse(cuilcuit, out long salida))
         {
-            errores += "El campo CUIL/CUIT debe ser un número.\n";
+            errores += "El CUIL/CUIT debe ser un número.\n";
         }
         if (cuilcuit.Length != 11)
         {
-            errores += "El campo CUIL/CUIT debe tener 11 dígitos.\n";
+            errores += "El CUIL/CUIT debe tener 11 dígitos.\n";
         }
 
         return errores;

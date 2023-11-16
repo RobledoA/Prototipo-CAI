@@ -9,43 +9,51 @@ namespace Prototipo_CAI;
 
 internal class CrearReservaModel
 {
-    public string ValidarCampos(string nombreApellido, string dni, string nroPas, DateTime fechaNac, string nacionalidad, string genero)
+    public string ValidarCampos(string nombreApellido, string dni, DateTime fechaNac, string nacionalidad, string genero)
     {
         string errores = "";
 
+        //Nombre y Apellido
         if (string.IsNullOrWhiteSpace(nombreApellido))
         {
-            errores += "El campo Nombre y Apellido no debe estar vacío.\n";
+            errores += "El Nombre y Apellido no debe estar vacío.\n";
         }
         if (nombreApellido.Length > 45)
         {
-            errores += "El campo Nombre y Apellido no puede tener más de 45 caracteres.\n";
+            errores += "El Nombre y Apellido no puede tener más de 45 caracteres.\n";
         }
         if (!(Regex.IsMatch(nombreApellido, @"^[a-zA-Z]+$")))
         {
-            errores += "El campo Nombre y Apellido no debe ser numérico.\n";
+            errores += "El Nombre y Apellido no debe contener caracteres numéricos o símbolos.\n";
         }
-        if()
+        //DNI
+        if (string.IsNullOrWhiteSpace(dni))
         {
-
+            errores += "El DNI no debe estar vacío.\n";
         }
-
-
-
-
-        /*
-        if (string.IsNullOrWhiteSpace(cuilcuit))
+        if (dni.Length < 7 || dni.Length > 8)
         {
-            errores += "El campo CUIL/CUIT no debe estar vacío.\n";
+            errores += "El DNI debe tener entre 7 y 8 dígitos.\n";
         }
-        if (!long.TryParse(cuilcuit, out long salida))
+        if (!int.TryParse(dni, out int salida))
         {
-            errores += "El campo CUIL/CUIT debe ser un número.\n";
+            errores += "El DNI debe ser numérico.";
         }
-        if (cuilcuit.Length != 11)
+        //Fecha de Nacimiento
+        if (fechaNac > DateTime.Now)
         {
-            errores += "El campo CUIL/CUIT debe tener 11 dígitos.\n";
-        }*/
+            errores += "La Fecha de Nacimiento debe ser menor a la fecha actual.";
+        }
+        //Nacionalidad
+        if(string.IsNullOrWhiteSpace(nacionalidad))
+        {
+            errores += "La Nacionalidad no debe estar vacía.\n";
+        }
+        //Género
+        if (string.IsNullOrWhiteSpace(genero))
+        {
+            errores += "El Género no debe estar vacía.\n";
+        }
 
         return errores;
     }
