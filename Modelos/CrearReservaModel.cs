@@ -18,13 +18,14 @@ internal class CrearReservaModel
         {
             errores += "El Nombre y Apellido no debe estar vacío.\n";
         }
+        else if(!(Regex.IsMatch(nombreApellido, @"^[a-zA-Z]+$")))
+        {
+            errores += "El Nombre y Apellido no debe contener caracteres numéricos o símbolos.\n";
+            
+        }
         if (nombreApellido.Length > 45)
         {
             errores += "El Nombre y Apellido no puede tener más de 45 caracteres.\n";
-        }
-        if (!(Regex.IsMatch(nombreApellido, @"^[a-zA-Z]+$")))
-        {
-            errores += "El Nombre y Apellido no debe contener caracteres numéricos o símbolos.\n";
         }
         //DNI
         if (string.IsNullOrWhiteSpace(dni))

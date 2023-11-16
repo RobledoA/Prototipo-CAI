@@ -87,7 +87,7 @@
             // dtpNacimientoP
             // 
             dtpNacimientoP.CalendarMonthBackground = Color.White;
-            dtpNacimientoP.Location = new Point(250, 101);
+            dtpNacimientoP.Location = new Point(17, 99);
             dtpNacimientoP.Name = "dtpNacimientoP";
             dtpNacimientoP.Size = new Size(216, 23);
             dtpNacimientoP.TabIndex = 6;
@@ -95,7 +95,7 @@
             // lblFechaNacPasajero
             // 
             lblFechaNacPasajero.AutoSize = true;
-            lblFechaNacPasajero.Location = new Point(249, 83);
+            lblFechaNacPasajero.Location = new Point(16, 81);
             lblFechaNacPasajero.Name = "lblFechaNacPasajero";
             lblFechaNacPasajero.Size = new Size(119, 15);
             lblFechaNacPasajero.TabIndex = 7;

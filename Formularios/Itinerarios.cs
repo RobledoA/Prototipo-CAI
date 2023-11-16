@@ -133,12 +133,11 @@ public partial class Itinerarios : Form
             int codigoSiguiente = ultimoCodigo + 1;
             model.AgregarItinerario(codigoSiguiente, "", "");
 
-            var item = new ListViewItem();
-            item.Text = codigoSiguiente.ToString();
-            item.SubItems.Add("");
-            item.SubItems.Add("");
-
-            lsvItinerario.Items.Add(item);
+            lsvItinerario.Items.Clear();
+            foreach (ListViewItem item in model.FormatoItinerarios())
+            {
+                lsvItinerario.Items.Add(item);
+            }
 
             MessageBox.Show($"Se ha creado el itinerario correctamente. Su código de itinerario es {codigoSiguiente}.", "Itinerario Creado");
         }
@@ -268,13 +267,20 @@ public partial class Itinerarios : Form
     #region Crear reserva
     private void iconbtnCrearReservaItinerario_Click(object sender, EventArgs e)
     {
-        botonActivado(sender, System.Drawing.Color.FromArgb(255, 255, 255));
+        botonActivado(sender, System.Drawing.Color.FromArgb(255, 255, 255));      
 
         if (lsvItinerario.SelectedItems.Count > 0)
         {
-            CrearReserva crearReserva = new();
-
-            crearReserva.ShowDialog();
+            var item = lsvItinerario.SelectedItems[0];
+            if (item.SubItems[3].Text == "True" || item.SubItems[3].Text == "true" || item.SubItems[3].Text == "TRUE")
+            {
+                MessageBox.Show("El itinerario seleccionado ya está reservado.", "Error");
+            }
+            else
+            {
+                CrearReserva crearReserva = new();
+                crearReserva.ShowDialog();
+            }         
         }
         else
         {

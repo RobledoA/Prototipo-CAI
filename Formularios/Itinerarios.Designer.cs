@@ -32,6 +32,7 @@
             CodItinerario = new ColumnHeader();
             CUILCUIT = new ColumnHeader();
             Nombre = new ColumnHeader();
+            Reservado = new ColumnHeader();
             fileSystemWatcher1 = new FileSystemWatcher();
             txtBuscarItinerario = new TextBox();
             lblItinerarios = new Label();
@@ -61,7 +62,7 @@
             // 
             lsvItinerario.BackColor = Color.FromArgb(214, 237, 255);
             lsvItinerario.BorderStyle = BorderStyle.None;
-            lsvItinerario.Columns.AddRange(new ColumnHeader[] { CodItinerario, CUILCUIT, Nombre });
+            lsvItinerario.Columns.AddRange(new ColumnHeader[] { CodItinerario, CUILCUIT, Nombre, Reservado });
             lsvItinerario.FullRowSelect = true;
             lsvItinerario.Location = new Point(226, 45);
             lsvItinerario.MultiSelect = false;
@@ -84,7 +85,12 @@
             // Nombre
             // 
             Nombre.Text = "Nombre/Razón Social";
-            Nombre.Width = 235;
+            Nombre.Width = 170;
+            // 
+            // Reservado
+            // 
+            Reservado.Text = "Reservado";
+            Reservado.Width = 70;
             // 
             // fileSystemWatcher1
             // 
@@ -427,5 +433,6 @@
         private Button btnModificar;
         private FontAwesome.Sharp.IconButton iconbtnLimpiarBuscarItinerario;
         private FontAwesome.Sharp.IconButton iconbtnBuscarItinerario;
+        private ColumnHeader Reservado;
     }
 }
