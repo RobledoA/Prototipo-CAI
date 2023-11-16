@@ -69,15 +69,15 @@ public partial class Hoteles : Form
         }
     }
 
-    private void btnQuitarItinerarioHoteles_Click(object sender, EventArgs e)
+    private void btnQuitarItinerarioHotel_Click(object sender, EventArgs e)
     {
-        if (lsvHotelesAgregados.SelectedItems.Count == 0)
+        if (lsvHotelesAgregados.SelectedItems.Count > 0)
         {
-            MessageBox.Show("Debe seleccionar un producto de la lista.", "Error");
+            lsvHotelesAgregados.Items.Remove(lsvHotelesAgregados.SelectedItems[0]);
         }
         else
         {
-            lsvHotelesAgregados.SelectedItems[0].Remove();
+            MessageBox.Show("Debe seleccionar un hotel de la lista derecha para poder quitarlo", "Error");
         }
     }
 
@@ -127,8 +127,16 @@ public partial class Hoteles : Form
 
     private void Hoteles_FormClosed(object sender, FormClosedEventArgs e)
     {
-        /*HotelesModel model = new HotelesModel();
-        lsvHotelesAgregados.Items.CopyTo*/
-
+        if (!lblItinerarioActivo.Text.Equals("NO HAY ITINERARIO ACTIVO"))
+        {
+            HotelesModel model = new();
+            List<ListViewItem> list = new List<ListViewItem>();
+            foreach (ListViewItem item in lsvHotelesAgregados.Items)
+            {
+                MessageBox.Show(item.Text);
+                list.Add(item);
+            }
+            model.ActualizarHotelesItinerarioActivo(list);
+        }
     }
 }

@@ -85,6 +85,11 @@ internal static class ModuloItinerarios
         ItinerarioActivo.TarifasVuelos = tarifas;
     }
 
+    public static void AgregarDisponibilidadesAItinerarioActivo(List<Disponibilidad> disp)
+    {
+        ItinerarioActivo.Disponibilidades = disp;
+    }
+
 
 
 }

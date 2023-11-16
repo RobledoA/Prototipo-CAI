@@ -18,7 +18,7 @@ internal class HotelesModel
         {
             foreach (Disponibilidad disp in hotel.Disponibilidades)
             {
-                ListViewItem item = new ListViewItem(Convert.ToString(disp.CodigoDisponibilidad));
+                ListViewItem item = new ListViewItem(hotel.CodigoHotel);
                 item.SubItems.Add(hotel.Nombre);
                 item.SubItems.Add(model.ConversorCalificacion(hotel.Calificacion));
                 item.SubItems.Add(hotel.CodigoCiudad);
@@ -38,7 +38,7 @@ internal class HotelesModel
         foreach (Disponibilidad disp in listDisponibilidades)
         {
             Hotel hotel = ModuloHoteles.ObtenerInfoHotel(Convert.ToString(disp.CodigoHotel));
-            ListViewItem item = new ListViewItem(Convert.ToString(disp.CodigoDisponibilidad));
+            ListViewItem item = new ListViewItem(hotel.CodigoHotel);
             item.SubItems.Add(hotel.Nombre);
             item.SubItems.Add(model.ConversorCalificacion(hotel.Calificacion));
             item.SubItems.Add(hotel.CodigoCiudad);
@@ -127,5 +127,11 @@ internal class HotelesModel
             listViewHoteles.Add(item);
         }
         return listViewHoteles;
+    }
+
+    public void ActualizarHotelesItinerarioActivo(List<ListViewItem> list)
+    {
+        List<Disponibilidad> disp = ModuloHoteles.ObtenerDisponibilidadesItinerarioActivo(list);
+        ModuloItinerarios.AgregarDisponibilidadesAItinerarioActivo(disp);
     }
 }

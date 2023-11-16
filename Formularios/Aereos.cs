@@ -162,12 +162,13 @@ public partial class Aereos : Form
 
     private void Aereos_FormClosed(object sender, FormClosedEventArgs e)
     {
-        if (ModuloItinerarios.ItinerarioActivo != null)
+        if (!lblItinerarioActivo.Text.Equals("NO HAY ITINERARIO ACTIVO"))
         {
             AereosModel model = new();
             List<ListViewItem> list = new List<ListViewItem>();
             foreach (ListViewItem item in lsvItinerarioAereos.Items)
             {
+                MessageBox.Show(item.Text);
                 list.Add(item);
             }
             model.ActualizarVuelosItinerarioActivo(list);

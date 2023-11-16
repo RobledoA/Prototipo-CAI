@@ -303,6 +303,7 @@
             btnQuitarItinerarioHotel.TabIndex = 28;
             btnQuitarItinerarioHotel.Text = "<<< Eliminar";
             btnQuitarItinerarioHotel.UseVisualStyleBackColor = false;
+            btnQuitarItinerarioHotel.Click += btnQuitarItinerarioHotel_Click;
             // 
             // lsvHotelesAgregados
             // 

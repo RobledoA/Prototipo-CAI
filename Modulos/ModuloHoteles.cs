@@ -111,6 +111,30 @@ internal static class ModuloHoteles
         return true;
     }
 
+    public static List<Disponibilidad> ObtenerDisponibilidadesItinerarioActivo(List<ListViewItem> list)
+    {
+        List<Disponibilidad> disponibilidadesItinerarioActivo = new();
+        foreach (ListViewItem item in list)
+        {
+            foreach (Hotel hotel in Hoteles)
+            {
+                if (hotel.CodigoHotel == item.Text)
+                {
+                    foreach (Disponibilidad disp in hotel.Disponibilidades)
+                    {
+                        //MessageBox.Show(disp.Nombre, item.Text);
+                        if (disp.Nombre == item.SubItems[4].Text)
+                        {
+                            //MessageBox.Show("encontro la wea madre santa");
+                            disponibilidadesItinerarioActivo.Add(disp);
+                        }
+                    }
+                }
+            }
+        }
+        return disponibilidadesItinerarioActivo;
+    }
+
     /*public int CompareTo(object o)
     {
         ModuloHoteles moduloHoteles = (ModuloHoteles)o;
