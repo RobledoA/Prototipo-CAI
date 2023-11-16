@@ -17,8 +17,11 @@ public partial class Aereos : Form
         InitializeComponent();
     }
 
+    private List<ListViewItem> todosLosVuelos = new List<ListViewItem>();
+
     private void Aereos_Load(object sender, EventArgs e)
     {
+        dtFechaDesdeAereos.Value = new DateTime(1999, 1, 1);
         AereosModel model = new();
         if (ModuloItinerarios.ItinerarioActivo == null)
         {
@@ -34,9 +37,13 @@ public partial class Aereos : Form
                 lsvHotelesAgregados.Items.Add(list);
             }*/
         }
+        lsvAereos.Items.Clear(); // Limpia la lista antes de cargar nuevos elementos
+        todosLosVuelos.Clear();  // Limpia la lista de todos los vuelos
+
         foreach (ListViewItem item in model.CargarVuelos())
         {
             lsvAereos.Items.Add(item);
+            todosLosVuelos.Add(item); // Almacena una copia del elemento
         }
 
     }
@@ -81,5 +88,49 @@ public partial class Aereos : Form
         {
             MessageBox.Show("Debe seleccionar un vuelo de la lista derecha para poder quitarlo", "Error");
         }
+    }
+
+    private void FiltrarVuelos()
+    {
+        string textoFiltroOrigen = txtOrigenAereos.Text.ToLower();
+        string textoFiltroDestino = txtDestinoAereos.Text.ToLower();
+        DateTime fechaSeleccionada = dtFechaDesdeAereos.Value.Date;
+        DateTime fechaPredeterminada = dtFechaDesdeAereos.MinDate; // No hay predeterminada pero x las dudas
+
+        List<ListViewItem> itemsFiltrados = todosLosVuelos.Where(item =>
+            (string.IsNullOrWhiteSpace(textoFiltroOrigen) || item.SubItems[4].Text.ToLower().Contains(textoFiltroOrigen)) &&
+            (string.IsNullOrWhiteSpace(textoFiltroDestino) || item.SubItems[1].Text.ToLower().Contains(textoFiltroDestino)) &&
+            (fechaSeleccionada == fechaPredeterminada || DateTime.Parse(item.SubItems[2].Text).Date >= fechaSeleccionada)).ToList();
+
+        lsvAereos.Items.Clear();
+        foreach (var item in itemsFiltrados)
+        {
+            lsvAereos.Items.Add(item);
+        }
+    }
+
+    private void txtOrigenAereos_TextChanged(object sender, EventArgs e)
+    {
+        FiltrarVuelos();
+    }
+
+    private void txtDestinoAereos_TextChanged(object sender, EventArgs e)
+    {
+        FiltrarVuelos();
+    }
+
+    private void dtFechaDesdeAereos_ValueChanged(object sender, EventArgs e)
+    {
+        FiltrarVuelos();
+    }
+
+    private void cmbTipoPasajeroAereos_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        FiltrarVuelos();
+    }
+
+    private void cmbClaseAereos_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        FiltrarVuelos();
     }
 }
