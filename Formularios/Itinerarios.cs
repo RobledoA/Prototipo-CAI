@@ -67,7 +67,7 @@ public partial class Itinerarios : Form
         }
     }
 
-    // ////////////////////////////////////////////////////////////////////////////////////////
+    #region Extension Submenu
 
     private void mostrarDatos()
     {
@@ -94,11 +94,13 @@ public partial class Itinerarios : Form
         iconbtnEstItinerarioActivo.Enabled = true;
         iconbtnEliminarItinerario.Enabled = true;
         iconbtnCrearReservaItinerario.Enabled = true;
+        lsvItinerario.Enabled = true;
+
     }
 
-    // ////////////////////////////////////////////////////////////////////////////////////////
+    #endregion
 
-
+    #region Cargar lista
     ItinerariosModel model = new();
 
     private void Itinerarios_Load(object sender, EventArgs e)
@@ -106,14 +108,20 @@ public partial class Itinerarios : Form
         foreach (ListViewItem item in model.FormatoItinerarios())
         {
             lsvItinerario.Items.Add(item);
+
         }
     }
+    #endregion
 
+    #region Nuevo itinerario
     private void iconbtnNuevoItinerario_Click(object sender, EventArgs e)
     {
         botonActivado(sender, System.Drawing.Color.FromArgb(255, 255, 255));
+        btnModificar.Enabled = false;
+        btnAceptar.Enabled = true;
+        lblNombreSubmenu.Text = "Nuevo cliente";
 
-        var r = MessageBox.Show("Desea agregar datos de cliente?", "Crear Itinerario", MessageBoxButtons.YesNoCancel);
+        var r = MessageBox.Show("Desea agregar datos de cliente?", "Crear Itinerario", MessageBoxButtons.YesNo);
         if (r == DialogResult.Yes)
         {
             mostrarDatos();
@@ -122,47 +130,107 @@ public partial class Itinerarios : Form
         }
         if (r == DialogResult.No)
         {
-            int ultimoCodigo = ItinerariosAlmacen.Itinerarios.Count;
+            int ultimoCodigo = ItinerariosAlmacen.Itinerarios.Last().CodigoItinerario;
             int codigoSiguiente = ultimoCodigo + 1; //No sirve si se elemina un Itinerario.
+            model.AgregarItinerario(codigoSiguiente, "", "");
 
-            MessageBox.Show($"Se ha creado el itinerario correctamente. Su código de itinerario es {codigoSiguiente}.",
-                "Itinerario Creado");
-            //Falta que se agregue al Json.
+            MessageBox.Show($"Se ha creado el itinerario correctamente. Su código de itinerario es {codigoSiguiente}.", "Itinerario Creado");
 
-            //Esto debería ir en otro lado?
             var item = new ListViewItem();
             item.Text = codigoSiguiente.ToString();
-            item.SubItems.Add("");  
+            item.SubItems.Add("");
             item.SubItems.Add("");
 
             lsvItinerario.Items.Add(item);
         }
     }
 
+    private void btnAceptar_Click(object sender, EventArgs e)
+    {
+        string nombreRZ = txtNombreCliente.Text;
+        string cuilcuit = txtCuilCuit.Text;
+        string errores = model.ValidarCampos(nombreRZ, cuilcuit);
+
+        if (string.IsNullOrEmpty(errores))
+        {
+            int ultimoCodigo = ItinerariosAlmacen.Itinerarios.Last().CodigoItinerario;
+            int codigoSiguiente = ultimoCodigo + 1;
+            model.AgregarItinerario(codigoSiguiente, cuilcuit, nombreRZ);
+
+            var item = new ListViewItem();
+            item.Text = codigoSiguiente.ToString();
+            item.SubItems.Add(cuilcuit);
+            item.SubItems.Add(nombreRZ);
+
+            lsvItinerario.Items.Add(item);
+
+            MessageBox.Show($"Se ha creado el itinerario correctamente. Su código de itinerario es {codigoSiguiente}.", "Itinerario Creado");
+            esconderDatos();
+        }
+        else
+        {
+            MessageBox.Show(errores, "Error");
+        }
+        //Se debería agregar los datos del cliente en la lista del formulario "Itinerario".
+    }
+
+    #endregion
+
+    #region Modificar Datos
+
     private void iconbtnDatosCliente_Click(object sender, EventArgs e)
     {
         botonActivado(sender, System.Drawing.Color.FromArgb(255, 255, 255));
-     
-        
+        btnAceptar.Enabled = false;
+        lblNombreSubmenu.Text = "Editar cliente";
+
         if (lsvItinerario.SelectedItems.Count == 0)
         {
             MessageBox.Show("Selecciona un itinerario de la lista.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             return;
         }
 
-        lsvItinerario.Enabled = false;
+        var ItinerarioSeleccionado = lsvItinerario.SelectedItems[0].SubItems;
+
+
+        txtNombreCliente.Text = ItinerarioSeleccionado[2].Text;
+        txtCuilCuit.Text = ItinerarioSeleccionado[1].Text;
+        //comboBox1.Items.Add(ItinerarioSeleccionado.Disponibilidades);
+        //textBox2.Text = ItinerarioSeleccionado.EstaReservado.ToString();
+        //textBox3.Text = ItinerarioSeleccionado.CodigoItinerario.ToString();
+        //comboBox1.Items.Add(ItinerarioSeleccionado.TarifasVuelos);
+
+        //lsvItinerario.Enabled = false;
         mostrarDatos();
-
-        Itinerario ItinerarioSeleccionado = (Itinerario)lsvItinerario.SelectedItems[0].Tag;
-
-        txtNombreCliente.Text = ItinerarioSeleccionado.NombreCliente;
-        txtCuilCuit.Text = ItinerarioSeleccionado.CUILCUIT.ToString();
-        //ItinerarioSeleccionado.Disponibilidades = null;
-        //ItinerarioSeleccionado.EstaReservado = false;
-        //ItinerarioSeleccionado.CodigoItinerario = 0;
-        //ItinerarioSeleccionado.TarifasVuelos = null;
     }
 
+    private void btnModificar_Click(object sender, EventArgs e)
+    {
+        model.ModificarItinerario(lsvItinerario.SelectedItems[0].Text, txtNombreCliente.Text, txtCuilCuit.Text);
+
+
+        var error = model.ModificarCliente(txtNombreCliente.Text, txtCuilCuit.Text);
+        if (error != null)
+        {
+            MessageBox.Show(error, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            return;
+        }
+
+
+
+        lsvItinerario.Items.Clear();
+        foreach (ListViewItem item in model.FormatoItinerarios())
+        {
+            lsvItinerario.Items.Add(item);
+        }
+
+        lsvItinerario.Enabled = true;
+        esconderDatos();
+    }
+
+    #endregion
+
+    #region Itinerario activo
     private void iconbtnEstItinerarioActivo_Click(object sender, EventArgs e)
     {
         botonActivado(sender, System.Drawing.Color.FromArgb(255, 255, 255));
@@ -178,22 +246,34 @@ public partial class Itinerarios : Form
             MessageBox.Show($"Se ha establecido el itinerario {codItinerario} como activo.");
         }
     }
+    #endregion
 
+    #region Eliminar itinerario
     private void iconbtnEliminarItinerario_Click(object sender, EventArgs e)
     {
         botonActivado(sender, System.Drawing.Color.FromArgb(255, 255, 255));
-
         if (lsvItinerario.SelectedItems.Count == 0)
         {
             MessageBox.Show("Debe seleccionar un itinerario de la lista.", "Error");
         }
         else
         {
-            lsvItinerario.SelectedItems[0].Remove();
-            //Falta que lo elimine del Json.
+            var r = MessageBox.Show("Desea eliminar datos de cliente?", "Eliminar itinerario", MessageBoxButtons.YesNo);
+            if (r == DialogResult.Yes)
+            {
+                model.EliminarItinerario(lsvItinerario.SelectedItems[0].Text);
+                lsvItinerario.Items.Clear();
+                foreach (ListViewItem item in model.FormatoItinerarios())
+                {
+                    lsvItinerario.Items.Add(item);
+                }
+
+            }
         }
     }
+    #endregion
 
+    #region Crear reserva
     private void iconbtnCrearReservaItinerario_Click(object sender, EventArgs e)
     {
         botonActivado(sender, System.Drawing.Color.FromArgb(255, 255, 255));
@@ -210,55 +290,29 @@ public partial class Itinerarios : Form
         }
     }
 
+
+    #endregion
+
+    #region Filtrar 
+
     /*Esto se puede mejorar con una función y llamar a la función directamente esto es una *****. También se puede agregar la función de 
     presionar enter y buscar*/
-
     private void btnBuscarItinerario_Click(object sender, EventArgs e)
     {
         BuscarItinerario(txtBuscarItinerario.Text);
     }
-
-
-    private void btnAceptar_Click(object sender, EventArgs e)
-    {
-        Itinerario clienteAModificar = (Itinerario)lsvItinerario.SelectedItems[0].Tag;
-        Itinerario clienteNuevaVersion = new Itinerario();
-
-        string nombreRZ = txtNombreCliente.Text;
-        string cuilcuit = txtCuilCuit.Text;
-        string errores = model.ValidarCampos(nombreRZ, cuilcuit);
-
-        if (!string.IsNullOrEmpty(errores))
+    /*
+        * AGREGAR
+        private void btnLimpiarBuscarItinerario_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(errores, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);         
-        }
-        else
+        lsvItinerario.Items.Clear();
+
+        foreach (ListViewItem item in model.FormatoItinerarios())
         {
-            MessageBox.Show($"Se ha creado el itinerario correctamente. Su código de itinerario es {1}.", "Itinerario Creado");
+            lsvItinerario.Items.Add(item);
         }
-
-        clienteNuevaVersion.NombreCliente = txtNombreCliente.Text;
-        clienteNuevaVersion.CUILCUIT = Convert.ToInt64(txtCuilCuit.Text);
-
-        model.ModificarCliente(clienteAModificar, clienteNuevaVersion);
-        var item = lsvItinerario.SelectedItems[0];
-        item.Text = clienteAModificar.NombreCliente;
-        item.SubItems[1].Text = clienteAModificar.CUILCUIT.ToString();
-        esconderDatos();
-    }
-
-    private void btnCancelar_Click(object sender, EventArgs e)
-    {
-        esconderDatos();
-    }
-
-    private void txtBuscarItinerario_KeyDown(object sender, KeyEventArgs e)
-    {
-        if (e.KeyCode == Keys.Enter)
-        {
-            BuscarItinerario(txtBuscarItinerario.Text);
         }
-    }
+        */
 
     public void BuscarItinerario(string idItinerario)
     {
@@ -280,7 +334,7 @@ public partial class Itinerarios : Form
                     lsvItinerario.Items.Clear();
                     lsvItinerario.Items.Add(item);
                 }
-                /*
+                /* NO FUNCIONA
                 if (razonsocial.Equals(idItinerario, StringComparison.OrdinalIgnoreCase))
                 {
                     lsvItinerario.Items.Clear();
@@ -295,8 +349,26 @@ public partial class Itinerarios : Form
         }
     }
 
-    private void lsvItinerario_SelectedIndexChanged(object sender, EventArgs e)
+    private void txtBuscarItinerario_KeyDown(object sender, KeyEventArgs e)
     {
-
+        if (e.KeyCode == Keys.Enter)
+        {
+            BuscarItinerario(txtBuscarItinerario.Text);
+        }
     }
+
+
+    #endregion
+
+    #region Boton cancelar
+
+    private void btnCancelar_Click(object sender, EventArgs e)
+    {
+        esconderDatos();
+        lsvItinerario.Enabled = true;
+    }
+
+
+    #endregion 
+
 }

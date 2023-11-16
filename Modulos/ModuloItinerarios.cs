@@ -49,4 +49,37 @@ internal static class ModuloItinerarios
     {
         return ItinerarioActivo;
     }
+
+    public static void ModificarItinerario(string codItinerario, string nombre, string CUIL)
+    {
+        foreach (Itinerario itinerario in Itinerarios)
+        {
+            if (string.Equals(itinerario.CodigoItinerario.ToString(), codItinerario))
+            {
+                itinerario.NombreCliente = nombre;
+                itinerario.CUILCUIT = CUIL;
+                return;
+            }
+        }
+    }
+
+    public static void EliminarItinerario(string codItinerario)
+    {
+        foreach (Itinerario itinerario in Itinerarios)
+        {
+            if (string.Equals(itinerario.CodigoItinerario.ToString(), codItinerario))
+            {
+                Itinerarios.Remove(itinerario);
+                return;
+            }
+        }
+
+    }
+    public static void AgregarItinerario(Itinerario itinerario)
+    {
+        Itinerarios.Add(itinerario);
+    }
+
+
+
 }

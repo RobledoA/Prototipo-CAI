@@ -43,7 +43,8 @@
             iconbtnDatosCliente = new FontAwesome.Sharp.IconButton();
             iconbtnNuevoItinerario = new FontAwesome.Sharp.IconButton();
             panel1 = new Panel();
-            btnNombreSubmenu = new Label();
+            btnModificar = new Button();
+            lblNombreSubmenu = new Label();
             btnAceptar = new Button();
             btnCancelar = new Button();
             lblCuilCuit = new Label();
@@ -68,7 +69,6 @@
             lsvItinerario.TabIndex = 1;
             lsvItinerario.UseCompatibleStateImageBehavior = false;
             lsvItinerario.View = View.Details;
-            lsvItinerario.SelectedIndexChanged += lsvItinerario_SelectedIndexChanged;
             // 
             // CodItinerario
             // 
@@ -247,7 +247,8 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(btnNombreSubmenu);
+            panel1.Controls.Add(btnModificar);
+            panel1.Controls.Add(lblNombreSubmenu);
             panel1.Controls.Add(btnAceptar);
             panel1.Controls.Add(btnCancelar);
             panel1.Controls.Add(lblCuilCuit);
@@ -259,15 +260,29 @@
             panel1.Size = new Size(306, 307);
             panel1.TabIndex = 14;
             // 
-            // btnNombreSubmenu
+            // btnModificar
             // 
-            btnNombreSubmenu.AutoSize = true;
-            btnNombreSubmenu.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            btnNombreSubmenu.Location = new Point(19, 12);
-            btnNombreSubmenu.Name = "btnNombreSubmenu";
-            btnNombreSubmenu.Size = new Size(79, 30);
-            btnNombreSubmenu.TabIndex = 15;
-            btnNombreSubmenu.Text = "asdada";
+            btnModificar.BackColor = Color.FromArgb(8, 32, 50);
+            btnModificar.FlatAppearance.BorderSize = 0;
+            btnModificar.FlatStyle = FlatStyle.Flat;
+            btnModificar.ForeColor = Color.White;
+            btnModificar.Location = new Point(19, 188);
+            btnModificar.Name = "btnModificar";
+            btnModificar.Size = new Size(276, 23);
+            btnModificar.TabIndex = 16;
+            btnModificar.Text = "Modificar";
+            btnModificar.UseVisualStyleBackColor = false;
+            btnModificar.Click += btnModificar_Click;
+            // 
+            // lblNombreSubmenu
+            // 
+            lblNombreSubmenu.AutoSize = true;
+            lblNombreSubmenu.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblNombreSubmenu.Location = new Point(19, 12);
+            lblNombreSubmenu.Name = "lblNombreSubmenu";
+            lblNombreSubmenu.Size = new Size(79, 30);
+            lblNombreSubmenu.TabIndex = 15;
+            lblNombreSubmenu.Text = "asdada";
             // 
             // btnAceptar
             // 
@@ -386,6 +401,7 @@
         private Label lblNombreCliente;
         private TextBox txtCuilCuit;
         private TextBox txtNombreCliente;
-        private Label btnNombreSubmenu;
+        private Label lblNombreSubmenu;
+        private Button btnModificar;
     }
 }

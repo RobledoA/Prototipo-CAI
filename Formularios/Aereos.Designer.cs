@@ -56,6 +56,8 @@
             lsvItinerarioAereos = new ListView();
             btnQuitarItinerarioAereos = new Button();
             lblItinerarioActivo = new Label();
+            iconbtnAgregarItinerario = new FontAwesome.Sharp.IconButton();
+            iconbtnQuitarItinerario = new FontAwesome.Sharp.IconButton();
             grpAereos.SuspendLayout();
             SuspendLayout();
             // 
@@ -122,16 +124,17 @@
             grpAereos.Controls.Add(lblOrigenAereos);
             grpAereos.Controls.Add(txtOrigenAereos);
             grpAereos.ForeColor = Color.White;
-            grpAereos.Location = new Point(410, 380);
+            grpAereos.Location = new Point(12, 350);
             grpAereos.Name = "grpAereos";
-            grpAereos.Size = new Size(265, 297);
+            grpAereos.Size = new Size(1110, 169);
             grpAereos.TabIndex = 11;
             grpAereos.TabStop = false;
             grpAereos.Text = "Opciones de Búsqueda";
             // 
             // btnLimpiarFiltros
             // 
-            btnLimpiarFiltros.Location = new Point(84, 250);
+            btnLimpiarFiltros.ForeColor = Color.Black;
+            btnLimpiarFiltros.Location = new Point(870, 109);
             btnLimpiarFiltros.Margin = new Padding(3, 2, 3, 2);
             btnLimpiarFiltros.Name = "btnLimpiarFiltros";
             btnLimpiarFiltros.Size = new Size(43, 26);
@@ -142,7 +145,7 @@
             // lblTipoPasajeroAereos
             // 
             lblTipoPasajeroAereos.AutoSize = true;
-            lblTipoPasajeroAereos.Location = new Point(26, 160);
+            lblTipoPasajeroAereos.Location = new Point(625, 29);
             lblTipoPasajeroAereos.Name = "lblTipoPasajeroAereos";
             lblTipoPasajeroAereos.Size = new Size(77, 15);
             lblTipoPasajeroAereos.TabIndex = 29;
@@ -151,23 +154,23 @@
             // cmbTipoPasajeroAereos
             // 
             cmbTipoPasajeroAereos.FormattingEnabled = true;
-            cmbTipoPasajeroAereos.Location = new Point(26, 178);
+            cmbTipoPasajeroAereos.Location = new Point(626, 47);
             cmbTipoPasajeroAereos.Name = "cmbTipoPasajeroAereos";
-            cmbTipoPasajeroAereos.Size = new Size(162, 23);
+            cmbTipoPasajeroAereos.Size = new Size(161, 23);
             cmbTipoPasajeroAereos.TabIndex = 28;
             // 
             // cmbClaseAereos
             // 
             cmbClaseAereos.FormattingEnabled = true;
-            cmbClaseAereos.Location = new Point(26, 222);
+            cmbClaseAereos.Location = new Point(839, 47);
             cmbClaseAereos.Name = "cmbClaseAereos";
-            cmbClaseAereos.Size = new Size(162, 23);
+            cmbClaseAereos.Size = new Size(161, 23);
             cmbClaseAereos.TabIndex = 27;
             // 
             // lblClaseAereos
             // 
             lblClaseAereos.AutoSize = true;
-            lblClaseAereos.Location = new Point(27, 204);
+            lblClaseAereos.Location = new Point(839, 29);
             lblClaseAereos.Name = "lblClaseAereos";
             lblClaseAereos.Size = new Size(35, 15);
             lblClaseAereos.TabIndex = 26;
@@ -175,7 +178,8 @@
             // 
             // btnBuscarAereos
             // 
-            btnBuscarAereos.Location = new Point(134, 250);
+            btnBuscarAereos.ForeColor = Color.Black;
+            btnBuscarAereos.Location = new Point(1014, 92);
             btnBuscarAereos.Margin = new Padding(3, 2, 3, 2);
             btnBuscarAereos.Name = "btnBuscarAereos";
             btnBuscarAereos.Size = new Size(54, 26);
@@ -186,7 +190,7 @@
             // lblFechaIdaAereos
             // 
             lblFechaIdaAereos.AutoSize = true;
-            lblFechaIdaAereos.Location = new Point(26, 116);
+            lblFechaIdaAereos.Location = new Point(387, 29);
             lblFechaIdaAereos.Name = "lblFechaIdaAereos";
             lblFechaIdaAereos.Size = new Size(57, 15);
             lblFechaIdaAereos.TabIndex = 7;
@@ -194,15 +198,15 @@
             // 
             // dtFechaDesdeAereos
             // 
-            dtFechaDesdeAereos.Location = new Point(26, 134);
+            dtFechaDesdeAereos.Location = new Point(398, 47);
             dtFechaDesdeAereos.Name = "dtFechaDesdeAereos";
-            dtFechaDesdeAereos.Size = new Size(185, 23);
+            dtFechaDesdeAereos.Size = new Size(211, 23);
             dtFechaDesdeAereos.TabIndex = 6;
             // 
             // lblDestinoAereos
             // 
             lblDestinoAereos.AutoSize = true;
-            lblDestinoAereos.Location = new Point(30, 73);
+            lblDestinoAereos.Location = new Point(213, 29);
             lblDestinoAereos.Name = "lblDestinoAereos";
             lblDestinoAereos.Size = new Size(47, 15);
             lblDestinoAereos.TabIndex = 5;
@@ -210,9 +214,9 @@
             // 
             // txtDestinoAereos
             // 
-            txtDestinoAereos.Location = new Point(26, 91);
+            txtDestinoAereos.Location = new Point(210, 47);
             txtDestinoAereos.Name = "txtDestinoAereos";
-            txtDestinoAereos.Size = new Size(162, 23);
+            txtDestinoAereos.Size = new Size(161, 23);
             txtDestinoAereos.TabIndex = 4;
             // 
             // lblOrigenAereos
@@ -226,14 +230,14 @@
             // 
             // txtOrigenAereos
             // 
-            txtOrigenAereos.Location = new Point(26, 47);
+            txtOrigenAereos.Location = new Point(27, 47);
             txtOrigenAereos.Name = "txtOrigenAereos";
-            txtOrigenAereos.Size = new Size(213, 23);
+            txtOrigenAereos.Size = new Size(161, 23);
             txtOrigenAereos.TabIndex = 2;
             // 
             // btnAgregarItinerarioAereos
             // 
-            btnAgregarItinerarioAereos.Location = new Point(573, 65);
+            btnAgregarItinerarioAereos.Location = new Point(585, 64);
             btnAgregarItinerarioAereos.Name = "btnAgregarItinerarioAereos";
             btnAgregarItinerarioAereos.Size = new Size(102, 26);
             btnAgregarItinerarioAereos.TabIndex = 7;
@@ -276,7 +280,7 @@
             // 
             // btnQuitarItinerarioAereos
             // 
-            btnQuitarItinerarioAereos.Location = new Point(573, 132);
+            btnQuitarItinerarioAereos.Location = new Point(590, 223);
             btnQuitarItinerarioAereos.Name = "btnQuitarItinerarioAereos";
             btnQuitarItinerarioAereos.Size = new Size(102, 26);
             btnQuitarItinerarioAereos.TabIndex = 21;
@@ -295,12 +299,50 @@
             lblItinerarioActivo.Text = "NO HAY ITINERARIO ACTIVO";
             lblItinerarioActivo.TextAlign = ContentAlignment.TopRight;
             // 
+            // iconbtnAgregarItinerario
+            // 
+            iconbtnAgregarItinerario.BackColor = Color.FromArgb(165, 182, 196);
+            iconbtnAgregarItinerario.FlatAppearance.BorderSize = 0;
+            iconbtnAgregarItinerario.FlatStyle = FlatStyle.Flat;
+            iconbtnAgregarItinerario.IconChar = FontAwesome.Sharp.IconChar.ArrowAltCircleLeft;
+            iconbtnAgregarItinerario.IconColor = Color.Black;
+            iconbtnAgregarItinerario.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconbtnAgregarItinerario.IconSize = 30;
+            iconbtnAgregarItinerario.Location = new Point(602, 117);
+            iconbtnAgregarItinerario.Name = "iconbtnAgregarItinerario";
+            iconbtnAgregarItinerario.Size = new Size(101, 30);
+            iconbtnAgregarItinerario.TabIndex = 28;
+            iconbtnAgregarItinerario.Text = "Agregar";
+            iconbtnAgregarItinerario.TextAlign = ContentAlignment.MiddleRight;
+            iconbtnAgregarItinerario.TextImageRelation = TextImageRelation.ImageBeforeText;
+            iconbtnAgregarItinerario.UseVisualStyleBackColor = false;
+            // 
+            // iconbtnQuitarItinerario
+            // 
+            iconbtnQuitarItinerario.BackColor = Color.FromArgb(165, 182, 196);
+            iconbtnQuitarItinerario.FlatAppearance.BorderSize = 0;
+            iconbtnQuitarItinerario.FlatStyle = FlatStyle.Flat;
+            iconbtnQuitarItinerario.IconChar = FontAwesome.Sharp.IconChar.ArrowAltCircleRight;
+            iconbtnQuitarItinerario.IconColor = Color.Black;
+            iconbtnQuitarItinerario.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconbtnQuitarItinerario.IconSize = 30;
+            iconbtnQuitarItinerario.Location = new Point(586, 286);
+            iconbtnQuitarItinerario.Name = "iconbtnQuitarItinerario";
+            iconbtnQuitarItinerario.Size = new Size(106, 31);
+            iconbtnQuitarItinerario.TabIndex = 29;
+            iconbtnQuitarItinerario.Text = "Quitar";
+            iconbtnQuitarItinerario.TextAlign = ContentAlignment.MiddleRight;
+            iconbtnQuitarItinerario.TextImageRelation = TextImageRelation.TextBeforeImage;
+            iconbtnQuitarItinerario.UseVisualStyleBackColor = false;
+            // 
             // Aereos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(8, 32, 50);
             ClientSize = new Size(1280, 605);
+            Controls.Add(iconbtnQuitarItinerario);
+            Controls.Add(iconbtnAgregarItinerario);
             Controls.Add(lblItinerarioActivo);
             Controls.Add(btnQuitarItinerarioAereos);
             Controls.Add(lblAereoEnItinerario);
@@ -356,5 +398,7 @@
         private ColumnHeader columnHeader3;
         private ColumnHeader columnHeader4;
         private Label lblItinerarioActivo;
+        private FontAwesome.Sharp.IconButton iconbtnAgregarItinerario;
+        private FontAwesome.Sharp.IconButton iconbtnQuitarItinerario;
     }
 }

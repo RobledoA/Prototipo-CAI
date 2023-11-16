@@ -9,12 +9,12 @@ namespace Prototipo_CAI;
 public class Itinerario
 {
     public int CodigoItinerario { get; set; }
-    public long CUILCUIT { get; set; }
+    public string CUILCUIT { get; set; }
     public List<Disponibilidad> Disponibilidades { get; set; }
     public bool EstaReservado { get; set; }
     public string NombreCliente { get; set; }
     public List<TarifaVuelo> TarifasVuelos { get; set; }
-    
+
     /*private decimal PrecioTotalAsientos()
     {
         decimal total = 0;

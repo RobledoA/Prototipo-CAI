@@ -30,11 +30,29 @@ internal class ItinerariosModel
         ModuloItinerarios.EstablecerItinerarioActivo(itinerario);
     }
 
-    public string ModificarCliente(Itinerario ClienteAModificar, Itinerario ClienteNuevaVersion)
+    public string ModificarCliente(string nombre, string cuilcuit)
     {
-        ClienteAModificar.NombreCliente = ClienteNuevaVersion.NombreCliente;
-        ClienteAModificar.CUILCUIT = ClienteNuevaVersion.CUILCUIT;
-
+        if (string.IsNullOrWhiteSpace(nombre))
+        {          
+            return "El campo Nombre/Razón Social no debe estar vacío.";
+        }
+        if (cuilcuit.Length > 30)
+        {
+            return "El campo Nombre/Razón Social debe tener menos de 30 caracteres.";
+        }
+        if (string.IsNullOrWhiteSpace(cuilcuit))
+        {
+            return "El campo CUIL/CUIT no debe estar vacío.";
+        }
+        if (cuilcuit.Length != 11)
+        {
+            return "El campo CUIL/CUIT debe tener 11 dígitos.";
+        }
+        if (!Int64.TryParse(cuilcuit, out long cuilcuitNumero))
+        {
+            return "El campo CUIL/CUIT debe ser numérico.";
+        }
+      
         return null;
     }
     
@@ -65,4 +83,29 @@ internal class ItinerariosModel
 
         return errores;
     }
+
+
+    public void ModificarItinerario(string codItinerario, string nombre, string CUIL)
+    {
+        ModuloItinerarios.ModificarItinerario(codItinerario, nombre, CUIL);
+    }
+
+    public void EliminarItinerario(string codItinerario)
+    {
+        ModuloItinerarios.EliminarItinerario(codItinerario);
+    }
+    public void AgregarItinerario(int codigoItinerario, string cuilcuit, string nombrecliente)
+    {
+        Itinerario itinerario = new();
+
+        itinerario.CodigoItinerario = codigoItinerario;
+        itinerario.NombreCliente = nombrecliente;
+        itinerario.CUILCUIT = cuilcuit;
+        itinerario.TarifasVuelos = new List<TarifaVuelo>();
+        itinerario.Disponibilidades = new List<Disponibilidad>();
+        itinerario.EstaReservado = false;
+
+        ModuloItinerarios.AgregarItinerario(itinerario);
+    }
+
 }
