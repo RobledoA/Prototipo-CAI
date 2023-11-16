@@ -41,7 +41,7 @@
             hdTiempoVuelo = new ColumnHeader();
             hdAerolinea = new ColumnHeader();
             grpAereos = new GroupBox();
-            btnLimpiarFiltros = new Button();
+            iconbtnLimpiarBuscarItinerario = new FontAwesome.Sharp.IconButton();
             lblTipoPasajeroAereos = new Label();
             cmbTipoPasajeroAereos = new ComboBox();
             cmbClaseAereos = new ComboBox();
@@ -59,7 +59,7 @@
             btnQuitarItinerarioAereos = new Button();
             lblItinerarioActivo = new Label();
             lsvItinerarioAereos = new ListView();
-            columnHeader5 = new ColumnHeader();
+            hdCodigoTarifaVueloItinerario = new ColumnHeader();
             columnHeader6 = new ColumnHeader();
             columnHeader7 = new ColumnHeader();
             columnHeader8 = new ColumnHeader();
@@ -70,14 +70,14 @@
             columnHeader13 = new ColumnHeader();
             columnHeader14 = new ColumnHeader();
             columnHeader15 = new ColumnHeader();
-            iconbtnLimpiarBuscarItinerario = new FontAwesome.Sharp.IconButton();
+            hdCodigoTarifaVuelo = new ColumnHeader();
             grpAereos.SuspendLayout();
             SuspendLayout();
             // 
             // lsvAereos
             // 
             lsvAereos.BackColor = Color.FromArgb(156, 184, 205);
-            lsvAereos.Columns.AddRange(new ColumnHeader[] { hdCodVuelo, hdDestino, hdFechaSalida, hdOrigen, hdTipoPasajero, hdClase, hdTarifa, hdAsientosDisp, hdFechaLlegada, hdTiempoVuelo, hdAerolinea });
+            lsvAereos.Columns.AddRange(new ColumnHeader[] { hdCodVuelo, hdDestino, hdFechaSalida, hdOrigen, hdTipoPasajero, hdClase, hdTarifa, hdAsientosDisp, hdFechaLlegada, hdTiempoVuelo, hdAerolinea, hdCodigoTarifaVuelo });
             lsvAereos.FullRowSelect = true;
             lsvAereos.Location = new Point(12, 42);
             lsvAereos.MultiSelect = false;
@@ -87,6 +87,7 @@
             lsvAereos.UseCompatibleStateImageBehavior = false;
             lsvAereos.View = View.Details;
             lsvAereos.ColumnWidthChanged += lsvAereos_ColumnWidthChanged_1;
+            lsvAereos.SelectedIndexChanged += lsvAereos_SelectedIndexChanged;
             // 
             // hdCodVuelo
             // 
@@ -144,7 +145,6 @@
             // 
             grpAereos.BackColor = SystemColors.ActiveCaption;
             grpAereos.Controls.Add(iconbtnLimpiarBuscarItinerario);
-            grpAereos.Controls.Add(btnLimpiarFiltros);
             grpAereos.Controls.Add(lblTipoPasajeroAereos);
             grpAereos.Controls.Add(cmbTipoPasajeroAereos);
             grpAereos.Controls.Add(cmbClaseAereos);
@@ -163,17 +163,20 @@
             grpAereos.TabStop = false;
             grpAereos.Text = "Opciones de Búsqueda";
             // 
-            // btnLimpiarFiltros
+            // iconbtnLimpiarBuscarItinerario
             // 
-            btnLimpiarFiltros.ForeColor = Color.Black;
-            btnLimpiarFiltros.Location = new Point(1061, 17);
-            btnLimpiarFiltros.Margin = new Padding(3, 2, 3, 2);
-            btnLimpiarFiltros.Name = "btnLimpiarFiltros";
-            btnLimpiarFiltros.Size = new Size(54, 23);
-            btnLimpiarFiltros.TabIndex = 30;
-            btnLimpiarFiltros.Text = "\U0001f9f9";
-            btnLimpiarFiltros.UseVisualStyleBackColor = true;
-            btnLimpiarFiltros.Click += btnLimpiarFiltros_Click;
+            iconbtnLimpiarBuscarItinerario.BackColor = Color.White;
+            iconbtnLimpiarBuscarItinerario.FlatStyle = FlatStyle.Flat;
+            iconbtnLimpiarBuscarItinerario.IconChar = FontAwesome.Sharp.IconChar.RotateForward;
+            iconbtnLimpiarBuscarItinerario.IconColor = Color.Black;
+            iconbtnLimpiarBuscarItinerario.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconbtnLimpiarBuscarItinerario.IconSize = 20;
+            iconbtnLimpiarBuscarItinerario.Location = new Point(1090, 45);
+            iconbtnLimpiarBuscarItinerario.Name = "iconbtnLimpiarBuscarItinerario";
+            iconbtnLimpiarBuscarItinerario.Size = new Size(25, 25);
+            iconbtnLimpiarBuscarItinerario.TabIndex = 31;
+            iconbtnLimpiarBuscarItinerario.UseVisualStyleBackColor = false;
+            iconbtnLimpiarBuscarItinerario.Click += iconbtnLimpiarBuscarItinerario_Click;
             // 
             // lblTipoPasajeroAereos
             // 
@@ -281,6 +284,7 @@
             btnAgregarItinerarioAereos.TabIndex = 7;
             btnAgregarItinerarioAereos.Text = "Agregar >>>";
             btnAgregarItinerarioAereos.UseVisualStyleBackColor = false;
+            btnAgregarItinerarioAereos.Click += btnAgregarItinerarioAereos_Click;
             // 
             // lblAereosDisponibles
             // 
@@ -316,6 +320,7 @@
             btnQuitarItinerarioAereos.TabIndex = 21;
             btnQuitarItinerarioAereos.Text = "<<< Quitar";
             btnQuitarItinerarioAereos.UseVisualStyleBackColor = false;
+            btnQuitarItinerarioAereos.Click += btnQuitarItinerarioAereos_Click;
             // 
             // lblItinerarioActivo
             // 
@@ -332,7 +337,7 @@
             // lsvItinerarioAereos
             // 
             lsvItinerarioAereos.BackColor = Color.FromArgb(156, 184, 205);
-            lsvItinerarioAereos.Columns.AddRange(new ColumnHeader[] { columnHeader5, columnHeader6, columnHeader7, columnHeader8, columnHeader9, columnHeader10, columnHeader11, columnHeader12, columnHeader13, columnHeader14, columnHeader15 });
+            lsvItinerarioAereos.Columns.AddRange(new ColumnHeader[] { hdCodigoTarifaVueloItinerario, columnHeader6, columnHeader7, columnHeader8, columnHeader9, columnHeader10, columnHeader11, columnHeader12, columnHeader13, columnHeader14, columnHeader15 });
             lsvItinerarioAereos.FullRowSelect = true;
             lsvItinerarioAereos.Location = new Point(638, 42);
             lsvItinerarioAereos.MultiSelect = false;
@@ -341,11 +346,12 @@
             lsvItinerarioAereos.TabIndex = 30;
             lsvItinerarioAereos.UseCompatibleStateImageBehavior = false;
             lsvItinerarioAereos.View = View.Details;
+            lsvItinerarioAereos.SelectedIndexChanged += lsvItinerarioAereos_SelectedIndexChanged;
             // 
-            // columnHeader5
+            // hdCodigoTarifaVueloItinerario
             // 
-            columnHeader5.Text = "Cod. Vuelo";
-            columnHeader5.Width = 70;
+            hdCodigoTarifaVueloItinerario.Text = "Cod. Vuelo";
+            hdCodigoTarifaVueloItinerario.Width = 1;
             // 
             // columnHeader6
             // 
@@ -394,19 +400,9 @@
             // 
             columnHeader15.Text = "Aerolinea";
             // 
-            // iconbtnLimpiarBuscarItinerario
+            // hdCodigoTarifaVuelo
             // 
-            iconbtnLimpiarBuscarItinerario.BackColor = Color.White;
-            iconbtnLimpiarBuscarItinerario.FlatStyle = FlatStyle.Flat;
-            iconbtnLimpiarBuscarItinerario.IconChar = FontAwesome.Sharp.IconChar.RotateForward;
-            iconbtnLimpiarBuscarItinerario.IconColor = Color.Black;
-            iconbtnLimpiarBuscarItinerario.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconbtnLimpiarBuscarItinerario.IconSize = 20;
-            iconbtnLimpiarBuscarItinerario.Location = new Point(1090, 45);
-            iconbtnLimpiarBuscarItinerario.Name = "iconbtnLimpiarBuscarItinerario";
-            iconbtnLimpiarBuscarItinerario.Size = new Size(25, 25);
-            iconbtnLimpiarBuscarItinerario.TabIndex = 31;
-            iconbtnLimpiarBuscarItinerario.UseVisualStyleBackColor = false;
+            hdCodigoTarifaVuelo.Width = 1;
             // 
             // Aereos
             // 
@@ -426,6 +422,7 @@
             MaximizeBox = false;
             Name = "Aereos";
             Text = "Aéreos Disponibles";
+            FormClosed += Aereos_FormClosed;
             Load += Aereos_Load;
             grpAereos.ResumeLayout(false);
             grpAereos.PerformLayout();
@@ -454,7 +451,6 @@
         private Label lblAereosDisponibles;
         private Label lblAereoEnItinerario;
         private Button btnQuitarItinerarioAereos;
-        private Button btnLimpiarFiltros;
         private ColumnHeader hdCodVuelo;
         private ColumnHeader hdDestino;
         private ColumnHeader hdFechaSalida;
@@ -472,7 +468,7 @@
         private ColumnHeader hdTarifa;
         private ColumnHeader hdAsientosDisp;
         private ListView lsvItinerarioAereos;
-        private ColumnHeader columnHeader5;
+        private ColumnHeader hdCodigoTarifaVueloItinerario;
         private ColumnHeader columnHeader6;
         private ColumnHeader columnHeader7;
         private ColumnHeader columnHeader8;
@@ -484,5 +480,6 @@
         private ColumnHeader columnHeader14;
         private ColumnHeader columnHeader15;
         private FontAwesome.Sharp.IconButton iconbtnLimpiarBuscarItinerario;
+        private ColumnHeader hdCodigoTarifaVuelo;
     }
 }

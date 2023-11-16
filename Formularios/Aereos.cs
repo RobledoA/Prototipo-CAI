@@ -32,10 +32,10 @@ public partial class Aereos : Form
             btnAgregarItinerarioAereos.Enabled = true;
             btnQuitarItinerarioAereos.Enabled = true;
             lblItinerarioActivo.Text = $"Itinerario Nº{ModuloItinerarios.ItinerarioActivo.CodigoItinerario.ToString()}";
-            /*foreach (ListViewItem list in model.CargarHotelesItinerarioActivo())
+            foreach (ListViewItem list in model.CargarVuelosItinerarioActivo())
             {
-                lsvHotelesAgregados.Items.Add(list);
-            }*/
+                lsvItinerarioAereos.Items.Add(list);
+            }
         }
         lsvAereos.Items.Clear(); // Limpia la lista antes de cargar nuevos elementos
         todosLosVuelos.Clear();  // Limpia la lista de todos los vuelos
@@ -46,48 +46,6 @@ public partial class Aereos : Form
             todosLosVuelos.Add(item); // Almacena una copia del elemento
         }
 
-    }
-
-    private void lsvAereos_SelectedIndexChanged(object sender, EventArgs e)
-    {
-        lsvItinerarioAereos.SelectedItems.Clear();
-    }
-
-    private void lsvAereosSeleccionados_SelectedIndexChanged(object sender, EventArgs e)
-    {
-        lsvAereos.SelectedItems.Clear();
-    }
-
-    private void btnAgregarItinerarioAereos_Click(object sender, EventArgs e)
-    {
-
-        if (lsvAereos.SelectedItems.Count == 0)
-        {
-            MessageBox.Show("Debe seleccionar un vuelo de la lista izquierda para poder agregarlo", "Error");
-        }
-        else
-        {
-            ListViewItem item = lsvAereos.SelectedItems[0];
-            lsvItinerarioAereos.Items.Add((ListViewItem)item.Clone());
-
-        }
-    }
-
-    private void lsvItinerarioAereos_SelectedIndexChanged(object sender, EventArgs e)
-    {
-
-    }
-
-    private void btnQuitarItinerarioAereos_Click(object sender, EventArgs e)
-    {
-        if (lsvItinerarioAereos.SelectedItems.Count > 0)
-        {
-            lsvItinerarioAereos.Items.Remove(lsvItinerarioAereos.SelectedItems[0]);
-        }
-        else
-        {
-            MessageBox.Show("Debe seleccionar un vuelo de la lista derecha para poder quitarlo", "Error");
-        }
     }
 
     private void FiltrarVuelos()
@@ -143,14 +101,6 @@ public partial class Aereos : Form
         FiltrarVuelos();
     }
 
-    private void btnLimpiarFiltros_Click(object sender, EventArgs e)
-    {
-        txtOrigenAereos.Clear();
-        txtDestinoAereos.Clear();
-        dtFechaDesdeAereos.Value = new DateTime(1999, 1, 1);
-        cmbTipoPasajeroAereos.SelectedIndex = -1;
-        cmbClaseAereos.SelectedIndex = -1;
-    }
 
     private void lsvAereos_ColumnWidthChanged_1(object sender, ColumnWidthChangedEventArgs e)
     {
@@ -162,6 +112,66 @@ public partial class Aereos : Form
 
     private void lblFechaIdaAereos_Click(object sender, EventArgs e)
     {
+
+    }
+
+    private void btnAgregarItinerarioAereos_Click(object sender, EventArgs e)
+    {
+        if (lsvAereos.SelectedItems.Count == 0)
+        {
+            MessageBox.Show("Debe seleccionar el vuelo que desea agregar al itinerario.", "Error");
+        }
+        else
+        {
+            ListViewItem item = lsvAereos.SelectedItems[0];
+            lsvItinerarioAereos.Items.Add((ListViewItem)item.Clone());
+
+        }
+    }
+
+    private void btnQuitarItinerarioAereos_Click(object sender, EventArgs e)
+    {
+        if (lsvItinerarioAereos.SelectedItems.Count > 0)
+        {
+            lsvItinerarioAereos.Items.Remove(lsvItinerarioAereos.SelectedItems[0]);
+        }
+        else
+        {
+            MessageBox.Show("Debe seleccionar un vuelo de la lista derecha para poder quitarlo", "Error");
+        }
+    }
+
+    private void iconbtnLimpiarBuscarItinerario_Click(object sender, EventArgs e)
+    {
+        txtOrigenAereos.Clear();
+        txtDestinoAereos.Clear();
+        dtFechaDesdeAereos.Value = new DateTime(1999, 1, 1);
+        cmbTipoPasajeroAereos.SelectedIndex = -1;
+        cmbClaseAereos.SelectedIndex = -1;
+    }
+
+    private void lsvAereos_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        lsvItinerarioAereos.SelectedItems.Clear();
+    }
+
+    private void lsvItinerarioAereos_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        lsvAereos.SelectedItems.Clear();
+    }
+
+    private void Aereos_FormClosed(object sender, FormClosedEventArgs e)
+    {
+        if (ModuloItinerarios.ItinerarioActivo != null)
+        {
+            AereosModel model = new();
+            List<ListViewItem> list = new List<ListViewItem>();
+            foreach (ListViewItem item in lsvItinerarioAereos.Items)
+            {
+                list.Add(item);
+            }
+            model.ActualizarVuelosItinerarioActivo(list);
+        }
 
     }
 }

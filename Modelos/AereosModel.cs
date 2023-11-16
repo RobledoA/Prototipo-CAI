@@ -25,10 +25,37 @@ internal class AereosModel
                 item.SubItems.Add(vuelo.FechaHoraLlegada.ToString());
                 item.SubItems.Add(vuelo.TiempoVuelo);
                 item.SubItems.Add(vuelo.Aerolinea);
+                item.SubItems.Add(tarifa.CodigoTarifaVuelo.ToString());
 
                 listViewItems.Add(item);
             }
-            
+
+        }
+
+        return listViewItems;
+    }
+
+    public List<ListViewItem> FormatoVuelosItinerarioActivo(List<TarifaVuelo> list)
+    {
+        List<ListViewItem> listViewItems = new List<ListViewItem>();
+
+        foreach (TarifaVuelo tarifa in list)
+        {
+            Vuelo vuelo = ModuloVuelos.ObtenerInfoVuelo(Convert.ToString(tarifa.CodigoVuelo));
+            ListViewItem item = new ListViewItem(vuelo.CodigoVuelo.ToString());
+            item.SubItems.Add(vuelo.Destino);
+            item.SubItems.Add(vuelo.FechaHoraSalida.ToString()); // Formato de fecha y hora
+            item.SubItems.Add(vuelo.Origen);
+            item.SubItems.Add(tarifa.TipoPasajero.ToString());
+            item.SubItems.Add(tarifa.Clase.ToString());
+            item.SubItems.Add(tarifa.Precio.ToString());
+            item.SubItems.Add(tarifa.TarifasVuelosDisponibles.ToString());
+            item.SubItems.Add(vuelo.FechaHoraLlegada.ToString());
+            item.SubItems.Add(vuelo.TiempoVuelo);
+            item.SubItems.Add(vuelo.Aerolinea);
+            item.SubItems.Add(tarifa.CodigoTarifaVuelo.ToString());
+
+            listViewItems.Add(item);
         }
 
         return listViewItems;
@@ -38,6 +65,19 @@ internal class AereosModel
     {
         List<Vuelo> listVuelo = ModuloVuelos.CargarListaVuelos();
         List<ListViewItem> list = FormatoVuelos(listVuelo);
+        return list;
+    }
+
+    public void ActualizarVuelosItinerarioActivo(List<ListViewItem> list)
+    {
+        List<TarifaVuelo> tarifas = ModuloVuelos.ObtenerTarifasItinerarioActivo(list);
+        ModuloItinerarios.AgregarTarifasAItinerarioActivo(tarifas);
+    }
+
+    public List<ListViewItem> CargarVuelosItinerarioActivo()
+    {
+        List<TarifaVuelo> listTarifas = ModuloItinerarios.ItinerarioActivo.TarifasVuelos;
+        List<ListViewItem> list = FormatoVuelosItinerarioActivo(listTarifas);
         return list;
     }
 }
