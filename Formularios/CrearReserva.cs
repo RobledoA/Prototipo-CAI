@@ -22,7 +22,7 @@ namespace Prototipo_CAI
 
         private void CrearReserva_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void txtNombrePasajero_TextChanged(object sender, EventArgs e)

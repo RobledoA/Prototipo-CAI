@@ -35,7 +35,7 @@ internal class ItinerariosModel
     public string ModificarCliente(string nombre, string cuilcuit)
     {
         if (string.IsNullOrWhiteSpace(nombre))
-        {          
+        {
             return "El Nombre/Razón Social no debe estar vacío.";
         }
         if (!string.IsNullOrWhiteSpace(nombre) && !(Regex.IsMatch(nombre, @"^[a-zA-Z\s]+$")))
@@ -58,10 +58,10 @@ internal class ItinerariosModel
         {
             return "El CUIL/CUIT debe ser numérico.";
         }
-      
+
         return null;
     }
-    
+
     public string ValidarCampos(string nombreRZ, string cuilcuit)
     {
         string errores = "";
@@ -110,8 +110,8 @@ internal class ItinerariosModel
         itinerario.CodigoItinerario = codigoItinerario;
         itinerario.NombreCliente = nombrecliente;
         itinerario.CUILCUIT = cuilcuit;
-        itinerario.TarifasVuelos = new List<TarifaVuelo>();
-        itinerario.Disponibilidades = new List<Disponibilidad>();
+        itinerario.TarifasVuelos = new();
+        itinerario.Disponibilidades = new();
         itinerario.EstaReservado = false;
 
         ModuloItinerarios.AgregarItinerario(itinerario);

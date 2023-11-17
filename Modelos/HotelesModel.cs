@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Prototipo_CAI.Modelos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,12 +33,13 @@ internal class HotelesModel
         return listViewItem;
     }
 
-    public List<ListViewItem> FormatoItinerarioHoteles(List<Disponibilidad> listDisponibilidades)
+    public List<ListViewItem> FormatoItinerarioHoteles(List<ItinerarioHotel> listDisponibilidades)
     {
         HotelesModel model = new HotelesModel();
         List<ListViewItem> listViewItem = new List<ListViewItem>();
-        foreach (Disponibilidad disp in listDisponibilidades)
+        foreach (var itiHotel in listDisponibilidades)
         {
+            var disp = itiHotel.Disponibilidad;
             Hotel hotel = ModuloHoteles.ObtenerInfoHotel(Convert.ToString(disp.CodigoHotel));
             ListViewItem item = new ListViewItem(hotel.CodigoHotel);
             item.SubItems.Add(hotel.Nombre);
@@ -48,6 +50,7 @@ internal class HotelesModel
             item.SubItems.Add(Convert.ToString(disp.Capacidad));
             item.SubItems.Add(Convert.ToString(disp.CodigoDisponibilidad));
             //item.SubItems.Add(disp.DiasDisponibles);
+            item.Tag = new DesdeHasta { Desde = itiHotel.Desde, Hasta = itiHotel.Hasta };
             listViewItem.Add(item);
         }
         return listViewItem;
@@ -62,8 +65,8 @@ internal class HotelesModel
 
     public List<ListViewItem> CargarHotelesItinerarioActivo()
     {
-        List<Disponibilidad> listDisponibilidades = ModuloItinerarios.ItinerarioActivo.Disponibilidades;
-        List<ListViewItem> list = FormatoItinerarioHoteles(listDisponibilidades);
+        var itinerarioHotel = ModuloItinerarios.ItinerarioActivo.Disponibilidades;
+        List<ListViewItem> list = FormatoItinerarioHoteles(itinerarioHotel);
         return list;
     }
 
@@ -99,7 +102,14 @@ internal class HotelesModel
     public void ActualizarHotelesItinerarioActivo(List<ListViewItem> list)
     {
         List<Disponibilidad> disp = ModuloHoteles.ObtenerDisponibilidadesItinerarioActivo(list);
-        ModuloItinerarios.AgregarDisponibilidadesAItinerarioActivo(disp);
+        var itinerarioHotel = new List<ItinerarioHotel>();
+        for (int i = 0; i < list.Count; i++)
+        {
+            var fechasReserva = (DesdeHasta)list[i].Tag;
+            itinerarioHotel.Add(new ItinerarioHotel { Disponibilidad = disp[i], Desde = fechasReserva.Desde, Hasta = fechasReserva.Hasta });
+        }
+
+        ModuloItinerarios.AgregarDisponibilidadesAItinerarioActivo(itinerarioHotel);
     }
 
     public List<string> FiltrarDisponibilidad(DateTime fechaDesde, DateTime fechaHasta, string cantHabitaciones)

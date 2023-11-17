@@ -36,12 +36,12 @@ internal static class ModuloItinerarios
         return null;
     }
 
-    public static void GuardarDisponibilidadEnItinerarioActivo(List<Disponibilidad> disponibilidad)
+    public static void GuardarDisponibilidadEnItinerarioActivo(List<Disponibilidad> disponibilidad, DateTime desde, DateTime hasta)
     {
         ItinerarioActivo.Disponibilidades.Clear();
         foreach (Disponibilidad disp in disponibilidad)
         {
-            ItinerarioActivo.Disponibilidades.Add(disp);
+            ItinerarioActivo.Disponibilidades.Add(new ItinerarioHotel{ Disponibilidad = disp, Desde = desde, Hasta = hasta });
         }
     }
 
@@ -85,7 +85,7 @@ internal static class ModuloItinerarios
         ItinerarioActivo.TarifasVuelos = tarifas;
     }
 
-    public static void AgregarDisponibilidadesAItinerarioActivo(List<Disponibilidad> disp)
+    public static void AgregarDisponibilidadesAItinerarioActivo(List<ItinerarioHotel> disp)
     {
         ItinerarioActivo.Disponibilidades = disp;
     }

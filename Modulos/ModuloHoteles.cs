@@ -64,6 +64,8 @@ internal static class ModuloHoteles
 
     public static List<Disponibilidad> ObtenerDisponibilidadesItinerarioActivo(List<ListViewItem> list)
     {
+        //OJO: devolver las disponibilidades en el mismo orden que los items de la lista.
+
         List<Disponibilidad> disponibilidadesItinerarioActivo = new();
         foreach (ListViewItem item in list)
         {

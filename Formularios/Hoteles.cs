@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Prototipo_CAI.Modelos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -72,7 +73,8 @@ public partial class Hoteles : Form
         else
         {
             ListViewItem item = lsvHoteles.SelectedItems[0];
-            lsvHotelesAgregados.Items.Add(item.Clone() as ListViewItem);
+            var itemAgregado = lsvHotelesAgregados.Items.Add(item.Clone() as ListViewItem);
+            itemAgregado.Tag = new DesdeHasta { Desde = dtpFechaDesdeHoteles.Value, Hasta = dtpFechaHastaHoteles.Value };
         }
     }
 
