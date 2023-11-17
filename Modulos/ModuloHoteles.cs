@@ -48,61 +48,13 @@ internal static class ModuloHoteles
         return null;
     }
 
-    public static List<Hotel> BuscarHoteles(string ubicacion, string calificacion, string fechaDesde, string fechaHasta, string cantHabitaciones)
-    {
-        
-
-        foreach (Hotel hotel in Hoteles)
-        {
-            list.Add(hotel);
-        }
-
-        if (!string.IsNullOrEmpty(ubicacion))
-        {
-            foreach (Hotel hotel in list.ToList())
-            {
-                if (hotel.CodigoCiudad != ubicacion)
-                {
-                    list.Remove(hotel);
-                }
-            }
-        }
-
-        if (!string.IsNullOrEmpty(calificacion))
-        {
-            foreach (Hotel hotel in list.ToList())
-            {
-                if (Convert.ToString(hotel.Calificacion) != calificacion)
-                {
-                    list.Remove(hotel);
-                }
-            }
-        }
-
-        if (!string.Equals(fechaDesde, "01/01/2023") && !string.Equals(fechaHasta, "01/01/2023"))
-        {
-            foreach (Hotel hotel in list)
-            {
-                foreach (Disponibilidad disp in hotel.Disponibilidades.ToList())
-                {
-                    if (!ObtenerDispFecha(disp, fechaDesde, fechaHasta, Convert.ToInt32(cantHabitaciones)))
-                    {
-                        hotel.Disponibilidades.Remove(disp);
-                    }
-                }
-            }
-        }
-
-        return list;
-    }
-
-    public static bool ObtenerDispFecha(Disponibilidad disp, string fechaDesde, string fechaHasta, int cantHabitaciones)
+    public static bool ObtenerDispFecha(Disponibilidad disp, DateTime fechaDesde, DateTime fechaHasta, int cantHabitaciones)
     {
 
-        for (DateTime date = Convert.ToDateTime(fechaDesde); date <= Convert.ToDateTime(fechaHasta); date.AddDays(1.0))
+        for (DateTime date = fechaDesde; date <= fechaHasta; date = date.AddDays(1.0))
         {
-            int salida;
-            if (!disp.DiasDisponibles.TryGetValue(date, out salida) || salida <= cantHabitaciones)
+            int salida = 0;
+            if (!disp.DiasDisponibles.TryGetValue(date, out salida) || salida < cantHabitaciones)
             {
                 return false;
             }
@@ -121,10 +73,8 @@ internal static class ModuloHoteles
                 {
                     foreach (Disponibilidad disp in hotel.Disponibilidades)
                     {
-                        //MessageBox.Show(disp.Nombre, item.Text);
                         if (disp.Nombre == item.SubItems[4].Text)
                         {
-                            //MessageBox.Show("encontro la wea madre santa");
                             disponibilidadesItinerarioActivo.Add(disp);
                         }
                     }
@@ -134,9 +84,25 @@ internal static class ModuloHoteles
         return disponibilidadesItinerarioActivo;
     }
 
-    /*public int CompareTo(object o)
+    public static List<Disponibilidad> FiltrarDisponibilidadesPorFecha(DateTime fechaDesde, DateTime fechaHasta, string cantHabitaciones)
     {
-        ModuloHoteles moduloHoteles = (ModuloHoteles)o;
-    }*/
+        List<Disponibilidad> disponibilidadesFiltradas = new();
+        DateTime fechaPredeterminada = new DateTime(1999, 1, 1);
+        if (fechaDesde != fechaPredeterminada && fechaHasta != fechaPredeterminada && fechaDesde <= fechaHasta)
+        {
+            foreach (Hotel hotel in Hoteles)
+            {
+                foreach (Disponibilidad disp in hotel.Disponibilidades)
+                {
+                    if (ObtenerDispFecha(disp, fechaDesde, fechaHasta, Convert.ToInt32(cantHabitaciones)))
+                    {
+                        disponibilidadesFiltradas.Add(disp);
+                    }
+                }
+
+            }
+        }
+        return disponibilidadesFiltradas;
+    }
 
 }

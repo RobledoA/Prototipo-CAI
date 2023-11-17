@@ -30,7 +30,8 @@
         {
             lblHoteles = new Label();
             grpHoteles = new GroupBox();
-            iconbtnBuscarHoteles = new FontAwesome.Sharp.IconButton();
+            lblTipoHabitacion = new Label();
+            cmbTipoHabitacion = new ComboBox();
             iconbtnLimpiarBuscarHoteles = new FontAwesome.Sharp.IconButton();
             lblFechaHastaHoteles = new Label();
             lblUbicacionHoteles = new Label();
@@ -50,6 +51,7 @@
             hdHabitacion = new ColumnHeader();
             hdTarifa = new ColumnHeader();
             hdCapacidad = new ColumnHeader();
+            hdCodigoDisponibilidad = new ColumnHeader();
             btnAgregarItinerarioHoteles = new Button();
             lblItinerarioActivo = new Label();
             btnQuitarItinerarioHotel = new Button();
@@ -61,6 +63,7 @@
             columnHeader5 = new ColumnHeader();
             columnHeader6 = new ColumnHeader();
             columnHeader7 = new ColumnHeader();
+            hdCodigoDisponibilidadItinerario = new ColumnHeader();
             lblHotelEnItinerario = new Label();
             grpHoteles.SuspendLayout();
             SuspendLayout();
@@ -79,7 +82,8 @@
             // grpHoteles
             // 
             grpHoteles.BackColor = SystemColors.ActiveCaption;
-            grpHoteles.Controls.Add(iconbtnBuscarHoteles);
+            grpHoteles.Controls.Add(lblTipoHabitacion);
+            grpHoteles.Controls.Add(cmbTipoHabitacion);
             grpHoteles.Controls.Add(iconbtnLimpiarBuscarHoteles);
             grpHoteles.Controls.Add(lblFechaHastaHoteles);
             grpHoteles.Controls.Add(lblUbicacionHoteles);
@@ -99,20 +103,26 @@
             grpHoteles.TabStop = false;
             grpHoteles.Text = "Opciones de Búsqueda";
             // 
-            // iconbtnBuscarHoteles
+            // lblTipoHabitacion
             // 
-            iconbtnBuscarHoteles.BackColor = Color.White;
-            iconbtnBuscarHoteles.FlatStyle = FlatStyle.Flat;
-            iconbtnBuscarHoteles.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            iconbtnBuscarHoteles.IconColor = Color.Black;
-            iconbtnBuscarHoteles.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconbtnBuscarHoteles.IconSize = 20;
-            iconbtnBuscarHoteles.Location = new Point(1014, 23);
-            iconbtnBuscarHoteles.Name = "iconbtnBuscarHoteles";
-            iconbtnBuscarHoteles.Size = new Size(25, 25);
-            iconbtnBuscarHoteles.TabIndex = 19;
-            iconbtnBuscarHoteles.UseVisualStyleBackColor = false;
-            iconbtnBuscarHoteles.Click += iconbtnBuscarHoteles_Click;
+            lblTipoHabitacion.AutoSize = true;
+            lblTipoHabitacion.ForeColor = Color.White;
+            lblTipoHabitacion.Location = new Point(806, 29);
+            lblTipoHabitacion.Name = "lblTipoHabitacion";
+            lblTipoHabitacion.Size = new Size(91, 15);
+            lblTipoHabitacion.TabIndex = 20;
+            lblTipoHabitacion.Text = "Tipo Habitación";
+            // 
+            // cmbTipoHabitacion
+            // 
+            cmbTipoHabitacion.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbTipoHabitacion.FormattingEnabled = true;
+            cmbTipoHabitacion.Items.AddRange(new object[] { "Individual", "Doble", "Matrimonial", "Suite", "Familiar", "Presidencial" });
+            cmbTipoHabitacion.Location = new Point(806, 47);
+            cmbTipoHabitacion.Name = "cmbTipoHabitacion";
+            cmbTipoHabitacion.Size = new Size(150, 23);
+            cmbTipoHabitacion.TabIndex = 19;
+            cmbTipoHabitacion.TextChanged += cmbTipoHabitacion_TextChanged;
             // 
             // iconbtnLimpiarBuscarHoteles
             // 
@@ -133,7 +143,7 @@
             // 
             lblFechaHastaHoteles.AutoSize = true;
             lblFechaHastaHoteles.ForeColor = Color.White;
-            lblFechaHastaHoteles.Location = new Point(630, 28);
+            lblFechaHastaHoteles.Location = new Point(494, 28);
             lblFechaHastaHoteles.Name = "lblFechaHastaHoteles";
             lblFechaHastaHoteles.RightToLeft = RightToLeft.Yes;
             lblFechaHastaHoteles.Size = new Size(71, 15);
@@ -153,12 +163,13 @@
             // dtpFechaHastaHoteles
             // 
             dtpFechaHastaHoteles.Format = DateTimePickerFormat.Short;
-            dtpFechaHastaHoteles.Location = new Point(630, 47);
+            dtpFechaHastaHoteles.Location = new Point(494, 47);
             dtpFechaHastaHoteles.Name = "dtpFechaHastaHoteles";
             dtpFechaHastaHoteles.RightToLeft = RightToLeft.No;
             dtpFechaHastaHoteles.Size = new Size(150, 23);
             dtpFechaHastaHoteles.TabIndex = 14;
             dtpFechaHastaHoteles.Value = new DateTime(2023, 1, 1, 0, 0, 0, 0);
+            dtpFechaHastaHoteles.ValueChanged += dtpFechaHastaHoteles_ValueChanged;
             // 
             // txtUbicacionHoteles
             // 
@@ -166,12 +177,13 @@
             txtUbicacionHoteles.Name = "txtUbicacionHoteles";
             txtUbicacionHoteles.Size = new Size(150, 23);
             txtUbicacionHoteles.TabIndex = 15;
+            txtUbicacionHoteles.TextChanged += txtUbicacionHoteles_TextChanged;
             // 
             // lblFechaDesdeHoteles
             // 
             lblFechaDesdeHoteles.AutoSize = true;
             lblFechaDesdeHoteles.ForeColor = Color.White;
-            lblFechaDesdeHoteles.Location = new Point(429, 29);
+            lblFechaDesdeHoteles.Location = new Point(338, 29);
             lblFechaDesdeHoteles.Name = "lblFechaDesdeHoteles";
             lblFechaDesdeHoteles.Size = new Size(73, 15);
             lblFechaDesdeHoteles.TabIndex = 13;
@@ -181,7 +193,7 @@
             // 
             lblCantHabitacionesHoteles.AutoSize = true;
             lblCantHabitacionesHoteles.ForeColor = Color.White;
-            lblCantHabitacionesHoteles.Location = new Point(827, 28);
+            lblCantHabitacionesHoteles.Location = new Point(650, 28);
             lblCantHabitacionesHoteles.Name = "lblCantHabitacionesHoteles";
             lblCantHabitacionesHoteles.Size = new Size(123, 15);
             lblCantHabitacionesHoteles.TabIndex = 13;
@@ -190,34 +202,37 @@
             // dtpFechaDesdeHoteles
             // 
             dtpFechaDesdeHoteles.Format = DateTimePickerFormat.Short;
-            dtpFechaDesdeHoteles.Location = new Point(429, 47);
+            dtpFechaDesdeHoteles.Location = new Point(338, 47);
             dtpFechaDesdeHoteles.Name = "dtpFechaDesdeHoteles";
             dtpFechaDesdeHoteles.Size = new Size(150, 23);
             dtpFechaDesdeHoteles.TabIndex = 12;
             dtpFechaDesdeHoteles.Value = new DateTime(2023, 1, 1, 0, 0, 0, 0);
+            dtpFechaDesdeHoteles.ValueChanged += dtpFechaDesdeHoteles_ValueChanged;
             // 
             // cmbCalificacionHoteles
             // 
             cmbCalificacionHoteles.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbCalificacionHoteles.FormattingEnabled = true;
             cmbCalificacionHoteles.Items.AddRange(new object[] { "★", "★★", "★★★", "★★★★", "★★★★★" });
-            cmbCalificacionHoteles.Location = new Point(225, 47);
+            cmbCalificacionHoteles.Location = new Point(182, 47);
             cmbCalificacionHoteles.Name = "cmbCalificacionHoteles";
             cmbCalificacionHoteles.Size = new Size(150, 23);
             cmbCalificacionHoteles.TabIndex = 14;
+            cmbCalificacionHoteles.TextChanged += cmbCalificacionHoteles_TextChanged;
             // 
             // txtHabitacionesHoteles
             // 
-            txtHabitacionesHoteles.Location = new Point(827, 47);
+            txtHabitacionesHoteles.Location = new Point(650, 47);
             txtHabitacionesHoteles.Name = "txtHabitacionesHoteles";
             txtHabitacionesHoteles.Size = new Size(150, 23);
             txtHabitacionesHoteles.TabIndex = 12;
+            txtHabitacionesHoteles.TextChanged += txtHabitacionesHoteles_TextChanged;
             // 
             // lblCalificacionHoteles
             // 
             lblCalificacionHoteles.AutoSize = true;
             lblCalificacionHoteles.ForeColor = Color.White;
-            lblCalificacionHoteles.Location = new Point(225, 29);
+            lblCalificacionHoteles.Location = new Point(182, 29);
             lblCalificacionHoteles.Name = "lblCalificacionHoteles";
             lblCalificacionHoteles.Size = new Size(69, 15);
             lblCalificacionHoteles.TabIndex = 13;
@@ -226,7 +241,7 @@
             // lsvHoteles
             // 
             lsvHoteles.BackColor = Color.FromArgb(156, 184, 205);
-            lsvHoteles.Columns.AddRange(new ColumnHeader[] { hdCodHotel, hdNombre, hdCalificacion, hdCiudad, hdHabitacion, hdTarifa, hdCapacidad });
+            lsvHoteles.Columns.AddRange(new ColumnHeader[] { hdCodHotel, hdNombre, hdCalificacion, hdCiudad, hdHabitacion, hdTarifa, hdCapacidad, hdCodigoDisponibilidad });
             lsvHoteles.FullRowSelect = true;
             lsvHoteles.Location = new Point(10, 40);
             lsvHoteles.MultiSelect = false;
@@ -270,6 +285,10 @@
             // 
             hdCapacidad.Text = "Capac.";
             hdCapacidad.Width = 48;
+            // 
+            // hdCodigoDisponibilidad
+            // 
+            hdCodigoDisponibilidad.Width = 1;
             // 
             // btnAgregarItinerarioHoteles
             // 
@@ -316,7 +335,7 @@
             // lsvHotelesAgregados
             // 
             lsvHotelesAgregados.BackColor = Color.FromArgb(156, 184, 205);
-            lsvHotelesAgregados.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader5, columnHeader6, columnHeader7 });
+            lsvHotelesAgregados.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader5, columnHeader6, columnHeader7, hdCodigoDisponibilidadItinerario });
             lsvHotelesAgregados.FullRowSelect = true;
             lsvHotelesAgregados.Location = new Point(610, 40);
             lsvHotelesAgregados.MultiSelect = false;
@@ -360,6 +379,10 @@
             // 
             columnHeader7.Text = "Capac.";
             columnHeader7.Width = 48;
+            // 
+            // hdCodigoDisponibilidadItinerario
+            // 
+            hdCodigoDisponibilidadItinerario.Width = 1;
             // 
             // lblHotelEnItinerario
             // 
@@ -433,7 +456,10 @@
         private ColumnHeader columnHeader6;
         private ColumnHeader columnHeader7;
         private Label lblHotelEnItinerario;
-        private FontAwesome.Sharp.IconButton iconbtnBuscarHoteles;
         private FontAwesome.Sharp.IconButton iconbtnLimpiarBuscarHoteles;
+        private Label lblTipoHabitacion;
+        private ComboBox cmbTipoHabitacion;
+        private ColumnHeader hdCodigoDisponibilidad;
+        private ColumnHeader hdCodigoDisponibilidadItinerario;
     }
 }

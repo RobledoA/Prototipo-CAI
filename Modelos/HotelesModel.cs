@@ -25,6 +25,7 @@ internal class HotelesModel
                 item.SubItems.Add(disp.Nombre);
                 item.SubItems.Add($"${Convert.ToString(disp.TarifaDiaria)}");
                 item.SubItems.Add(Convert.ToString(disp.Capacidad));
+                item.SubItems.Add(Convert.ToString(disp.CodigoDisponibilidad));
                 listViewItem.Add(item);
             }
         }
@@ -45,6 +46,8 @@ internal class HotelesModel
             item.SubItems.Add(disp.Nombre);
             item.SubItems.Add($"${Convert.ToString(disp.TarifaDiaria)}");
             item.SubItems.Add(Convert.ToString(disp.Capacidad));
+            item.SubItems.Add(Convert.ToString(disp.CodigoDisponibilidad));
+            //item.SubItems.Add(disp.DiasDisponibles);
             listViewItem.Add(item);
         }
         return listViewItem;
@@ -67,31 +70,6 @@ internal class HotelesModel
     public bool GuardarItemsItinerarioActivo(List<ListViewItem> list)
     {
         return true;
-    }
-
-    public string ValidarFiltros(string ubicacion, string calificacion, string fechaDesde, string fechaHasta, string cantHabitaciones)
-    {
-        string errores = "";
-        if (string.IsNullOrWhiteSpace(ubicacion + calificacion + cantHabitaciones) && fechaDesde == "01/01/2023" && fechaHasta == "01/01/2023")
-        {
-            errores += "Debe seleccionar un filtro.\n";
-            return errores;
-        }
-        if (!string.IsNullOrWhiteSpace(ubicacion) && !(Regex.IsMatch(ubicacion, @"^[a-zA-Z]+$") && ubicacion.Length == 3))
-        {
-            errores += "La ubicación debe ser un código formado por 3 letras.\n";
-        }
-       /* if ((!String.Equals(fechaDesde, "01/01/2023") && Convert.ToDateTime(fechaDesde) < DateTime.Now) || (!String.Equals(fechaHasta, "01/01/2023") && Convert.ToDateTime(fechaHasta) < DateTime.Now))
-        {
-            errores += "Cualquier fecha ingresada no puede ser anterior a la fecha actual.\n";
-        }*/
-        if (!string.IsNullOrWhiteSpace(cantHabitaciones))
-        {
-            errores += ValidarNumeroEntero(cantHabitaciones);
-        }
-
-
-        return errores;
     }
 
     public string ValidarNumeroEntero(string numero)
@@ -118,20 +96,20 @@ internal class HotelesModel
         return estrellas;
     }
 
-    public List<ListViewItem> FiltrarHoteles(string ubicacion, string calificacion, string fechaDesde, string fechaHasta, string cantHabitaciones)
-    {
-        List<Hotel> hotelesFiltrados = ModuloHoteles.BuscarHoteles(ubicacion, calificacion, fechaDesde, fechaHasta, cantHabitaciones);
-        List<ListViewItem> listViewHoteles = new();
-        foreach (ListViewItem item in FormatoHoteles(hotelesFiltrados))
-        {
-            listViewHoteles.Add(item);
-        }
-        return listViewHoteles;
-    }
-
     public void ActualizarHotelesItinerarioActivo(List<ListViewItem> list)
     {
         List<Disponibilidad> disp = ModuloHoteles.ObtenerDisponibilidadesItinerarioActivo(list);
         ModuloItinerarios.AgregarDisponibilidadesAItinerarioActivo(disp);
+    }
+
+    public List<string> FiltrarDisponibilidad(DateTime fechaDesde, DateTime fechaHasta, string cantHabitaciones)
+    {
+        List<Disponibilidad> disp = ModuloHoteles.FiltrarDisponibilidadesPorFecha(fechaDesde, fechaHasta, cantHabitaciones);
+        List<string> items = new();
+        foreach (Disponibilidad item in disp)
+        {
+            items.Add(item.CodigoDisponibilidad.ToString());
+        }
+        return items;
     }
 }

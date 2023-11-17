@@ -15,12 +15,14 @@ public partial class Hoteles : Form
     public Hoteles()
     {
         InitializeComponent();
-
     }
 
+    private List<ListViewItem> todosLosHoteles = new List<ListViewItem>();
 
     private void Hoteles_Load(object sender, EventArgs e)
     {
+        dtpFechaDesdeHoteles.Value = new DateTime(1999, 1, 1);
+        dtpFechaHastaHoteles.Value = new DateTime(1999, 1, 1);
         HotelesModel model = new HotelesModel();
         if (ModuloItinerarios.ItinerarioActivo == null)
         {
@@ -36,9 +38,13 @@ public partial class Hoteles : Form
                 lsvHotelesAgregados.Items.Add(list);
             }
         }
+
+        lsvHoteles.Items.Clear(); // Limpia la lista antes de cargar nuevos elementos
+        todosLosHoteles.Clear();  // Limpia la lista de todos los vuelos
         foreach (ListViewItem item in model.CargarHoteles())
         {
             lsvHoteles.Items.Add(item);
+            todosLosHoteles.Add(item);
         }
     }
 
@@ -82,6 +88,23 @@ public partial class Hoteles : Form
         }
     }
 
+    private void btnLimpiarFiltros_Click(object sender, EventArgs e)
+    {
+
+        lsvHoteles.Items.Clear();
+        txtUbicacionHoteles.Clear();
+        cmbCalificacionHoteles.SelectedIndex = -1;
+        dtpFechaDesdeHoteles.Value = new DateTime(1999, 1, 1);
+        dtpFechaHastaHoteles.Value = new DateTime(1999, 1, 1);
+        txtHabitacionesHoteles.Clear();
+        cmbTipoHabitacion.SelectedIndex = -1;
+        HotelesModel model = new HotelesModel();
+        foreach (ListViewItem item in model.CargarHoteles())
+        {
+            lsvHoteles.Items.Add(item);
+        }
+    }
+
     private void Hoteles_FormClosed(object sender, FormClosedEventArgs e)
     {
         if (!lblItinerarioActivo.Text.Equals("NO HAY ITINERARIO ACTIVO"))
@@ -97,32 +120,63 @@ public partial class Hoteles : Form
         }
     }
 
-    private void iconbtnBuscarHoteles_Click(object sender, EventArgs e)
+    private void FiltrarHoteles()
     {
         HotelesModel model = new();
-        string ubicacion = txtUbicacionHoteles.Text;
+        string ubicacion = txtUbicacionHoteles.Text.ToLower();
         string calificacion = cmbCalificacionHoteles.Text;
-        string fechaDesde = dtpFechaDesdeHoteles.Text;
-        string fechaHasta = dtpFechaHastaHoteles.Text;
+        DateTime fechaDesde = dtpFechaDesdeHoteles.Value.Date;
+        DateTime fechaHasta = dtpFechaHastaHoteles.Value.Date;
+        DateTime fechaPredeterminada = new DateTime(1999, 1, 1);
         string cantHabitaciones = txtHabitacionesHoteles.Text;
-        string errores = model.ValidarFiltros(ubicacion, calificacion, fechaDesde, fechaHasta, cantHabitaciones);
-        if (string.IsNullOrEmpty(errores))
+        string tipoHabitacion = cmbTipoHabitacion.Text;
+        if (string.IsNullOrWhiteSpace(cantHabitaciones) || !int.TryParse(cantHabitaciones, out int salida))
         {
-            List<ListViewItem> hotelesFiltrados = model.FiltrarHoteles(ubicacion, calificacion, fechaDesde, fechaHasta, cantHabitaciones);
-            lsvHoteles.Items.Clear();
-            foreach (ListViewItem item in hotelesFiltrados)
-            {
-                lsvHoteles.Items.Add(item);
-            }
-            if (hotelesFiltrados.Count == 0)
-            {
-                MessageBox.Show("No se han encontrado hoteles que coincidan con los filtros. Por favor, intente nuevamente.");
-            }
+            cantHabitaciones = "1";
         }
-        else
+        List<string> filtroFecha = model.FiltrarDisponibilidad(fechaDesde, fechaHasta, cantHabitaciones);
+
+        List<ListViewItem> itemsFiltrados = todosLosHoteles.Where(item =>
+            (string.IsNullOrWhiteSpace(ubicacion) || item.SubItems[3].Text.ToLower().Contains(ubicacion)) &&
+            (string.IsNullOrWhiteSpace(calificacion) || item.SubItems[2].Text.Equals(calificacion)) &&
+            (string.IsNullOrWhiteSpace(tipoHabitacion) || string.Equals(item.SubItems[4].Text, tipoHabitacion)) &&
+            (fechaDesde == fechaPredeterminada || fechaHasta == fechaPredeterminada || filtroFecha.Contains(item.SubItems[7].Text))).ToList();
+
+        lsvHoteles.Items.Clear();
+        foreach (var item in itemsFiltrados)
         {
-            MessageBox.Show(errores, "Error");
+            lsvHoteles.Items.Add(item);
         }
+    }
+
+    private void txtUbicacionHoteles_TextChanged(object sender, EventArgs e)
+    {
+        FiltrarHoteles();
+    }
+
+    private void cmbCalificacionHoteles_TextChanged(object sender, EventArgs e)
+    {
+        FiltrarHoteles();
+    }
+
+    private void dtpFechaDesdeHoteles_ValueChanged(object sender, EventArgs e)
+    {
+        FiltrarHoteles();
+    }
+
+    private void dtpFechaHastaHoteles_ValueChanged(object sender, EventArgs e)
+    {
+        FiltrarHoteles();
+    }
+
+    private void txtHabitacionesHoteles_TextChanged(object sender, EventArgs e)
+    {
+        FiltrarHoteles();
+    }
+
+    private void cmbTipoHabitacion_TextChanged(object sender, EventArgs e)
+    {
+        FiltrarHoteles();
     }
 
     private void iconbtnLimpiarBuscarHoteles_Click(object sender, EventArgs e)
@@ -130,9 +184,10 @@ public partial class Hoteles : Form
         lsvHoteles.Items.Clear();
         txtUbicacionHoteles.Clear();
         cmbCalificacionHoteles.SelectedIndex = -1;
-        dtpFechaDesdeHoteles.Text = "01/01/2023";
-        dtpFechaHastaHoteles.Text = "01/01/2023";
+        dtpFechaDesdeHoteles.Value = new DateTime(1999, 1, 1);
+        dtpFechaHastaHoteles.Value = new DateTime(1999, 1, 1);
         txtHabitacionesHoteles.Clear();
+        cmbTipoHabitacion.SelectedIndex = -1;
         HotelesModel model = new HotelesModel();
         foreach (ListViewItem item in model.CargarHoteles())
         {
