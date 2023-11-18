@@ -59,4 +59,38 @@ internal class CrearReservaModel
         return errores;
     }
 
+    public Itinerario ObtenerItinerarioActivo()
+    {
+        return ModuloItinerarios.ItinerarioActivo;
+    }
+
+    public Hotel ObtenerInfoHotel(string codHotel)
+    {
+        Hotel hotel = ModuloHoteles.ObtenerInfoHotel(codHotel);
+        return hotel;
+    }
+
+    public Vuelo ObtenerInfoVuelo(string codVuelo)
+    {
+        Vuelo vuelo = ModuloVuelos.ObtenerInfoVuelo(codVuelo);
+        return vuelo;
+    }
+
+    public string ValidarPasajeroTarifas(List<ItemCheckBox> list)
+    {
+        string cosa = string.Empty;
+        foreach (ItemCheckBox item in list)
+        {
+            if (item.Hotel == null)
+            {
+                cosa+="vuelo;";
+            }
+            if (item.Vuelo == null)
+            {
+                cosa+="hotel";
+            }
+        }
+        return cosa;
+    }
+
 }

@@ -56,13 +56,13 @@
             lblItinerarioActivo = new Label();
             btnQuitarItinerarioHotel = new Button();
             lsvHotelesAgregados = new ListView();
-            columnHeader1 = new ColumnHeader();
-            columnHeader2 = new ColumnHeader();
-            columnHeader3 = new ColumnHeader();
-            columnHeader4 = new ColumnHeader();
-            columnHeader5 = new ColumnHeader();
-            columnHeader6 = new ColumnHeader();
-            columnHeader7 = new ColumnHeader();
+            hdCodHotelItinerario = new ColumnHeader();
+            hdNombreHotelItinerario = new ColumnHeader();
+            hdCalificacionItinerario = new ColumnHeader();
+            hdCiudadHotelItinerario = new ColumnHeader();
+            hdTipoHabItinerario = new ColumnHeader();
+            hdTarifaHotelItinerario = new ColumnHeader();
+            hdCapacidadHotelItinerario = new ColumnHeader();
             hdCodigoDisponibilidadItinerario = new ColumnHeader();
             lblHotelEnItinerario = new Label();
             grpHoteles.SuspendLayout();
@@ -335,7 +335,7 @@
             // lsvHotelesAgregados
             // 
             lsvHotelesAgregados.BackColor = Color.FromArgb(156, 184, 205);
-            lsvHotelesAgregados.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader5, columnHeader6, columnHeader7, hdCodigoDisponibilidadItinerario });
+            lsvHotelesAgregados.Columns.AddRange(new ColumnHeader[] { hdCodHotelItinerario, hdNombreHotelItinerario, hdCalificacionItinerario, hdCiudadHotelItinerario, hdTipoHabItinerario, hdTarifaHotelItinerario, hdCapacidadHotelItinerario, hdCodigoDisponibilidadItinerario });
             lsvHotelesAgregados.FullRowSelect = true;
             lsvHotelesAgregados.Location = new Point(610, 40);
             lsvHotelesAgregados.MultiSelect = false;
@@ -346,39 +346,39 @@
             lsvHotelesAgregados.View = View.Details;
             lsvHotelesAgregados.SelectedIndexChanged += lsvHotelesAgregados_SelectedIndexChanged;
             // 
-            // columnHeader1
+            // hdCodHotelItinerario
             // 
-            columnHeader1.Width = 1;
+            hdCodHotelItinerario.Width = 1;
             // 
-            // columnHeader2
+            // hdNombreHotelItinerario
             // 
-            columnHeader2.Text = "Nombre";
-            columnHeader2.Width = 125;
+            hdNombreHotelItinerario.Text = "Nombre";
+            hdNombreHotelItinerario.Width = 125;
             // 
-            // columnHeader3
+            // hdCalificacionItinerario
             // 
-            columnHeader3.Text = "Calificacion";
-            columnHeader3.Width = 75;
+            hdCalificacionItinerario.Text = "Calificacion";
+            hdCalificacionItinerario.Width = 75;
             // 
-            // columnHeader4
+            // hdCiudadHotelItinerario
             // 
-            columnHeader4.Text = "Ciudad";
-            columnHeader4.Width = 55;
+            hdCiudadHotelItinerario.Text = "Ciudad";
+            hdCiudadHotelItinerario.Width = 55;
             // 
-            // columnHeader5
+            // hdTipoHabItinerario
             // 
-            columnHeader5.Text = "Tipo Hab.";
-            columnHeader5.Width = 80;
+            hdTipoHabItinerario.Text = "Tipo Hab.";
+            hdTipoHabItinerario.Width = 80;
             // 
-            // columnHeader6
+            // hdTarifaHotelItinerario
             // 
-            columnHeader6.Text = "Tarifa";
-            columnHeader6.Width = 54;
+            hdTarifaHotelItinerario.Text = "Tarifa";
+            hdTarifaHotelItinerario.Width = 54;
             // 
-            // columnHeader7
+            // hdCapacidadHotelItinerario
             // 
-            columnHeader7.Text = "Capac.";
-            columnHeader7.Width = 48;
+            hdCapacidadHotelItinerario.Text = "Capac.";
+            hdCapacidadHotelItinerario.Width = 48;
             // 
             // hdCodigoDisponibilidadItinerario
             // 
@@ -448,13 +448,13 @@
         private Button btnQuitarItinerarioHotel;
         private ColumnHeader hdCodHotel;
         public ListView lsvHotelesAgregados;
-        private ColumnHeader columnHeader1;
-        private ColumnHeader columnHeader2;
-        private ColumnHeader columnHeader3;
-        private ColumnHeader columnHeader4;
-        private ColumnHeader columnHeader5;
-        private ColumnHeader columnHeader6;
-        private ColumnHeader columnHeader7;
+        private ColumnHeader hdCodHotelItinerario;
+        private ColumnHeader hdNombreHotelItinerario;
+        private ColumnHeader hdCalificacionItinerario;
+        private ColumnHeader hdCiudadHotelItinerario;
+        private ColumnHeader hdTipoHabItinerario;
+        private ColumnHeader hdTarifaHotelItinerario;
+        private ColumnHeader hdCapacidadHotelItinerario;
         private Label lblHotelEnItinerario;
         private FontAwesome.Sharp.IconButton iconbtnLimpiarBuscarHoteles;
         private Label lblTipoHabitacion;

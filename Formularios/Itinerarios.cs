@@ -273,12 +273,14 @@ public partial class Itinerarios : Form
         if (lsvItinerario.SelectedItems.Count > 0)
         {
             var item = lsvItinerario.SelectedItems[0];
-            if (item.SubItems[3].Text == "True" || item.SubItems[3].Text == "true" || item.SubItems[3].Text == "TRUE")
+            if (item.SubItems[3].Text.ToLower() == "true")
             {
                 MessageBox.Show("El itinerario seleccionado ya está reservado.", "Error");
             }
             else
             {
+                string codItinerario = item.Text;
+                model.CambiarItinerarioActivo(codItinerario);
                 CrearReserva crearReserva = new();
                 crearReserva.ShowDialog();
             }

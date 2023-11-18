@@ -19,11 +19,12 @@ public partial class Hoteles : Form
     }
 
     private List<ListViewItem> todosLosHoteles = new List<ListViewItem>();
+    internal DateTime fechaPredeterminada = new DateTime(1999, 1, 1);
 
     private void Hoteles_Load(object sender, EventArgs e)
     {
-        dtpFechaDesdeHoteles.Value = new DateTime(1999, 1, 1);
-        dtpFechaHastaHoteles.Value = new DateTime(1999, 1, 1);
+        dtpFechaDesdeHoteles.Value = fechaPredeterminada;
+        dtpFechaHastaHoteles.Value = fechaPredeterminada;
         HotelesModel model = new HotelesModel();
         if (ModuloItinerarios.ItinerarioActivo == null)
         {
@@ -70,6 +71,10 @@ public partial class Hoteles : Form
         {
             MessageBox.Show("Debe seleccionar un producto de la lista.", "Error");
         }
+        else if (dtpFechaDesdeHoteles.Value.Date == fechaPredeterminada || dtpFechaHastaHoteles.Value.Date == fechaPredeterminada)
+        {
+            MessageBox.Show("Debe establecer una fecha en los filtros si desea agregar un hotel.", "Error");
+        }
         else
         {
             ListViewItem item = lsvHoteles.SelectedItems[0];
@@ -115,7 +120,6 @@ public partial class Hoteles : Form
             List<ListViewItem> list = new List<ListViewItem>();
             foreach (ListViewItem item in lsvHotelesAgregados.Items)
             {
-                MessageBox.Show(item.Text);
                 list.Add(item);
             }
             model.ActualizarHotelesItinerarioActivo(list);
@@ -129,7 +133,6 @@ public partial class Hoteles : Form
         string calificacion = cmbCalificacionHoteles.Text;
         DateTime fechaDesde = dtpFechaDesdeHoteles.Value.Date;
         DateTime fechaHasta = dtpFechaHastaHoteles.Value.Date;
-        DateTime fechaPredeterminada = new DateTime(1999, 1, 1);
         string cantHabitaciones = txtHabitacionesHoteles.Text;
         string tipoHabitacion = cmbTipoHabitacion.Text;
         if (string.IsNullOrWhiteSpace(cantHabitaciones) || !int.TryParse(cantHabitaciones, out int salida))
@@ -186,8 +189,8 @@ public partial class Hoteles : Form
         lsvHoteles.Items.Clear();
         txtUbicacionHoteles.Clear();
         cmbCalificacionHoteles.SelectedIndex = -1;
-        dtpFechaDesdeHoteles.Value = new DateTime(1999, 1, 1);
-        dtpFechaHastaHoteles.Value = new DateTime(1999, 1, 1);
+        dtpFechaDesdeHoteles.Value = fechaPredeterminada;
+        dtpFechaHastaHoteles.Value = fechaPredeterminada;
         txtHabitacionesHoteles.Clear();
         cmbTipoHabitacion.SelectedIndex = -1;
         HotelesModel model = new HotelesModel();
@@ -196,4 +199,5 @@ public partial class Hoteles : Form
             lsvHoteles.Items.Add(item);
         }
     }
+
 }
