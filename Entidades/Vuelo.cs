@@ -16,9 +16,4 @@ public class Vuelo
     public TarifaVuelo[] Tarifas { get; set; }
     public string TiempoVuelo { get; set; }
 
-
-    /*public void CalcularTiempoVuelo()
-    {
-        //Calcula el tiempo entre fecha salida y fecha llegada
-    }*/
 }

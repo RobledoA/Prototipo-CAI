@@ -143,6 +143,7 @@
             // 
             // hdCodigoTarifaVuelo
             // 
+            hdCodigoTarifaVuelo.Text = "CodigoTarifa";
             hdCodigoTarifaVuelo.Width = 1;
             // 
             // grpAereos
