@@ -50,4 +50,23 @@ internal class ModuloVuelos
 
         return null;
     }
+
+    public static string ValidarDisponibilidadVuelo(TarifaVuelo tarifaVuelo, int cantReserva)
+    {
+        foreach (Vuelo vuelo in Vuelos)
+        {
+            foreach (TarifaVuelo tarifa in vuelo.Tarifas)
+            {
+                if (tarifa == tarifaVuelo)
+                {
+                    if (tarifa.TarifasVuelosDisponibles <  cantReserva)
+                    {
+                        return $"No hay suficientes asientos disponibles para el vuelo {tarifaVuelo.CodigoVuelo} - Clase {tarifaVuelo.Clase} - {tarifaVuelo.TipoPasajero}.";
+                    }
+                    return "";
+                }
+            }
+        }
+        return $"No se ha encontrado el vuelo {tarifaVuelo.CodigoVuelo} - Clase {tarifaVuelo.Clase} - {tarifaVuelo.TipoPasajero} en el sistema.";
+    }
 }

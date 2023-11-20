@@ -38,14 +38,21 @@
             lblGeneroPasajero = new Label();
             cmbNacionalidad = new ComboBox();
             cmbGenero = new ComboBox();
-            btnConfirmarGuardarReserva = new Button();
+            btnCerrarCrearReserva = new Button();
             chklbTarifasAsignadas = new CheckedListBox();
             btnAgregarPasajero = new Button();
             lsvTarifasReserva = new ListView();
+            hdNombreApellidoPasajero = new ColumnHeader();
+            hdDNIPasajero = new ColumnHeader();
+            hdNacionalidadPasajero = new ColumnHeader();
+            hdGeneroPasajero = new ColumnHeader();
+            hdFechaNacPasajero = new ColumnHeader();
+            hdTarifasPasajero = new ColumnHeader();
             gpbDatosPasajero = new GroupBox();
+            btnLimpiarDatosPasajero = new Button();
             lblTarifasAsignadas = new Label();
-            button1 = new Button();
-            button2 = new Button();
+            btnEliminarPasajero = new Button();
+            btnCrearReserva = new Button();
             gpbDatosPasajero.SuspendLayout();
             SuspendLayout();
             // 
@@ -87,6 +94,7 @@
             // dtpNacimientoP
             // 
             dtpNacimientoP.CalendarMonthBackground = Color.White;
+            dtpNacimientoP.Format = DateTimePickerFormat.Short;
             dtpNacimientoP.Location = new Point(17, 155);
             dtpNacimientoP.Name = "dtpNacimientoP";
             dtpNacimientoP.Size = new Size(216, 23);
@@ -141,19 +149,20 @@
             cmbGenero.Size = new Size(216, 23);
             cmbGenero.TabIndex = 12;
             // 
-            // btnConfirmarGuardarReserva
+            // btnCerrarCrearReserva
             // 
-            btnConfirmarGuardarReserva.BackColor = Color.FromArgb(8, 32, 50);
-            btnConfirmarGuardarReserva.FlatAppearance.BorderSize = 0;
-            btnConfirmarGuardarReserva.FlatStyle = FlatStyle.Flat;
-            btnConfirmarGuardarReserva.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnConfirmarGuardarReserva.ForeColor = Color.White;
-            btnConfirmarGuardarReserva.Location = new Point(684, 545);
-            btnConfirmarGuardarReserva.Name = "btnConfirmarGuardarReserva";
-            btnConfirmarGuardarReserva.Size = new Size(155, 34);
-            btnConfirmarGuardarReserva.TabIndex = 18;
-            btnConfirmarGuardarReserva.Text = "Cerrar";
-            btnConfirmarGuardarReserva.UseVisualStyleBackColor = false;
+            btnCerrarCrearReserva.BackColor = Color.FromArgb(8, 32, 50);
+            btnCerrarCrearReserva.FlatAppearance.BorderSize = 0;
+            btnCerrarCrearReserva.FlatStyle = FlatStyle.Flat;
+            btnCerrarCrearReserva.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCerrarCrearReserva.ForeColor = Color.White;
+            btnCerrarCrearReserva.Location = new Point(761, 545);
+            btnCerrarCrearReserva.Name = "btnCerrarCrearReserva";
+            btnCerrarCrearReserva.Size = new Size(155, 34);
+            btnCerrarCrearReserva.TabIndex = 18;
+            btnCerrarCrearReserva.Text = "Cerrar";
+            btnCerrarCrearReserva.UseVisualStyleBackColor = false;
+            btnCerrarCrearReserva.Click += btnCerrarCrearReserva_Click;
             // 
             // chklbTarifasAsignadas
             // 
@@ -162,7 +171,7 @@
             chklbTarifasAsignadas.FormattingEnabled = true;
             chklbTarifasAsignadas.Location = new Point(491, 42);
             chklbTarifasAsignadas.Name = "chklbTarifasAsignadas";
-            chklbTarifasAsignadas.Size = new Size(320, 180);
+            chklbTarifasAsignadas.Size = new Size(399, 180);
             chklbTarifasAsignadas.TabIndex = 20;
             // 
             // btnAgregarPasajero
@@ -174,7 +183,7 @@
             btnAgregarPasajero.ForeColor = Color.White;
             btnAgregarPasajero.Location = new Point(12, 274);
             btnAgregarPasajero.Name = "btnAgregarPasajero";
-            btnAgregarPasajero.Size = new Size(393, 34);
+            btnAgregarPasajero.Size = new Size(418, 34);
             btnAgregarPasajero.TabIndex = 21;
             btnAgregarPasajero.Text = "Agregar v v v";
             btnAgregarPasajero.UseVisualStyleBackColor = false;
@@ -183,14 +192,49 @@
             // lsvTarifasReserva
             // 
             lsvTarifasReserva.BackColor = Color.FromArgb(156, 184, 205);
+            lsvTarifasReserva.Columns.AddRange(new ColumnHeader[] { hdNombreApellidoPasajero, hdDNIPasajero, hdNacionalidadPasajero, hdGeneroPasajero, hdFechaNacPasajero, hdTarifasPasajero });
+            lsvTarifasReserva.FullRowSelect = true;
             lsvTarifasReserva.Location = new Point(12, 330);
+            lsvTarifasReserva.MultiSelect = false;
             lsvTarifasReserva.Name = "lsvTarifasReserva";
-            lsvTarifasReserva.Size = new Size(827, 209);
+            lsvTarifasReserva.Size = new Size(904, 209);
             lsvTarifasReserva.TabIndex = 22;
             lsvTarifasReserva.UseCompatibleStateImageBehavior = false;
+            lsvTarifasReserva.View = View.Details;
+            // 
+            // hdNombreApellidoPasajero
+            // 
+            hdNombreApellidoPasajero.Text = "Nombre y Apellido";
+            hdNombreApellidoPasajero.Width = 200;
+            // 
+            // hdDNIPasajero
+            // 
+            hdDNIPasajero.Text = "DNI";
+            hdDNIPasajero.Width = 80;
+            // 
+            // hdNacionalidadPasajero
+            // 
+            hdNacionalidadPasajero.Text = "Nacionalidad";
+            hdNacionalidadPasajero.Width = 100;
+            // 
+            // hdGeneroPasajero
+            // 
+            hdGeneroPasajero.Text = "Género";
+            hdGeneroPasajero.Width = 100;
+            // 
+            // hdFechaNacPasajero
+            // 
+            hdFechaNacPasajero.Text = "Fecha de Nacimiento";
+            hdFechaNacPasajero.Width = 130;
+            // 
+            // hdTarifasPasajero
+            // 
+            hdTarifasPasajero.Text = "Tarifas Asociadas";
+            hdTarifasPasajero.Width = 390;
             // 
             // gpbDatosPasajero
             // 
+            gpbDatosPasajero.Controls.Add(btnLimpiarDatosPasajero);
             gpbDatosPasajero.Controls.Add(lblTarifasAsignadas);
             gpbDatosPasajero.Controls.Add(txtDNIPasajero);
             gpbDatosPasajero.Controls.Add(lblNombrePasajero);
@@ -206,10 +250,25 @@
             gpbDatosPasajero.ForeColor = Color.White;
             gpbDatosPasajero.Location = new Point(12, 12);
             gpbDatosPasajero.Name = "gpbDatosPasajero";
-            gpbDatosPasajero.Size = new Size(827, 242);
+            gpbDatosPasajero.Size = new Size(904, 242);
             gpbDatosPasajero.TabIndex = 24;
             gpbDatosPasajero.TabStop = false;
             gpbDatosPasajero.Text = "Datos Pasajero";
+            // 
+            // btnLimpiarDatosPasajero
+            // 
+            btnLimpiarDatosPasajero.BackColor = Color.FromArgb(8, 32, 50);
+            btnLimpiarDatosPasajero.FlatAppearance.BorderSize = 0;
+            btnLimpiarDatosPasajero.FlatStyle = FlatStyle.Flat;
+            btnLimpiarDatosPasajero.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnLimpiarDatosPasajero.ForeColor = Color.White;
+            btnLimpiarDatosPasajero.Location = new Point(17, 191);
+            btnLimpiarDatosPasajero.Name = "btnLimpiarDatosPasajero";
+            btnLimpiarDatosPasajero.Size = new Size(34, 34);
+            btnLimpiarDatosPasajero.TabIndex = 27;
+            btnLimpiarDatosPasajero.Text = "\U0001f9f9";
+            btnLimpiarDatosPasajero.UseVisualStyleBackColor = false;
+            btnLimpiarDatosPasajero.Click += btnLimpiarDatosPasajero_Click;
             // 
             // lblTarifasAsignadas
             // 
@@ -220,45 +279,47 @@
             lblTarifasAsignadas.TabIndex = 22;
             lblTarifasAsignadas.Text = "Tarifas Asignadas";
             // 
-            // button1
+            // btnEliminarPasajero
             // 
-            button1.BackColor = Color.FromArgb(8, 32, 50);
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(446, 274);
-            button1.Name = "button1";
-            button1.Size = new Size(393, 34);
-            button1.TabIndex = 25;
-            button1.Text = "Eliminar ^ ^ ^";
-            button1.UseVisualStyleBackColor = false;
+            btnEliminarPasajero.BackColor = Color.FromArgb(8, 32, 50);
+            btnEliminarPasajero.FlatAppearance.BorderSize = 0;
+            btnEliminarPasajero.FlatStyle = FlatStyle.Flat;
+            btnEliminarPasajero.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnEliminarPasajero.ForeColor = Color.White;
+            btnEliminarPasajero.Location = new Point(503, 274);
+            btnEliminarPasajero.Name = "btnEliminarPasajero";
+            btnEliminarPasajero.Size = new Size(413, 34);
+            btnEliminarPasajero.TabIndex = 25;
+            btnEliminarPasajero.Text = "Eliminar ^ ^ ^";
+            btnEliminarPasajero.UseVisualStyleBackColor = false;
+            btnEliminarPasajero.Click += btnEliminarPasajero_Click;
             // 
-            // button2
+            // btnCrearReserva
             // 
-            button2.BackColor = Color.FromArgb(8, 32, 50);
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(523, 545);
-            button2.Name = "button2";
-            button2.Size = new Size(155, 34);
-            button2.TabIndex = 26;
-            button2.Text = "Crear reserva";
-            button2.UseVisualStyleBackColor = false;
+            btnCrearReserva.BackColor = Color.FromArgb(8, 32, 50);
+            btnCrearReserva.FlatAppearance.BorderSize = 0;
+            btnCrearReserva.FlatStyle = FlatStyle.Flat;
+            btnCrearReserva.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCrearReserva.ForeColor = Color.White;
+            btnCrearReserva.Location = new Point(600, 545);
+            btnCrearReserva.Name = "btnCrearReserva";
+            btnCrearReserva.Size = new Size(155, 34);
+            btnCrearReserva.TabIndex = 26;
+            btnCrearReserva.Text = "Crear reserva";
+            btnCrearReserva.UseVisualStyleBackColor = false;
+            btnCrearReserva.Click += btnCrearReserva_Click;
             // 
             // CrearReserva
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(86, 124, 153);
-            ClientSize = new Size(851, 586);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            ClientSize = new Size(928, 586);
+            Controls.Add(btnCrearReserva);
+            Controls.Add(btnEliminarPasajero);
             Controls.Add(gpbDatosPasajero);
             Controls.Add(lsvTarifasReserva);
-            Controls.Add(btnConfirmarGuardarReserva);
+            Controls.Add(btnCerrarCrearReserva);
             Controls.Add(btnAgregarPasajero);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
@@ -282,13 +343,20 @@
         private Label lblGeneroPasajero;
         private ComboBox cmbNacionalidad;
         private ComboBox cmbGenero;
-        private Button btnConfirmarGuardarReserva;
+        private Button btnCerrarCrearReserva;
         private CheckedListBox chklbTarifasAsignadas;
         private Button btnAgregarPasajero;
         private ListView lsvTarifasReserva;
         private GroupBox gpbDatosPasajero;
         private Label lblTarifasAsignadas;
-        private Button button1;
-        private Button button2;
+        private Button btnEliminarPasajero;
+        private Button btnCrearReserva;
+        private ColumnHeader hdNombreApellidoPasajero;
+        private ColumnHeader hdDNIPasajero;
+        private ColumnHeader hdNacionalidadPasajero;
+        private ColumnHeader hdGeneroPasajero;
+        private ColumnHeader hdFechaNacPasajero;
+        private ColumnHeader hdTarifasPasajero;
+        private Button btnLimpiarDatosPasajero;
     }
 }

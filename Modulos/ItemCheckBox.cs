@@ -11,6 +11,7 @@ namespace Prototipo_CAI
         public ItinerarioHotel Hotel { get; set; } //uno de los es nulo
         public TarifaVuelo Vuelo { get; set; }
         public string Descripcion { get; set; }
+        public int CodTarifa { get; set; } //identificador en la pantalla crearreserva
 
         public override string ToString() //crear una descripcion para el item
         {

@@ -22,25 +22,37 @@ namespace Prototipo_CAI
 
         private void CrearReserva_Load(object sender, EventArgs e)
         {
+            /////////// INFO DE PRUEBA PARA NO PERDER TIEMPO, BORRAR ////////////////
+            txtNombrePasajero.Text = "Lionel mesi";
+            txtDNIPasajero.Text = "12345678";
+            cmbGenero.SelectedIndex = 0;
+            cmbNacionalidad.SelectedIndex = 0;
+            dtpNacimientoP.Value = new DateTime(1999, 1, 1);
+
+            ////////////////////////////////////////////////////////////////////////
             CrearReservaModel model = new();
             Itinerario itinerarioActivo = model.ObtenerItinerarioActivo();
-
+            int codTarifa = 0;
             foreach (var disp in itinerarioActivo.Disponibilidades)
             {
+                codTarifa++;
                 Hotel hotel = model.ObtenerInfoHotel(disp.Disponibilidad.CodigoHotel);
                 var item = new ItemCheckBox();
+                item.CodTarifa = codTarifa;
                 item.Hotel = disp;
                 //Crear una descripcion buscando los datos del hotel en el modulo, etc....
-                item.Descripcion = $"{hotel.Nombre};{item.Hotel.Disponibilidad.Nombre};Capacidad:{item.Hotel.Disponibilidad.Capacidad};{item.Hotel.Disponibilidad.TarifaDiaria}";
+                item.Descripcion = $"{item.CodTarifa};{hotel.Nombre};{item.Hotel.Disponibilidad.Nombre};Capacidad:{item.Hotel.Disponibilidad.Capacidad},{item.Hotel.Disponibilidad.Menores},{item.Hotel.Disponibilidad.Infantes};{item.Hotel.Disponibilidad.TarifaDiaria}";
                 this.chklbTarifasAsignadas.Items.Add(item);
             }
 
             foreach (var tarifaVuelo in itinerarioActivo.TarifasVuelos)
             {
+                codTarifa++;
                 Vuelo vuelo = model.ObtenerInfoVuelo(tarifaVuelo.CodigoVuelo);
                 var item = new ItemCheckBox();
+                item.CodTarifa = codTarifa;
                 item.Vuelo = tarifaVuelo;
-                item.Descripcion = $"{vuelo.CodigoVuelo};{vuelo.Origen};{vuelo.Destino};{tarifaVuelo.Clase};{tarifaVuelo.TipoPasajero};{tarifaVuelo.Precio};";
+                item.Descripcion = $"{item.CodTarifa};{vuelo.CodigoVuelo};{vuelo.Origen};{vuelo.Destino};{tarifaVuelo.Clase};{tarifaVuelo.TipoPasajero};{tarifaVuelo.Precio};";
                 this.chklbTarifasAsignadas.Items.Add(item);
             }
 
@@ -59,25 +71,101 @@ namespace Prototipo_CAI
             DateTime fechaNac = dtpNacimientoP.Value.Date;
             string nacionalidad = cmbNacionalidad.Text;
             string genero = cmbGenero.Text;
+            string tarifasAsociadas = "";
+            foreach (ItemCheckBox item in this.chklbTarifasAsignadas.CheckedItems)
+            {
+                tarifasAsociadas += $"{item.CodTarifa};";
+            }
+            List<ListViewItem> list = new();
+            foreach (ListViewItem item in lsvTarifasReserva.Items)
+            {
+                list.Add(item);
+            }
 
             string errores = model.ValidarCampos(nombreApellido, dni, fechaNac, nacionalidad, genero);
+            errores += model.ValidarRepetidos(dni, list);
 
-            if (string.IsNullOrWhiteSpace(errores))
+            if (!string.IsNullOrWhiteSpace(errores))
             {
-                List<ItemCheckBox> list = new List<ItemCheckBox>();
-                foreach (var item in this.chklbTarifasAsignadas.CheckedItems)
-                {
-                    list.Add((ItemCheckBox)item);
-                }
-                MessageBox.Show(model.ValidarPasajeroTarifas(list));
+                MessageBox.Show(errores, "Error");
+                return;
+            }
 
-                /*model.ValidarPasajeroTarifa(list, nombreApellido, dni, fechaNac, nacionalidad, genero);*/
-                MessageBox.Show("Hasta aca llegaste javier");
+            if (chklbTarifasAsignadas.CheckedItems.Count == 0)
+            {
+                MessageBox.Show("Debe seleccionar al menos una tarifa.", "Error");
+                return;
+            }
+
+            tarifasAsociadas = tarifasAsociadas.Substring(0, tarifasAsociadas.Length - 1);
+
+            ListViewItem itemlsv = new ListViewItem(nombreApellido);
+
+            lsvTarifasReserva.Items.Add(model.FormatoPasajeroReserva(nombreApellido, dni, fechaNac, nacionalidad, genero, tarifasAsociadas));
+
+            MessageBox.Show("Pasajero agregado correctamente.", "Éxito");
+        }
+
+        private void btnEliminarPasajero_Click(object sender, EventArgs e)
+        {
+            if (lsvTarifasReserva.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Debe seleccionar un pasajero si quiere eliminarlo.", "Error");
             }
             else
             {
-                MessageBox.Show(errores, "Error");
+                lsvTarifasReserva.SelectedItems[0].Remove();
             }
+        }
+
+        private void btnLimpiarDatosPasajero_Click(object sender, EventArgs e)
+        {
+            txtNombrePasajero.Clear();
+            txtDNIPasajero.Clear();
+            cmbNacionalidad.SelectedIndex = -1;
+            cmbGenero.SelectedIndex = -1;
+            dtpNacimientoP.Value = DateTime.Now;
+        }
+
+        private void btnCerrarCrearReserva_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnCrearReserva_Click(object sender, EventArgs e)
+        {
+            if (lsvTarifasReserva.Items.Count == 0)
+            {
+                MessageBox.Show("Debe agregar al menos un pasajero para concretar una reserva.","Error");
+                return;
+            }
+            CrearReservaModel model = new();
+            List<ItemCheckBox> list = new();
+            foreach (ItemCheckBox cb in chklbTarifasAsignadas.Items)
+            {
+                list.Add(cb);
+            }
+            List<ListViewItem> listViewItems = new List<ListViewItem>();
+            foreach (ListViewItem lsvitem in lsvTarifasReserva.Items)
+            {
+                listViewItems.Add(lsvitem);
+            }
+            if(!model.ValidarUsoTarifas(list, listViewItems))
+            {
+                MessageBox.Show("No se han utilizado todas las tarifas correspondientes al itinerario.","Error");
+                return;
+            }
+
+            MessageBox.Show("con esto me aseguro que todas las tarifas fueron usadas, ahora checkeamos que todas sigan disponibles");
+
+            string errores = model.ValidarDisponibilidadTarifas(list);
+
+            if (!string.IsNullOrEmpty(errores))
+            {
+                MessageBox.Show(errores);
+                return;
+            }
+
         }
     }
 }

@@ -168,7 +168,6 @@ public partial class Aereos : Form
             List<ListViewItem> list = new List<ListViewItem>();
             foreach (ListViewItem item in lsvItinerarioAereos.Items)
             {
-                MessageBox.Show(item.Text);
                 list.Add(item);
             }
             model.ActualizarVuelosItinerarioActivo(list);

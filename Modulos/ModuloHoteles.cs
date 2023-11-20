@@ -107,4 +107,24 @@ internal static class ModuloHoteles
         return disponibilidadesFiltradas;
     }
 
+    public static string ValidarDisponibilidadHoteles(ItinerarioHotel itinerarioHotel, int cantReservada)
+    {
+        Disponibilidad disponibilidad = null;
+        foreach (Hotel hotel in Hoteles)
+        {
+            foreach (Disponibilidad disp in hotel.Disponibilidades)
+            {
+                if (ObtenerDispFecha(itinerarioHotel.Disponibilidad, itinerarioHotel.Desde, itinerarioHotel.Hasta, cantReservada))
+                {
+                    disponibilidad = disp;
+                }
+            }
+        }
+        if (disponibilidad == null)
+        {
+            return $"No hay {cantReservada} habitaciones '{itinerarioHotel.Disponibilidad.Nombre}' disponibles en el hotel {itinerarioHotel.Disponibilidad.CodigoHotel} entre el {itinerarioHotel.Desde.ToString("dd-MM-yyyy")} y el {itinerarioHotel.Hasta.ToString("dd-MM-yyyy")}.";
+        }
+        return "";
+    }
+
 }
