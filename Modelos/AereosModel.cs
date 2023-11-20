@@ -72,6 +72,7 @@ internal class AereosModel
     {
         List<TarifaVuelo> tarifas = ModuloVuelos.ObtenerTarifasItinerarioActivo(list);
         ModuloItinerarios.AgregarTarifasAItinerarioActivo(tarifas);
+        ModuloItinerarios.CalcularPrecioTotalItinerarioActivo();
     }
 
     public List<ListViewItem> CargarVuelosItinerarioActivo()

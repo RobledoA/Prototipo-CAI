@@ -102,6 +102,23 @@ internal static class ModuloItinerarios
         return null;
     }
 
+    public static void CalcularPrecioTotalItinerarioActivo()
+    {
+        decimal PrecioTotal = 0;
+        foreach (ItinerarioHotel disp in ItinerarioActivo.Disponibilidades)
+        {
+            for (DateTime i = disp.Desde.Date; i < disp.Hasta.Date; i = i.AddDays(1.0))
+            {
+                PrecioTotal += disp.Disponibilidad.TarifaDiaria;
+            }
+        }
+        foreach (TarifaVuelo tarifa in ItinerarioActivo.TarifasVuelos)
+        {
+            PrecioTotal += tarifa.Precio;
+        }
+        ItinerarioActivo.PrecioTotal = PrecioTotal;
+    }
+
 
 
 }

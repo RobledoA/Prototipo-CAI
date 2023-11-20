@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             lsvItinerario = new ListView();
-            CodItinerario = new ColumnHeader();
-            CUILCUIT = new ColumnHeader();
-            Nombre = new ColumnHeader();
-            Reservado = new ColumnHeader();
+            hdCodItinerario = new ColumnHeader();
+            hdCUILCUIT = new ColumnHeader();
+            hdNombre = new ColumnHeader();
+            hdReservado = new ColumnHeader();
             fileSystemWatcher1 = new FileSystemWatcher();
             txtBuscarItinerario = new TextBox();
             lblItinerarios = new Label();
@@ -53,6 +53,7 @@
             txtNombreCliente = new TextBox();
             iconbtnLimpiarBuscarItinerario = new FontAwesome.Sharp.IconButton();
             iconbtnBuscarItinerario = new FontAwesome.Sharp.IconButton();
+            hdPrecio = new ColumnHeader();
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).BeginInit();
             panelMenuItinerario.SuspendLayout();
             panel1.SuspendLayout();
@@ -62,7 +63,7 @@
             // 
             lsvItinerario.BackColor = Color.FromArgb(214, 237, 255);
             lsvItinerario.BorderStyle = BorderStyle.None;
-            lsvItinerario.Columns.AddRange(new ColumnHeader[] { CodItinerario, CUILCUIT, Nombre, Reservado });
+            lsvItinerario.Columns.AddRange(new ColumnHeader[] { hdCodItinerario, hdCUILCUIT, hdNombre, hdReservado, hdPrecio });
             lsvItinerario.FullRowSelect = true;
             lsvItinerario.Location = new Point(226, 45);
             lsvItinerario.MultiSelect = false;
@@ -73,25 +74,25 @@
             lsvItinerario.View = View.Details;
             lsvItinerario.SelectedIndexChanged += lsvItinerario_SelectedIndexChanged;
             // 
-            // CodItinerario
+            // hdCodItinerario
             // 
-            CodItinerario.Text = "Código";
-            CodItinerario.Width = 80;
+            hdCodItinerario.Text = "Código";
+            hdCodItinerario.Width = 51;
             // 
-            // CUILCUIT
+            // hdCUILCUIT
             // 
-            CUILCUIT.Text = "CUIL/CUIT";
-            CUILCUIT.Width = 150;
+            hdCUILCUIT.Text = "CUIL/CUIT";
+            hdCUILCUIT.Width = 100;
             // 
-            // Nombre
+            // hdNombre
             // 
-            Nombre.Text = "Nombre/Razón Social";
-            Nombre.Width = 170;
+            hdNombre.Text = "Nombre/Razón Social";
+            hdNombre.Width = 170;
             // 
-            // Reservado
+            // hdReservado
             // 
-            Reservado.Text = "Reservado";
-            Reservado.Width = 70;
+            hdReservado.Text = "Reservado";
+            hdReservado.Width = 70;
             // 
             // fileSystemWatcher1
             // 
@@ -376,6 +377,11 @@
             iconbtnBuscarItinerario.UseVisualStyleBackColor = false;
             iconbtnBuscarItinerario.Click += iconbtnBuscarItinerario_Click;
             // 
+            // hdPrecio
+            // 
+            hdPrecio.Text = "Precio Total";
+            hdPrecio.Width = 80;
+            // 
             // Itinerarios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -406,12 +412,12 @@
         #endregion
 
         private ListView lsvItinerario;
-        private ColumnHeader CUILCUIT;
-        private ColumnHeader CodItinerario;
+        private ColumnHeader hdCUILCUIT;
+        private ColumnHeader hdCodItinerario;
         private Button btnNuevoItinerario;
         private Button btnEstItinerarioActivo;
         private Button btnEliminarItinerario;
-        private ColumnHeader Nombre;
+        private ColumnHeader hdNombre;
         private FileSystemWatcher fileSystemWatcher1;
         private TextBox txtBuscarItinerario;
         private Label lblItinerarios;
@@ -434,6 +440,7 @@
         private Button btnModificar;
         private FontAwesome.Sharp.IconButton iconbtnLimpiarBuscarItinerario;
         private FontAwesome.Sharp.IconButton iconbtnBuscarItinerario;
-        private ColumnHeader Reservado;
+        private ColumnHeader hdReservado;
+        private ColumnHeader hdPrecio;
     }
 }

@@ -20,6 +20,7 @@ internal class ItinerariosModel
             item.SubItems.Add(itinerario.CUILCUIT.ToString());
             item.SubItems.Add(itinerario.NombreCliente);
             item.SubItems.Add(itinerario.EstaReservado.ToString());
+            item.SubItems.Add($"${itinerario.PrecioTotal.ToString()}");
             listViewItem.Add(item);
         }
 

@@ -110,6 +110,7 @@ internal class HotelesModel
         }
 
         ModuloItinerarios.AgregarDisponibilidadesAItinerarioActivo(itinerarioHotel);
+        ModuloItinerarios.CalcularPrecioTotalItinerarioActivo();
     }
 
     public List<string> FiltrarDisponibilidad(DateTime fechaDesde, DateTime fechaHasta, string cantHabitaciones)

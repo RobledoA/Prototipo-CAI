@@ -14,29 +14,5 @@ public class Itinerario
     public bool EstaReservado { get; set; }
     public string NombreCliente { get; set; }
     public List<TarifaVuelo> TarifasVuelos { get; set; }
-
-    /*private decimal PrecioTotalAsientos()
-    {
-        decimal total = 0;
-        foreach (var asiento in AsientosReservados)
-        {
-            total += asiento.Precio();
-        }
-        return total;
-    }*/
-
-    /*private decimal PrecioTotalHabitacion()
-    {
-        decimal total = 0;
-        foreach (var Habitacion in HabitacionesReservadas)
-        {
-            total += Habitacion.HabitacionRef.TarifaDiaria;
-        }
-        return total;
-    }*/
-
-    /*public decimal PrecioTotal()
-    {
-        return PrecioTotalAsientos() + PrecioTotalHabitacion();
-    }*/
+    public decimal PrecioTotal { get; set; }
 }
