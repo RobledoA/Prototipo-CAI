@@ -57,16 +57,16 @@ internal class ModuloVuelos
         {
             foreach (TarifaVuelo tarifa in vuelo.Tarifas)
             {
-                if (tarifa == tarifaVuelo)
+                if (tarifa.CodigoVuelo == tarifaVuelo.CodigoVuelo && tarifa.CodigoTarifaVuelo == tarifaVuelo.CodigoTarifaVuelo)
                 {
                     if (tarifa.TarifasVuelosDisponibles <  cantReserva)
                     {
-                        return $"No hay suficientes asientos disponibles para el vuelo {tarifaVuelo.CodigoVuelo} - Clase {tarifaVuelo.Clase} - {tarifaVuelo.TipoPasajero}.";
+                        return $"No hay suficientes asientos disponibles para el vuelo {tarifaVuelo.CodigoVuelo} - Clase {tarifaVuelo.Clase} - {tarifaVuelo.TipoPasajero}.\n";
                     }
                     return "";
                 }
             }
         }
-        return $"No se ha encontrado el vuelo {tarifaVuelo.CodigoVuelo} - Clase {tarifaVuelo.Clase} - {tarifaVuelo.TipoPasajero} en el sistema.";
+        return $"No se ha encontrado el vuelo {tarifaVuelo.CodigoVuelo} - Clase {tarifaVuelo.Clase} - {tarifaVuelo.TipoPasajero} en el sistema.\n";
     }
 }

@@ -6,6 +6,7 @@ using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Documents;
 
 namespace Prototipo_CAI;
 
@@ -225,4 +226,118 @@ internal class CrearReservaModel
         // NO LA PROBE MUCHO, HAY QUE FORZAR BASTANTE ESTA FUNCION A VER SI SE ROMPE
     }
 
+    public char CalcularTipoPasajero(DateTime fechaNacimiento)
+    {
+
+        DateTime fechaActual = DateTime.Now;
+        int edad = fechaActual.Year - fechaNacimiento.Year;
+
+        if (fechaNacimiento.Date > fechaActual.AddYears(-edad))
+        {
+            edad--;
+        }
+        if (edad < 2)
+        {
+            return 'I';
+        }
+        else if (edad < 12)
+        {
+            return 'M';
+        }
+        else
+        {
+            return 'A';
+        }
+    }
+
+    public int CalcularEdad(DateTime fechaNacimiento)
+    {
+
+        DateTime fechaActual = DateTime.Now;
+        int edad = fechaActual.Year - fechaNacimiento.Year;
+
+        if (fechaNacimiento.Date > fechaActual.AddYears(-edad))
+        {
+            edad--;
+        }
+        return edad;
+    }
+
+    public string ValidarPasajerosTarifas(List<ItemCheckBox> listcb, List<ListViewItem> listlsv)
+    {
+        string errores = "";
+        foreach (ItemCheckBox item in listcb)
+        {
+            if (item.Hotel == null)
+            {
+                int contador = 0;
+                foreach (ListViewItem lsvitem in listlsv)
+                {
+                    string[] vector = lsvitem.SubItems[5].Text.Split(';');
+                    List<int> list = new();
+                    char tipoPasajero = CalcularTipoPasajero(Convert.ToDateTime(lsvitem.SubItems[4].Text));
+                    foreach (string s in vector)
+                    {
+                        list.Add(int.Parse(s));
+                    }
+                    if (list.Contains(item.CodTarifa))
+                    {
+                        contador++;
+                        if (tipoPasajero != item.Vuelo.TipoPasajero)
+                        {
+                            errores += $"No puede asignar un pasajero tipo '{tipoPasajero}' a la tarifa {item.CodTarifa} (Debe ser '{item.Vuelo.TipoPasajero}').\n";
+                        }
+                    }
+                }
+                if (contador > 1)
+                {
+                    errores += $"No puede asignar la tarifa {item.CodTarifa} a 2 o más pasajeros distintos.\n";
+                }
+            }
+
+            if (item.Vuelo == null)
+            {
+                int contadorAdulto = 0;
+                int contadorMenor = 0;
+                int contadorInfante = 0;
+                foreach (ListViewItem lsvitem in listlsv)
+                {
+                    string[] vector = lsvitem.SubItems[5].Text.Split(';');
+                    List<int> list = new();
+                    int edad = CalcularEdad(Convert.ToDateTime(lsvitem.SubItems[4].Text));
+                    foreach (string s in vector)
+                    {
+                        list.Add(int.Parse(s));
+                    }
+                    if (list.Contains(item.CodTarifa))
+                    {
+                        if (edad < 2) { contadorInfante++; }
+                        else if (edad < 12) { contadorMenor++; }
+                        else { contadorAdulto++; }
+                    }
+                }
+                if (contadorAdulto == 0)
+                {
+                    errores += $"La tarifa {item.CodTarifa} no puede tener 0 adultos asignados.\n";
+                }
+                if ((contadorAdulto+contadorInfante+contadorMenor)>item.Hotel.Disponibilidad.Capacidad)
+                {
+                    errores += $"La cantidad de huéspedes asignados a la tarifa {item.CodTarifa} supera la capacidad máxima de esta.\n";
+                }
+                if (contadorAdulto > item.Hotel.Disponibilidad.Adultos)
+                {
+                    errores += $"La cantidad de adultos asignados a la tarifa {item.CodTarifa} supera la capacidad máxima de adultos de esta.\n";
+                }
+                if (contadorMenor > item.Hotel.Disponibilidad.Menores)
+                {
+                    errores += $"La cantidad de menores asignados a la tarifa {item.CodTarifa} supera la capacidad máxima de menores de esta.\n";
+                }
+                if (contadorInfante > item.Hotel.Disponibilidad.Infantes)
+                {
+                    errores += $"La cantidad de infantes asignados a la tarifa {item.CodTarifa} supera la capacidad máxima de infantes de esta.\n";
+                }
+            }
+        }
+        return errores;
+    }
 }

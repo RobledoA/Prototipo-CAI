@@ -160,11 +160,14 @@ namespace Prototipo_CAI
 
             string errores = model.ValidarDisponibilidadTarifas(list);
 
+            errores += model.ValidarPasajerosTarifas(list, listViewItems);
+
             if (!string.IsNullOrEmpty(errores))
             {
                 MessageBox.Show(errores);
                 return;
             }
+
 
         }
     }
