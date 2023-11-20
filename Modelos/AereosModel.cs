@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Prototipo_CAI;
@@ -80,5 +81,16 @@ internal class AereosModel
         List<TarifaVuelo> listTarifas = ModuloItinerarios.ItinerarioActivo.TarifasVuelos;
         List<ListViewItem> list = FormatoVuelosItinerarioActivo(listTarifas);
         return list;
+    }
+
+    public decimal CalcularTotal(List<ListViewItem> list)
+    {
+        decimal total = 0;
+        foreach (ListViewItem item in list)
+        {
+            string precioLimpio = Regex.Replace(item.SubItems[6].Text, "\\$", "");
+            total += Convert.ToDecimal(precioLimpio);
+        }
+        return total;
     }
 }

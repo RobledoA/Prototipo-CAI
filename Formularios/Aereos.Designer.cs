@@ -71,6 +71,7 @@
             columnHeader13 = new ColumnHeader();
             columnHeader14 = new ColumnHeader();
             columnHeader15 = new ColumnHeader();
+            lblSubTotal = new Label();
             grpAereos.SuspendLayout();
             SuspendLayout();
             // 
@@ -161,7 +162,7 @@
             grpAereos.Controls.Add(lblOrigenAereos);
             grpAereos.Controls.Add(txtOrigenAereos);
             grpAereos.ForeColor = Color.White;
-            grpAereos.Location = new Point(12, 350);
+            grpAereos.Location = new Point(12, 339);
             grpAereos.Name = "grpAereos";
             grpAereos.Size = new Size(1133, 87);
             grpAereos.TabIndex = 11;
@@ -284,7 +285,7 @@
             btnAgregarItinerarioAereos.FlatAppearance.BorderSize = 0;
             btnAgregarItinerarioAereos.FlatStyle = FlatStyle.Flat;
             btnAgregarItinerarioAereos.ForeColor = Color.White;
-            btnAgregarItinerarioAereos.Location = new Point(525, 141);
+            btnAgregarItinerarioAereos.Location = new Point(527, 141);
             btnAgregarItinerarioAereos.Name = "btnAgregarItinerarioAereos";
             btnAgregarItinerarioAereos.Size = new Size(102, 26);
             btnAgregarItinerarioAereos.TabIndex = 7;
@@ -321,7 +322,7 @@
             btnQuitarItinerarioAereos.FlatAppearance.BorderSize = 0;
             btnQuitarItinerarioAereos.FlatStyle = FlatStyle.Flat;
             btnQuitarItinerarioAereos.ForeColor = Color.White;
-            btnQuitarItinerarioAereos.Location = new Point(525, 202);
+            btnQuitarItinerarioAereos.Location = new Point(527, 190);
             btnQuitarItinerarioAereos.Name = "btnQuitarItinerarioAereos";
             btnQuitarItinerarioAereos.Size = new Size(102, 26);
             btnQuitarItinerarioAereos.TabIndex = 21;
@@ -407,12 +408,25 @@
             // 
             columnHeader15.Text = "Aerolinea";
             // 
+            // lblSubTotal
+            // 
+            lblSubTotal.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            lblSubTotal.ForeColor = Color.White;
+            lblSubTotal.Location = new Point(934, 320);
+            lblSubTotal.Name = "lblSubTotal";
+            lblSubTotal.RightToLeft = RightToLeft.No;
+            lblSubTotal.Size = new Size(213, 18);
+            lblSubTotal.TabIndex = 31;
+            lblSubTotal.Text = "Subtotal: -";
+            lblSubTotal.TextAlign = ContentAlignment.TopRight;
+            // 
             // Aereos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(86, 124, 153);
             ClientSize = new Size(1159, 456);
+            Controls.Add(lblSubTotal);
             Controls.Add(lsvItinerarioAereos);
             Controls.Add(lblItinerarioActivo);
             Controls.Add(btnQuitarItinerarioAereos);
@@ -484,5 +498,6 @@
         private ColumnHeader columnHeader15;
         private FontAwesome.Sharp.IconButton iconbtnLimpiarBuscarItinerario;
         private ColumnHeader hdCodigoTarifaVuelo;
+        private Label lblSubTotal;
     }
 }

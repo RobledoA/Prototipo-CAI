@@ -65,6 +65,7 @@
             hdCapacidadHotelItinerario = new ColumnHeader();
             hdCodigoDisponibilidadItinerario = new ColumnHeader();
             lblHotelEnItinerario = new Label();
+            lblSubTotal = new Label();
             grpHoteles.SuspendLayout();
             SuspendLayout();
             // 
@@ -395,12 +396,25 @@
             lblHotelEnItinerario.TabIndex = 31;
             lblHotelEnItinerario.Text = "En el itinerario";
             // 
+            // lblSubTotal
+            // 
+            lblSubTotal.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            lblSubTotal.ForeColor = Color.White;
+            lblSubTotal.Location = new Point(854, 302);
+            lblSubTotal.Name = "lblSubTotal";
+            lblSubTotal.RightToLeft = RightToLeft.No;
+            lblSubTotal.Size = new Size(213, 15);
+            lblSubTotal.TabIndex = 32;
+            lblSubTotal.Text = "Subtotal: -";
+            lblSubTotal.TextAlign = ContentAlignment.TopRight;
+            // 
             // Hoteles
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(86, 124, 153);
             ClientSize = new Size(1078, 420);
+            Controls.Add(lblSubTotal);
             Controls.Add(lblHotelEnItinerario);
             Controls.Add(lsvHotelesAgregados);
             Controls.Add(btnQuitarItinerarioHotel);
@@ -461,5 +475,6 @@
         private ComboBox cmbTipoHabitacion;
         private ColumnHeader hdCodigoDisponibilidad;
         private ColumnHeader hdCodigoDisponibilidadItinerario;
+        private Label lblSubTotal;
     }
 }

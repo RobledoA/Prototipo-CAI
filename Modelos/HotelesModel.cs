@@ -123,4 +123,15 @@ internal class HotelesModel
         }
         return items;
     }
+
+    public decimal CalcularTotal(List<ListViewItem> list)
+    {
+        decimal total = 0;
+        foreach (ListViewItem item in list)
+        {
+            string precioLimpio = Regex.Replace(item.SubItems[5].Text, "\\$", "");
+            total += Convert.ToDecimal(precioLimpio);
+        }
+        return total;
+    }
 }

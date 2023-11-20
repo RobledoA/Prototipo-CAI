@@ -45,7 +45,12 @@ public partial class Aereos : Form
             lsvAereos.Items.Add(item);
             todosLosVuelos.Add(item); // Almacena una copia del elemento
         }
-
+        List<ListViewItem> lsvlist = new();
+        foreach (ListViewItem lsvitem in lsvItinerarioAereos.Items)
+        {
+            lsvlist.Add(lsvitem);
+        }
+        lblSubTotal.Text = $"Subtotal: ${model.CalcularTotal(lsvlist)}";
     }
 
     private void FiltrarVuelos()
@@ -117,6 +122,7 @@ public partial class Aereos : Form
 
     private void btnAgregarItinerarioAereos_Click(object sender, EventArgs e)
     {
+        AereosModel model = new AereosModel();
         if (lsvAereos.SelectedItems.Count == 0)
         {
             MessageBox.Show("Debe seleccionar el vuelo que desea agregar al itinerario.", "Error");
@@ -127,10 +133,17 @@ public partial class Aereos : Form
             lsvItinerarioAereos.Items.Add((ListViewItem)item.Clone());
 
         }
+        List<ListViewItem> lsvlist = new();
+        foreach (ListViewItem lsvitem in lsvItinerarioAereos.Items)
+        {
+            lsvlist.Add(lsvitem);
+        }
+        lblSubTotal.Text = $"Subtotal: ${model.CalcularTotal(lsvlist)}";
     }
 
     private void btnQuitarItinerarioAereos_Click(object sender, EventArgs e)
     {
+        AereosModel model = new AereosModel();
         if (lsvItinerarioAereos.SelectedItems.Count > 0)
         {
             lsvItinerarioAereos.Items.Remove(lsvItinerarioAereos.SelectedItems[0]);
@@ -139,6 +152,12 @@ public partial class Aereos : Form
         {
             MessageBox.Show("Debe seleccionar un vuelo de la lista derecha para poder quitarlo", "Error");
         }
+        List<ListViewItem> lsvlist = new();
+        foreach (ListViewItem lsvitem in lsvItinerarioAereos.Items)
+        {
+            lsvlist.Add(lsvitem);
+        }
+        lblSubTotal.Text = $"Subtotal: ${model.CalcularTotal(lsvlist)}";
     }
 
     private void iconbtnLimpiarBuscarItinerario_Click(object sender, EventArgs e)

@@ -39,6 +39,12 @@ public partial class Hoteles : Form
             {
                 lsvHotelesAgregados.Items.Add(list);
             }
+            List<ListViewItem> lsvlist = new();
+            foreach (ListViewItem lsvitem in lsvHotelesAgregados.Items)
+            {
+                lsvlist.Add(lsvitem);
+            }
+            lblSubTotal.Text = $"Subtotal: ${model.CalcularTotal(lsvlist)}";
         }
 
         lsvHoteles.Items.Clear(); // Limpia la lista antes de cargar nuevos elementos
@@ -77,14 +83,22 @@ public partial class Hoteles : Form
         }
         else
         {
+            HotelesModel model = new();
             ListViewItem item = lsvHoteles.SelectedItems[0];
             var itemAgregado = lsvHotelesAgregados.Items.Add(item.Clone() as ListViewItem);
             itemAgregado.Tag = new DesdeHasta { Desde = dtpFechaDesdeHoteles.Value, Hasta = dtpFechaHastaHoteles.Value };
+            List<ListViewItem> lsvlist = new();
+            foreach (ListViewItem lsvitem in lsvHotelesAgregados.Items)
+            {
+                lsvlist.Add(lsvitem);
+            }
+            lblSubTotal.Text = $"Subtotal: ${model.CalcularTotal(lsvlist)}";
         }
     }
 
     private void btnQuitarItinerarioHotel_Click(object sender, EventArgs e)
     {
+        HotelesModel model = new();
         if (lsvHotelesAgregados.SelectedItems.Count > 0)
         {
             lsvHotelesAgregados.Items.Remove(lsvHotelesAgregados.SelectedItems[0]);
@@ -93,6 +107,12 @@ public partial class Hoteles : Form
         {
             MessageBox.Show("Debe seleccionar un hotel de la lista derecha para poder quitarlo", "Error");
         }
+        List<ListViewItem> lsvlist = new();
+        foreach (ListViewItem lsvitem in lsvHotelesAgregados.Items)
+        {
+            lsvlist.Add(lsvitem);
+        }
+        lblSubTotal.Text = $"Subtotal: ${model.CalcularTotal(lsvlist)}";
     }
 
     private void btnLimpiarFiltros_Click(object sender, EventArgs e)
