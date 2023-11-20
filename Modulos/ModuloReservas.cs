@@ -116,7 +116,9 @@ internal class ModuloReservas
                         {
                             ModuloVuelos.AumentarDisponibilidadVuelo(tarifa);
                         }
+                        ModuloItinerarios.ItinerarioReservadoFalse(reservaSeleccionada.ItinerarioAsociado);
                     }
+                    
                     // No es necesario manejar el caso de DialogResult.No o DialogResult.Cancel en este contexto
                 }
             }

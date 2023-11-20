@@ -119,6 +119,18 @@ internal static class ModuloItinerarios
         ItinerarioActivo.PrecioTotal = PrecioTotal;
     }
 
+    public static void ItinerarioReservadoTrue(Itinerario itinerario)
+    {
+        Itinerario itinerarioAModificar = DevolverItinerarioActivo(itinerario);
+        itinerario.EstaReservado = true;
+    }
+
+    public static void ItinerarioReservadoFalse(Itinerario itinerario)
+    {
+        Itinerario itinerarioAModificar = DevolverItinerarioActivo(itinerario);
+        itinerario.EstaReservado = false;
+    }
+
 
 
 }

@@ -16,9 +16,10 @@ internal static class Program
         ApplicationConfiguration.Initialize();
         Application.Run(new Form1());
 
-        //HotelesAlmacen.Grabar();
-        //VuelosAlmacen.Grabar();
-        //ItinerariosAlmacen.Grabar();
-        //ReservasAlmacen.Grabar();
+
+        HotelesAlmacen.Grabar();
+        VuelosAlmacen.Grabar();
+        ItinerariosAlmacen.Grabar();
+        ReservasAlmacen.Grabar();
     }
 }

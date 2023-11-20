@@ -29,10 +29,12 @@ namespace Prototipo_CAI
         private void btnConfirmarReserva_Click(object sender, EventArgs e)
         {
             ModuloReservas.ConfirmarReserva(lsvReservas);
+            ReservasModel.Actualizar(lsvReservas);
         }
         private void btnCancelarReserva_Click(object sender, EventArgs e)
         {
             ModuloReservas.CancelarReservas(lsvReservas);
+            ReservasModel.Actualizar(lsvReservas);
         }
 
         //procedimientos que responden al formulario
@@ -64,6 +66,11 @@ namespace Prototipo_CAI
         private void iconbtnRefrescaBuscarReserva_Click_1(object sender, EventArgs e)
         {
             ReservasModel.Actualizar(lsvReservas);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ModuloReservas.EliminarReserva(lsvReservas.SelectedItems[0].Text);
         }
     }
 }

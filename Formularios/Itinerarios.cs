@@ -283,6 +283,11 @@ public partial class Itinerarios : Form
                 model.CambiarItinerarioActivo(codItinerario);
                 CrearReserva crearReserva = new();
                 crearReserva.ShowDialog();
+                lsvItinerario.Items.Clear();
+                foreach (ListViewItem item2 in model.FormatoItinerarios())
+                {
+                    lsvItinerario.Items.Add(item2);
+                }
             }
         }
         else

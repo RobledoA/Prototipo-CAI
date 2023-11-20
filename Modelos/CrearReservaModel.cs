@@ -411,6 +411,8 @@ internal class CrearReservaModel
             }
         }
         MessageBox.Show($"Se ha creado una pre-reserva exitósamente. Su código de reserva es {codReserva}.");
+
+        ModuloItinerarios.ItinerarioReservadoTrue(itinerarioAsociado);
     }
 
     public string ValidarVuelosRepetidos(List<ItemCheckBox> list)
@@ -432,4 +434,5 @@ internal class CrearReservaModel
         }
         return "";
     }
+
 }
