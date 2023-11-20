@@ -69,4 +69,40 @@ internal class ModuloVuelos
         }
         return $"No se ha encontrado el vuelo {tarifaVuelo.CodigoVuelo} - Clase {tarifaVuelo.Clase} - {tarifaVuelo.TipoPasajero} en el sistema.\n";
     }
+
+    public static void ReducirDisponibilidadVuelo(TarifaVuelo tarifaIti)
+    {
+
+        foreach (Vuelo vuelo in Vuelos)
+        {
+            if (vuelo.CodigoVuelo == tarifaIti.CodigoVuelo)
+            {
+                foreach (TarifaVuelo tarifa in vuelo.Tarifas)
+                {
+                    if (tarifa.CodigoTarifaVuelo == tarifaIti.CodigoTarifaVuelo)
+                    {
+                        tarifa.TarifasVuelosDisponibles--;
+                    }
+                }
+            }  
+        }
+    }
+
+    public static void AumentarDisponibilidadVuelo(TarifaVuelo tarifaIti)
+    {
+
+        foreach (Vuelo vuelo in Vuelos)
+        {
+            if (vuelo.CodigoVuelo == tarifaIti.CodigoVuelo)
+            {
+                foreach (TarifaVuelo tarifa in vuelo.Tarifas)
+                {
+                    if (tarifa.CodigoTarifaVuelo == tarifaIti.CodigoTarifaVuelo)
+                    {
+                        tarifa.TarifasVuelosDisponibles++;
+                    }
+                }
+            }
+        }
+    }
 }

@@ -127,4 +127,37 @@ internal static class ModuloHoteles
         return "";
     }
 
+    public static void ReducirDisponibilidadHotel(ItinerarioHotel dispIti)
+    {
+        foreach (Hotel hotel in Hoteles)
+        {
+            foreach (Disponibilidad disp in hotel.Disponibilidades)
+            {
+                if (dispIti.Disponibilidad.CodigoDisponibilidad == disp.CodigoDisponibilidad)
+                {
+                    for (DateTime i = dispIti.Desde.Date; i <= dispIti.Hasta.Date; i = i.AddDays(1))
+                    {
+                        disp.DiasDisponibles[i]--;
+                    }
+                }
+            }
+        }
+    }
+
+    public static void AumentarDisponibilidadHotel(ItinerarioHotel dispIti)
+    {
+        foreach (Hotel hotel in Hoteles)
+        {
+            foreach (Disponibilidad disp in hotel.Disponibilidades)
+            {
+                if (dispIti.Disponibilidad.CodigoDisponibilidad == disp.CodigoDisponibilidad)
+                {
+                    for (DateTime i = dispIti.Desde.Date; i <= dispIti.Hasta.Date; i = i.AddDays(1))
+                    {
+                        disp.DiasDisponibles[i]++;
+                    }
+                }
+            }
+        }
+    }
 }

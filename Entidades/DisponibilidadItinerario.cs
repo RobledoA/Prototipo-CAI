@@ -9,6 +9,6 @@ namespace Prototipo_CAI;
 public class DisponibilidadItinerario
 {
     public int CodigoDisponiblidad { get; set; }
-    public DateOnly FechaDesde { get; set; }
-    public DateOnly FechaHasta { get; set; }
+    public DateTime FechaDesde { get; set; }
+    public DateTime FechaHasta { get; set; }
 }

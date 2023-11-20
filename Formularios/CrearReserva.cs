@@ -168,6 +168,9 @@ namespace Prototipo_CAI
                 return;
             }
 
+            // CREACION DE RESERVA
+
+            model.CrearReserva(list, listViewItems);
 
         }
     }

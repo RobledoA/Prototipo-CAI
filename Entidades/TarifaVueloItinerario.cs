@@ -8,6 +8,7 @@ namespace Prototipo_CAI;
 
 public class TarifaVueloItinerario
 {
+    public string CodigoVuelo { get; set; }
     public int CodigoTarifa { get; set; }
     public int Cantidad { get; set; }
 }

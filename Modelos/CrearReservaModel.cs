@@ -340,4 +340,76 @@ internal class CrearReservaModel
         }
         return errores;
     }
+
+    public void CrearReserva(List<ItemCheckBox> listcb, List<ListViewItem> listlsv)
+    {
+        Itinerario itinerarioActivo = ModuloItinerarios.LlamarItinerarioActivo();
+        Itinerario itinerarioAsociado = ModuloItinerarios.DevolverItinerarioActivo(itinerarioActivo);
+        List<TarifaPasajero> pasajeros = new();
+        string estadoReserva = "Pendiente";
+        DateTime fechaReserva = DateTime.Now;
+        int codReserva = ModuloReservas.ObtenerUltimoCodigoReserva() + 1;
+        foreach (ListViewItem lsvitem in listlsv)
+        {
+            List<DisponibilidadItinerario> listDisp = new();
+            List<TarifaVueloItinerario> listTarifa = new();
+            string nombre = lsvitem.Text;
+            string dni = lsvitem.SubItems[1].Text;
+            string nacionalidad = lsvitem.SubItems[2].Text;
+            string genero = lsvitem.SubItems[3].Text;
+            DateTime fechaNac = Convert.ToDateTime(lsvitem.SubItems[4].Text);
+            string[] vector = lsvitem.SubItems[5].Text.Split(';');
+            List<int> list = new();
+            foreach (string s in vector)
+            {
+                list.Add(int.Parse(s));
+            }
+            foreach (ItemCheckBox item in listcb)
+            {
+                if (list.Contains(item.CodTarifa) && item.Hotel == null)
+                {
+                    TarifaVueloItinerario tarifa = new();
+                    tarifa.CodigoVuelo = item.Vuelo.CodigoVuelo;
+                    tarifa.CodigoTarifa = item.CodTarifa;
+                    listTarifa.Add(tarifa);
+                }
+                if (list.Contains(item.CodTarifa) && item.Vuelo == null)
+                {
+                    DisponibilidadItinerario disp = new();
+                    disp.CodigoDisponiblidad = item.Hotel.Disponibilidad.CodigoDisponibilidad;
+                    disp.FechaDesde = item.Hotel.Desde;
+                    disp.FechaHasta = item.Hotel.Hasta;
+                    listDisp.Add(disp);
+                }
+            }
+            TarifaPasajero pasajero = new();
+            pasajero.Nombre = nombre;
+            pasajero.DNI = Convert.ToInt32(dni);
+            pasajero.Nacionalidad = nacionalidad;
+            pasajero.Genero = genero;
+            pasajero.DisponibilidadesAsociadas = listDisp;
+            pasajero.TarifasVuelosAsociadas = listTarifa;
+            pasajeros.Add(pasajero);
+        }
+
+        Reserva reserva = new();
+        reserva.CodigoReserva = codReserva;
+        reserva.FechaReserva = fechaReserva;
+        reserva.EstadoReserva = estadoReserva;
+        reserva.ItinerarioAsociado = itinerarioAsociado;
+        reserva.TarifasPasajeros = pasajeros;
+        ModuloReservas.AgregarReserva(reserva);
+        foreach (ItemCheckBox itemcb in listcb)
+        {
+            if (itemcb.Vuelo == null)
+            {
+                ModuloHoteles.ReducirDisponibilidadHotel(itemcb.Hotel);
+            }
+            if (itemcb.Hotel == null)
+            {
+                ModuloVuelos.ReducirDisponibilidadVuelo(itemcb.Vuelo);
+            }
+        }
+        MessageBox.Show($"Se ha creado una pre-reserva exitósamente. Su código de reserva es {codReserva}.");
+    }
 }

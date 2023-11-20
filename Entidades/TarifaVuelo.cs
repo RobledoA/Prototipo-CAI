@@ -13,10 +13,4 @@ public class TarifaVuelo
     public decimal Precio { get; set; }
     public int TarifasVuelosDisponibles { get; set; }
     public char TipoPasajero { get; set; }
-
-    /*public decimal CalcularPrecioFinal()
-    {
-        // Obtenemos el Precio final de la instancia
-        return PrecioBase * (1 + Impuestos) * (1 + Comision);
-    }*/
 }

@@ -97,6 +97,10 @@ internal class ModuloReservas
                 {
                     MessageBox.Show("Esta reserva ya ha sido cancelada.");
                 }
+                else if (reservaSeleccionada.EstadoReserva.Equals("Confirmado", StringComparison.OrdinalIgnoreCase))
+                {
+                    MessageBox.Show("Esta reserva ya ha sido confirmada y no se puede cancelar.");
+                }
                 else
                 {
                     DialogResult result = MessageBox.Show("¿Desea cancelar esta reserva?", "Cancelar reserva", MessageBoxButtons.YesNo);
@@ -104,6 +108,14 @@ internal class ModuloReservas
                     if (result == DialogResult.Yes)
                     {
                         reservaSeleccionada.EstadoReserva = "Cancelado";
+                        foreach (ItinerarioHotel itinerarioHotel in reservaSeleccionada.ItinerarioAsociado.Disponibilidades)
+                        {
+                            ModuloHoteles.AumentarDisponibilidadHotel(itinerarioHotel);
+                        }
+                        foreach (TarifaVuelo tarifa in reservaSeleccionada.ItinerarioAsociado.TarifasVuelos)
+                        {
+                            ModuloVuelos.AumentarDisponibilidadVuelo(tarifa);
+                        }
                     }
                     // No es necesario manejar el caso de DialogResult.No o DialogResult.Cancel en este contexto
                 }
@@ -170,5 +182,15 @@ internal class ModuloReservas
         {
             listView.Items.Add(item);
         }
+    }
+
+    public static int ObtenerUltimoCodigoReserva()
+    {
+        return Reservas.Last().CodigoReserva;
+    }
+
+    public static void AgregarReserva(Reserva reserva)
+    {
+        Reservas.Add(reserva);
     }
 }

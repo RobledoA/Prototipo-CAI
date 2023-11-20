@@ -16,12 +16,20 @@ internal class ReservasModel
 
         foreach (Reserva reserva in listReservas)
         {
-            Itinerario itinerario = listItinerarios.Find(i => i.CodigoItinerario == reserva.CodigoReserva);
+            Itinerario itinerario = reserva.ItinerarioAsociado;
 
             if (itinerario != null)
             {
                 ListViewItem item = new ListViewItem(reserva.CodigoReserva.ToString());
                 item.SubItems.Add(itinerario.NombreCliente.ToString());
+                item.SubItems.Add(reserva.FechaReserva.ToString());
+                item.SubItems.Add(reserva.EstadoReserva);
+                listViewItems.Add(item);
+            }
+            else
+            {
+                ListViewItem item = new ListViewItem(reserva.CodigoReserva.ToString());
+                item.SubItems.Add("test");
                 item.SubItems.Add(reserva.FechaReserva.ToString());
                 item.SubItems.Add(reserva.EstadoReserva);
                 listViewItems.Add(item);

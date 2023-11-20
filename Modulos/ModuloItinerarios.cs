@@ -90,6 +90,18 @@ internal static class ModuloItinerarios
         ItinerarioActivo.Disponibilidades = disp;
     }
 
+    public static Itinerario DevolverItinerarioActivo(Itinerario itinerarioActivo)
+    {
+        foreach (Itinerario itinerario in Itinerarios)
+        {
+            if (itinerarioActivo.CodigoItinerario == itinerario.CodigoItinerario)
+            {
+                return itinerario;
+            }
+        }
+        return null;
+    }
+
 
 
 }
