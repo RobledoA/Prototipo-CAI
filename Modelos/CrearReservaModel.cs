@@ -412,4 +412,24 @@ internal class CrearReservaModel
         }
         MessageBox.Show($"Se ha creado una pre-reserva exitósamente. Su código de reserva es {codReserva}.");
     }
+
+    public string ValidarVuelosRepetidos(List<ItemCheckBox> list)
+    {
+        List<string> codVuelos = new();
+        foreach (ItemCheckBox itemcb in list)
+        {
+            if (itemcb.Hotel == null)
+            {
+                if (codVuelos.Contains(itemcb.Vuelo.CodigoVuelo))
+                {
+                    return $"No puede asignar más de un asiento del vuelo {itemcb.Vuelo.CodigoVuelo} al pasajero.";
+                }
+                else
+                {
+                    codVuelos.Add(itemcb.Vuelo.CodigoVuelo);
+                }
+            }
+        }
+        return "";
+    }
 }

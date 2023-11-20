@@ -84,6 +84,12 @@ namespace Prototipo_CAI
 
             string errores = model.ValidarCampos(nombreApellido, dni, fechaNac, nacionalidad, genero);
             errores += model.ValidarRepetidos(dni, list);
+            List<ItemCheckBox> listcb = new();
+            foreach (ItemCheckBox item in this.chklbTarifasAsignadas.CheckedItems)
+            {
+                listcb.Add(item);
+            }
+            
 
             if (!string.IsNullOrWhiteSpace(errores))
             {
@@ -94,6 +100,14 @@ namespace Prototipo_CAI
             if (chklbTarifasAsignadas.CheckedItems.Count == 0)
             {
                 MessageBox.Show("Debe seleccionar al menos una tarifa.", "Error");
+                return;
+            }
+
+            errores += model.ValidarVuelosRepetidos(listcb);
+
+            if (!string.IsNullOrWhiteSpace(errores))
+            {
+                MessageBox.Show(errores, "Error");
                 return;
             }
 
