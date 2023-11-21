@@ -258,17 +258,26 @@ public partial class Itinerarios : Form
         }
         else
         {
-            var r = MessageBox.Show("Desea eliminar datos de cliente?", "Eliminar itinerario", MessageBoxButtons.YesNo);
-            if (r == DialogResult.Yes)
+            var item2 = lsvItinerario.SelectedItems[0];
+            if (Convert.ToInt32(item2.Text) == ModuloItinerarios.ItinerarioActivo.CodigoItinerario)
             {
-                model.EliminarItinerario(lsvItinerario.SelectedItems[0].Text);
-                lsvItinerario.Items.Clear();
-                foreach (ListViewItem item in model.FormatoItinerarios())
-                {
-                    lsvItinerario.Items.Add(item);
-                }
-
+                MessageBox.Show("No puede eliminar el itinerario activo.", "Error");
             }
+            else
+            {
+                var r = MessageBox.Show("Desea eliminar datos de cliente?", "Eliminar itinerario", MessageBoxButtons.YesNo);
+                if (r == DialogResult.Yes)
+                {
+                    model.EliminarItinerario(lsvItinerario.SelectedItems[0].Text);
+                    lsvItinerario.Items.Clear();
+                    foreach (ListViewItem item in model.FormatoItinerarios())
+                    {
+                        lsvItinerario.Items.Add(item);
+                    }
+
+                }
+            }
+            
         }
     }
     #endregion
