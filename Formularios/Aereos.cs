@@ -107,13 +107,7 @@ public partial class Aereos : Form
     }
 
 
-    private void lsvAereos_ColumnWidthChanged_1(object sender, ColumnWidthChangedEventArgs e)
-    {
-        if (lsvAereos.Columns[e.ColumnIndex].Width < 50)
-        {
-            lsvAereos.Columns[e.ColumnIndex].Width = 50;
-        }
-    }
+
 
     private void lblFechaIdaAereos_Click(object sender, EventArgs e)
     {
@@ -193,4 +187,34 @@ public partial class Aereos : Form
         }
 
     }
+
+    #region Tamaño
+    private void lsvAereos_ColumnWidthChanged_1(object sender, ColumnWidthChangedEventArgs e)
+    {
+        if (lsvAereos.Columns[e.ColumnIndex].Width < 50)
+        {
+            lsvAereos.Columns[e.ColumnIndex].Width = 50;
+        }
+        if (lsvAereos.Columns[e.ColumnIndex].Width > 130)
+        {
+            lsvAereos.Columns[e.ColumnIndex].Width = 130;
+        }
+    }
+
+    private void lsvItinerarioAereos_ColumnWidthChanged(object sender, ColumnWidthChangedEventArgs e)
+    {
+        if (lsvItinerarioAereos.Columns[e.ColumnIndex].Width < 50)
+        {
+            lsvItinerarioAereos.Columns[e.ColumnIndex].Width = 50;
+        }
+        if (lsvItinerarioAereos.Columns[e.ColumnIndex].Width > 130)
+        {
+            lsvItinerarioAereos.Columns[e.ColumnIndex].Width = 130;
+        }
+    }
+
+    #endregion
+
+
+
 }

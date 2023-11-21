@@ -220,4 +220,34 @@ public partial class Hoteles : Form
         }
     }
 
+    #region Tamaño
+    private void lsvHoteles_ColumnWidthChanged_1(object sender, ColumnWidthChangedEventArgs e)
+    {
+        if (lsvHoteles.Columns[e.ColumnIndex].Width < 50)
+        {
+            lsvHoteles.Columns[e.ColumnIndex].Width = 50;
+        }
+        if (lsvHoteles.Columns[e.ColumnIndex].Width > 200)
+        {
+            lsvHoteles.Columns[e.ColumnIndex].Width = 200;
+        }
+    }
+
+    private void lsvHotelesAgregados_ColumnWidthChanged(object sender, ColumnWidthChangedEventArgs e)
+    {
+        if (lsvHotelesAgregados.Columns[e.ColumnIndex].Width < 50)
+        {
+            lsvHotelesAgregados.Columns[e.ColumnIndex].Width = 50;
+        }
+        if (lsvHotelesAgregados.Columns[e.ColumnIndex].Width > 130)
+        {
+            lsvHotelesAgregados.Columns[e.ColumnIndex].Width = 130;
+        }
+    }
+
+    #endregion
+
+
+
+
 }

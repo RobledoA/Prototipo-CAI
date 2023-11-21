@@ -177,7 +177,7 @@
             iconbtnLimpiarBuscarItinerario.IconColor = Color.Black;
             iconbtnLimpiarBuscarItinerario.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconbtnLimpiarBuscarItinerario.IconSize = 20;
-            iconbtnLimpiarBuscarItinerario.Location = new Point(1090, 45);
+            iconbtnLimpiarBuscarItinerario.Location = new Point(1092, 45);
             iconbtnLimpiarBuscarItinerario.Name = "iconbtnLimpiarBuscarItinerario";
             iconbtnLimpiarBuscarItinerario.Size = new Size(25, 25);
             iconbtnLimpiarBuscarItinerario.TabIndex = 31;
@@ -187,7 +187,7 @@
             // lblTipoPasajeroAereos
             // 
             lblTipoPasajeroAereos.AutoSize = true;
-            lblTipoPasajeroAereos.Location = new Point(695, 29);
+            lblTipoPasajeroAereos.Location = new Point(684, 29);
             lblTipoPasajeroAereos.Name = "lblTipoPasajeroAereos";
             lblTipoPasajeroAereos.Size = new Size(77, 15);
             lblTipoPasajeroAereos.TabIndex = 29;
@@ -198,7 +198,7 @@
             cmbTipoPasajeroAereos.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbTipoPasajeroAereos.FormattingEnabled = true;
             cmbTipoPasajeroAereos.Items.AddRange(new object[] { "A", "M", "I" });
-            cmbTipoPasajeroAereos.Location = new Point(695, 47);
+            cmbTipoPasajeroAereos.Location = new Point(684, 47);
             cmbTipoPasajeroAereos.Name = "cmbTipoPasajeroAereos";
             cmbTipoPasajeroAereos.Size = new Size(161, 23);
             cmbTipoPasajeroAereos.TabIndex = 28;
@@ -209,7 +209,7 @@
             cmbClaseAereos.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbClaseAereos.FormattingEnabled = true;
             cmbClaseAereos.Items.AddRange(new object[] { "E", "P", "B", "F" });
-            cmbClaseAereos.Location = new Point(901, 47);
+            cmbClaseAereos.Location = new Point(890, 47);
             cmbClaseAereos.Name = "cmbClaseAereos";
             cmbClaseAereos.Size = new Size(161, 23);
             cmbClaseAereos.TabIndex = 27;
@@ -218,7 +218,7 @@
             // lblClaseAereos
             // 
             lblClaseAereos.AutoSize = true;
-            lblClaseAereos.Location = new Point(901, 29);
+            lblClaseAereos.Location = new Point(890, 29);
             lblClaseAereos.Name = "lblClaseAereos";
             lblClaseAereos.Size = new Size(35, 15);
             lblClaseAereos.TabIndex = 26;
@@ -227,7 +227,7 @@
             // lblFechaIdaAereos
             // 
             lblFechaIdaAereos.AutoSize = true;
-            lblFechaIdaAereos.Location = new Point(435, 29);
+            lblFechaIdaAereos.Location = new Point(443, 29);
             lblFechaIdaAereos.Name = "lblFechaIdaAereos";
             lblFechaIdaAereos.Size = new Size(72, 15);
             lblFechaIdaAereos.TabIndex = 7;
@@ -237,7 +237,7 @@
             // dtFechaDesdeAereos
             // 
             dtFechaDesdeAereos.Format = DateTimePickerFormat.Short;
-            dtFechaDesdeAereos.Location = new Point(435, 47);
+            dtFechaDesdeAereos.Location = new Point(443, 47);
             dtFechaDesdeAereos.Name = "dtFechaDesdeAereos";
             dtFechaDesdeAereos.Size = new Size(195, 23);
             dtFechaDesdeAereos.TabIndex = 6;
@@ -247,7 +247,7 @@
             // lblDestinoAereos
             // 
             lblDestinoAereos.AutoSize = true;
-            lblDestinoAereos.Location = new Point(223, 29);
+            lblDestinoAereos.Location = new Point(231, 29);
             lblDestinoAereos.Name = "lblDestinoAereos";
             lblDestinoAereos.Size = new Size(47, 15);
             lblDestinoAereos.TabIndex = 5;
@@ -255,7 +255,7 @@
             // 
             // txtDestinoAereos
             // 
-            txtDestinoAereos.Location = new Point(223, 47);
+            txtDestinoAereos.Location = new Point(231, 47);
             txtDestinoAereos.Name = "txtDestinoAereos";
             txtDestinoAereos.Size = new Size(161, 23);
             txtDestinoAereos.TabIndex = 4;
@@ -354,6 +354,7 @@
             lsvItinerarioAereos.TabIndex = 30;
             lsvItinerarioAereos.UseCompatibleStateImageBehavior = false;
             lsvItinerarioAereos.View = View.Details;
+            lsvItinerarioAereos.ColumnWidthChanged += lsvItinerarioAereos_ColumnWidthChanged;
             lsvItinerarioAereos.SelectedIndexChanged += lsvItinerarioAereos_SelectedIndexChanged;
             // 
             // hdCodigoTarifaVueloItinerario

@@ -68,5 +68,22 @@ namespace Prototipo_CAI
             ReservasModel.Actualizar(lsvReservas);
         }
 
+
+        #region Tamaño
+
+        #endregion
+        private void lsvReservas_ColumnWidthChanged(object sender, ColumnWidthChangedEventArgs e)
+        {
+
+            if (lsvReservas.Columns[e.ColumnIndex].Width < 100)
+            {
+                lsvReservas.Columns[e.ColumnIndex].Width = 100;
+            }
+            if (lsvReservas.Columns[e.ColumnIndex].Width > 200)
+            {
+                lsvReservas.Columns[e.ColumnIndex].Width = 200;
+            }
+        
+        }
     }
 }

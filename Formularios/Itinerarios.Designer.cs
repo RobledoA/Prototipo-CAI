@@ -33,6 +33,7 @@
             hdCUILCUIT = new ColumnHeader();
             hdNombre = new ColumnHeader();
             hdReservado = new ColumnHeader();
+            hdPrecio = new ColumnHeader();
             fileSystemWatcher1 = new FileSystemWatcher();
             txtBuscarItinerario = new TextBox();
             lblItinerarios = new Label();
@@ -53,7 +54,6 @@
             txtNombreCliente = new TextBox();
             iconbtnLimpiarBuscarItinerario = new FontAwesome.Sharp.IconButton();
             iconbtnBuscarItinerario = new FontAwesome.Sharp.IconButton();
-            hdPrecio = new ColumnHeader();
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).BeginInit();
             panelMenuItinerario.SuspendLayout();
             panel1.SuspendLayout();
@@ -72,6 +72,7 @@
             lsvItinerario.TabIndex = 1;
             lsvItinerario.UseCompatibleStateImageBehavior = false;
             lsvItinerario.View = View.Details;
+            lsvItinerario.ColumnWidthChanged += lsvItinerario_ColumnWidthChanged;
             lsvItinerario.SelectedIndexChanged += lsvItinerario_SelectedIndexChanged;
             // 
             // hdCodItinerario
@@ -93,6 +94,11 @@
             // 
             hdReservado.Text = "Reservado";
             hdReservado.Width = 70;
+            // 
+            // hdPrecio
+            // 
+            hdPrecio.Text = "Precio Total";
+            hdPrecio.Width = 80;
             // 
             // fileSystemWatcher1
             // 
@@ -376,11 +382,6 @@
             iconbtnBuscarItinerario.TabIndex = 16;
             iconbtnBuscarItinerario.UseVisualStyleBackColor = false;
             iconbtnBuscarItinerario.Click += iconbtnBuscarItinerario_Click;
-            // 
-            // hdPrecio
-            // 
-            hdPrecio.Text = "Precio Total";
-            hdPrecio.Width = 80;
             // 
             // Itinerarios
             // 

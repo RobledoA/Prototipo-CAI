@@ -81,7 +81,7 @@ namespace Prototipo_CAI
             {
                 listcb.Add(item);
             }
-            
+
 
             if (!string.IsNullOrWhiteSpace(errores))
             {
@@ -131,6 +131,13 @@ namespace Prototipo_CAI
             cmbNacionalidad.SelectedIndex = -1;
             cmbGenero.SelectedIndex = -1;
             dtpNacimientoP.Value = DateTime.Now;
+            for (int i = 0; i < chklbTarifasAsignadas.Items.Count; i++)
+            {
+                if (chklbTarifasAsignadas.GetItemChecked(i))
+                {
+                    chklbTarifasAsignadas.SetItemChecked(i, false);
+                }
+            }
         }
 
         private void btnCerrarCrearReserva_Click(object sender, EventArgs e)
@@ -142,7 +149,7 @@ namespace Prototipo_CAI
         {
             if (lsvTarifasReserva.Items.Count == 0)
             {
-                MessageBox.Show("Debe agregar al menos un pasajero para concretar una reserva.","Error");
+                MessageBox.Show("Debe agregar al menos un pasajero para concretar una reserva.", "Error");
                 return;
             }
             CrearReservaModel model = new();
@@ -156,9 +163,9 @@ namespace Prototipo_CAI
             {
                 listViewItems.Add(lsvitem);
             }
-            if(!model.ValidarUsoTarifas(list, listViewItems))
+            if (!model.ValidarUsoTarifas(list, listViewItems))
             {
-                MessageBox.Show("No se han utilizado todas las tarifas correspondientes al itinerario.","Error");
+                MessageBox.Show("No se han utilizado todas las tarifas correspondientes al itinerario.", "Error");
                 return;
             }
 
@@ -178,5 +185,25 @@ namespace Prototipo_CAI
 
             this.Close();
         }
+
+
+
+        #region Tamaño
+        private void lsvTarifasReserva_ColumnWidthChanged(object sender, ColumnWidthChangedEventArgs e)
+        {
+            if (lsvTarifasReserva.Columns[e.ColumnIndex].Width < 100)
+            {
+                lsvTarifasReserva.Columns[e.ColumnIndex].Width = 100;
+            }
+            if (lsvTarifasReserva.Columns[e.ColumnIndex].Width > 150)
+            {
+                lsvTarifasReserva.Columns[e.ColumnIndex].Width = 150;
+            }
+        }
+
+        #endregion
+
+
+
     }
 }

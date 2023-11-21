@@ -201,6 +201,7 @@
             lsvTarifasReserva.TabIndex = 22;
             lsvTarifasReserva.UseCompatibleStateImageBehavior = false;
             lsvTarifasReserva.View = View.Details;
+            lsvTarifasReserva.ColumnWidthChanged += lsvTarifasReserva_ColumnWidthChanged;
             // 
             // hdNombreApellidoPasajero
             // 

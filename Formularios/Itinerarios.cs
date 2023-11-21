@@ -233,9 +233,17 @@ public partial class Itinerarios : Form
         }
         else
         {
-            string codItinerario = lsvItinerario.SelectedItems[0].Text;
-            model.CambiarItinerarioActivo(codItinerario);
-            MessageBox.Show($"Se ha establecido el itinerario {codItinerario} como activo.");
+            var item = lsvItinerario.SelectedItems[0];
+            if (item.SubItems[3].Text.ToLower() == "true")
+            {
+                MessageBox.Show("El itinerario seleccionado ya está reservado.", "Error");
+            }
+            else
+            {
+                string codItinerario = lsvItinerario.SelectedItems[0].Text;
+                model.CambiarItinerarioActivo(codItinerario);
+                MessageBox.Show($"Se ha establecido el itinerario {codItinerario} como activo.");
+            }
         }
     }
     #endregion
@@ -390,4 +398,22 @@ public partial class Itinerarios : Form
     {
 
     }
+
+
+    #region Tamaño
+
+    private void lsvItinerario_ColumnWidthChanged(object sender, ColumnWidthChangedEventArgs e)
+    {
+        if (lsvItinerario.Columns[e.ColumnIndex].Width < 50)
+        {
+            lsvItinerario.Columns[e.ColumnIndex].Width = 50;
+        }
+        if (lsvItinerario.Columns[e.ColumnIndex].Width > 180)
+        {
+            lsvItinerario.Columns[e.ColumnIndex].Width = 180;
+        }
+    }
+
+    #endregion
+
 }

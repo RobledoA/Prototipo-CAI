@@ -52,6 +52,7 @@
             lsvReservas.TabIndex = 0;
             lsvReservas.UseCompatibleStateImageBehavior = false;
             lsvReservas.View = View.Details;
+            lsvReservas.ColumnWidthChanged += lsvReservas_ColumnWidthChanged;
             lsvReservas.SelectedIndexChanged += lsvReservas_SelectedIndexChanged;
             // 
             // codReserva

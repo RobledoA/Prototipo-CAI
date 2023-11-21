@@ -251,6 +251,7 @@
             lsvHoteles.TabIndex = 22;
             lsvHoteles.UseCompatibleStateImageBehavior = false;
             lsvHoteles.View = View.Details;
+            lsvHoteles.ColumnWidthChanged += lsvHoteles_ColumnWidthChanged_1;
             lsvHoteles.SelectedIndexChanged += lsvHoteles_SelectedIndexChanged;
             // 
             // hdCodHotel
@@ -345,6 +346,7 @@
             lsvHotelesAgregados.TabIndex = 29;
             lsvHotelesAgregados.UseCompatibleStateImageBehavior = false;
             lsvHotelesAgregados.View = View.Details;
+            lsvHotelesAgregados.ColumnWidthChanged += lsvHotelesAgregados_ColumnWidthChanged;
             lsvHotelesAgregados.SelectedIndexChanged += lsvHotelesAgregados_SelectedIndexChanged;
             // 
             // hdCodHotelItinerario
