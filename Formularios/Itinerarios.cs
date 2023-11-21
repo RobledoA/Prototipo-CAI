@@ -151,7 +151,11 @@ public partial class Itinerarios : Form
 
         if (string.IsNullOrWhiteSpace(errores))
         {
-            int ultimoCodigo = ItinerariosAlmacen.Itinerarios.Last().CodigoItinerario;
+            var ultimoCodigo = 0;
+            if (ItinerariosAlmacen.Itinerarios.Count > 0)
+            {
+                ultimoCodigo = ItinerariosAlmacen.Itinerarios.Last().CodigoItinerario;
+            }
             int codigoSiguiente = ultimoCodigo + 1;
             model.AgregarItinerario(codigoSiguiente, cuilcuit, nombreRZ);
 
@@ -165,6 +169,8 @@ public partial class Itinerarios : Form
 
             MessageBox.Show($"Se ha creado el itinerario correctamente. Su código de itinerario es {codigoSiguiente}.", "Itinerario Creado");
             esconderDatos();
+
+
         }
         else
         {

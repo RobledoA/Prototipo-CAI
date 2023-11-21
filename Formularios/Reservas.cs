@@ -83,7 +83,12 @@ namespace Prototipo_CAI
             {
                 lsvReservas.Columns[e.ColumnIndex].Width = 200;
             }
-        
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ModuloReservas.EliminarReserva(lsvReservas.SelectedItems[0].Text);
         }
     }
 }
