@@ -129,7 +129,11 @@ public partial class Itinerarios : Form
         }
         if (r == DialogResult.No)
         {
-            int ultimoCodigo = ItinerariosAlmacen.Itinerarios.Last().CodigoItinerario;
+            int ultimoCodigo = 0;
+            if (ItinerariosAlmacen.Itinerarios.Count > 0)
+            {
+                ultimoCodigo = ItinerariosAlmacen.Itinerarios.Last().CodigoItinerario;
+            }
             int codigoSiguiente = ultimoCodigo + 1;
             model.AgregarItinerario(codigoSiguiente, "", "");
 
