@@ -188,7 +188,12 @@ internal class ModuloReservas
 
     public static int ObtenerUltimoCodigoReserva()
     {
+        if (Reservas.Count == 0)
+        {
+            return 0;
+        }
         return Reservas.Last().CodigoReserva;
+
     }
 
     public static void AgregarReserva(Reserva reserva)

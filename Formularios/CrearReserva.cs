@@ -162,8 +162,6 @@ namespace Prototipo_CAI
                 return;
             }
 
-            MessageBox.Show("con esto me aseguro que todas las tarifas fueron usadas, ahora checkeamos que todas sigan disponibles");
-
             string errores = model.ValidarDisponibilidadTarifas(list);
 
             errores += model.ValidarPasajerosTarifas(list, listViewItems);
@@ -178,7 +176,7 @@ namespace Prototipo_CAI
 
             model.CrearReserva(list, listViewItems);
 
-
+            this.Close();
         }
     }
 }
