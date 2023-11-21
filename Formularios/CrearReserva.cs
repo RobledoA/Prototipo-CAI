@@ -22,14 +22,6 @@ namespace Prototipo_CAI
 
         private void CrearReserva_Load(object sender, EventArgs e)
         {
-            /////////// INFO DE PRUEBA PARA NO PERDER TIEMPO, BORRAR ////////////////
-            txtNombrePasajero.Text = "Lionel mesi";
-            txtDNIPasajero.Text = "12345678";
-            cmbGenero.SelectedIndex = 0;
-            cmbNacionalidad.SelectedIndex = 0;
-            dtpNacimientoP.Value = new DateTime(1999, 1, 1);
-
-            ////////////////////////////////////////////////////////////////////////
             CrearReservaModel model = new();
             Itinerario itinerarioActivo = model.ObtenerItinerarioActivo();
             int codTarifa = 0;
