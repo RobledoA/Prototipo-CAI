@@ -183,6 +183,8 @@ namespace Prototipo_CAI
 
             model.CrearReserva(list, listViewItems);
 
+            ModuloItinerarios.ItinerarioActivo = null;
+
             this.Close();
         }
 
