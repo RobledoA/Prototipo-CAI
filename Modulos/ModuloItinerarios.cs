@@ -122,15 +122,12 @@ internal static class ModuloItinerarios
     public static void ItinerarioReservadoTrue(Itinerario itinerario)
     {
         Itinerario itinerarioAModificar = DevolverItinerarioActivo(itinerario);
-        itinerario.EstaReservado = true;
+        itinerarioAModificar.EstaReservado = true;
     }
 
     public static void ItinerarioReservadoFalse(Itinerario itinerario)
     {
         Itinerario itinerarioAModificar = DevolverItinerarioActivo(itinerario);
-        itinerario.EstaReservado = false;
+        itinerarioAModificar.EstaReservado = false;
     }
-
-
-
 }
