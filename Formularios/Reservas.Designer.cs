@@ -38,7 +38,6 @@
             btnCancelarReserva = new Button();
             iconbtnBuscarItinerario = new FontAwesome.Sharp.IconButton();
             iconbtnRefrescaBuscarReserva = new FontAwesome.Sharp.IconButton();
-            button1 = new Button();
             SuspendLayout();
             // 
             // lsvReservas
@@ -146,28 +145,12 @@
             iconbtnRefrescaBuscarReserva.UseVisualStyleBackColor = false;
             iconbtnRefrescaBuscarReserva.Click += iconbtnRefrescaBuscarReserva_Click_1;
             // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(8, 32, 50);
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(322, 405);
-            button1.Name = "button1";
-            button1.Size = new Size(129, 35);
-            button1.TabIndex = 19;
-            button1.Text = "eliminar reserva";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
-            // 
             // Reservas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(86, 124, 153);
             ClientSize = new Size(800, 444);
-            Controls.Add(button1);
             Controls.Add(iconbtnRefrescaBuscarReserva);
             Controls.Add(iconbtnBuscarItinerario);
             Controls.Add(btnCancelarReserva);
@@ -195,6 +178,5 @@
         private Button btnCancelarReserva;
         private FontAwesome.Sharp.IconButton iconbtnBuscarItinerario;
         private FontAwesome.Sharp.IconButton iconbtnRefrescaBuscarReserva;
-        private Button button1;
     }
 }

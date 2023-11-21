@@ -68,9 +68,5 @@ namespace Prototipo_CAI
             ReservasModel.Actualizar(lsvReservas);
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            ModuloReservas.EliminarReserva(lsvReservas.SelectedItems[0].Text);
-        }
     }
 }
